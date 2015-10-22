@@ -12,6 +12,7 @@ public abstract class Futbolista {
 		this.posicion = posicion;
 	}
 	
+	@Override
 	public String toString(){
 		return "El futbolista " + nombre + " juega de " + posicion;
 	}

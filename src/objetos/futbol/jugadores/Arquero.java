@@ -9,6 +9,8 @@ public Arquero (String nombre, String posicion, int TiempoSinGoles,byte dorsal){
 	this.TiempoSinGoles = TiempoSinGoles;
 	this.dorsal = dorsal;
 }
+
+@Override
 public String toString(){
 	return super.toString()+" con el dorsal "+ dorsal+ " Tiempo Sin Goles "+TiempoSinGoles;
 }
