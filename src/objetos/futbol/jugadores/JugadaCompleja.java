@@ -15,5 +15,19 @@ public abstract class JugadaCompleja {
 		this.Explicacion=Explicacion;
 		
 	}
+	@Override
+	public String toString(){
+		return "Jugada "+ nombreJugada;
+	}
+	public boolean equals (JugadaCompleja j){
+		for (int i=0; i<j.Jugada.size();i++){
+			if!(this.Jugada.get(i).identificarJugada().equals(j.Jugada.get(i).identificarJugada())){
+				return false;
+			}
+		
+		}
+		return true;
+	}
+	
 
 }
