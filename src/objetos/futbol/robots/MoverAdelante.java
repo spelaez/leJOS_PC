@@ -11,5 +11,10 @@ public class MoverAdelante extends JugadaPrimitiva {
 	public String ordenJugada() {
 		return ID_JUGADA +"-"+ velocidad;
 	}
+	
+	@Override
+	public int getID_JUGADA(){
+		return ID_JUGADA;
+	}
 
 }

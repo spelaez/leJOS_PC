@@ -1,7 +1,7 @@
 package objetos.futbol.robots;
 
 public class MoverAtras extends JugadaPrimitiva {
-	private final int ID_Jugada = 0;
+	private final int ID_JUGADA = 0;
 	
 	public MoverAtras(int velocidad){
 		super(velocidad);
@@ -9,7 +9,11 @@ public class MoverAtras extends JugadaPrimitiva {
 	
 	@Override
 	public String ordenJugada() {
-		return ID_Jugada + "-" + "velocidad";
+		return ID_JUGADA + "-" + "velocidad";
 	}
 
+	@Override
+	public int getID_JUGADA(){
+		return ID_JUGADA;
+	}
 }

@@ -14,4 +14,8 @@ public class Chutar extends JugadaPrimitiva {
 		return ID_JUGADA + "-" + velocidad + "-" + grados;
 	}
 
+	@Override
+	public int getID_JUGADA(){
+		return ID_JUGADA;
+	}
 }
