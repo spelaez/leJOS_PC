@@ -22,8 +22,12 @@ public abstract class JugadaCompleja {
 	}
 	
 	public boolean equals(JugadaCompleja j){
+		
+		if (!(j.Jugada.size() == this.Jugada.size())){
+			return false;
+		}
 		for (int i=0; i<j.Jugada.size();i++){
-			if(!this.Jugada.get(i).identificarJugada().equals(j.Jugada.get(i).identificarJugada())){
+			if(!(this.Jugada.get(i).getID_JUGADA() == j.Jugada.get(i).getID_JUGADA())){
 				return false;
 			}
 		
