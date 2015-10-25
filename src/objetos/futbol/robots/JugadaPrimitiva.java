@@ -1,7 +1,7 @@
 package objetos.futbol.robots;
 
 public abstract class JugadaPrimitiva {
-	private int velocidad;
+	protected int velocidad;
 	
 	public JugadaPrimitiva(int velocidad){
 		this.velocidad = velocidad;
