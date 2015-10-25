@@ -7,9 +7,10 @@ public abstract class Futbolista {
 	private final String posicion;
 	private ArrayList listaJugadas;
 	
-	public Futbolista(String nombre, String posicion){
+	public Futbolista(String nombre, String posicion, ArrayList listaJugadas){
 		this.nombre = nombre;
 		this.posicion = posicion;
+		this.listaJugadas = listaJugadas;
 	}
 	
 	@Override
