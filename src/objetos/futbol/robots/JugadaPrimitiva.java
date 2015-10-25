@@ -7,4 +7,5 @@ public abstract class JugadaPrimitiva {
 		this.velocidad = velocidad;
 	}
 	public abstract String ordenJugada();
+	public abstract int getID_JUGADA();
 }
