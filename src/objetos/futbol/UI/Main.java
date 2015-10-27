@@ -1,19 +1,77 @@
 package objetos.futbol.UI;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
 
-import java.io.*;
+import lejos.pc.comm.NXTCommLogListener;
+import lejos.pc.comm.NXTConnector;
 
-import lejos.nxt.comm.*;
-import lejos.pc.comm.NXTComm;
-import lejos.pc.comm.NXTCommException;
-import lejos.pc.comm.NXTCommFactory;
-import lejos.pc.comm.NXTInfo;
-public class Main {
-	public static void main(String [] args) throws NXTCommException, IOException{
-		NXTComm nxtComm = NXTCommFactory.createNXTComm(NXTCommFactory.BLUETOOTH);
-		NXTInfo nxtInfo = new NXTInfo(NXTCommFactory.BLUETOOTH, "NXT", "00:16:53:00:78:48");
-		NXTInfo[] nxtInfoo = nxtComm.search("NXT");
-		nxtComm.open(nxtInfoo[0]);
-		DataOutputStream Op = (DataOutputStream)nxtComm.getOutputStream();
-		Op.writeInt(1);
+
+public class Main {	
+	public static void main(String[] args) {
+		NXTConnector conn = new NXTConnector();
+	
+		conn.addLogListener(new NXTCommLogListener(){
+
+			public void logEvent(String message) {
+				System.out.println("BTSend Log.listener: "+message);
+				
+			}
+
+			public void logEvent(Throwable throwable) {
+				System.out.println("BTSend Log.listener - stack trace: ");
+				 throwable.printStackTrace();
+				
+			}
+			
+		} 
+		);
+		// Connect to any NXT over Bluetooth
+		boolean connected = conn.connectTo("btspp://");
+	
+		
+		if (!connected) {
+			System.err.println("Failed to connect to any NXT");
+			System.exit(1);
+		}
+		
+		DataOutputStream dos = new DataOutputStream(conn.getOutputStream());
+		DataInputStream dis = new DataInputStream(conn.getInputStream());
+				
+		for(int i=0;i<20;i++) {
+			try {
+				System.out.println("Enviando mi pene");
+				dos.writeChars("Santiago" + i);
+				dos.flush();
+				System.out.println("llegue al final del try");
+				
+			} catch (IOException ioe) {
+				System.out.println("IO Exception writing bytes:");
+				System.out.println(ioe.getMessage());
+				break;
+			}
+			
+			try {
+				System.out.println("Received " + dis.readInt());
+				System.out.println("No logre recibir bien");
+			} catch (IOException ioe) {
+				System.out.println("IO Exception reading bytes:");
+				System.out.println(ioe.getMessage());
+				break;
+			}
+		}
+		
+		
+		try {
+			dis.close();
+			System.out.println("logre cerrar el dis");
+			dos.close();
+			System.out.println("logre cerrar el dos");
+			conn.close();
+			System.out.println("logre cerrar la conexion");
+		} catch (IOException ioe) {
+			System.out.println("IOException closing connection:");
+			System.out.println(ioe.getMessage());
+		}
 	}
 }
