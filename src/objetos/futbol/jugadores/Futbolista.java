@@ -1,13 +1,14 @@
 package objetos.futbol.jugadores;
 
 import java.util.ArrayList;
+import objetos.futbol.robots.JugadaPrimitiva;
 
 public abstract class Futbolista {
 	private String nombre;
 	private final String posicion;
-	private ArrayList listaJugadas;
+	private ArrayList<JugadaPrimitiva> listaJugadas;
 	
-	public Futbolista(String nombre, String posicion, ArrayList listaJugadas){
+	public Futbolista(String nombre, String posicion, ArrayList<JugadaPrimitiva> listaJugadas){
 		this.nombre = nombre;
 		this.posicion = posicion;
 		this.listaJugadas = listaJugadas;
