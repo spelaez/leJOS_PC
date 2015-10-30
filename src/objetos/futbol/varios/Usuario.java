@@ -1,4 +1,4 @@
-package objetos.futbol.UI;
+package objetos.futbol.varios;
 
 public class Usuario {
 protected String nombreUsuario;
