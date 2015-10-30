@@ -1,11 +1,12 @@
 package objetos.futbol.jugadores;
-
+import  objetos.futbol.robots.JugadaPrimitiva;
+import java.util.ArrayList;
 public class Arquero extends Futbolista {
 	public int TiempoSinGoles;
 	public byte dorsal;
 	
-public Arquero (String nombre, String posicion, int TiempoSinGoles,byte dorsal){
-	super(nombre,posicion);
+public Arquero (String nombre, String posicion, int TiempoSinGoles,byte dorsal, ArrayList <JugadaPrimitiva> listaJugadas){
+	super(nombre,posicion,listaJugadas);
 	this.TiempoSinGoles = TiempoSinGoles;
 	this.dorsal = dorsal;
 }
