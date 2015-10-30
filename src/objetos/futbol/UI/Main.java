@@ -41,10 +41,8 @@ public class Main {
 		for(int i=0;i<20;i++) {
 			try {
 				System.out.println("Enviando mi pene");
-				dos.writeChars("Santiago" + i);
-				dos.flush();
-				System.out.println("llegue al final del try");
-				
+				dos.writeInt(i);
+				dos.flush();		
 			} catch (IOException ioe) {
 				System.out.println("IO Exception writing bytes:");
 				System.out.println(ioe.getMessage());
@@ -53,7 +51,6 @@ public class Main {
 			
 			try {
 				System.out.println("Received " + dis.readInt());
-				System.out.println("No logre recibir bien");
 			} catch (IOException ioe) {
 				System.out.println("IO Exception reading bytes:");
 				System.out.println(ioe.getMessage());
@@ -64,11 +61,8 @@ public class Main {
 		
 		try {
 			dis.close();
-			System.out.println("logre cerrar el dis");
 			dos.close();
-			System.out.println("logre cerrar el dos");
 			conn.close();
-			System.out.println("logre cerrar la conexion");
 		} catch (IOException ioe) {
 			System.out.println("IOException closing connection:");
 			System.out.println(ioe.getMessage());
