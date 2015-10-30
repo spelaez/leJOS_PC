@@ -9,7 +9,7 @@ public class MoverAtras extends JugadaPrimitiva {
 	
 	@Override
 	public String ordenJugada() {
-		return ID_JUGADA + "-" + "velocidad";
+		return ID_JUGADA + "-" + velocidad;
 	}
 
 	@Override
