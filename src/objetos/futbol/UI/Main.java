@@ -2,18 +2,14 @@ package objetos.futbol.UI;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-
-import lejos.pc.comm.NXTCommFactory;
 import lejos.pc.comm.NXTCommLogListener;
 import lejos.pc.comm.NXTConnector;
-import lejos.pc.comm.NXTInfo;
-
+import java.util.Scanner;
 
 public class Main {	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
+		Scanner scn = new Scanner(System.in);
 		NXTConnector conn = new NXTConnector();
-		NXTInfo nxtInfo[] = conn.search("NXT_4", "", NXTCommFactory.BLUETOOTH);
-		System.out.print(nxtInfo[0].name);
 		conn.addLogListener(new NXTCommLogListener(){
 
 			public void logEvent(String message) {
@@ -40,27 +36,10 @@ public class Main {
 		
 		DataOutputStream dos = new DataOutputStream(conn.getOutputStream());
 		DataInputStream dis = new DataInputStream(conn.getInputStream());
-				
-		for(int i=0;i<20;i++) {
-			try {
-				System.out.println("Enviando mi pene");
-				dos.writeInt(i);
-				dos.flush();		
-			} catch (IOException ioe) {
-				System.out.println("IO Exception writing bytes:");
-				System.out.println(ioe.getMessage());
-				break;
-			}
-			
-			try {
-				System.out.println("Received " + dis.readInt());
-			} catch (IOException ioe) {
-				System.out.println("IO Exception reading bytes:");
-				System.out.println(ioe.getMessage());
-				break;
-			}
-		}
-		
+		dos.writeInt(scn.nextInt());
+		dos.flush();
+		dos.writeInt(scn.nextInt());
+		dos.flush();
 		
 		try {
 			dis.close();
