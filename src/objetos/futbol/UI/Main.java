@@ -3,14 +3,17 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
+import lejos.pc.comm.NXTCommFactory;
 import lejos.pc.comm.NXTCommLogListener;
 import lejos.pc.comm.NXTConnector;
+import lejos.pc.comm.NXTInfo;
 
 
 public class Main {	
 	public static void main(String[] args) {
 		NXTConnector conn = new NXTConnector();
-	
+		NXTInfo nxtInfo[] = conn.search("NXT_4", "", NXTCommFactory.BLUETOOTH);
+		System.out.print(nxtInfo[0].name);
 		conn.addLogListener(new NXTCommLogListener(){
 
 			public void logEvent(String message) {
