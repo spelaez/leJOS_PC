@@ -1,7 +1,7 @@
 package objetos.futbol.robots;
 
 public class MoverAtras extends JugadaPrimitiva {
-	private final int ID_JUGADA = 0;
+	private final int ID_JUGADA = 4;
 	
 	public MoverAtras(int velocidad){
 		super(velocidad);
