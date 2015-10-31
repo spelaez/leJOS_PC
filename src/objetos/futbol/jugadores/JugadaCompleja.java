@@ -35,8 +35,8 @@ public abstract class JugadaCompleja {
 		return true;
 	}
 	public abstract String identificarJugada();
-	public int getComplejidad(JugadaCompleja obj){
-		return obj.Jugada.size();
+	protected ArrayList<JugadaPrimitiva> getJugada(){
+		return Jugada;
 	}
 
 }

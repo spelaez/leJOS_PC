@@ -9,7 +9,7 @@ public class JugadaComplejaDefensiva extends JugadaCompleja {
 	
 	public JugadaComplejaDefensiva(String nombreJugada,String fechaCreacion,UsuarioAdministrador Autor,ArrayList<JugadaPrimitiva> Jugada,String Explicacion){
 		super(nombreJugada, fechaCreacion, Autor, Jugada, Explicacion);
-		this.complejidad=super.getComplejidad(this);
+		this.complejidad=super.getJugada().size();
 	}
 	
 	
