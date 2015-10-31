@@ -57,5 +57,6 @@ public class Main {
 			System.out.println("IOException closing connection:");
 			System.out.println(ioe.getMessage());
 		}
+		scn.close();
 	}
 }
