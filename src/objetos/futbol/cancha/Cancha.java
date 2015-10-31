@@ -1,38 +1,37 @@
 package objetos.futbol.cancha;
 
 public class Cancha {
-//Medidas en dm
-	static final float LARGO_CANCHA = 12.2F;
-	static final float ANCHO_CANCHA = 18.3F;
-	static final float ARCO_ANCHO = 0.8F;
-	static final float ARCO_LARGO = 4.5F;
-	static final float ZONA_ARCO_ANCHO = 4.5F;
-	static final float CAMPO = 9.3F;
-	static final float BORDES_EXTERIORES = 3F;
-	static final float ZONA_CENTRAL = 9.3F;
-	static final float ZONA_SUP_INF = 3.85F;
+//Medidas en grupos de a 61MM y algunas redondeadas para evitar decimales
+	static final int LARGO_CANCHA = 20;
+	static final int ANCHO_CANCHA = 30;
+	static final int ARCO_ANCHO = 1;
+	static final int ARCO_LARGO = 7;
+	static final int ZONA_ARCO_ANCHO = 7;
+	static final int CAMPO = 15;
+	static final int BORDES_EXTERIORES = 5;
+	static final int ZONA_SUP_INF = 6;
 	static String[][] rep;
 	
 	public void inicializarCancha(){
-		rep = new String[(int)LARGO_CANCHA][(int)ANCHO_CANCHA];
-		for(int i=0; i<(int)LARGO_CANCHA; i++){
-			for(int j=0; j<(int)ANCHO_CANCHA; j++){
-				rep[i][j]= " ";
+		rep = new String[LARGO_CANCHA][ANCHO_CANCHA];
+		for(int i=0; i<LARGO_CANCHA; i++){
+			for(int j=0; j<ANCHO_CANCHA; j++){
+				rep[i][j]= "  ";
 			}
 		}
-		for(int j=0; j<(int)ANCHO_CANCHA; j++){
-			rep[0][j] = "#";
-			rep[4][j] = "#";
-			rep[8][j] = "#";
-			rep[(int)(LARGO_CANCHA-1)][j] = "#";
+		for(int j=0; j<ANCHO_CANCHA; j++){
+			rep[0][j] = "# ";
+			rep[6][j] = "# ";
+			rep[13][j] = "# ";
+			rep[19][j] = "# ";
 		}
-		for(int i=0; i<(int)LARGO_CANCHA; i++){
-			rep[i][0] = "#";
-			rep[i][(int)(ANCHO_CANCHA-1)] = "#";
+		for(int i=0; i<LARGO_CANCHA; i++){
+			rep[i][0] = "# ";
+			rep[i][29] = "# ";
 		}
-		for(int i=4; i<=8; i++){
-			rep[i][5] = "#";
-			rep[i][14] = "#";
+		for(int i=6; i<14; i++){
+			rep[i][7] = "# ";
+			rep[i][22] = "# ";
 		}
 	}
 	
