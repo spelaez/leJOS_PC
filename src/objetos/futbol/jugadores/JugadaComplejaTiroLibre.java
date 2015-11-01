@@ -7,10 +7,17 @@ import objetos.futbol.robots.Chutar;
 public class JugadaComplejaTiroLibre extends JugadaCompleja {
  private int potenciachute;
  private int efecto;
- public JugadaComplejaTiroLibre(String nombreJugada,String fechaCreacion,UsuarioAdminitrador Autor,ArrayList<JugadaPrimitiva> jugada,String Explicacion){
+
+ public JugadaComplejaTiroLibre (String nombreJugada,String fechaCreacion,UsuarioAdminitrador Autor,ArrayList<JugadaPrimitiva> jugada,String Explicacion){
   super(nombreJugada,fechaCreacion,Autor,jugada,Explicacion);
-  this.potenciachute=super.getJugada().get(super.getJugada().size()-1).getVelocidad();
-  this.efecto=((Chutar) super.getJugada().get(super.getJugada().size()-1)).getGrados();
+  JugadaPrimitiva y = super.getJugada().get(super.getJugada().size()-1);
+if(y instanceof Chutar){
+  this.potenciachute=y.getVelocidad();
+  this.efecto=((Chutar) y).getGrados();
+  }
+  else{
+	throw new ClassCastException();
+  }
  }
  
  @Override
