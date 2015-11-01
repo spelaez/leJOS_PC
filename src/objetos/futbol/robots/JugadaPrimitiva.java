@@ -6,8 +6,7 @@ public abstract class JugadaPrimitiva {
 	public JugadaPrimitiva(int velocidad){
 		this.velocidad = velocidad;
 	}
-	public abstract String ordenJugada();
-	public abstract int getID_JUGADA();
+
 	public int getVelocidad(){
 		return velocidad;
 	}
