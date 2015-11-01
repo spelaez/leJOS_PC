@@ -40,27 +40,27 @@ public class Robot {
 	}
 	
 	public int ejecutarTrotar(){
-		return trotar.getID_JUGADA();
+		return trotar.getIdJugada();
 	}
 	
 	public int ejecutarCorrer(){
-		return correr.getID_JUGADA();
+		return correr.getIdJugada();
 	}
 	
 	public int ejecutarRetroceder(){
-		return retroceder.getID_JUGADA();
+		return retroceder.getIdJugada();
 	}
 	
 	public int ejecutarGirar(){
-		return girar.getID_JUGADA();
+		return girar.getIdJugada();
 	}
 	
 	public int ejecutarChutar(){
-		return chutar.getID_JUGADA();
+		return chutar.getIdJugada();
 	}
 	
 	public int ejecutarPatear(){
-		return patear.getID_JUGADA();
+		return patear.getIdJugada();
 	}
 	
 	public void ejecutarJugadaCompleja(int index){
