@@ -1,7 +1,7 @@
 package objetos.futbol.jugadores;
 
 import java.util.ArrayList;
-
+import objetos.futbol.varios.UsuarioAdministrador;
 import objetos.futbol.robots.JugadaPrimitiva;
 
 public class JugadaComplejaDefensiva extends JugadaCompleja {

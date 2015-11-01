@@ -1,10 +1,11 @@
 package objetos.futbol.jugadores;
 import objetos.futbol.robots.JugadaPrimitiva;
 import java.util.ArrayList;
+import objetos.futbol.varios.UsuarioAdministrador;
 public abstract class JugadaCompleja {
 	private String nombreJugada;
 	private final String fechaCreacion;
-	//private final UsuarioAdministrador Autor; 
+	private final UsuarioAdministrador Autor; 
 	private ArrayList<JugadaPrimitiva> Jugada;
 	private String Explicacion;
 	

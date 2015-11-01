@@ -3,12 +3,13 @@ package objetos.futbol.jugadores;
 import java.util.ArrayList;
 import objetos.futbol.robots.JugadaPrimitiva;
 import objetos.futbol.robots.Chutar;
+import objetos.futbol.varios.UsuarioAdministrador;
 
 public class JugadaComplejaTiroLibre extends JugadaCompleja {
  private int potenciachute;
  private int efecto;
 
- public JugadaComplejaTiroLibre (String nombreJugada,String fechaCreacion,UsuarioAdminitrador Autor,ArrayList<JugadaPrimitiva> jugada,String Explicacion){
+ public JugadaComplejaTiroLibre (String nombreJugada,String fechaCreacion,UsuarioAdministrador Autor,ArrayList<JugadaPrimitiva> jugada,String Explicacion){
   super(nombreJugada,fechaCreacion,Autor,jugada,Explicacion);
   JugadaPrimitiva y = super.getJugada().get(super.getJugada().size()-1);
 if(y instanceof Chutar){
