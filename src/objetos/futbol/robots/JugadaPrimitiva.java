@@ -14,4 +14,5 @@ public abstract class JugadaPrimitiva {
 	public void setVelocidad(int vel){
 		velocidad = velocidad+vel;
 	}
+	
 }
