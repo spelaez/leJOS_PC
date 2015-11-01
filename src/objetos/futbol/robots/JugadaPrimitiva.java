@@ -12,6 +12,6 @@ public abstract class JugadaPrimitiva {
 		return velocidad;
 	}
 	public void setVelocidad(int vel){
-		velocidad = velocidad*vel;
+		velocidad = velocidad+vel;
 	}
 }
