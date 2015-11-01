@@ -15,6 +15,8 @@ public abstract class JugadaPrimitiva {
 		velocidad = velocidad+factor;
 	}
 	
-	
+	public void cambioVelocidadA(int factor){
+		velocidad = velocidad*factor;
+	}
 	
 }
