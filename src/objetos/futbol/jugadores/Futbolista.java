@@ -6,9 +6,9 @@ import objetos.futbol.robots.JugadaPrimitiva;
 public abstract class Futbolista {
 	private String nombre;
 	private final String posicion;
-	private ArrayList<JugadaPrimitiva> listaJugadas;
+	private ArrayList<JugadaCompleja> listaJugadas;
 	
-	public Futbolista(String nombre, String posicion, ArrayList<JugadaPrimitiva> listaJugadas){
+	public Futbolista(String nombre, String posicion, ArrayList<JugadaCompleja> listaJugadas){
 		this.nombre = nombre;
 		this.posicion = posicion;
 		this.listaJugadas = listaJugadas;

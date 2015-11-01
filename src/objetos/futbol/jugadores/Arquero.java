@@ -5,7 +5,7 @@ public class Arquero extends Futbolista {
 	public int TiempoSinGoles;
 	public byte dorsal;
 	
-public Arquero (String nombre, String posicion, int TiempoSinGoles,byte dorsal, ArrayList <JugadaPrimitiva> listaJugadas){
+public Arquero (String nombre, String posicion, int TiempoSinGoles,byte dorsal, ArrayList <JugadaCompleja> listaJugadas){
 	super(nombre,posicion,listaJugadas);
 	this.TiempoSinGoles = TiempoSinGoles;
 	this.dorsal = dorsal;
