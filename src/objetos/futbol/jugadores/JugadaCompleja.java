@@ -27,8 +27,8 @@ public abstract class JugadaCompleja {
 		if (!(j.Jugada.size() == this.Jugada.size())){
 			return false;
 		}
-		for (int i=0; i<j.Jugada.size();i++){
-			if(!(this.Jugada.get(i).getID_JUGADA() == j.Jugada.get(i).getID_JUGADA())){
+		for (int i=0; i < j.Jugada.size();i++){
+			if(!(this.Jugada.get(i).getIdJugada() == j.Jugada.get(i).getIdJugada())){
 				return false;
 			}
 		
