@@ -6,12 +6,12 @@ import objetos.futbol.robots.JugadaPrimitiva;
 
 public class JugadaComplejaDefensiva extends JugadaCompleja {
 	private int complejidad;
+	private int fuerza;
 	
-	
-	public JugadaComplejaDefensiva(String nombreJugada,String fechaCreacion,UsuarioAdministrador Autor,ArrayList<JugadaPrimitiva> Jugada,String Explicacion){
+	public JugadaComplejaDefensiva(String nombreJugada,String fechaCreacion,UsuarioAdministrador Autor,ArrayList<JugadaPrimitiva> Jugada,String Explicacion,int fuerza){
 		super(nombreJugada, fechaCreacion, Autor, Jugada, Explicacion);
 		this.complejidad=super.getJugada().size();
-		
+		this.fuerza = fuerza;
 	}
 	
 	
@@ -35,8 +35,8 @@ public class JugadaComplejaDefensiva extends JugadaCompleja {
 	}
 	public void modVel(JugadaComplejaDefensiva X){
 		
-		for(int i = 0 ; i<super.getJugada().size();i++){
-			getJugada().get(i).setVelocidad(2);
+		for(int i = 0 ; i < super.getJugada().size() ;i++){
+			getJugada().get(i).setVelocidad(fuerza);
 			
 		}
 	}
