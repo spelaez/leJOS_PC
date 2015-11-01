@@ -21,22 +21,22 @@ public class JugadaComplejaDefensiva extends JugadaCompleja {
 	}
 	public String getComplejidad(){
 		if (complejidad ==1){
-		return "jugada poco defensiva" ;
+		return "jugada poco defensiva " + " numero de jugadas " + complejidad;
 		}
 		else if(complejidad ==  2){
-			return "jugada medianamente defensiva";
+			return "jugada medianamente defensiva"+" numero de jugadas " + complejidad ;
 		}
 		else if (complejidad >= 3){
-			return "jugada muy defensiva";
+			return "jugada muy defensiva"+ " numero de jugadas " + complejidad;
 		}
 		else{
 			return "no existe jugada";
 		}
 	}
-	public void modVel(JugadaComplejaDefensiva X){
+	public void modVel(){
 		
-		for(int i = 0 ; i < super.getJugada().size() ;i++){
-			getJugada().get(i).setVelocidad(fuerza);
+		for(int i = 0 ; i<super.getJugada().size();i++){
+			getJugada().get(i).cambioVelocidad(fuerza);
 			
 		}
 	}
