@@ -5,7 +5,7 @@ public class Delantero extends Futbolista {
 	public short golesMarcados;
 	public byte dorsal;
 	
-	public Delantero(String nombre, String posicion, short golesMarcados, byte dorsal, ArrayList <JugadaPrimitiva> listaJugadas ){
+	public Delantero(String nombre, String posicion, short golesMarcados, byte dorsal, ArrayList <JugadaCompleja> listaJugadas ){
 		super(nombre,posicion,listaJugadas);
 		this.golesMarcados = golesMarcados;
 		this.dorsal = dorsal;
