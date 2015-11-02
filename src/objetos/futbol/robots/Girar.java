@@ -1,18 +1,21 @@
 package objetos.futbol.robots;
 
 public class Girar extends JugadaPrimitiva {
-	private final int idJugada = 4;
-	private int grados;
+	private int idJugada = 4;
 	public Girar(int velocidad, int grados){
 		super(velocidad);
-		this.grados = grados;
-	}
+		if(grados == 45){
+			idJugada = 4;
+		}else if (grados == -45){
+			idJugada = 5;
+		}
+		}
 
 	public int getIdJugada(){
 		return idJugada;
 	}
 	
 	public int getGrados(){
-		return grados;
+		return idJugada == 4 ? 45 : -45;
 	}
 }
