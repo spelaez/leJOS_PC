@@ -6,10 +6,11 @@ import objetos.futbol.varios.UsuarioAdministrador;
 
 public class JugadaComplejaOfensiva extends JugadaCompleja {
 	private int efectividad;
-	private int pique;
+	private String descripcion;
 	public JugadaComplejaOfensiva(String nombreJugada,String fechaCreacion,UsuarioAdministrador Autor,ArrayList<JugadaPrimitiva> Jugada,String Explicacion){
 		super(nombreJugada, fechaCreacion, Autor, Jugada, Explicacion);
 		this.efectividad= super.getJugada().size();
+		this.descripcion= "La jugada " + nombreJugada + " es una " + getEfectividad()+  ", fue creada por " + Autor + ", en la fecha " + fechaCreacion;
 	}
 	
 	@Override
@@ -17,24 +18,22 @@ public class JugadaComplejaOfensiva extends JugadaCompleja {
 		return "Jugada Ofensiva";
 	}
 	
-	public String getEfectividad(){
+	private String getEfectividad(){
 		if (efectividad ==1){
-		return "jugada poco efectiva " + " numero de jugadas " + efectividad;
+		return "jugada poco efectiva, numero de jugadas " + efectividad;
 		}
 		else if(efectividad==  2){
-			return "jugada medianamente efectiva"+" numero de jugadas " + efectividad ;
+			return "jugada medianamente efectiva, numero de jugadas " + efectividad ;
 		}
 		else if (efectividad >= 3){
-			return "jugada efectiva"+ " numero de jugadas " + efectividad;
+			return "jugada efectiva, numero de jugadas " + efectividad;
 		}
 		else{
 			return "no existe jugada";
 		}
 	}
 	
-	public void modVelAtaque(){
-		for(int i = 0 ; i<super.getJugada().size();i++){
-			getJugada().get(i).cambioVelocidadA(pique);
-		}
+	public String getDescripcion(){
+		return descripcion;
 	}
 }

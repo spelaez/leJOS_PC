@@ -8,6 +8,7 @@ import objetos.futbol.varios.UsuarioAdministrador;
 public class JugadaComplejaTiroLibre extends JugadaCompleja {
 	private int potenciachute;
 	private int efecto;
+	private String descripcion;
 
 	public JugadaComplejaTiroLibre (String nombreJugada,String fechaCreacion,UsuarioAdministrador Autor,ArrayList<JugadaPrimitiva> jugada,String Explicacion){
 		super(nombreJugada,fechaCreacion,Autor,jugada,Explicacion);
@@ -15,6 +16,7 @@ public class JugadaComplejaTiroLibre extends JugadaCompleja {
 		if(y instanceof Chutar){
 			this.potenciachute=y.getVelocidad();
 			this.efecto=((Chutar) y).getGrados();
+			this.descripcion = "La jugada " + nombreJugada +" es un "+ getPotenciachute() +", con un " +getEfecto()+ ", fue creada por " + Autor + ", en la fecha " + fechaCreacion;
 		}
 		else{
 			throw new ClassCastException();
@@ -47,13 +49,17 @@ public class JugadaComplejaTiroLibre extends JugadaCompleja {
 			return "chute directo";
 		}
 		else if (efecto>=25 && efecto<35){
-			return "efecto medio hacia arriba";
+			return "tiro medio hacia arriba";
 		}
 		else if(efecto>=35){
-			return "tiro vascelina";
+			return "tiro vaselina";
 		}
 		else{
 			return "tiro sin efecto";
 		}
+	}
+	
+	public String getDescripcion(){
+		return descripcion;
 	}
 }

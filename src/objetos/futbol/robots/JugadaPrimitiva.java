@@ -11,13 +11,5 @@ public abstract class JugadaPrimitiva {
 		return velocidad;
 	}
 	
-	public void cambioVelocidad(int factor){
-		velocidad = velocidad+factor;
-	}
-	
-	public void cambioVelocidadA(int factor){
-		velocidad = velocidad*factor;
-	}
-	
 	public abstract int getIdJugada();
 }
