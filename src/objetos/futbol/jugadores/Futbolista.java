@@ -1,8 +1,6 @@
 package objetos.futbol.jugadores;
 
 import java.util.ArrayList;
-import objetos.futbol.robots.JugadaPrimitiva;
-
 public abstract class Futbolista {
 	private String nombre;
 	private final String posicion;

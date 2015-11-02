@@ -1,5 +1,4 @@
 package objetos.futbol.jugadores;
-import  objetos.futbol.robots.JugadaPrimitiva;
 import java.util.ArrayList;
 public class Delantero extends Futbolista {
 	public short golesMarcados;
