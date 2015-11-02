@@ -36,7 +36,7 @@ public abstract class JugadaCompleja {
 		return true;
 	}
 	public abstract String identificarJugada();
-	protected ArrayList<JugadaPrimitiva> getJugada(){
+	public ArrayList<JugadaPrimitiva> getJugada(){
 		return Jugada;
 	}
 
