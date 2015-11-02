@@ -1,6 +1,10 @@
 package objetos.futbol.robots;
 
+import java.io.DataOutputStream;
+import java.io.IOException;
+
 import objetos.futbol.jugadores.Futbolista;
+import objetos.futbol.jugadores.JugadaCompleja;
 
 public class Robot {
 	private Futbolista jugador;
@@ -70,6 +74,11 @@ public class Robot {
 		return patear.getIdJugada();
 	}
 	
-	public void ejecutarJugadaCompleja(int index){
+	public void ejecutarJugadaCompleja(int index, DataOutputStream dataOut) throws IOException{
+		JugadaCompleja x = jugador.getListaJugadas().get(index);
+		for(JugadaPrimitiva j: x.getJugada()){
+			dataOut.writeInt(j.getIdJugada());
+		}
+		dataOut.flush();
 	}
 }
