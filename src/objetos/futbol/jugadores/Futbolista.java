@@ -23,6 +23,10 @@ public abstract class Futbolista {
 		return this.equals(f);
 	}
 	
+	public ArrayList<JugadaCompleja> getListaJugadas(){
+		return listaJugadas;
+	}
+	
 	public abstract boolean jugarConLasManos();
 	
 }
