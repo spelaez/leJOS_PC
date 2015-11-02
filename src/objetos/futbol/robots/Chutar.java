@@ -15,9 +15,11 @@ public class Chutar extends JugadaPrimitiva {
 		}
 		
 	}
+	
 	public int getIdJugada(){
 		return idJugada;
 	}
+	
 	public int getGrados(){
 		return grados;
 	}

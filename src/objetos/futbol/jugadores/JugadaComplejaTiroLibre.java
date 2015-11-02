@@ -19,12 +19,13 @@ public class JugadaComplejaTiroLibre extends JugadaCompleja {
 		else{
 			throw new ClassCastException();
 		}
-}
+	}
  
 	@Override
  	public String identificarJugada() {
 		return "Jugada Tiro Libre";
 	}
+	
 	private String getPotenciachute(){
 		if(potenciachute>0 && potenciachute <50){
 			return "chute suave";
@@ -40,6 +41,7 @@ public class JugadaComplejaTiroLibre extends JugadaCompleja {
 			return"chute sin potencia";
 		}
 	}
+	
 	private String getEfecto(){
 		if(efecto>=18 && efecto<25){
 			return "chute directo";
@@ -54,5 +56,4 @@ public class JugadaComplejaTiroLibre extends JugadaCompleja {
 			return "tiro sin efecto";
 		}
 	}
-
 }

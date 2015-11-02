@@ -19,6 +19,7 @@ public class JugadaComplejaDefensiva extends JugadaCompleja {
 	public String identificarJugada() {
 		return "Jugada Defensiva";
 	}
+	
 	public String getComplejidad(){
 		if (complejidad ==1){
 		return "jugada poco defensiva " + " numero de jugadas " + complejidad;
@@ -33,14 +34,10 @@ public class JugadaComplejaDefensiva extends JugadaCompleja {
 			return "no existe jugada";
 		}
 	}
+	
 	public void modVel(){
-		
 		for(int i = 0 ; i<super.getJugada().size();i++){
 			getJugada().get(i).cambioVelocidad(fuerza);
-			
 		}
 	}
-	
-
-
 }

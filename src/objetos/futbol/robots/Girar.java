@@ -9,7 +9,7 @@ public class Girar extends JugadaPrimitiva {
 		}else if (grados == -45){
 			idJugada = 5;
 		}
-		}
+	}
 
 	public int getIdJugada(){
 		return idJugada;

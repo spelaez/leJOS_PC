@@ -1,7 +1,9 @@
 package objetos.futbol.jugadores;
+
 import  objetos.futbol.robots.JugadaPrimitiva;
 import java.util.ArrayList;
 import objetos.futbol.varios.UsuarioAdministrador;
+
 public class JugadaComplejaOfensiva extends JugadaCompleja {
 	private int efectividad;
 	private int pique;
@@ -9,11 +11,12 @@ public class JugadaComplejaOfensiva extends JugadaCompleja {
 		super(nombreJugada, fechaCreacion, Autor, Jugada, Explicacion);
 		this.efectividad= super.getJugada().size();
 	}
+	
 	@Override
 	public String identificarJugada() {
-		
 		return "Jugada Ofensiva";
 	}
+	
 	public String getEfectividad(){
 		if (efectividad ==1){
 		return "jugada poco efectiva " + " numero de jugadas " + efectividad;
@@ -28,12 +31,10 @@ public class JugadaComplejaOfensiva extends JugadaCompleja {
 			return "no existe jugada";
 		}
 	}
+	
 	public void modVelAtaque(){
-		
 		for(int i = 0 ; i<super.getJugada().size();i++){
 			getJugada().get(i).cambioVelocidadA(pique);
-			
 		}
-
 	}
 }

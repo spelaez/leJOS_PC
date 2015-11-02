@@ -1,5 +1,7 @@
 package objetos.futbol.jugadores;
+
 import java.util.ArrayList;
+
 public class Delantero extends Futbolista {
 	public short golesMarcados;
 	public byte dorsal;
