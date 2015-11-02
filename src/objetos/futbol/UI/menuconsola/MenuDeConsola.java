@@ -1,11 +1,20 @@
 package objetos.futbol.UI.menuconsola;
 
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.Scanner;
 
 public class MenuDeConsola {
 	private LinkedList<OpcionDeMenu> opciones;
 	public static Scanner scn = new Scanner(System.in);
+	Comparator<OpcionDeMenu> c = new Comparator<OpcionDeMenu>() {
+
+		@Override
+		public int compare(OpcionDeMenu o1, OpcionDeMenu o2) {
+			return o1.categoria.compareTo(o2.categoria);
+		}
+		
+	};
 	
 	public void anadirOpcion(OpcionDeMenu op){
 		opciones.add(op);
@@ -13,7 +22,7 @@ public class MenuDeConsola {
 	}
 	
 	public void ordenarOpciones(){
-		opciones.sort(Clasificable.c);
+		opciones.sort(c);
 	}
 	
 	public void lanzarMenu(){
