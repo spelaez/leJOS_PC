@@ -1,16 +1,20 @@
 package objetos.futbol.UI.menuconsola;
 
-public abstract class OpcionDeMenu {
+public abstract class OpcionDeMenu{
 	String nombre;
-	String categoria; //Opcion de Arquero ,de Delantero o de Sistema
+	Categoria categoria;
 	
+	public OpcionDeMenu(String nombre, Categoria categoria){
+		this.nombre = nombre;
+		this.categoria = categoria;
+	}
+
 	public String getNombre(){
 		return nombre;
 	}
 	public String getCategoria(){
-		return categoria;
+		return categoria.name();
 	}
-	
 	public abstract void ejecutar();
 	public abstract void identificarOpcion();
 }

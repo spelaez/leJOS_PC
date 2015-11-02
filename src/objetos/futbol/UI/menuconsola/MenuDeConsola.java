@@ -9,6 +9,11 @@ public class MenuDeConsola {
 	
 	public void anadirOpcion(OpcionDeMenu op){
 		opciones.add(op);
+		ordenarOpciones();
+	}
+	
+	public void ordenarOpciones(){
+		opciones.sort(Clasificable.c);
 	}
 	
 	public void lanzarMenu(){
