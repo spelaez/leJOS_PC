@@ -40,4 +40,13 @@ public abstract class JugadaCompleja {
 		return Jugada;
 	}
 
+	public String getExplicacion(){
+		return Explicacion;
+	}
+	public UsuarioAdministrador getAutor(){
+		return Autor;
+	}
+	public String getfechaCreacion(){
+		return fechaCreacion;
+	}
 }
