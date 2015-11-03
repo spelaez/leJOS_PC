@@ -2,11 +2,11 @@ package objetos.futbol.UI.menuconsola;
 
 import java.util.Comparator;
 import java.util.InputMismatchException;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MenuDeConsola {
-	private LinkedList<OpcionDeMenu> opciones;
+	private ArrayList<OpcionDeMenu> opciones;
 	public static Scanner scn = new Scanner(System.in);
 	Comparator<OpcionDeMenu> c = new Comparator<OpcionDeMenu>() {
 
@@ -20,6 +20,14 @@ public class MenuDeConsola {
 	public void anadirOpcion(OpcionDeMenu op){
 		opciones.add(op);
 		ordenarOpciones();
+	}
+	
+	public void eliminarOpcion(OpcionDeMenu op){
+		opciones.remove(op);
+	}
+	
+	public void limpiar(){
+		opciones = new ArrayList<OpcionDeMenu>();
 	}
 	
 	public void ordenarOpciones(){
