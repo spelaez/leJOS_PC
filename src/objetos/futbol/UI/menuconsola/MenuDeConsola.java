@@ -60,13 +60,19 @@ public class MenuDeConsola {
 	private void cargarOpciones(){
 		if(opciones2.size() == 0){
 			opciones2.add(new Trotar(Categoria.ARQUERO));
-			opciones2.add(new Trotar(Categoria.DELANTERO));
 			opciones2.add(new Correr(Categoria.ARQUERO));
-			opciones2.add(new Correr(Categoria.DELANTERO));
 			opciones2.add(new Chutar(Categoria.ARQUERO));
-			opciones2.add(new Chutar(Categoria.DELANTERO));
 			opciones2.add(new Patear(Categoria.ARQUERO));
+			opciones2.add(new GirarDerecha(Categoria.ARQUERO));
+			opciones2.add(new GirarIzquierda(Categoria.ARQUERO));
+			opciones2.add(new Retroceder(Categoria.ARQUERO));
+			opciones2.add(new Trotar(Categoria.DELANTERO));
+			opciones2.add(new Correr(Categoria.DELANTERO));
+			opciones2.add(new Chutar(Categoria.DELANTERO));
 			opciones2.add(new Patear(Categoria.DELANTERO));
+			opciones2.add(new GirarDerecha(Categoria.DELANTERO));
+			opciones2.add(new GirarIzquierda(Categoria.DELANTERO));
+			opciones2.add(new Retroceder(Categoria.DELANTERO));
 		}
 		
 	}
