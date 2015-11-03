@@ -8,13 +8,11 @@ public abstract class OpcionDeMenu{
 		this.nombre = nombre;
 		this.categoria = categoria;
 	}
-
-	public String getNombre(){
+	
+	@Override
+	public String toString(){
 		return nombre;
 	}
-	public String getCategoria(){
-		return categoria.name();
-	}
+	
 	public abstract void ejecutar();
-	public abstract void identificarOpcion();
 }

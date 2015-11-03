@@ -29,7 +29,7 @@ public class MenuDeConsola {
 		int option;
 		System.out.println("MENU");
 		for(int i = 0; i < opciones.size(); i++){
-			System.out.println((i+1) +" "+ opciones.get(i).getNombre());
+			System.out.println((i+1) +" "+ opciones.get(i));
 		}
 		System.out.print("0 Salir \n Por favor ingrese el número de la opción que desea ejecutar");
 		option = scn.nextInt();
