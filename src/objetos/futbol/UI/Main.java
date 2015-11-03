@@ -4,16 +4,24 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import lejos.pc.comm.NXTCommLogListener;
 import lejos.pc.comm.NXTConnector;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 import objetos.futbol.robots.MoverAdelante;
 import objetos.futbol.robots.MoverAtras;
 import objetos.futbol.robots.Chutar;
 import objetos.futbol.robots.Girar;
+import objetos.futbol.jugadores.Futbolista;
+import objetos.futbol.varios.Usuario;
+import objetos.futbol.jugadores.JugadaCompleja;
 
 public class Main {	
 	
+	//Objetos de lectura y escritura hacia los robots
 	public static DataOutputStream dos;
 	public static DataInputStream dis;
+	
+	//Jugadas primitivas definidas para todos
 	public static MoverAdelante trotar = new MoverAdelante(1);
 	public static MoverAdelante correr = new MoverAdelante(2);
 	public static MoverAtras retroceder = new MoverAtras(1);
@@ -22,6 +30,15 @@ public class Main {
 	public static Chutar chutar = new Chutar(1, -10);
 	public static Chutar patear = new Chutar(2, -10);
 	
+	//Lista de JugadasComplejas
+	public static ArrayList<JugadaCompleja> listaJugadasComplejas = new ArrayList<>();
+	
+	//Lista de Usuarios
+	public static ArrayList<Usuario> listaUsuarios = new ArrayList<>();
+	public static Usuario usuarioActual; //Usuario logueado
+	
+	//Lista de Jugadores
+	public static ArrayList<Futbolista> listaJugadores = new ArrayList<>();
 	
 	public static void main(String[] args) throws IOException {
 		Scanner scn = new Scanner(System.in);
