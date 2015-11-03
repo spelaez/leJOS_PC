@@ -14,6 +14,7 @@ import objetos.futbol.robots.Girar;
 import objetos.futbol.jugadores.Futbolista;
 import objetos.futbol.varios.Usuario;
 import objetos.futbol.jugadores.JugadaCompleja;
+import objetos.futbol.robots.Robot;
 
 public class Main {	
 	
@@ -39,6 +40,9 @@ public class Main {
 	
 	//Lista de Jugadores
 	public static ArrayList<Futbolista> listaJugadores = new ArrayList<>();
+	
+	//Robots
+	public static Robot r1, r2;
 	
 	public static void main(String[] args) throws IOException {
 		Scanner scn = new Scanner(System.in);

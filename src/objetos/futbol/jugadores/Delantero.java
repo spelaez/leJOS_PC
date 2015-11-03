@@ -21,4 +21,7 @@ public class Delantero extends Futbolista {
 		return false;
 	}
 	
+	public void registrarGol(){
+		this.golesMarcados++;
+	}
 }
