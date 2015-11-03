@@ -13,6 +13,7 @@ public class Chutar extends OpcionDeMenu {
 		System.out.print("---------------------------------------------------\n"+this);
 		try{
 			Main.dos.writeInt(Main.chutar.getIdJugada());
+			Main.dos.flush();
 		}catch(IOException e){
 			System.out.println("No se pudo ejecutar la jugada");
 		}

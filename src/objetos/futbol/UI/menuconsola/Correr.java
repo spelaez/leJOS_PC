@@ -12,6 +12,7 @@ public class Correr extends OpcionDeMenu {
 		System.out.print("---------------------------------------------------\n"+this);
 		try{
 			Main.dos.writeInt(Main.correr.getIdJugada());
+			Main.dos.flush();
 			
 		}catch(IOException e){
 			System.out.println("No se pudo ejecutar la jugada");

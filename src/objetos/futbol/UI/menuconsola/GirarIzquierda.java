@@ -15,6 +15,7 @@ public class GirarIzquierda extends OpcionDeMenu {
 		System.out.print("---------------------------------------------------\n"+this);
 		try{
 		Main.dos.writeInt(Main.girarIzquierda.getIdJugada());
+		Main.dos.flush();
 		}
 		catch(IOException e){
 			System.out.print("No se pudo ejecutar la jugada");
