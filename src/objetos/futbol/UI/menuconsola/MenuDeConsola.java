@@ -1,6 +1,7 @@
 package objetos.futbol.UI.menuconsola;
 
 import java.util.Comparator;
+import java.util.InputMismatchException;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -27,16 +28,22 @@ public class MenuDeConsola {
 	
 	public void lanzarMenu(){
 		int option;
-		System.out.println("MENU");
 		for(int i = 0; i < opciones.size(); i++){
 			System.out.println((i+1) +" "+ opciones.get(i));
 		}
-		System.out.print("0 Salir \n Por favor ingrese el número de la opción que desea ejecutar");
+		System.out.print("\n Por favor ingrese el número de la opción que desea ejecutar");
+		try{
 		option = scn.nextInt();
-		if (option > 0){
-			opciones.get(option-1).ejecutar();
-			lanzarMenu();
+		while (option < 0 || option > opciones.size()){
+			System.out.println("Dato fuera del rango, Ingrese el dato de nuevo: ");
+			option = scn.nextInt();
 		}
-		else if (option == 0) System.exit(0);  //falta implementar el metodo para guardar el estado del sistema y salir
+		}
+		catch(NumberFormatException e){
+			System.out.println("Error: Dato incorrecto");
+		}
+		catch(InputMismatchException e){
+			System.out.println("Error: Dato incorrecto");
+		}
 	}
 }
