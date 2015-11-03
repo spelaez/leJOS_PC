@@ -61,6 +61,12 @@ public class MenuDeConsola {
 		if(opciones2.size() == 0){
 			opciones2.add(new Trotar(Categoria.ARQUERO));
 			opciones2.add(new Trotar(Categoria.DELANTERO));
+			opciones2.add(new Correr(Categoria.ARQUERO));
+			opciones2.add(new Correr(Categoria.DELANTERO));
+			opciones2.add(new Chutar(Categoria.ARQUERO));
+			opciones2.add(new Chutar(Categoria.DELANTERO));
+			opciones2.add(new Patear(Categoria.ARQUERO));
+			opciones2.add(new Patear(Categoria.DELANTERO));
 		}
 		
 	}
