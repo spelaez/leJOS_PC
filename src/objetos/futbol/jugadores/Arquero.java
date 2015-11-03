@@ -20,4 +20,8 @@ public class Arquero extends Futbolista {
 	public boolean jugarConLasManos(){
 		return true;
 	}
+	
+	public void registrarTiempoGol(int tiempo){
+		this.TiempoSinGoles = tiempo;
+	}
 }
