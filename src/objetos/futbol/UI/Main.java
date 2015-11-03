@@ -6,12 +6,21 @@ import lejos.pc.comm.NXTCommLogListener;
 import lejos.pc.comm.NXTConnector;
 import java.util.Scanner;
 import objetos.futbol.robots.MoverAdelante;
+import objetos.futbol.robots.MoverAtras;
+import objetos.futbol.robots.Chutar;
+import objetos.futbol.robots.Girar;
 
 public class Main {	
 	
 	public static DataOutputStream dos;
 	public static DataInputStream dis;
 	public static MoverAdelante trotar = new MoverAdelante(1);
+	public static MoverAdelante correr = new MoverAdelante(2);
+	public static MoverAtras retroceder = new MoverAtras(1);
+	public static Girar girarDerecha = new Girar(1, 45);
+	public static Girar girarIzquierda = new Girar(1,-45);
+	public static Chutar chutar = new Chutar(1, -10);
+	public static Chutar patear = new Chutar(2, -10);
 	
 	
 	public static void main(String[] args) throws IOException {
