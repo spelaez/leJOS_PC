@@ -4,8 +4,7 @@ public abstract class OpcionDeMenu{
 	String nombre;
 	Categoria categoria;
 	
-	public OpcionDeMenu(String nombre, Categoria categoria){
-		this.nombre = nombre;
+	public OpcionDeMenu(Categoria categoria){
 		this.categoria = categoria;
 	}
 	

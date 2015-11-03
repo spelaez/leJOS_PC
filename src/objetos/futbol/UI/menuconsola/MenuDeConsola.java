@@ -4,9 +4,11 @@ import java.util.Comparator;
 import java.util.InputMismatchException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import objetos.futbol.UI.menuconsola.Trotar;
 
 public class MenuDeConsola {
-	private ArrayList<OpcionDeMenu> opciones;
+	public static ArrayList<OpcionDeMenu> opciones2 = new ArrayList<>();
+	public ArrayList<OpcionDeMenu> opciones;
 	public static Scanner scn = new Scanner(System.in);
 	Comparator<OpcionDeMenu> c = new Comparator<OpcionDeMenu>() {
 
@@ -53,5 +55,13 @@ public class MenuDeConsola {
 		catch(InputMismatchException e){
 			System.out.println("Error: Dato incorrecto");
 		}
+	}
+
+	private void cargarOpciones(){
+		if(opciones2.size() == 0){
+			opciones2.add(new Trotar(Categoria.ARQUERO));
+			opciones2.add(new Trotar(Categoria.DELANTERO));
+		}
+		
 	}
 }

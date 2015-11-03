@@ -5,18 +5,17 @@ import java.io.IOException;
 import lejos.pc.comm.NXTCommLogListener;
 import lejos.pc.comm.NXTConnector;
 import java.util.Scanner;
+import objetos.futbol.robots.MoverAdelante;
 
 public class Main {	
+	
+	public static DataOutputStream dos;
+	public static DataInputStream dis;
+	public static MoverAdelante trotar = new MoverAdelante(1);
+	
+	
 	public static void main(String[] args) throws IOException {
 		Scanner scn = new Scanner(System.in);
-		System.out.println("Bienvenido! \n Para ingresar al sistema escoja una de las siguientes opciones: \n 1. Usuario Jugador. \n 2. Usuario Administrador.");
-		int option = scn.nextInt();
-		if (option == 1){
-			//UsuarioGeneral.logIn(scn.next(), scn.next());
-		}
-		if (option == 2){
-			//UsuarioAdministrador.logIn(scn.next(), scn.next());
-		}
 		NXTConnector conn = new NXTConnector();
 		conn.addLogListener(new NXTCommLogListener(){
 
@@ -42,8 +41,8 @@ public class Main {
 			System.exit(1);
 		}
 		
-		DataOutputStream dos = new DataOutputStream(conn.getOutputStream());
-		DataInputStream dis = new DataInputStream(conn.getInputStream());
+		dos = new DataOutputStream(conn.getOutputStream());
+		dis = new DataInputStream(conn.getInputStream());
 		dos.writeInt(scn.nextInt());
 		dos.flush();
 		dos.writeInt(scn.nextInt());
