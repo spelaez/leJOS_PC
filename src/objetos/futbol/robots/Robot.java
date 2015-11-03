@@ -1,8 +1,7 @@
 package objetos.futbol.robots;
 
-import java.io.DataOutputStream;
 import java.io.IOException;
-
+import objetos.futbol.UI.Main;
 import objetos.futbol.jugadores.Futbolista;
 import objetos.futbol.jugadores.JugadaCompleja;
 
@@ -16,26 +15,14 @@ public class Robot {
 	private Girar girarDerecha;
 	private Girar girarIzquierda;
 	
-	public Robot(Futbolista jugador, MoverAdelante trotar, MoverAdelante correr, MoverAtras retroceder, Chutar chutar, Chutar patear, Girar girarDerecha, Girar girarIzquierda){
-		this.jugador = jugador;
-		this.trotar = trotar;
-		this.correr = correr;
-		this.retroceder = retroceder;
-		this.chutar = chutar;
-		this.patear = patear;
-		this.girarDerecha = girarDerecha;
-		this.girarIzquierda = girarIzquierda;
-	}
-	
 	public Robot(Futbolista jugador){
-		this.jugador = jugador;
-		this.trotar = new MoverAdelante(1);
-		this.correr = new MoverAdelante(2);
-		this.retroceder = new MoverAtras(1);
-		this.chutar = new Chutar(1, 10);
-		this.patear = new Chutar(2,10);
-		this.girarDerecha = new Girar(1, 45);
-		this.girarIzquierda = new Girar(1, -45);
+		this.trotar = Main.trotar;
+		this.correr = Main.correr;
+		this.retroceder = Main.retroceder;
+		this.girarDerecha = Main.girarDerecha;
+		this.girarIzquierda = Main.girarIzquierda;
+		this.chutar = Main.chutar;
+		this.patear = Main.patear;
 	}
 	
 	public Futbolista getJugador(){
@@ -74,11 +61,11 @@ public class Robot {
 		return patear.getIdJugada();
 	}
 	
-	public void ejecutarJugadaCompleja(int index, DataOutputStream dataOut) throws IOException{
+	public void ejecutarJugadaCompleja(int index) throws IOException{
 		JugadaCompleja x = jugador.getListaJugadas().get(index);
 		for(JugadaPrimitiva j: x.getJugada()){
-			dataOut.writeInt(j.getIdJugada());
+			Main.dos.writeInt(j.getIdJugada());
 		}
-		dataOut.flush();
+		Main.dos.flush();
 	}
 }
