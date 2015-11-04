@@ -9,10 +9,10 @@ import objetos.futbol.jugadores.JugadaComplejaOfensiva;
 import objetos.futbol.jugadores.JugadaComplejaTiroLibre;
 import objetos.futbol.varios.UsuarioAdministrador;
 
-public class NuevaJugadaCompleja extends OpcionDeMenu {
+public class CrearJugadaCompleja extends OpcionDeMenu {
 
 
-	public NuevaJugadaCompleja(Categoria categoria) {
+	public CrearJugadaCompleja(Categoria categoria) {
 		super(categoria);		
 	}
 
@@ -26,12 +26,12 @@ public class NuevaJugadaCompleja extends OpcionDeMenu {
 		try{
 			int n = scn.nextInt();
 			while(n < 1 || n > 3){
-				System.out.print("Dato fuera de rango, por favor ingréselo de nuevo");
+				System.out.print("Dato fuera de rango, por favor ingrï¿½selo de nuevo");
 				n = scn.nextInt();
 			}			
 			System.out.println("Ingrese nombre de la jugada");
 			String nom = scn.next();
-			System.out.println("Ingrese fecha de creacion Dia-Mes-Año");
+			System.out.println("Ingrese fecha de creacion Dia-Mes-Aï¿½o");
 			String fecha = scn.next();				
 			System.out.println("Ingrese una explicacion");
 			String expl = scn.next();	
