@@ -66,13 +66,13 @@ public class NuevaJugadaCompleja extends OpcionDeMenu {
 
 
 			if(n == 1){				
-				new JugadaComplejaDefensiva(nom, fecha,  (UsuarioAdministrador)Main.usuarioActual, lista, expl );				
+				Main.listaJugadasComplejas.add(new JugadaComplejaDefensiva(nom, fecha,  (UsuarioAdministrador)Main.usuarioActual, lista, expl ));				
 			}
 			else if( n == 2){
-				new JugadaComplejaOfensiva(nom, fecha,  (UsuarioAdministrador)Main.usuarioActual, lista, expl );
+				Main.listaJugadasComplejas.add(new JugadaComplejaOfensiva(nom, fecha,  (UsuarioAdministrador)Main.usuarioActual, lista, expl ));
 			}
 			else if(n == 3){
-				new JugadaComplejaTiroLibre(nom, fecha,  (UsuarioAdministrador)Main.usuarioActual, lista, expl );		
+				Main.listaJugadasComplejas.add(new JugadaComplejaTiroLibre(nom, fecha,  (UsuarioAdministrador)Main.usuarioActual, lista, expl ));		
 			}	
 		}
 		catch(NumberFormatException e){
