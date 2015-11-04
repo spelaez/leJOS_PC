@@ -18,6 +18,12 @@ import objetos.futbol.robots.Robot;
 
 public class Main {	
 	
+	//Atributos para manejar el tiempo
+	public static long tInicio;
+	public static long tPausa;
+	public static long tFinal;
+	public static long tSinGoles;
+	
 	//Objetos de lectura y escritura hacia los robots
 	public static DataOutputStream dos;
 	public static DataInputStream dis;
