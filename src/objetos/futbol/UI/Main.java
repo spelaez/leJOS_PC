@@ -22,7 +22,7 @@ public class Main {
 	public static long tInicio;
 	public static long tPausa;
 	public static long tFinal;
-	public static long tSinGoles;
+	public static long tUltimoGol;
 	
 	//Objetos de lectura y escritura hacia los robots
 	public static DataOutputStream dos;

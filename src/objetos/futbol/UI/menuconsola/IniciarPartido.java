@@ -12,7 +12,7 @@ public class IniciarPartido extends OpcionDeMenu{
 	public void ejecutar() {
 		System.out.print("-----------------------------------------------------------"+this);
 		Main.tInicio = System.currentTimeMillis();
-		Main.tSinGoles = Main.tInicio;
+		Main.tUltimoGol = Main.tInicio;
 		System.out.print("Partido Iniciado\n-----------------------------------------------------------");
 	}
 	

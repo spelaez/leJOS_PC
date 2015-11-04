@@ -66,6 +66,8 @@ public class MenuDeConsola {
 			opciones2.add(new GirarDerecha(Categoria.ARQUERO));
 			opciones2.add(new GirarIzquierda(Categoria.ARQUERO));
 			opciones2.add(new Retroceder(Categoria.ARQUERO));
+			opciones2.add(new RegistrarTiempoSinGoles(Categoria.ARQUERO));
+			opciones2.add(new RegistrarTiempoUltimoGol(Categoria.ARQUERO));
 			opciones2.add(new Trotar(Categoria.DELANTERO));
 			opciones2.add(new Correr(Categoria.DELANTERO));
 			opciones2.add(new Chutar(Categoria.DELANTERO));
@@ -81,7 +83,7 @@ public class MenuDeConsola {
 			opciones2.add(new ImprimirJugadores(Categoria.SISTEMA));
 			opciones2.add(new IniciarPartido(Categoria.SISTEMA));
 			opciones2.add(new ListaJugadasDisponibles(Categoria.SISTEMA));
-		}
+			}
 		
 	}
 }
