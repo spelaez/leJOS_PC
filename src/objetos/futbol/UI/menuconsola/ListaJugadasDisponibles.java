@@ -34,15 +34,15 @@ public class ListaJugadasDisponibles extends OpcionDeMenu{
 		}
 		System.out.println("\t\t\tJugadas Defensivas");
 		for(JugadaComplejaDefensiva x: jDefensivas){
-			System.out.println(x);
+			System.out.println((Main.listaJugadasComplejas.indexOf(x)+1)+" "+x);
 		}
 		System.out.println("\n\t\t\tJugadas Ofensivas");
 		for(JugadaComplejaOfensiva x: jOfensivas){
-			System.out.println(x);
+			System.out.println((Main.listaJugadasComplejas.indexOf(x)+1)+" "+x);
 		}
 		System.out.println("\n\t\tJugadas Tiro Libre");
 		for(JugadaComplejaTiroLibre x: jTiroLibre){
-			System.out.println(x);
+			System.out.println((Main.listaJugadasComplejas.indexOf(x)+1)+" "+x);
 		}
 	}
 }
