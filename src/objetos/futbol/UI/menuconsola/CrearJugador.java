@@ -7,6 +7,7 @@ import objetos.futbol.UI.menuconsola.ListaJugadasDisponibles;
 import objetos.futbol.jugadores.JugadaCompleja;
 
 import java.util.InputMismatchException;
+import java.lang.NumberFormatException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
