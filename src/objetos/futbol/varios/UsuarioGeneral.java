@@ -14,6 +14,7 @@ public class UsuarioGeneral implements Usuario
 		this.nombre = nombre;
 		this.clave = clave;
 		agregarPermisos();
+		asignarMenu();
 	}
 	
 	public void setNombre(String nombre){
