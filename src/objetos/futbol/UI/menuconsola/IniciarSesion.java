@@ -2,6 +2,8 @@ package objetos.futbol.UI.menuconsola;
 
 import objetos.futbol.UI.Main;
 import java.util.Scanner;
+import objetos.futbol.varios.UsuarioAdministrador;
+import objetos.futbol.varios.UsuarioGeneral;
 
 
 public class IniciarSesion extends OpcionDeMenu{
@@ -22,6 +24,8 @@ public class IniciarSesion extends OpcionDeMenu{
 			return;
 		}
 		System.out.println("-------------------------------------------------------\n"+this);
+		System.out.print("1. Usuario Jugador.\n 2. Usuario Administrador");
+		int option = scn.nextInt();
 		System.out.print("Usuario: ");
 		usuario=scn.nextLine();
 
@@ -30,7 +34,23 @@ public class IniciarSesion extends OpcionDeMenu{
 
 		if(Main.listaUsuarios.get(usuario)!=null){
 			if(Main.listaUsuarios.get(usuario).getClave().equals(clave)){
-				Main.usuarioActual=Main.listaUsuarios.get(usuario);}
+				if(option == 1 && Main.listaUsuarios.get(usuario) instanceof UsuarioGeneral){
+					Main.usuarioActual=Main.listaUsuarios.get(usuario);
+				}
+				else {
+					System.out.print("No existe un usuario jugador con esos datos");
+					scn.close();
+					return;
+				}
+				if(option == 2 && Main.listaUsuarios.get(usuario) instanceof UsuarioAdministrador){
+					Main.usuarioActual=Main.listaUsuarios.get(usuario);
+				}
+				else{
+					System.out.print("No existe un usuario Administrador con esos datos");
+					scn.close();
+					return;
+				}
+			}
 			else{
 				System.out.println("\nContraseña incorrecta!");}
 		}else{
