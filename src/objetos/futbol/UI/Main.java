@@ -7,6 +7,7 @@ import lejos.pc.comm.NXTConnector;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Hashtable;
 import objetos.futbol.robots.MoverAdelante;
 import objetos.futbol.robots.MoverAtras;
 import objetos.futbol.robots.Chutar;
@@ -41,7 +42,7 @@ public class Main {
 	public static ArrayList<JugadaCompleja> listaJugadasComplejas = new ArrayList<>();
 	
 	//Lista de Usuarios
-	public static ArrayList<Usuario> listaUsuarios = new ArrayList<>();
+	public static Hashtable<String, Usuario> listaUsuarios = new Hashtable<>();
 	public static Usuario usuarioActual; //Usuario logueado
 	
 	//Lista de Jugadores
