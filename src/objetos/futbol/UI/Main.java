@@ -10,6 +10,7 @@ import lejos.pc.comm.NXTInfo;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Hashtable;
 import objetos.futbol.robots.MoverAdelante;
 import objetos.futbol.robots.MoverAtras;
 import objetos.futbol.robots.Chutar;
@@ -20,6 +21,12 @@ import objetos.futbol.jugadores.JugadaCompleja;
 import objetos.futbol.robots.Robot;
 
 public class Main {	
+	
+	//Atributos para manejar el tiempo
+	public static long tInicio;
+	public static long tPausa;
+	public static long tFinal;
+	public static long tUltimoGol;
 	
 	//Objetos de lectura y escritura hacia los robots
 	public static DataOutputStream dos;
@@ -38,7 +45,7 @@ public class Main {
 	public static ArrayList<JugadaCompleja> listaJugadasComplejas = new ArrayList<>();
 	
 	//Lista de Usuarios
-	public static ArrayList<Usuario> listaUsuarios = new ArrayList<>();
+	public static Hashtable<String, Usuario> listaUsuarios = new Hashtable<>();
 	public static Usuario usuarioActual; //Usuario logueado
 	
 	//Lista de Jugadores
@@ -47,9 +54,12 @@ public class Main {
 	//Robots
 	public static Robot r1, r2;
 	
+	//Variables de conexion a los robots
+	public static NXTConnector conn = new NXTConnector();
+	public static boolean connected;
+	
 	public static void main(String[] args) throws IOException {
 		Scanner scn = new Scanner(System.in);
-		NXTConnector conn = new NXTConnector();
 		conn.addLogListener(new NXTCommLogListener(){
 
 			public void logEvent(String message) {

@@ -66,14 +66,24 @@ public class MenuDeConsola {
 			opciones2.add(new GirarDerecha(Categoria.ARQUERO));
 			opciones2.add(new GirarIzquierda(Categoria.ARQUERO));
 			opciones2.add(new Retroceder(Categoria.ARQUERO));
+			opciones2.add(new RegistrarTiempoSinGoles(Categoria.ARQUERO));
+			opciones2.add(new RegistrarTiempoUltimoGol(Categoria.ARQUERO));
 			opciones2.add(new Trotar(Categoria.DELANTERO));
 			opciones2.add(new Correr(Categoria.DELANTERO));
 			opciones2.add(new Chutar(Categoria.DELANTERO));
 			opciones2.add(new Patear(Categoria.DELANTERO));
 			opciones2.add(new GirarDerecha(Categoria.DELANTERO));
 			opciones2.add(new GirarIzquierda(Categoria.DELANTERO));
+			opciones2.add(new RegistrarGolAFavor(Categoria.DELANTERO));
 			opciones2.add(new Retroceder(Categoria.DELANTERO));
-		}
+			opciones2.add(new CrearJugador(Categoria.SISTEMA));
+			opciones2.add(new ConsultarExplicacionJugada(Categoria.SISTEMA));
+			opciones2.add(new ConsultarInfoJugador(Categoria.SISTEMA));
+			opciones2.add(new CrearJugadaCompleja(Categoria.SISTEMA));
+			opciones2.add(new ImprimirJugadores(Categoria.SISTEMA));
+			opciones2.add(new IniciarPartido(Categoria.SISTEMA));
+			opciones2.add(new ListaJugadasDisponibles(Categoria.SISTEMA));
+			}
 		
 	}
 }
