@@ -51,9 +51,12 @@ public class Main {
 	//Robots
 	public static Robot r1, r2;
 	
+	//Variables de conexion a los robots
+	public static NXTConnector conn = new NXTConnector();
+	public static boolean connected;
+	
 	public static void main(String[] args) throws IOException {
 		Scanner scn = new Scanner(System.in);
-		NXTConnector conn = new NXTConnector();
 		conn.addLogListener(new NXTCommLogListener(){
 
 			public void logEvent(String message) {
