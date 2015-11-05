@@ -8,6 +8,10 @@ public Usuario(String nombreUsuario, String clave){
 	this.nombreUsuario = nombreUsuario;
 	this.clave = clave;
 }
+
+public String getClave(){
+	return clave;
+}
 public void logOut(){
 	//System.exit(0);
 }
