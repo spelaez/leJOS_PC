@@ -90,8 +90,8 @@ public class Main {
 		while(connected){
 			dos.writeInt(scn.nextInt());
 			dos.flush();
-			//System.out.print(dis.readInt()+" ");
-			//System.out.println(dis.readInt());
+			System.out.print(dis.readInt()+" ");
+			System.out.println(dis.readInt());
 		}
 		
 		try {
