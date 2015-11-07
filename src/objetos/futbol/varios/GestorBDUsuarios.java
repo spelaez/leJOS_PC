@@ -124,6 +124,7 @@ public class GestorBDUsuarios {
 		}
 	}
 	public void leerJugdores(){
+		System.out.print("Leyendo base de datos de jugadores");
 		Usuario g;
 		ArrayList<Integer> p = new ArrayList<Integer>();
 		try{
@@ -145,8 +146,8 @@ public class GestorBDUsuarios {
 			
 			//raiz
 			Element raiz = doc.getDocumentElement();
-			Element general = (Element) raiz.getElementsByTagName("Usuario_general");
-			Element administrador = (Element)raiz.getElementsByTagName("Usuario_Administrador");
+			Element general = (Element) raiz.getFirstChild();
+			Element administrador = (Element)raiz.getLastChild();
 			
 			NodeList generales = general.getElementsByTagName("Usuario");
 			NodeList admins = administrador.getElementsByTagName("Administrador");
@@ -187,7 +188,7 @@ public class GestorBDUsuarios {
 				Main.listaUsuarios.put(nombre, g);
 			}
 			
-			
+			System.out.println("Lectura exitosa.");
 		}
 		catch(Exception e){
 			e.printStackTrace();
