@@ -15,6 +15,7 @@ import objetos.futbol.robots.MoverAdelante;
 import objetos.futbol.robots.MoverAtras;
 import objetos.futbol.robots.Chutar;
 import objetos.futbol.robots.Girar;
+import objetos.futbol.cancha.Cancha;
 import objetos.futbol.jugadores.Futbolista;
 import objetos.futbol.varios.Usuario;
 import objetos.futbol.jugadores.JugadaCompleja;
@@ -50,6 +51,9 @@ public class Main {
 	
 	//Lista de Jugadores
 	public static ArrayList<Futbolista> listaJugadores = new ArrayList<>();
+	
+	//Cancha
+	public static Cancha cancha;
 	
 	//Robots
 	public static Robot r1, r2;
