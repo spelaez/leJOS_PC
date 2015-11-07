@@ -20,7 +20,7 @@ import objetos.futbol.varios.UsuarioAdministrador;
 import objetos.futbol.jugadores.JugadaCompleja;
 import objetos.futbol.robots.Robot;
 import objetos.futbol.varios.GestorBDUsuarios;
-
+import objetos.futbol.varios.GestorBDJugadores;
 public class Main {	
 	
 	//Atributos para manejar el tiempo
@@ -60,6 +60,7 @@ public class Main {
 	public static boolean connected;
 	
 	public static void main(String[] args) throws IOException {
+		
 		Scanner scn = new Scanner(System.in);
 		conn.addLogListener(new NXTCommLogListener(){
 
