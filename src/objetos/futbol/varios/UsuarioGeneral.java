@@ -17,6 +17,13 @@ public class UsuarioGeneral implements Usuario
 		//asignarMenu();
 	}
 	
+	public UsuarioGeneral(String nombre, String clave, ArrayList<Integer> p) {
+		this.nombre = nombre;
+		this.clave = clave;
+		this.permisos = p;
+		//asignarMenu();
+	}
+	
 	public void setNombre(String nombre){
 		this.nombre = nombre;
 	}

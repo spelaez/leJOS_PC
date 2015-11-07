@@ -15,6 +15,13 @@ public class UsuarioAdministrador implements Usuario {
 		asignarPermisos();
 		//asignarMenu();
 	}
+	
+	public UsuarioAdministrador(String nombre, String clave, ArrayList<Integer> p){
+		this.nombre = nombre;
+		this.clave = clave;
+		this.permisos = p;
+		//asignarMenu();
+	}
 
 	@Override
 	public void setNombre(String nombre) {

@@ -1,6 +1,8 @@
 package objetos.futbol.varios;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.util.ArrayList;
 import java.util.Enumeration;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -16,6 +18,8 @@ import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
 
 import objetos.futbol.UI.Main;
 
@@ -23,6 +27,7 @@ public class GestorBDUsuarios {
 
 
 	public void guardarJugadores(){
+		Usuario g;
 		System.out.println("Guardando usuarios...");
 		Enumeration<Usuario> enumUsu = Main.listaUsuarios.elements(); 
 		if(Main.listaUsuarios.size() == 0){
@@ -48,7 +53,7 @@ public class GestorBDUsuarios {
 
 			//Atributos
 			while(enumUsu.hasMoreElements()){
-				Usuario g = enumUsu.nextElement();
+				g = enumUsu.nextElement();
 				if(g instanceof UsuarioGeneral){
 					g = (UsuarioGeneral)g;
 					Element usuario = document.createElement("Usuario");
@@ -61,10 +66,13 @@ public class GestorBDUsuarios {
 					Element clave = document.createElement("Clave");
 					usuario.appendChild(clave);
 					clave.appendChild(document.createTextNode(g.getClave()));
-
+					
+					Element permisos = document.createElement("Permisos");
+					usuario.appendChild(permisos);
+					
 					for(int j = 0; j < g.getPermisos().size(); j++){
 						Element permiso = document.createElement("Permiso");
-						usuario.appendChild(permiso);
+						permisos.appendChild(permiso);
 						permiso.appendChild(document.createTextNode(String.valueOf(g.getPermisos().get(j))));
 					}
 
@@ -82,11 +90,13 @@ public class GestorBDUsuarios {
 					Element clave = document.createElement("Clave");
 					usuario.appendChild(clave);
 					clave.appendChild(document.createTextNode(g.getClave()));
+					
+					Element permisos = document.createElement("Permisos");
+					usuario.appendChild(permisos);
 
 					for(int j = 0; j < g.getPermisos().size(); j++){
 						Element permiso = document.createElement("Permiso");
-						usuario.appendChild(permiso);
-
+						permisos.appendChild(permiso);
 						permiso.appendChild(document.createTextNode(String.valueOf(g.getPermisos().get(j))));
 					}
 
@@ -110,6 +120,76 @@ public class GestorBDUsuarios {
 		} catch (TransformerFactoryConfigurationError e) {
 			e.printStackTrace();
 		} catch (TransformerException e) {
+			e.printStackTrace();
+		}
+	}
+	public void leerJugdores(){
+		Usuario g;
+		ArrayList<Integer> p = new ArrayList<Integer>();
+		try{
+			DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+			File fichero = new File("/Users/Santiago/Documents/XML/BDUsuarios.xml");
+			File fichero2 = new File("/Users/Santiago/Documents/XML/temp/BDUsuarios.xml");
+			
+			if(!fichero.exists() && !fichero2.exists()){
+				return;
+			}
+			
+			Document doc= builder.parse(new InputSource(new FileInputStream("/Users/Santiago/Documents/XML/BDUsuarios.xml")));
+			if(fichero.exists()){
+				doc = builder.parse(new InputSource(new FileInputStream("/Users/Santiago/Documents/XML/temp/BDUsuarios.xml")));
+			}
+			else{
+				doc = builder.parse(new InputSource(new FileInputStream("Users/Santiago/Documents/XML/temp/BDUsuarios.xml")));
+			}
+			
+			//raiz
+			Element raiz = doc.getDocumentElement();
+			Element general = (Element) raiz.getElementsByTagName("Usuario_general");
+			Element administrador = (Element)raiz.getElementsByTagName("Usuario_Administrador");
+			
+			NodeList generales = general.getElementsByTagName("Usuario");
+			NodeList admins = administrador.getElementsByTagName("Administrador");
+			
+			for(int i=0; i<generales.getLength(); i++){
+				p.clear();
+				Element usuario = (Element)generales.item(i).getChildNodes(); //Coge cada elemento usuario
+				
+				String nombre = usuario.getAttribute("Nombre");
+				String clave = usuario.getAttribute("Clave");
+				
+				NodeList permisos = usuario.getElementsByTagName("Permisos");
+				
+				for(int j = 0; j < permisos.getLength(); j++){
+					Element permiso = (Element)permisos.item(j);
+					p.add(Integer.valueOf(permiso.getTextContent()));
+				}
+				
+				g = new UsuarioAdministrador(nombre, clave, p);
+				Main.listaUsuarios.put(nombre, g);
+			}
+			
+			for(int i=0; i<admins.getLength(); i++){
+				p.clear();
+				Element usuario = (Element)generales.item(i).getChildNodes(); //Coge cada elemento administrador
+				
+				String nombre = usuario.getAttribute("Nombre");
+				String clave = usuario.getAttribute("Clave");
+				
+				NodeList permisos = usuario.getElementsByTagName("Permisos");
+				
+				for(int j = 0; j < permisos.getLength(); j++){
+					Element permiso = (Element)permisos.item(j);
+					p.add(Integer.valueOf(permiso.getTextContent()));
+				}
+				
+				g = new UsuarioGeneral(nombre, clave, p);
+				Main.listaUsuarios.put(nombre, g);
+			}
+			
+			
+		}
+		catch(Exception e){
 			e.printStackTrace();
 		}
 	}
