@@ -119,7 +119,7 @@ public class GestorBDJugadores {
 		  try {
 			DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 			File fichero = new File("D:\\XML\\BDjugadores.xml");
-			File fichero2 = new File("C:\\Windows\\Temp\\BDjugadores.xml");
+			File fichero2 = new File("C:\\Temp\\bd\\BDjugadores.xml");
 			if(!fichero.exists()&&!fichero2.exists()){
 				return;
 			}
