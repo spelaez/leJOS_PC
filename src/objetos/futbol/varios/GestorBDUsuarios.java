@@ -1,6 +1,7 @@
 package objetos.futbol.varios;
 
 import java.io.File;
+import java.util.Enumeration;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -23,6 +24,7 @@ public class GestorBDUsuarios {
 
 	public void guardarJugadores(){
 		System.out.println("Guardando usuarios...");
+		Enumeration<Usuario> enumUsu = Main.listaUsuarios.elements(); 
 		if(Main.listaUsuarios.size() == 0){
 			System.out.println("No hay usuarios");
 			return;
@@ -37,16 +39,16 @@ public class GestorBDUsuarios {
 			document.appendChild(raiz);
 
 			//Usuario General
-			Element general = document.createElement("Usuario general");
+			Element general = document.createElement("Usuario_general");
 			raiz.appendChild(general);
 
 			//Usuario Administrador
-			Element administrador = document.createElement("Usuario Administrador");
+			Element administrador = document.createElement("Usuario_Administrador");
 			raiz.appendChild(administrador);
 
 			//Atributos
-			for(int i = 0; i < Main.listaUsuarios.size(); i++){
-				Usuario g = Main.listaUsuarios.get(i);
+			while(enumUsu.hasMoreElements()){
+				Usuario g = enumUsu.nextElement();
 				if(g instanceof UsuarioGeneral){
 					g = (UsuarioGeneral)g;
 					Element usuario = document.createElement("Usuario");
@@ -62,9 +64,8 @@ public class GestorBDUsuarios {
 
 					for(int j = 0; j < g.getPermisos().size(); j++){
 						Element permiso = document.createElement("Permiso");
-						general.appendChild(permiso);
-
-						permiso.appendChild(document.createTextNode(String.valueOf(g.getPermisos().get(i))));
+						usuario.appendChild(permiso);
+						permiso.appendChild(document.createTextNode(String.valueOf(g.getPermisos().get(j))));
 					}
 
 
@@ -72,7 +73,7 @@ public class GestorBDUsuarios {
 				else if (g instanceof UsuarioAdministrador){
 					g = (UsuarioAdministrador)g;
 					Element usuario = document.createElement("Administrador");
-					general.appendChild(usuario);
+					administrador.appendChild(usuario);
 
 					Element nombre = document.createElement("Nombre");
 					usuario.appendChild(nombre);
@@ -84,9 +85,9 @@ public class GestorBDUsuarios {
 
 					for(int j = 0; j < g.getPermisos().size(); j++){
 						Element permiso = document.createElement("Permiso");
-						general.appendChild(permiso);
+						usuario.appendChild(permiso);
 
-						permiso.appendChild(document.createTextNode(String.valueOf(g.getPermisos().get(i))));
+						permiso.appendChild(document.createTextNode(String.valueOf(g.getPermisos().get(j))));
 					}
 
 				}
@@ -101,7 +102,7 @@ public class GestorBDUsuarios {
 			DOMSource src = new DOMSource(document);
 			StreamResult fileResult = new StreamResult(new File("/Users/Santiago/Documents/XML/BDUsuarios.xml"));
 			transformer.transform(src, fileResult);	
-
+			System.out.println("Guardado exitoso.");
 		} catch (ParserConfigurationException e) {
 			e.printStackTrace();
 		} catch (TransformerConfigurationException e) {

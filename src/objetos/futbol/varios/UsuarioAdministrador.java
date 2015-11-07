@@ -12,7 +12,8 @@ public class UsuarioAdministrador implements Usuario {
 	public UsuarioAdministrador(String nombre, String clave){
 		this.nombre = nombre;
 		this.clave = clave;
-		asignarMenu();
+		asignarPermisos();
+		//asignarMenu();
 	}
 
 	@Override
@@ -50,5 +51,11 @@ public class UsuarioAdministrador implements Usuario {
 		for(int i = 0; i < permisos.size(); i++){
 			menu.anadirOpcion(MenuDeConsola.opciones2.get(permisos.get(i)));
 		}
+	}
+	
+	public void asignarPermisos(){
+		permisos.add(1);
+		permisos.add(2);
+		permisos.add(3);
 	}
 }

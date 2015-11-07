@@ -2,12 +2,10 @@ package objetos.futbol.UI;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-
 import lejos.pc.comm.NXTCommFactory;
 import lejos.pc.comm.NXTCommLogListener;
 import lejos.pc.comm.NXTConnector;
 import lejos.pc.comm.NXTInfo;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Hashtable;
@@ -17,8 +15,11 @@ import objetos.futbol.robots.Chutar;
 import objetos.futbol.robots.Girar;
 import objetos.futbol.jugadores.Futbolista;
 import objetos.futbol.varios.Usuario;
+import objetos.futbol.varios.UsuarioGeneral;
+import objetos.futbol.varios.UsuarioAdministrador;
 import objetos.futbol.jugadores.JugadaCompleja;
 import objetos.futbol.robots.Robot;
+import objetos.futbol.varios.GestorBDUsuarios;
 
 public class Main {	
 	

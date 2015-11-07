@@ -14,7 +14,7 @@ public class UsuarioGeneral implements Usuario
 		this.nombre = nombre;
 		this.clave = clave;
 		agregarPermisos();
-		asignarMenu();
+		//asignarMenu();
 	}
 	
 	public void setNombre(String nombre){
@@ -43,7 +43,7 @@ public class UsuarioGeneral implements Usuario
 	}
 	
 	public void agregarPermisos(){
-		//TODO: codigo para agregar los permisos cuando estén definidos
+		permisos.add(1);
 	}
 	
 	public void asignarMenu(){
