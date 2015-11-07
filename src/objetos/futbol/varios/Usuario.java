@@ -1,5 +1,5 @@
 package objetos.futbol.varios;
-
+//Interfaz para ser implementada por los tipos de usuarios
 public interface Usuario {
 
 public void setNombre(String nombre);
