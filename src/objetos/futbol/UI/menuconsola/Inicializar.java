@@ -78,7 +78,7 @@ public class Inicializar extends OpcionDeMenu{
 			System.out.print("Conexión exitosa!");
 		}
 		
-		
+		scn.close();
 	}
 	
 	@Override

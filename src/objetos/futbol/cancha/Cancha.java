@@ -35,7 +35,8 @@ public class Cancha {
 		}
 	}
 	
-	public void actualizarPosicion(int i, int j, int anti, int antj){
+	public void actualizarPosicion(int x, int y){//Recibido movimiento del robot en milimetros
+		
 		rep[i][j] = "X";
 		rep[anti][antj] = " ";
 	}
