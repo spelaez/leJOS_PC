@@ -4,8 +4,13 @@ import java.io.IOException;
 import objetos.futbol.UI.Main;
 import objetos.futbol.jugadores.Futbolista;
 import objetos.futbol.jugadores.JugadaCompleja;
-//Clase para definir las jugadas primitivas de un robot
+/**
+ * Clase para definir las jugadas primitivas de un robot
+ * @author Santiago Peláez
+ *
+ */
 public class Robot {
+	//Campos de clase
 	private Futbolista jugador;
 	private MoverAdelante trotar;
 	private MoverAdelante correr;
@@ -14,7 +19,10 @@ public class Robot {
 	private Chutar patear;
 	private Girar girarDerecha;
 	private Girar girarIzquierda;
-	//Método para asignar las jugadas primitivas a un futbolista
+	/**
+	 * Constructor para asignar las jugadas primitivas a un futbolista
+	 * @param jugador
+	 */
 	public Robot(Futbolista jugador){
 		this.trotar = Main.trotar;
 		this.correr = Main.correr;
@@ -23,49 +31,80 @@ public class Robot {
 		this.girarIzquierda = Main.girarIzquierda;
 		this.chutar = Main.chutar;
 		this.patear = Main.patear;
-	}
-	//Método para ver si el futbolista es in arquero o un delantero
+	}//Cierre del constructor
+	/**
+	 * Método para ver si el futbolista es in arquero o un delantero
+	 * @return Retorna el tipo de jugador
+	 */
 	public Futbolista getJugador(){
 		return jugador;
-	}
-	//Método para modificar al futbolista
+	}//Cierre del método
+	/**
+	 * Método para modificar al futbolista
+	 * @param jugador
+	 */
 	public void setJugador(Futbolista jugador){
 		this.jugador = jugador;
-	}
-	//Método para llamar al tipo de jugada primitiva en este caso trotar
+	}//Cierre del método
+	/**
+	 * Método para llamar al tipo de jugada primitiva en este caso trotar
+	 * @return Retorna el ID de la jugada
+	 */
 	public int ejecutarTrotar(){
 		return trotar.getIdJugada();
-	}
-	//Método para llamar al tipo de jugada primitiva en este caso correr
+	}//Cierre del método
+	/**
+	 * Método para llamar al tipo de jugada primitiva en este caso correr
+	 * @return Retorna el ID de la ejecucuion de lajugada
+	 */
 	public int ejecutarCorrer(){
 		return correr.getIdJugada();
-	}
-	//Método para llamar al tipo de jugada primitiva en este caso retroceder
+	}//Cierre del método
+	/**
+	 * Método para llamar al tipo de jugada primitiva en este caso retroceder
+	 * @return Retorna el ID de la ejecucion de la jugada
+	 */
 	public int ejecutarRetroceder(){
 		return retroceder.getIdJugada();
-	}
-	//Método para llamar al tipo de jugada primitiva en este caso girar a la derecha
+	}//Cierre del método
+	/**
+	 * Método para llamar al tipo de jugada primitiva en este caso girar a la derecha
+	 * @return Retorna el ID de la ejecucion de la jugada
+	 */
 	public int ejecutarGirarDerecha(){
 		return girarDerecha.getIdJugada();
-	}
-	//Método para llamar al tipo de jugada primitiva en este caso girar a la izquierda
+	}//Cierre del método
+	/**
+	 * Método para llamar al tipo de jugada primitiva en este caso girar a la izquierda
+	 * @return Retorna el ID de la ejecucion de la jugada
+	 */
 	public int ejecutarGirarIzquierda(){
 		return girarIzquierda.getIdJugada();
-	}
-	//Método para llamar al tipo de jugada primitiva en este caso chutar
+	}//Cierre del método
+	/**
+	 * Método para llamar al tipo de jugada primitiva en este caso chutar
+	 * @return Retorna el ID de la ejecucion de la jugada
+	 */
 	public int ejecutarChutar(){
 		return chutar.getIdJugada();
-	}
-	//Método para llamar al tipo de jugada primitiva en este caso patear
+	}//Cierre del método
+	/**
+	 * Método para llamar al tipo de jugada primitiva en este caso patear
+	 * @return Retorna el ID de la ejecucion de la jugada
+	 */
 	public int ejecutarPatear(){
 		return patear.getIdJugada();
-	}
-	//Método para asignarle las jugadas primitivas que componen una jugada compleja
+	}//Cierre del método
+	/**
+	 * Método para asignarle las jugadas primitivas que componen una jugada compleja
+	 * @param index
+	 * @throws IOException
+	 */
 	public void ejecutarJugadaCompleja(int index) throws IOException{
 		JugadaCompleja x = jugador.getListaJugadas().get(index);
 		for(JugadaPrimitiva j: x.getJugada()){
 			Main.dos.writeInt(j.getIdJugada());
 		}
 		Main.dos.flush();
-	}
-}
+	}//Cierre del método
+}//Cierr de la clase

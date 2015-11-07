@@ -4,13 +4,22 @@ import objetos.futbol.UI.menuconsola.ImprimirJugadores;
 import objetos.futbol.jugadores.*;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-//Clase que define la opcion de consultar la informacion de un jugador
+/**
+ * Clase que define la opcion de consultar la informacion de un jugador
+ * @author Santiago Peláez
+ *
+ */
 public class ConsultarInfoJugador extends OpcionDeMenu{
-	//Método que accesa al tipo de categoria que tiene la opcion de consutar la informacion de un jugador
+	/**
+	 * Constructor que accesa al tipo de categoria que tiene la opcion de consutar la informacion de un jugador
+	 * @param categoria
+	 */
 	public ConsultarInfoJugador(Categoria categoria){
 		super(categoria);
-	}
-	//Método sobreescrito de opciones de menu que ejecuta el menu para consultar la infromacion de un jugador
+	}//Cierre del constructor
+	/**
+	 * Método sobreescrito de opciones de menu que ejecuta el menu para consultar la infromacion de un jugador
+	 */
 	@Override
 	public void ejecutar(){
 		new ImprimirJugadores(Categoria.SISTEMA).ejecutar();
@@ -52,10 +61,13 @@ public class ConsultarInfoJugador extends OpcionDeMenu{
 		}
 	
 		scn.close();
-	}
-	//Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
+	}//Cierre del método
+	/**
+	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
+	 * @return Retorna el tipo de opcion
+	 */
 	@Override
 	public String toString(){
 		return "Consultar información de un jugador";
-	}
-}
+	}//Cierre del método
+}//Cierre de la clase

@@ -5,13 +5,22 @@ import java.util.Scanner;
 import objetos.futbol.varios.UsuarioAdministrador;
 import objetos.futbol.varios.UsuarioGeneral;
 
-//Clase que define la opcion iniciar sesion
+/**
+ * Clase que define la opcion iniciar sesion
+ * @author Santiago Peláez
+ *
+ */
 public class IniciarSesion extends OpcionDeMenu{
-	//Método que accesa al tipo de categoria que tiene la opcion iniciar sesion
+	/**
+	 * Constructor que accesa al tipo de categoria que tiene la opcion iniciar sesion
+	 * @param categoria
+	 */
 	public IniciarSesion(Categoria categoria){
 		super(categoria);
-	}
-	//Método que ejecuta el menu para iniciar sesion
+	}//Cierre del constructor
+	/**
+	 * Método que ejecuta el menu para iniciar sesion
+	 */
 	@Override
 	public void ejecutar() {
 
@@ -57,9 +66,12 @@ public class IniciarSesion extends OpcionDeMenu{
 			System.out.println("\nUsuario no encontrado!");
 		}
 		scn.close();
-	}
-	//Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
+	}//Cierre del método
+	/**
+	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
+	 * @return Retorna el tipo de opcion
+	 */
 	public String toString(){
 		return "Iniciar Sesion.";
-	}
-}
+	}//Cierre del método
+}//Cierre de la clase
