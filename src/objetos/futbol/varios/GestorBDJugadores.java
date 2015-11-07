@@ -5,8 +5,7 @@ import objetos.futbol.jugadores.Arquero;
 import objetos.futbol.jugadores.Delantero;
 
 import java.io.*;
-import java.io.File;
-import java.io.FileInputStream;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -19,6 +18,7 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
 import org.w3c.dom.*;
 
 public class GestorBDJugadores {
@@ -106,6 +106,39 @@ public class GestorBDJugadores {
 		} catch (TransformerException e) {
 			e.printStackTrace();
 		}
+		System.out.println("...JUGADORES GUARDADOS EXITOSAMENTE");
 	}
+	
+	public void LeerJugadores(){
+		  try {
+			File fichero = new File("D:\\XML\\BDjugadores.xml");
+			DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+			if(!fichero.exists()){
+				System.out.println("..NO EXISTE REGISTRO DE JUGADORES");
+				return;
+			}
+			Document document = documentBuilder.parse(fichero);
+			Element raiz = document.getDocumentElement();
+			Element arquero = (Element) raiz.getElementsByTagName("Arquero");
+			Element delantero = (Element) raiz.getElementsByTagName("Delantero");
+			NodeList lista_JugadoresD = delantero.getElementsByTagName("Jugador"); // lista los jugadores de el nodo delantero
+			NodeList lista_JugadoresA = arquero.getElementsByTagName("Jugador"); // lista los jugadores del nodo arquero
+			for (int i = 0 ; i < lista_JugadoresD.getLength(); i++){
+				Element jugadorD =(Element) lista_JugadoresD.item(i); // Saca el elemento jugador
+				String nombre = jugadorD.getElementsByTagName("Nombre").item(0).getTextContent();
+				String dorsal = jugadorD.getElementsByTagName("Dorsal").item(0).getTextContent();
+				String NumeroDeGoles = jugadorD.getElementsByTagName("GolesMarcados").item(0).getTextContent();
+			}
+			for(int i = 0; i< lista_JugadoresA.getLength(); i++){
+				Element jugadorA = (Element) lista_JugadoresA.item(i);
+				String nombre = jugadorA.getElementsByTagName("Nombre").item(0).getTextContent();
+				String dorsal = jugadorA.getElementsByTagName("Dorsal").item(0).getTextContent();
+				String TsinGoles = jugadorA.getElementsByTagName("TiempoSinGol").item(0).getTextContent();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+	}  
+
 }
 
