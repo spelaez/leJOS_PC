@@ -103,14 +103,14 @@ public class GestorBDUsuarios {
 				}
 			}
 
-			File folder = new File("/Users/Santiago/Documents/XML");
+			File folder = new File("gestorBD\\BDUsuarios.xml");
 			if(!folder.exists()){
 				folder.mkdirs();
 			}
 			
 			Transformer transformer = TransformerFactory.newInstance().newTransformer();
 			DOMSource src = new DOMSource(document);
-			StreamResult fileResult = new StreamResult(new File("/Users/Santiago/Documents/XML/BDUsuarios.xml"));
+			StreamResult fileResult = new StreamResult(new File("gestorBD\\BDUsuarios.xml"));
 			transformer.transform(src, fileResult);	
 			System.out.println("Guardado exitoso.");
 		} catch (ParserConfigurationException e) {
@@ -124,13 +124,13 @@ public class GestorBDUsuarios {
 		}
 	}
 	public void leerJugdores(){
-		System.out.print("Leyendo base de datos de jugadores");
+		System.out.println("Leyendo base de datos de jugadores");
 		Usuario g;
 		ArrayList<Integer> p = new ArrayList<Integer>();
 		try{
 			DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-			File fichero = new File("/Users/Santiago/Documents/XML/BDUsuarios.xml");
-			File fichero2 = new File("/Users/Santiago/Documents/XML/temp/BDUsuarios.xml");
+			File fichero = new File("gestorBD\\BDUsuarios.xml");
+			File fichero2 = new File("C:\\temp\\bd\\BDUsuarios.xml");
 			
 			if(!fichero.exists() && !fichero2.exists()){
 				return;
@@ -141,7 +141,7 @@ public class GestorBDUsuarios {
 				doc = builder.parse(new InputSource(new FileInputStream("/Users/Santiago/Documents/XML/temp/BDUsuarios.xml")));
 			}
 			else{
-				doc = builder.parse(new InputSource(new FileInputStream("Users/Santiago/Documents/XML/temp/BDUsuarios.xml")));
+				doc = builder.parse(new InputSource(new FileInputStream("Users/Santiago/Documents/XML/BDUsuarios.xml")));
 			}
 			
 			//raiz
