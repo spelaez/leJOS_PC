@@ -2,6 +2,8 @@ package objetos.futbol.UI;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+
+import lejos.pc.comm.NXTCommFactory;
 import lejos.pc.comm.NXTCommLogListener;
 import lejos.pc.comm.NXTConnector;
 import lejos.pc.comm.NXTInfo;
@@ -75,7 +77,8 @@ public class Main {
 		} 
 		);
 		// Connect to any NXT over Bluetooth
-		boolean connected = conn.connectTo("btspp://");
+		NXTInfo[] info = conn.search(null, null, NXTCommFactory.BLUETOOTH);
+		boolean connected = conn.connectTo("NXT_4", "00165313189D", NXTCommFactory.BLUETOOTH);
 	
 		
 		if (!connected) {
@@ -85,10 +88,12 @@ public class Main {
 		
 		dos = new DataOutputStream(conn.getOutputStream());
 		dis = new DataInputStream(conn.getInputStream());
-		dos.writeInt(scn.nextInt());
-		dos.flush();
-		dos.writeInt(scn.nextInt());
-		dos.flush();
+		while(connected){
+			dos.writeInt(scn.nextInt());
+			dos.flush();
+			System.out.print(dis.readInt()+" ");
+			System.out.println(dis.readInt());
+		}
 		
 		try {
 			dis.close();

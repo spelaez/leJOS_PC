@@ -83,6 +83,11 @@ public class MenuDeConsola {
 			opciones2.add(new ImprimirJugadores(Categoria.SISTEMA));
 			opciones2.add(new IniciarPartido(Categoria.SISTEMA));
 			opciones2.add(new ListaJugadasDisponibles(Categoria.SISTEMA));
+			opciones2.add(new Inicializar(Categoria.SISTEMA));
+			opciones2.add(new IniciarPartido(Categoria.SISTEMA));
+			opciones2.add(new IniciarSesion(Categoria.SISTEMA));
+			opciones2.add(new RegistrarUsuarioAdministrador(Categoria.SISTEMA));
+			opciones2.add(new RegistrarUsuarioGeneral(Categoria.SISTEMA));
 			}
 		
 	}
