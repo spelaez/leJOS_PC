@@ -32,6 +32,10 @@ public class UsuarioGeneral implements Usuario
 	public String getClave(){
 		return clave;
 	}
+	
+	public ArrayList<Integer> getPermisos(){
+		return permisos;
+	}
 
 	@Override
 	public void lanzarMenu() {

@@ -35,6 +35,10 @@ public class UsuarioAdministrador implements Usuario {
 	public String getNombre() {
 		return nombre;
 	}
+	
+	public ArrayList<Integer> getPermisos(){
+		return permisos;
+	}
 
 	@Override
 	public void lanzarMenu() {
