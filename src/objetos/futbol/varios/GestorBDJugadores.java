@@ -2,12 +2,11 @@ package objetos.futbol.varios;
 
 import objetos.futbol.UI.Main;
 import objetos.futbol.jugadores.Arquero;
+import objetos.futbol.jugadores.Delantero;
 
 import java.io.*;
 import java.io.File;
 import java.io.FileInputStream;
-import java.util.Calendar;
-import java.util.Enumeration;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -48,13 +47,45 @@ public class GestorBDJugadores {
 			for (int i=0;i<Main.listaJugadores.size();i++){
 				if(Main.listaJugadores.get(i) instanceof Arquero){
 					Arquero a = (Arquero) Main.listaJugadores.get(i);
-					Element nombre = document.createElement(a.getNombre());
-					arquero.appendChild(nombre);
+					Element jugador = document.createElement("Jugador");
+					arquero.appendChild(jugador);
+					Element nombre = document.createElement("Nombre");
+					jugador.appendChild(nombre);
+					nombre.appendChild(document.createTextNode(a.getNombre()));
 					Element dorsal = document.createElement("Dorsal");
-					nombre.appendChild(dorsal);
+					jugador.appendChild(dorsal);
 					dorsal.appendChild(document.createTextNode(Byte.toString(a.getDorsal())));
-					Element tiempoSinGol = document.createElement("Tiempo sin gol");
+					Element tiempoSinGol = document.createElement("TiempoSinGol");
+					jugador.appendChild(tiempoSinGol);
 					tiempoSinGol.appendChild(document.createTextNode(Integer.toString(a.getTiempoSinGoles())));
+					Element jugadas = document.createElement("Jugadas");
+					jugador.appendChild(jugadas);
+					for(int j=0; j< a.getListaJugadas().size();j++){
+						Element jugada = document.createElement("Jugada");
+						jugadas.appendChild(jugada);
+						jugada.appendChild(document.createTextNode(Integer.toString(Main.listaJugadasComplejas.indexOf(a.getListaJugadas().get(j)))));
+					}
+				}
+				else if(Main.listaJugadores.get(i) instanceof Delantero){
+					Delantero a = (Delantero)Main.listaJugadores.get(i);
+					Element jugador = document.createElement("Jugador");
+					delantero.appendChild(jugador);
+					Element nombre = document.createElement("Nombre");
+					jugador.appendChild(nombre);
+					nombre.appendChild(document.createTextNode(a.getNombre()));
+					Element dorsal = document.createElement("Dorsal");
+					jugador.appendChild(dorsal);
+					dorsal.appendChild(document.createTextNode(Byte.toString(a.getDorsal())));
+					Element golesMarcados = document.createElement("GolesMarcados");
+					jugador.appendChild(golesMarcados);
+					golesMarcados.appendChild(document.createTextNode(Integer.toString(a.getGolesMarcados())));
+					Element jugadas = document.createElement("Jugadas");
+					jugador.appendChild(jugadas);
+					for(int j=0; j< a.getListaJugadas().size();j++){
+						Element jugada = document.createElement("Jugada");
+						jugadas.appendChild(jugada);
+						jugada.appendChild(document.createTextNode(Integer.toString(Main.listaJugadasComplejas.indexOf(a.getListaJugadas().get(j)))));
+					}
 				}
 			}
 			
@@ -77,3 +108,4 @@ public class GestorBDJugadores {
 		}
 	}
 }
+
