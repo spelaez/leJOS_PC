@@ -14,7 +14,7 @@ public abstract class Futbolista {
 		this.posicion = posicion;
 		this.listaJugadas = listaJugadas;
 	}
-	//Método para imprimir sobreescrito del package object
+	//Método para devolver, sobreescrito del package object
 	@Override
 	public String toString(){
 		return "El futbolista " + nombre + " juega de " + posicion;

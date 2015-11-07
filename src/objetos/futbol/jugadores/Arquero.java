@@ -11,7 +11,7 @@ public class Arquero extends Futbolista {
 		this.TiempoSinGoles = TiempoSinGoles;
 		this.dorsal = dorsal;
 	}
-	//Método para imprimir sobreescrito del package object
+	//Método para devolver, sobreescrito del package object
 	@Override
 	public String toString(){
 		return super.toString()+" con el dorsal "+ dorsal+ " Tiempo Sin Goles "+TiempoSinGoles;

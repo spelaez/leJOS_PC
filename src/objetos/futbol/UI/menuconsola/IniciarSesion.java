@@ -5,13 +5,13 @@ import java.util.Scanner;
 import objetos.futbol.varios.UsuarioAdministrador;
 import objetos.futbol.varios.UsuarioGeneral;
 
-
+//Clase que define la opcion iniciar sesion
 public class IniciarSesion extends OpcionDeMenu{
-
+	//Método que accesa al tipo de categoria que tiene la opcion iniciar sesion
 	public IniciarSesion(Categoria categoria){
 		super(categoria);
 	}
-	
+	//Método que ejecuta el menu para iniciar sesion
 	@Override
 	public void ejecutar() {
 
@@ -58,9 +58,7 @@ public class IniciarSesion extends OpcionDeMenu{
 		}
 		scn.close();
 	}
-
-
-
+	//Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
 	public String toString(){
 		return "Iniciar Sesion.";
 	}

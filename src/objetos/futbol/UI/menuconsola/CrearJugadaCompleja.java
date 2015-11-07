@@ -1,4 +1,5 @@
 package objetos.futbol.UI.menuconsola;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import objetos.futbol.UI.Main;
@@ -8,14 +9,13 @@ import objetos.futbol.jugadores.JugadaComplejaDefensiva;
 import objetos.futbol.jugadores.JugadaComplejaOfensiva;
 import objetos.futbol.jugadores.JugadaComplejaTiroLibre;
 import objetos.futbol.varios.UsuarioAdministrador;
-
+//Clase que define la opncion crea jugada compleja
 public class CrearJugadaCompleja extends OpcionDeMenu {
-
-
+	//Método que accesa al tipo de categoria que tiene la opcion crear jugada compleja
 	public CrearJugadaCompleja(Categoria categoria) {
 		super(categoria);		
 	}
-
+	//Método sobreescrito que ejecuta el meu para crear una jugada compleja
 	@Override
 	public void ejecutar() {		
 		System.out.print("--------------------------------------------\n"+this);
@@ -83,7 +83,7 @@ public class CrearJugadaCompleja extends OpcionDeMenu {
 		}
 		scn.close();
 	}	
-
+	//Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
 	public String toString(){
 		return "Crear nueva jugada compleja";
 	}

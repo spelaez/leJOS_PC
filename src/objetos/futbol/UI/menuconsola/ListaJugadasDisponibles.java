@@ -6,13 +6,13 @@ import objetos.futbol.jugadores.JugadaComplejaDefensiva;
 import objetos.futbol.jugadores.JugadaComplejaOfensiva;
 import objetos.futbol.jugadores.JugadaComplejaTiroLibre;
 import java.util.ArrayList;
-
+//Clase que define la opcion  de lista de jugadas disponibles
 public class ListaJugadasDisponibles extends OpcionDeMenu{
-	
+	//Método que accesa al tipo de categoria que tiene la opcion lista de jugadas disponibles
 	public ListaJugadasDisponibles(Categoria categoria){
 		super(categoria);
 	}
-	
+	//Método que se ejecuta para mostrar las jugadas disponibles
 	@Override
 	public void ejecutar(){
 		System.out.print("------------------------------------------------\n"+this);

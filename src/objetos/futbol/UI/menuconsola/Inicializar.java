@@ -7,13 +7,13 @@ import objetos.futbol.jugadores.Futbolista;
 import objetos.futbol.robots.Robot;
 import lejos.pc.comm.*;
 import java.util.Scanner;
-
+//Clase que define la opcion incicializar
 public class Inicializar extends OpcionDeMenu{
-
+	//Método que accesa al tipo de categoria que tiene la opcion inicializar
 	public Inicializar(Categoria categoria){
 		super(categoria);
 	}
-	
+	//Método que ejecuta el menu para inicializar
 	@Override
 	public void ejecutar(){
 		Scanner scn = new Scanner(System.in);
@@ -78,7 +78,7 @@ public class Inicializar extends OpcionDeMenu{
 		
 		
 	}
-	
+	//Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
 	@Override
 	public String toString(){
 		return "Inicializando sistema...";

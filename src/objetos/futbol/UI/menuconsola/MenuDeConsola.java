@@ -5,37 +5,37 @@ import java.util.InputMismatchException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import objetos.futbol.UI.menuconsola.Trotar;
-
+//Clase que define al menu de consola 
 public class MenuDeConsola {
 	public static ArrayList<OpcionDeMenu> opciones2 = new ArrayList<>();
 	public ArrayList<OpcionDeMenu> opciones;
 	public static Scanner scn = new Scanner(System.in);
 	Comparator<OpcionDeMenu> c = new Comparator<OpcionDeMenu>() {
-
+		//Método que compara
 		@Override
 		public int compare(OpcionDeMenu o1, OpcionDeMenu o2) {
 			return o1.categoria.compareTo(o2.categoria);
 		}
 		
 	};
-	
+	//Método que permite agregar opciones de menu y ordenarla
 	public void anadirOpcion(OpcionDeMenu op){
 		opciones.add(op);
 		ordenarOpciones();
 	}
-	
+	//Método que permite eliminar una opcion de menu
 	public void eliminarOpcion(OpcionDeMenu op){
 		opciones.remove(op);
 	}
-	
+	//Método que permite limpiar la lista de opciones de menu
 	public void limpiar(){
 		opciones = new ArrayList<OpcionDeMenu>();
 	}
-	
+	//Método que permite ordenar las opciones de menu
 	public void ordenarOpciones(){
 		opciones.sort(c);
 	}
-	
+	//ejecuta el método lanzar menu que muestra las opciones disponibles a elegir
 	public void lanzarMenu(){
 		int option;
 		for(int i = 0; i < opciones.size(); i++){
@@ -56,7 +56,7 @@ public class MenuDeConsola {
 			System.out.println("Error: Dato incorrecto");
 		}
 	}
-
+	//Método que agrega todas las opciones de menu a una segunda lista
 	private void cargarOpciones(){
 		if(opciones2.size() == 0){
 			opciones2.add(new Trotar(Categoria.ARQUERO));

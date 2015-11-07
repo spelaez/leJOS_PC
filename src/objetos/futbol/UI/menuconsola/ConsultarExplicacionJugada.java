@@ -4,13 +4,13 @@ import objetos.futbol.UI.menuconsola.ImprimirJugadores;
 import objetos.futbol.jugadores.*;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
+//Clase que define la opcion de consultar explicacion de una jugada
 public class ConsultarExplicacionJugada extends OpcionDeMenu{
-
+	//Método que accesa al tipo de categoria que tiene la opcion de consutar la explicacion de una jugada
 	public ConsultarExplicacionJugada(Categoria categoria){
 		super(categoria);
 	}
-	
+	//Método sobreescrito de opncion de menu que ejecuta el menu para consultar la explicacion de una jugada
 	@Override
 	public void ejecutar(){
 		new ImprimirJugadores(Categoria.SISTEMA).ejecutar();
@@ -85,7 +85,7 @@ public class ConsultarExplicacionJugada extends OpcionDeMenu{
 	
 		scn.close();
 	}
-	
+	//Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
 	@Override
 	public String toString(){
 		return "Consultar Explicación de una jugada";

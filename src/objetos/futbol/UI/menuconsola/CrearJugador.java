@@ -10,13 +10,13 @@ import java.util.InputMismatchException;
 import java.lang.NumberFormatException;
 import java.util.Scanner;
 import java.util.ArrayList;
-
+//Clase que define la opcion crear jugador, consiste de un ArrayList para guardar las jugadas complejas del jugador nuevo
 public class CrearJugador extends OpcionDeMenu {
-
+	//Método que accesa al tipo de categoria que tiene la opcion crear jugador
 	public CrearJugador(Categoria categoria){
 		super(categoria);
 	}
-
+	//Método que ejecuta el menu de crear jugador
 	@Override
 	public void ejecutar(){
 		System.out.println("---------------------------------------------------\n"+this);
@@ -77,7 +77,7 @@ public class CrearJugador extends OpcionDeMenu {
 		}
 		scn.close();
 	}
-
+	//Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
 	@Override
 	public String toString(){
 		return "Crear nuevo Jugador";

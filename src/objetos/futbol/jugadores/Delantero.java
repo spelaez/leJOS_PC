@@ -11,7 +11,7 @@ public class Delantero extends Futbolista {
 		this.golesMarcados = golesMarcados;
 		this.dorsal = dorsal;
 	}
-	//Método para imprimir sobreescrito del package object
+	//Método para devolver, sobreescrito del package object
 	@Override
 	public String toString(){
 		return super.toString() + " con el dorsal " + dorsal + " ha marcado " + golesMarcados;

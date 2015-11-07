@@ -19,7 +19,7 @@ public abstract class JugadaCompleja {
 		this.Explicacion=Explicacion;
 		
 	}
-	//Método para imprimir sobreescrito del package object
+	//Método para devolver sobreescrito del package object
 	@Override
 	public String toString(){
 		return "Jugada "+ nombreJugada;
