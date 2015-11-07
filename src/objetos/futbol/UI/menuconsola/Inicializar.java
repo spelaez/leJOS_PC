@@ -40,6 +40,7 @@ public class Inicializar extends OpcionDeMenu{
 			}
 			System.out.print("NXT #: ");
 			int option = scn.nextInt();
+			Main.nxt1 = nxtinfo[option-1];
 			System.out.print("Seleccione de la lista de futbolistas el arquero que desea asignar al robot");
 			for(int i = 0; i < Main.listaJugadores.size(); i++){
 				if(Main.listaJugadores.get(i) instanceof Arquero){
@@ -64,6 +65,7 @@ public class Inicializar extends OpcionDeMenu{
 			}
 			System.out.print("NXT #: ");
 			int option = scn.nextInt();
+			Main.nxt2 = nxtinfo[option-1];
 			System.out.print("Seleccione de la lista de futbolistas el delantero que desea asignar al robot");
 			for(int i = 0; i < Main.listaJugadores.size(); i++){
 				if(Main.listaJugadores.get(i) instanceof Delantero){

@@ -4,6 +4,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import lejos.pc.comm.NXTCommLogListener;
 import lejos.pc.comm.NXTConnector;
+import lejos.pc.comm.NXTInfo;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -54,6 +55,7 @@ public class Main {
 	//Variables de conexion a los robots
 	public static NXTConnector conn = new NXTConnector();
 	public static boolean connected;
+	public static NXTInfo nxt1, nxt2;
 	
 	public static void main(String[] args) throws IOException {
 		Scanner scn = new Scanner(System.in);
