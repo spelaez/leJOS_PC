@@ -24,30 +24,26 @@ public class IniciarSesion extends OpcionDeMenu{
 			return;
 		}
 		System.out.println("-------------------------------------------------------\n"+this);
-		System.out.print("1. Usuario Jugador.\n 2. Usuario Administrador");
+		System.out.print("1. Usuario Jugador.\n2. Usuario Administrador\n");
 		int option = scn.nextInt();
-		System.out.print("Usuario: ");
-		usuario=scn.nextLine();
+		System.out.print("Usuario:\n");
+		usuario=scn.next();
 
-		System.out.print("Contraseña: ");
-		clave=scn.nextLine();
+		System.out.print("Contraseña:\n");
+		clave=scn.next();
 
 		if(Main.listaUsuarios.get(usuario)!=null){
 			if(Main.listaUsuarios.get(usuario).getClave().equals(clave)){
 				if(option == 1 && Main.listaUsuarios.get(usuario) instanceof UsuarioGeneral){
 					Main.usuarioActual=Main.listaUsuarios.get(usuario);
-				}
-				else {
-					System.out.print("No existe un usuario jugador con esos datos");
 					scn.close();
+					System.out.println("Logueo existoso");
 					return;
 				}
 				if(option == 2 && Main.listaUsuarios.get(usuario) instanceof UsuarioAdministrador){
 					Main.usuarioActual=Main.listaUsuarios.get(usuario);
-				}
-				else{
-					System.out.print("No existe un usuario Administrador con esos datos");
 					scn.close();
+					System.out.println("Logueo exitoso");
 					return;
 				}
 			}
@@ -62,6 +58,6 @@ public class IniciarSesion extends OpcionDeMenu{
 
 
 	public String toString(){
-		return "Iniciar Sesion.";
+		return "Bienvenido!\nElija como desea iniciar Sesion.";
 	}
 }

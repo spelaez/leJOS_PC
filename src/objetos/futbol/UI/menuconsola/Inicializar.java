@@ -3,9 +3,11 @@ package objetos.futbol.UI.menuconsola;
 import objetos.futbol.UI.Main;
 import objetos.futbol.jugadores.Arquero;
 import objetos.futbol.jugadores.Delantero;
-import objetos.futbol.jugadores.Futbolista;
 import objetos.futbol.robots.Robot;
 import lejos.pc.comm.*;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.util.Scanner;
 
 public class Inicializar extends OpcionDeMenu{
@@ -16,6 +18,7 @@ public class Inicializar extends OpcionDeMenu{
 	
 	@Override
 	public void ejecutar(){
+		
 		Scanner scn = new Scanner(System.in);
 		System.out.print("-------------------------------------------------------\n"+this);
 		Main.conn.addLogListener(new NXTCommLogListener(){
@@ -75,8 +78,10 @@ public class Inicializar extends OpcionDeMenu{
 			Main.conn.connectTo(nxtinfo[option-1], NXTCommFactory.BLUETOOTH);
 			System.out.print("Conexión exitosa!");
 		}
-		
-		
+		Main.dos = new DataOutputStream(Main.conn.getOutputStream());
+		Main.dis = new DataInputStream(Main.conn.getInputStream());
+		scn.close();
+		System.out.println();
 	}
 	
 	@Override

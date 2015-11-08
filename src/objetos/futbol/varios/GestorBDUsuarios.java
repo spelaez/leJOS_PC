@@ -2,6 +2,8 @@ package objetos.futbol.varios;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Enumeration;
 
@@ -16,10 +18,12 @@ import javax.xml.transform.TransformerFactoryConfigurationError;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+import org.w3c.dom.*;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
 
 import objetos.futbol.UI.Main;
 
@@ -103,14 +107,14 @@ public class GestorBDUsuarios {
 				}
 			}
 
-			File folder = new File("gestorBD\\BDUsuarios.xml");
+			File folder = new File("//BD/BDUsuarios.xml");
 			if(!folder.exists()){
 				folder.mkdirs();
 			}
 			
 			Transformer transformer = TransformerFactory.newInstance().newTransformer();
 			DOMSource src = new DOMSource(document);
-			StreamResult fileResult = new StreamResult(new File("gestorBD\\BDUsuarios.xml"));
+			StreamResult fileResult = new StreamResult(new File("//BD/BDUsuarios.xml"));
 			transformer.transform(src, fileResult);	
 			System.out.println("Guardado exitoso.");
 		} catch (ParserConfigurationException e) {
@@ -123,74 +127,51 @@ public class GestorBDUsuarios {
 			e.printStackTrace();
 		}
 	}
-	public void leerJugdores(){
+	public void leerUsuarios(){
 		System.out.println("Leyendo base de datos de jugadores");
 		Usuario g;
 		ArrayList<Integer> p = new ArrayList<Integer>();
-		try{
-			DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-			File fichero = new File("gestorBD\\BDUsuarios.xml");
-			File fichero2 = new File("C:\\temp\\bd\\BDUsuarios.xml");
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		try {
+			DocumentBuilder builder = factory.newDocumentBuilder();
+			File file = new File("/Users/Santiago/Documents/XML/BDUsuarios.xml");
+			Document doc = builder.parse(new InputSource(new FileInputStream(file)));
 			
-			if(!fichero.exists() && !fichero2.exists()){
-				return;
-			}
-			
-			Document doc= builder.parse(new InputSource(new FileInputStream("/Users/Santiago/Documents/XML/BDUsuarios.xml")));
-			if(fichero.exists()){
-				doc = builder.parse(new InputSource(new FileInputStream("/Users/Santiago/Documents/XML/temp/BDUsuarios.xml")));
-			}
-			else{
-				doc = builder.parse(new InputSource(new FileInputStream("Users/Santiago/Documents/XML/BDUsuarios.xml")));
-			}
-			
-			//raiz
 			Element raiz = doc.getDocumentElement();
-			Element general = (Element) raiz.getFirstChild();
-			Element administrador = (Element)raiz.getLastChild();
-			
+			Element general = (Element)raiz.getElementsByTagName("Usuario_general").item(0);
+			Element admin = (Element)raiz.getElementsByTagName("Usuario_Administrador").item(0);
 			NodeList generales = general.getElementsByTagName("Usuario");
-			NodeList admins = administrador.getElementsByTagName("Administrador");
-			
-			for(int i=0; i<generales.getLength(); i++){
-				p.clear();
-				Element usuario = (Element)generales.item(i).getChildNodes(); //Coge cada elemento usuario
-				
-				String nombre = usuario.getAttribute("Nombre");
-				String clave = usuario.getAttribute("Clave");
-				
-				NodeList permisos = usuario.getElementsByTagName("Permisos");
-				
+			NodeList admins = admin.getElementsByTagName("Administrador");
+			for(int i = 0; i < generales.getLength(); i++){
+				Node usuario = generales.item(i);
+				NodeList datos = usuario.getChildNodes();
+				String name = (datos.item(0).getTextContent());
+				String clave = (datos.item(1).getTextContent());
+				NodeList permisos = datos.item(2).getChildNodes();
 				for(int j = 0; j < permisos.getLength(); j++){
-					Element permiso = (Element)permisos.item(j);
-					p.add(Integer.valueOf(permiso.getTextContent()));
+					p.add(Integer.parseInt((permisos.item(j).getTextContent())));
 				}
-				
-				g = new UsuarioAdministrador(nombre, clave, p);
-				Main.listaUsuarios.put(nombre, g);
-			}
+				g = new UsuarioGeneral(name, clave, p);
+				Main.listaUsuarios.put(name, g);
 			
-			for(int i=0; i<admins.getLength(); i++){
-				p.clear();
-				Element usuario = (Element)generales.item(i).getChildNodes(); //Coge cada elemento administrador
-				
-				String nombre = usuario.getAttribute("Nombre");
-				String clave = usuario.getAttribute("Clave");
-				
-				NodeList permisos = usuario.getElementsByTagName("Permisos");
-				
+			
+			}
+			for(int i = 0; i < admins.getLength(); i++){
+				Node usuario = admins.item(i);
+				NodeList datos = usuario.getChildNodes();
+				String name = (datos.item(0).getTextContent());
+				String clave = (datos.item(1).getTextContent());
+				NodeList permisos = datos.item(2).getChildNodes();
 				for(int j = 0; j < permisos.getLength(); j++){
-					Element permiso = (Element)permisos.item(j);
-					p.add(Integer.valueOf(permiso.getTextContent()));
+					p.add(Integer.parseInt((permisos.item(j).getTextContent())));
 				}
-				
-				g = new UsuarioGeneral(nombre, clave, p);
-				Main.listaUsuarios.put(nombre, g);
-			}
+				g = new UsuarioAdministrador(name, clave, p);
+				Main.listaUsuarios.put(name, g);
 			
-			System.out.println("Lectura exitosa.");
-		}
-		catch(Exception e){
+			
+			}
+		} catch (ParserConfigurationException | SAXException | IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

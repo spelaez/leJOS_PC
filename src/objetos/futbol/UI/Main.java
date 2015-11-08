@@ -13,12 +13,15 @@ import objetos.futbol.robots.MoverAdelante;
 import objetos.futbol.robots.MoverAtras;
 import objetos.futbol.robots.Chutar;
 import objetos.futbol.robots.Girar;
+import objetos.futbol.UI.menuconsola.Categoria;
+import objetos.futbol.UI.menuconsola.IniciarSesion;
 import objetos.futbol.jugadores.Futbolista;
 import objetos.futbol.varios.Usuario;
 import objetos.futbol.varios.UsuarioGeneral;
 import objetos.futbol.varios.UsuarioAdministrador;
 import objetos.futbol.jugadores.JugadaCompleja;
 import objetos.futbol.robots.Robot;
+import objetos.futbol.varios.GestorBDJugadores;
 import objetos.futbol.varios.GestorBDUsuarios;
 
 public class Main {	
@@ -59,50 +62,20 @@ public class Main {
 	public static NXTConnector conn = new NXTConnector();
 	public static boolean connected;
 	
-	public static void main(String[] args) throws IOException {
-		Scanner scn = new Scanner(System.in);
-		conn.addLogListener(new NXTCommLogListener(){
-
-			public void logEvent(String message) {
-				System.out.println("BTSend Log.listener: "+message);
-				
-			}
-
-			public void logEvent(Throwable throwable) {
-				System.out.println("BTSend Log.listener - stack trace: ");
-				 throwable.printStackTrace();
-				
-			}
-			
-		} 
-		);
-		// Connect to any NXT over Bluetooth
-		NXTInfo[] info = conn.search(null, null, NXTCommFactory.BLUETOOTH);
-		boolean connected = conn.connectTo("NXT_4", "00165313189D", NXTCommFactory.BLUETOOTH);
+	//Gestores bd
+	static GestorBDUsuarios gestorUsuarios = new GestorBDUsuarios();
+	//static GestorBDJugadores gestorJugadores = new GestorBDJugadores();
+	//static GestorBDJugadasComplejas gestorJugadas = new GestorBDJugadasComplejas();
 	
+	public static void main(String[] args) throws IOException {
+		gestorUsuarios.leerUsuarios();
+		//gestorJugadores.LeerJugadores();
+		//gestorJugadas.leerJugadas();
 		
-		if (!connected) {
-			System.err.println("Failed to connect to any NXT");
-			System.exit(1);
-		}
+		Scanner scn = new Scanner(System.in);		
+		new IniciarSesion(Categoria.SISTEMA).ejecutar();
+		//usuarioActual.lanzarMenu();
 		
-		dos = new DataOutputStream(conn.getOutputStream());
-		dis = new DataInputStream(conn.getInputStream());
-		while(connected){
-			dos.writeInt(scn.nextInt());
-			dos.flush();
-			//System.out.print(dis.readInt()+" ");
-			//System.out.println(dis.readInt());
-		}
-		
-		try {
-			dis.close();
-			dos.close();
-			conn.close();
-		} catch (IOException ioe) {
-			System.out.println("IOException closing connection:");
-			System.out.println(ioe.getMessage());
-		}
 		scn.close();
 	}
 }
