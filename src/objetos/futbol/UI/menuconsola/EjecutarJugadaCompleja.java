@@ -16,7 +16,7 @@ public class EjecutarJugadaCompleja extends OpcionDeMenu{
 	public void ejecutar(){
 		Scanner scn = new Scanner(System.in);
 		if(categoria == Categoria.ARQUERO){
-			System.out.println("------------------------------------------\n"+this);
+			System.out.print("---------------------------------------------------\n"+this+"\n");
 			ArrayList<JugadaCompleja> list = new ArrayList<>();
 			list = Main.r1.getJugador().getListaJugadas();
 			for(int i = 0 ; i< list.size();i++){
@@ -40,7 +40,7 @@ public class EjecutarJugadaCompleja extends OpcionDeMenu{
 		}
 		
 		else if(categoria == Categoria.DELANTERO){
-			System.out.println("------------------------------------------\n"+this);
+			System.out.print("---------------------------------------------------\n"+this+"\n");
 			ArrayList<JugadaCompleja> list = new ArrayList<>();
 			list = Main.r2.getJugador().getListaJugadas();
 			for(int i = 0 ; i< list.size();i++){

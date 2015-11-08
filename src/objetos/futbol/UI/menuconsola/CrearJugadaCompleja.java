@@ -18,7 +18,7 @@ public class CrearJugadaCompleja extends OpcionDeMenu {
 
 	@Override
 	public void ejecutar() {		
-		System.out.print("--------------------------------------------\n"+this);
+		System.out.print("---------------------------------------------------\n"+this+"\n");
 		System.out.print("Ingrese el tipo de jugada compleja");
 		System.out.print("1 Para defensiva \n2 Para ofensiva \n3 Para tiro libre");
 		Scanner scn = new Scanner(System.in);

@@ -14,7 +14,7 @@ public class RegistrarUsuarioAdministrador extends OpcionDeMenu {
 	}
 
 	public void ejecutar(){
-		System.out.print("---------------------------------------------------\n"+this);
+		System.out.print("---------------------------------------------------\n"+this+"\n");
 		System.out.println("Por favor ingresa un nombre de usuario");
 		Usuario = scn.next();
 		System.out.println("Porfavor ingresa tu contraseña");

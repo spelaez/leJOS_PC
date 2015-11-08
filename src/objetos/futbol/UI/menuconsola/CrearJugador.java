@@ -19,7 +19,7 @@ public class CrearJugador extends OpcionDeMenu {
 
 	@Override
 	public void ejecutar(){
-		System.out.println("---------------------------------------------------\n"+this);
+		System.out.print("---------------------------------------------------\n"+this+"\n");
 		System.out.println("Ingrese tipo jugador");
 		System.out.println("1 para delantero \n2 para arquero ");
 		Scanner scn = new Scanner(System.in);

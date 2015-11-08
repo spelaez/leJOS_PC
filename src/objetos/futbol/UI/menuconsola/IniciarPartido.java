@@ -10,7 +10,7 @@ public class IniciarPartido extends OpcionDeMenu{
 
 	@Override
 	public void ejecutar() {
-		System.out.print("-----------------------------------------------------------"+this);
+		System.out.print("---------------------------------------------------\n"+this+"\n");
 		Main.tInicio = System.currentTimeMillis();
 		Main.tUltimoGol = Main.tInicio;
 		System.out.print("Partido Iniciado\n-----------------------------------------------------------");

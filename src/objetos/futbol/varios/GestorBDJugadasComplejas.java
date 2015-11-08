@@ -152,13 +152,13 @@ public class GestorBDJugadasComplejas {
 				}
 
 			}
-			File folder = new File("D:\\XML");
+			File folder = new File("gestorBD");
 			if (!folder.exists()){
 				folder.mkdirs();
 			}
 			Transformer transformer = TransformerFactory.newInstance().newTransformer();
 			DOMSource source = new DOMSource(document);
-			StreamResult fileResult = new StreamResult(new File("D:\\XML\\BDjugadas.xml"));
+			StreamResult fileResult = new StreamResult(new File("gestorBD\\BDjugadas.xml"));
 			transformer.transform(source, fileResult);
 		} catch (ParserConfigurationException e) {
 			e.printStackTrace();
@@ -175,15 +175,15 @@ public class GestorBDJugadasComplejas {
 		System.out.println("Leyendo usuarios....");
 		try {
 			DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-			File fichero = new File("D:\\XML\\BDjugadas.xml");
+			File fichero = new File("gestorBD\\BDjugadas.xml");
 			File fichero2 = new File("C:\\temp\\bd\\BDjugadas.xml");
 
 			if(!fichero.exists() && !fichero2.exists()){
 				return;
 			}
-			Document document= documentBuilder.parse(new InputSource(new FileInputStream("D:\\XML\\BDjugadas.xml")));
+			Document document= documentBuilder.parse(new InputSource(new FileInputStream("gestorBD\\BDjugadas.xml")));
 			if(fichero.exists()){
-				document = documentBuilder.parse(new InputSource(new FileInputStream("D:\\XML\\BDjugadas.xml")));
+				document = documentBuilder.parse(new InputSource(new FileInputStream("gestorBD\\BDjugadas.xml")));
 			}
 			else{
 				document = documentBuilder.parse(new InputSource(new FileInputStream("C:\\temp\\bd\\BDUsuarios.xml")));

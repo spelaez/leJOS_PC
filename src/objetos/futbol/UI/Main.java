@@ -16,9 +16,10 @@ import objetos.futbol.varios.UsuarioAnonimo;
 import objetos.futbol.robots.Robot;
 import objetos.futbol.varios.GestorBDJugadores;
 import objetos.futbol.varios.GestorBDUsuarios;
-import objetos.futbol.varios.GestorBDJugadores;
+import objetos.futbol.varios.GestorBDJugadasComplejas;
 import objetos.futbol.jugadores.*;
 import objetos.futbol.robots.*;
+import objetos.futbol.varios.UsuarioAdministrador;
 public class Main {	
 	
 	//Atributos para manejar el tiempo
@@ -59,8 +60,8 @@ public class Main {
 	
 	//Gestores bd
 	static GestorBDUsuarios gestorUsuarios = new GestorBDUsuarios();
-	//static GestorBDJugadores gestorJugadores = new GestorBDJugadores();
-	//static GestorBDJugadasComplejas gestorJugadas = new GestorBDJugadasComplejas();
+	static GestorBDJugadores gestorJugadores = new GestorBDJugadores();
+	static GestorBDJugadasComplejas gestorJugadas = new GestorBDJugadasComplejas();
 
 	public static void main(String[] args) throws IOException {
 		gestorUsuarios.leerUsuarios();
@@ -71,5 +72,6 @@ public class Main {
 		new UsuarioAnonimo();
 		
 		scn.close();
+		
 	}
 }

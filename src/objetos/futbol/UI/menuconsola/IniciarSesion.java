@@ -23,7 +23,7 @@ public class IniciarSesion extends OpcionDeMenu{
 			scn.close();
 			return;
 		}
-		System.out.println("-------------------------------------------------------\n"+this);
+		System.out.print("---------------------------------------------------\n"+this+"\n");
 		System.out.print("1. Usuario Jugador.\n2. Usuario Administrador\n");
 		int option = scn.nextInt();
 		System.out.print("Usuario:\n");

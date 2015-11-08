@@ -12,7 +12,7 @@ public class Salir extends OpcionDeMenu{
 
 	@Override
 	public void ejecutar() {
-		System.out.println("-----------------------------------------\n"+this);
+		System.out.print("---------------------------------------------------\n"+this+"\n");
 		new GestorBDUsuarios().guardarUsuarios();
 		new GestorBDJugadores().guardarJugadores();
 		new GestorBDJugadasComplejas().guardarJugadas();
