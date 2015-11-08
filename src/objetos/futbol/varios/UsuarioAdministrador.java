@@ -1,27 +1,19 @@
 package objetos.futbol.varios;
 
 import objetos.futbol.UI.menuconsola.MenuDeConsola;
-import java.util.ArrayList;
 
 public class UsuarioAdministrador implements Usuario {
 
 	private String nombre, clave;
 	public MenuDeConsola menu = new MenuDeConsola();
-	public ArrayList<Integer> permisos = new ArrayList<>();
+	//No creamos array de permisos en administrador, porque los tiene todos
 	
 	public UsuarioAdministrador(String nombre, String clave){
 		this.nombre = nombre;
 		this.clave = clave;
-		asignarPermisos();
-		//asignarMenu();
+		asignarMenu();
 	}
-	
-	public UsuarioAdministrador(String nombre, String clave, ArrayList<Integer> p){
-		this.nombre = nombre;
-		this.clave = clave;
-		this.permisos = p;
-		//asignarMenu();
-	}
+
 
 	@Override
 	public void setNombre(String nombre) {
@@ -44,10 +36,6 @@ public class UsuarioAdministrador implements Usuario {
 		return nombre;
 	}
 	
-	public ArrayList<Integer> getPermisos(){
-		return permisos;
-	}
-
 	@Override
 	public void lanzarMenu() {
 		menu.lanzarMenu();	
@@ -55,14 +43,9 @@ public class UsuarioAdministrador implements Usuario {
 	
 	public void asignarMenu(){
 		menu.limpiar();
-		for(int i = 0; i < permisos.size(); i++){
-			menu.anadirOpcion(MenuDeConsola.opciones2.get(permisos.get(i)));
+		for(int i = 0; i < MenuDeConsola.opciones2.size(); i++){
+			menu.anadirOpcion(MenuDeConsola.opciones2.get(i));
 		}
 	}
-	
-	public void asignarPermisos(){
-		permisos.add(1);
-		permisos.add(2);
-		permisos.add(3);
-	}
 }
+

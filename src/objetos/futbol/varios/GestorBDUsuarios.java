@@ -3,8 +3,6 @@ package objetos.futbol.varios;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.Enumeration;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -70,16 +68,6 @@ public class GestorBDUsuarios {
 					Element clave = document.createElement("Clave");
 					usuario.appendChild(clave);
 					clave.appendChild(document.createTextNode(g.getClave()));
-					
-					Element permisos = document.createElement("Permisos");
-					usuario.appendChild(permisos);
-					
-					for(int j = 0; j < g.getPermisos().size(); j++){
-						Element permiso = document.createElement("Permiso");
-						permisos.appendChild(permiso);
-						permiso.appendChild(document.createTextNode(String.valueOf(g.getPermisos().get(j))));
-					}
-
 
 				}
 				else if (g instanceof UsuarioAdministrador){
@@ -94,16 +82,6 @@ public class GestorBDUsuarios {
 					Element clave = document.createElement("Clave");
 					usuario.appendChild(clave);
 					clave.appendChild(document.createTextNode(g.getClave()));
-					
-					Element permisos = document.createElement("Permisos");
-					usuario.appendChild(permisos);
-
-					for(int j = 0; j < g.getPermisos().size(); j++){
-						Element permiso = document.createElement("Permiso");
-						permisos.appendChild(permiso);
-						permiso.appendChild(document.createTextNode(String.valueOf(g.getPermisos().get(j))));
-					}
-
 				}
 			}
 
@@ -130,7 +108,6 @@ public class GestorBDUsuarios {
 	public void leerUsuarios(){
 		System.out.println("Leyendo base de datos de jugadores");
 		Usuario g;
-		ArrayList<Integer> p = new ArrayList<Integer>();
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		try {
 			DocumentBuilder builder = factory.newDocumentBuilder();
@@ -147,11 +124,7 @@ public class GestorBDUsuarios {
 				NodeList datos = usuario.getChildNodes();
 				String name = (datos.item(0).getTextContent());
 				String clave = (datos.item(1).getTextContent());
-				NodeList permisos = datos.item(2).getChildNodes();
-				for(int j = 0; j < permisos.getLength(); j++){
-					p.add(Integer.parseInt((permisos.item(j).getTextContent())));
-				}
-				g = new UsuarioGeneral(name, clave, p);
+				g = new UsuarioGeneral(name, clave);
 				Main.listaUsuarios.put(name, g);
 			
 			
@@ -161,17 +134,12 @@ public class GestorBDUsuarios {
 				NodeList datos = usuario.getChildNodes();
 				String name = (datos.item(0).getTextContent());
 				String clave = (datos.item(1).getTextContent());
-				NodeList permisos = datos.item(2).getChildNodes();
-				for(int j = 0; j < permisos.getLength(); j++){
-					p.add(Integer.parseInt((permisos.item(j).getTextContent())));
-				}
-				g = new UsuarioAdministrador(name, clave, p);
+				g = new UsuarioAdministrador(name, clave);
 				Main.listaUsuarios.put(name, g);
 			
 			
 			}
 		} catch (ParserConfigurationException | SAXException | IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

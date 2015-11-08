@@ -1,8 +1,7 @@
 package objetos.futbol.varios;
 
-import objetos.futbol.UI.menuconsola.Categoria;
+
 import objetos.futbol.UI.menuconsola.MenuDeConsola;
-import objetos.futbol.UI.menuconsola.IniciarSesion;
 
 public class UsuarioAnonimo {
 	public MenuDeConsola menu = new MenuDeConsola();
@@ -13,8 +12,9 @@ public class UsuarioAnonimo {
 	
 	public void asignarMenu(){
 		menu.limpiar();
-		menu.anadirOpcion(new IniciarSesion(Categoria.SISTEMA));
-		//menu.anadirOpcion(new RegistrarUsuario(Categoria.SISTEMA));
-		//menu.anadirOpcion(new Exit(Categoria.SISTEMA));
+		menu.anadirOpcion(MenuDeConsola.opciones2.get(28));
+		menu.anadirOpcion(MenuDeConsola.opciones2.get(30));
+		menu.anadirOpcion(MenuDeConsola.opciones2.get(31));
+		menu.lanzarMenu();
 	}
 }

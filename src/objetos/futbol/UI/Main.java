@@ -19,6 +19,7 @@ import objetos.futbol.jugadores.Futbolista;
 import objetos.futbol.varios.Usuario;
 import objetos.futbol.varios.UsuarioGeneral;
 import objetos.futbol.varios.UsuarioAdministrador;
+import objetos.futbol.varios.UsuarioAnonimo;
 import objetos.futbol.robots.Robot;
 import objetos.futbol.varios.GestorBDJugadores;
 import objetos.futbol.varios.GestorBDUsuarios;
@@ -74,8 +75,7 @@ public class Main {
 		//gestorJugadas.leerJugadas();
 		
 		Scanner scn = new Scanner(System.in);		
-		new IniciarSesion(Categoria.SISTEMA).ejecutar();
-		//usuarioActual.lanzarMenu();
+		new UsuarioAnonimo();
 		
 		scn.close();
 	}

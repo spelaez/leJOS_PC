@@ -10,6 +10,11 @@ public class MenuDeConsola {
 	public static ArrayList<OpcionDeMenu> opciones2 = new ArrayList<>();
 	public ArrayList<OpcionDeMenu> opciones;
 	public static Scanner scn = new Scanner(System.in);
+	
+	public MenuDeConsola(){
+		cargarOpciones();
+	}
+	
 	Comparator<OpcionDeMenu> c = new Comparator<OpcionDeMenu>() {
 
 		@Override
@@ -59,35 +64,40 @@ public class MenuDeConsola {
 
 	private void cargarOpciones(){
 		if(opciones2.size() == 0){
-			opciones2.add(new Trotar(Categoria.ARQUERO));
-			opciones2.add(new Correr(Categoria.ARQUERO));
-			opciones2.add(new Chutar(Categoria.ARQUERO));
-			opciones2.add(new Patear(Categoria.ARQUERO));
-			opciones2.add(new GirarDerecha(Categoria.ARQUERO));
-			opciones2.add(new GirarIzquierda(Categoria.ARQUERO));
-			opciones2.add(new Retroceder(Categoria.ARQUERO));
-			opciones2.add(new RegistrarTiempoSinGoles(Categoria.ARQUERO));
-			opciones2.add(new RegistrarTiempoUltimoGol(Categoria.ARQUERO));
-			opciones2.add(new Trotar(Categoria.DELANTERO));
-			opciones2.add(new Correr(Categoria.DELANTERO));
-			opciones2.add(new Chutar(Categoria.DELANTERO));
-			opciones2.add(new Patear(Categoria.DELANTERO));
-			opciones2.add(new GirarDerecha(Categoria.DELANTERO));
-			opciones2.add(new GirarIzquierda(Categoria.DELANTERO));
-			opciones2.add(new RegistrarGolAFavor(Categoria.DELANTERO));
-			opciones2.add(new Retroceder(Categoria.DELANTERO));
-			opciones2.add(new CrearJugador(Categoria.SISTEMA));
-			opciones2.add(new ConsultarExplicacionJugada(Categoria.SISTEMA));
-			opciones2.add(new ConsultarInfoJugador(Categoria.SISTEMA));
-			opciones2.add(new CrearJugadaCompleja(Categoria.SISTEMA));
-			opciones2.add(new ImprimirJugadores(Categoria.SISTEMA));
-			opciones2.add(new IniciarPartido(Categoria.SISTEMA));
-			opciones2.add(new ListaJugadasDisponibles(Categoria.SISTEMA));
-			opciones2.add(new Inicializar(Categoria.SISTEMA));
-			opciones2.add(new IniciarPartido(Categoria.SISTEMA));
-			opciones2.add(new IniciarSesion(Categoria.SISTEMA));
-			opciones2.add(new RegistrarUsuarioAdministrador(Categoria.SISTEMA));
-			opciones2.add(new RegistrarUsuarioGeneral(Categoria.SISTEMA));
+			opciones2.add(new Trotar(Categoria.ARQUERO));// 1
+			opciones2.add(new Correr(Categoria.ARQUERO));// 2
+			opciones2.add(new Retroceder(Categoria.ARQUERO));// 3
+			opciones2.add(new GirarDerecha(Categoria.ARQUERO));// 4
+			opciones2.add(new GirarIzquierda(Categoria.ARQUERO));// 5
+			opciones2.add(new Chutar(Categoria.ARQUERO));// 6
+			opciones2.add(new Patear(Categoria.ARQUERO));// 7
+			//opciones2.add(new EjecutaJugadaCompleja(Categoria.ARQUERO)); //8
+			opciones2.add(new RegistrarTiempoSinGoles(Categoria.ARQUERO));// 9
+			opciones2.add(new RegistrarTiempoUltimoGol(Categoria.ARQUERO));// 10
+			
+			
+			opciones2.add(new Trotar(Categoria.DELANTERO));//11
+			opciones2.add(new Correr(Categoria.DELANTERO));//12
+			opciones2.add(new Retroceder(Categoria.DELANTERO));//13
+			opciones2.add(new GirarDerecha(Categoria.DELANTERO));//14
+			opciones2.add(new GirarIzquierda(Categoria.DELANTERO));//15
+			opciones2.add(new Chutar(Categoria.DELANTERO));//16
+			opciones2.add(new Patear(Categoria.DELANTERO));//17	
+			//opciones2.add(new EjecutarJugadaCompleja(Categoria.DELANTERO)); //18
+			opciones2.add(new RegistrarGolAFavor(Categoria.DELANTERO));//19
+			
+			opciones2.add(new CrearJugador(Categoria.SISTEMA));//20  //Solo admin
+			opciones2.add(new ConsultarExplicacionJugada(Categoria.SISTEMA));//21 //todos
+			opciones2.add(new ConsultarInfoJugador(Categoria.SISTEMA));//22 //todos
+			opciones2.add(new CrearJugadaCompleja(Categoria.SISTEMA));//23 //solo admin
+			opciones2.add(new ImprimirJugadores(Categoria.SISTEMA));//24  // todos
+			opciones2.add(new IniciarPartido(Categoria.SISTEMA));//25 //todos
+			opciones2.add(new ListaJugadasDisponibles(Categoria.SISTEMA));//26 //solo admin
+			opciones2.add(new Inicializar(Categoria.SISTEMA));//27 //todos
+			opciones2.add(new IniciarSesion(Categoria.SISTEMA));//28 todos
+			opciones2.add(new RegistrarUsuarioAdministrador(Categoria.SISTEMA));//29 solo admin
+			opciones2.add(new RegistrarUsuarioGeneral(Categoria.SISTEMA));//30 // todos
+			//opciones2.add(new Salir(Categoria.SISTEMA));//31 //todos
 			}
 		
 	}

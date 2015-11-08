@@ -9,7 +9,5 @@ public void setClave(String clave);
 	
 public String getClave();
 public String getNombre();
-public ArrayList<Integer> getPermisos();
-
 public void lanzarMenu();
 }
