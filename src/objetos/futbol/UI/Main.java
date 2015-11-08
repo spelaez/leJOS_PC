@@ -13,14 +13,14 @@ import objetos.futbol.robots.MoverAdelante;
 import objetos.futbol.robots.MoverAtras;
 import objetos.futbol.robots.Chutar;
 import objetos.futbol.robots.Girar;
-import objetos.futbol.jugadores.Futbolista;
 import objetos.futbol.varios.Usuario;
 import objetos.futbol.varios.UsuarioGeneral;
 import objetos.futbol.varios.UsuarioAdministrador;
-import objetos.futbol.jugadores.JugadaCompleja;
 import objetos.futbol.robots.Robot;
 import objetos.futbol.varios.GestorBDUsuarios;
 import objetos.futbol.varios.GestorBDJugadores;
+import objetos.futbol.jugadores.*;
+import objetos.futbol.robots.*;
 public class Main {	
 	
 	//Atributos para manejar el tiempo
