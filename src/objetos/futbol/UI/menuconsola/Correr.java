@@ -3,20 +3,20 @@ package objetos.futbol.UI.menuconsola;
 import java.io.IOException;
 import objetos.futbol.UI.Main;
 /**
- * Clase para definir la opcion correr
+ * Clase para definir la opción correr
  * @author Santiago Peláez
  *
  */
 public class Correr extends OpcionDeMenu {
 	/**
-	 * Constructor que accesa al tipo de categoria que tiene la opcion correr
+	 * Constructor que accesa al tipo de categoria que tiene la opción correr
 	 * @param categoria
 	 */
 	public Correr(Categoria categoria){
 		super(categoria);
 	}//Cierre del constructor
 	/**
-	 * Método sobreescrito de opcion de menu, que imprime el tipo de opcion, y llama a un método de la clase main del paquete objetos.futbol.UI para enviarla al robot 
+	 * Método sobreescrito de opción de menú, que imprime el tipo de opción, y llama a un método de la clase main del paquete objetos.futbol.UI para enviarla al robot 
 	 */
 	@Override
 	public void ejecutar(){
@@ -30,8 +30,8 @@ public class Correr extends OpcionDeMenu {
 		}
 	}//Cierre del método
 	/**
-	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
-	 * @return Retorna el tipo de opcion
+	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
+	 * @return Retorna el tipo de opción
 	 */
 	@Override
 	public String toString(){

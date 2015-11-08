@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import objetos.futbol.UI.menuconsola.Trotar;
 /**
- * Clase que define al menu de consola 
+ * Clase que define al menú de consola 
  * @author Santiago Peláez
  *
  */
@@ -26,7 +26,7 @@ public class MenuDeConsola {
 		
 	};//Cierre del método
 	/**
-	 * Método que permite agregar opciones de menu y ordenarla
+	 * Método que permite agregar opciones de menú y ordenarla
 	 * @param op
 	 */
 	public void anadirOpcion(OpcionDeMenu op){
@@ -34,26 +34,26 @@ public class MenuDeConsola {
 		ordenarOpciones();
 	}//Cierre del método
 	/**
-	 * Método que permite eliminar una opcion de menu
+	 * Método que permite eliminar una opcion de menú
 	 * @param op
 	 */
 	public void eliminarOpcion(OpcionDeMenu op){
 		opciones.remove(op);
 	}//Cierre del método
 	/**
-	 * Método que permite limpiar la lista de opciones de menu
+	 * Método que permite limpiar la lista de opciones de menú
 	 */
 	public void limpiar(){
 		opciones = new ArrayList<OpcionDeMenu>();
 	}//Cierre del método
 	/**
-	 * Método que permite ordenar las opciones de menu
+	 * Método que permite ordenar las opciones de menú
 	 */
 	public void ordenarOpciones(){
 		opciones.sort(c);
 	}//Cierre del método
 	/**
-	 * ejecuta el método lanzar menu que muestra las opciones disponibles a elegir
+	 * ejecuta el método lanzar menú que muestra las opciones disponibles a elegir
 	 */
 	public void lanzarMenu(){
 		int option;
@@ -76,7 +76,7 @@ public class MenuDeConsola {
 		}
 	}//Cierre del método
 	/**
-	 * Método que agrega todas las opciones de menu a una segunda lista
+	 * Método que agrega todas las opciones de menú a una segunda lista
 	 */
 	private void cargarOpciones(){
 		if(opciones2.size() == 0){

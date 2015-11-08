@@ -4,20 +4,20 @@ import java.io.IOException;
 
 import objetos.futbol.UI.Main;
 /**
- * Clase que define la opcion retroceder
+ * Clase que define la opción retroceder
  * @author Juan Pablo Betancur
  *
  */
 public class Retroceder extends OpcionDeMenu{
 	/**
-	 * Constructor que accesa al tipo de categoria que tiene la opcion retroceder
+	 * Constructor que accesa al tipo de categoria que tiene la opción retroceder
 	 * @param categoria
 	 */
 	public Retroceder(Categoria categoria){
 		super(categoria);
 	}//Cierre del constructor
 	/**
-	 * Método sobreescrito de opcion de menu, que imprime el tipo de opcion, y llama a un método de la clase main del paquete objetos.futbol.UI para enviarla al robot
+	 * Método sobreescrito de opcion de menú, que imprime el tipo de opción, y llama a un método de la clase main del paquete objetos.futbol.UI para enviarla al robot
 	 */
 	@Override
 	public void ejecutar(){
@@ -31,8 +31,8 @@ public class Retroceder extends OpcionDeMenu{
 		}
 	}//Cierre del método
 	/**
-	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
-	 * @return Retrona el tipo de opcon
+	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
+	 * @return Retrona el tipo de opción
 	 */
 	@Override
 	public String toString(){

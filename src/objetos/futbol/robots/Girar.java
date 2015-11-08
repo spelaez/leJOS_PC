@@ -36,7 +36,7 @@ public class Girar extends JugadaPrimitiva {
 	}//Cierre del método
 	/**
 	 * Método para consultar los grados a los que gira el robot
-	 * @return Retorna el campo grados dependeiendo del Id de jugada
+	 * @return Retorna el campo grados dependiendo del Id de jugada
 	 */
 	public int getGrados(){
 		return idJugada == 4 ? 45 : -45;

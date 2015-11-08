@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import objetos.futbol.UI.Main;
 /**
- * Clase para definir la opcion patear
+ * Clase para definir la opción patear
  * @author Juan Pablo Betancur
  *
  */
@@ -17,7 +17,7 @@ public class Patear extends OpcionDeMenu{
 		super(categoria);
 	}//Cierre del cosntructor
 	/**
-	 * Método sobreescrito de opcion de menu, que imprime el tipo de opcion, y llama a un método de la clase main del paquete objetos.futbol.UI para enviarla al robot 
+	 * Método sobreescrito de opción de menú, que imprime el tipo de opción, y llama a un método de la clase main del paquete objetos.futbol.UI para enviarla al robot 
 	 */
 	@Override
 	public void ejecutar(){
@@ -31,8 +31,8 @@ public class Patear extends OpcionDeMenu{
 		}
 	}//Cierre del método
 	/**
-	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
-	 * Retorna el tipo de opcion
+	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
+	 * Retorna el tipo de opción
 	 */
 	@Override
 	public String toString(){

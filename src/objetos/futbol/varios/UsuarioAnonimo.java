@@ -4,20 +4,20 @@ import objetos.futbol.UI.menuconsola.Categoria;
 import objetos.futbol.UI.menuconsola.MenuDeConsola;
 import objetos.futbol.UI.menuconsola.IniciarSesion;
 /**
- * Clase que define un usuario anonimo
+ * Clase que define un usuario anónimo
  * @author Santiago Peláez
  *
  */
 public class UsuarioAnonimo {
 	public MenuDeConsola menu = new MenuDeConsola();
 	/**
-	 * Constructor que asigna un menu para un usuario anonimo
+	 * Constructor que asigna un menú para un usuario anónimo
 	 */
 	public UsuarioAnonimo(){
 		asignarMenu();
 	}//Cierre del constructor
 	/**
-	 * Método que añade las opciones de menu a un usuario anonimo
+	 * Método que añade las opciones de menú a un usuario anónimo
 	 */
 	public void asignarMenu(){
 		menu.limpiar();

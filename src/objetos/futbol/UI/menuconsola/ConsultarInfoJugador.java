@@ -5,20 +5,20 @@ import objetos.futbol.jugadores.*;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 /**
- * Clase que define la opcion de consultar la informacion de un jugador
+ * Clase que define la opción de consultar la información de un jugador
  * @author Santiago Peláez
  *
  */
 public class ConsultarInfoJugador extends OpcionDeMenu{
 	/**
-	 * Constructor que accesa al tipo de categoria que tiene la opcion de consutar la informacion de un jugador
+	 * Constructor que accesa al tipo de categoria que tiene la opción de consutar la información de un jugador
 	 * @param categoria
 	 */
 	public ConsultarInfoJugador(Categoria categoria){
 		super(categoria);
 	}//Cierre del constructor
 	/**
-	 * Método sobreescrito de opciones de menu que ejecuta el menu para consultar la infromacion de un jugador
+	 * Método sobreescrito de opciones de menu que ejecuta el menú para consultar la infromación de un jugador
 	 */
 	@Override
 	public void ejecutar(){
@@ -63,8 +63,8 @@ public class ConsultarInfoJugador extends OpcionDeMenu{
 		scn.close();
 	}//Cierre del método
 	/**
-	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
-	 * @return Retorna el tipo de opcion
+	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
+	 * @return Retorna el tipo de opción
 	 */
 	@Override
 	public String toString(){

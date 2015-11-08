@@ -10,20 +10,20 @@ import objetos.futbol.jugadores.JugadaComplejaOfensiva;
 import objetos.futbol.jugadores.JugadaComplejaTiroLibre;
 import objetos.futbol.varios.UsuarioAdministrador;
 /**
- * Clase que define la opncion crea jugada compleja
+ * Clase que define la opnción crear jugada compleja
  * @author Santiago Saldarriaga
  *
  */
 public class CrearJugadaCompleja extends OpcionDeMenu {
 	/**
-	 * Constructor que accesa al tipo de categoria que tiene la opcion crear jugada compleja
+	 * Constructor que accesa al tipo de categoria que tiene la opción crear jugada compleja
 	 * @param categoria
 	 */
 	public CrearJugadaCompleja(Categoria categoria) {
 		super(categoria);		
 	}//Cierre del constructor
 	/**
-	 * Método sobreescrito que ejecuta el meu para crear una jugada compleja
+	 * Método sobreescrito que ejecuta el menú para crear una jugada compleja
 	 */
 	@Override
 	public void ejecutar() {		
@@ -91,10 +91,10 @@ public class CrearJugadaCompleja extends OpcionDeMenu {
 			System.out.println("Error: dato incorrecto");
 		}
 		scn.close();
-	}//Cierre del métodp
+	}//Cierre del métod
 	/**
-	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
-	 * @return Retorna el tipo de opcion
+	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
+	 * @return Retorna el tipo de opción
 	 */
 	public String toString(){
 		return "Crear nueva jugada compleja";

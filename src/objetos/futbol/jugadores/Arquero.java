@@ -31,7 +31,7 @@ public class Arquero extends Futbolista {
 		return super.toString()+" con el dorsal "+ dorsal+ " Tiempo Sin Goles "+TiempoSinGoles;
 	}//Cierre del método
 	/**
-	 * Verifica si el jugador juega con las manos, parametro de salidad: true
+	 * Verifica si el jugador juega con las manos, parametro de salida: true
 	 * @return Retorna verdadero si el futbolista juega con las manos  
 	 */
 	public boolean jugarConLasManos(){

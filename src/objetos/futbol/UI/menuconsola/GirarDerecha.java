@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import objetos.futbol.UI.Main;
 /**
- * Clase para definir la opcion girar a la derecha
+ * Clase para definir la opción girar a la derecha
  * @author Juan Pablo Betancur
  *
  */
@@ -17,7 +17,7 @@ public class GirarDerecha extends OpcionDeMenu{
 		super(categoria);
 	}//Cierre del constructor
 	/**
-	 * Método que ejecuta el menu para girar a la derecha
+	 * Método que ejecuta el menú para girar a la derecha
 	 */
 	@Override
 	public void ejecutar(){
@@ -31,8 +31,8 @@ public class GirarDerecha extends OpcionDeMenu{
 		}
 	}//Cierre del método 
 	/**
-	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
-	 * @return Retorna el tipo de opcion
+	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
+	 * @return Retorna el tipo de opción
 	 */
 	@Override
 	public String toString(){

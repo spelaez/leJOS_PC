@@ -69,7 +69,7 @@ public abstract class JugadaCompleja {
 		return Jugada;
 	}//Cierre del método
 	/**
-	 * Método para acceder a la explciaicon de la jugada
+	 * Método para acceder a la explicación de la jugada
 	 * @return Retorna la explicacion de la jugada
 	 */
 	public String getExplicacion(){

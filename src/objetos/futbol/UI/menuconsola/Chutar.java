@@ -2,20 +2,20 @@ package objetos.futbol.UI.menuconsola;
 import java.io.IOException;
 import objetos.futbol.UI.Main;
 /**
- * Método que define la opcion chutar 
+ * Método que define la opción chutar 
  * @author Juan Pablo Betancur
  *
  */
 public class Chutar extends OpcionDeMenu {
 	/**
-	 * Constructor que accesa al tipo de categoria que tiene la opcion chutar
+	 * Constructor que accesa al tipo de categoria que tiene la opción chutar
 	 * @param categoria
 	 */
 	public Chutar(Categoria categoria){
 		super(categoria);
 	}//Cierre del constructor
 	/**
-	 * Método sobreescrito de opcion de menu, que imprime el tipo de opcion, y llama a un método de la clase main del paquete objetos.futbol.UI para enviarla al robot 
+	 * Método sobreescrito de opción de menú, que imprime el tipo de opcion, y llama a un método de la clase main del paquete objetos.futbol.UI para enviarla al robot 
 	 */
 	@Override
 	public void ejecutar(){
@@ -29,7 +29,7 @@ public class Chutar extends OpcionDeMenu {
 		
 	}//Cierre del método
 	/**
-	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
+	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
 	 * @return Retorna el tipo opcion
 	 */
 	@Override

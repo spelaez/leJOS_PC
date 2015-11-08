@@ -31,7 +31,7 @@ public class Delantero extends Futbolista {
 		return super.toString() + " con el dorsal " + dorsal + " ha marcado " + golesMarcados;
 	}//Cierre del método
 	/**
-	 * Verifica si el jugador juega con las manos, parametro de salidad: false
+	 * Verifica si el jugador juega con las manos, parametro de salida: false
 	 * @return Retorna verdadero si el futbolista juega con las manos
 	 */
 	public boolean jugarConLasManos(){

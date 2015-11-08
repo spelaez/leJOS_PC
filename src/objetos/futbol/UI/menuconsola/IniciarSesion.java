@@ -6,20 +6,20 @@ import objetos.futbol.varios.UsuarioAdministrador;
 import objetos.futbol.varios.UsuarioGeneral;
 
 /**
- * Clase que define la opcion iniciar sesion
+ * Clase que define la opción iniciar sesion
  * @author Santiago Peláez
  *
  */
 public class IniciarSesion extends OpcionDeMenu{
 	/**
-	 * Constructor que accesa al tipo de categoria que tiene la opcion iniciar sesion
+	 * Constructor que accesa al tipo de categoria que tiene la opción iniciar sesión
 	 * @param categoria
 	 */
 	public IniciarSesion(Categoria categoria){
 		super(categoria);
 	}//Cierre del constructor
 	/**
-	 * Método que ejecuta el menu para iniciar sesion
+	 * Método que ejecuta el menú para iniciar sesión
 	 */
 	@Override
 	public void ejecutar() {
@@ -68,8 +68,8 @@ public class IniciarSesion extends OpcionDeMenu{
 		scn.close();
 	}//Cierre del método
 	/**
-	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
-	 * @return Retorna el tipo de opcion
+	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
+	 * @return Retorna el tipo de opción
 	 */
 	public String toString(){
 		return "Iniciar Sesion.";

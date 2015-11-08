@@ -33,7 +33,7 @@ public class Robot {
 		this.patear = Main.patear;
 	}//Cierre del constructor
 	/**
-	 * Método para ver si el futbolista es in arquero o un delantero
+	 * Método para ver si el futbolista es un arquero o un delantero
 	 * @return Retorna el tipo de jugador
 	 */
 	public Futbolista getJugador(){
@@ -55,42 +55,42 @@ public class Robot {
 	}//Cierre del método
 	/**
 	 * Método para llamar al tipo de jugada primitiva en este caso correr
-	 * @return Retorna el ID de la ejecucuion de lajugada
+	 * @return Retorna el ID de la ejecucuión de lajugada
 	 */
 	public int ejecutarCorrer(){
 		return correr.getIdJugada();
 	}//Cierre del método
 	/**
 	 * Método para llamar al tipo de jugada primitiva en este caso retroceder
-	 * @return Retorna el ID de la ejecucion de la jugada
+	 * @return Retorna el ID de la ejecución de la jugada
 	 */
 	public int ejecutarRetroceder(){
 		return retroceder.getIdJugada();
 	}//Cierre del método
 	/**
 	 * Método para llamar al tipo de jugada primitiva en este caso girar a la derecha
-	 * @return Retorna el ID de la ejecucion de la jugada
+	 * @return Retorna el ID de la ejecución de la jugada
 	 */
 	public int ejecutarGirarDerecha(){
 		return girarDerecha.getIdJugada();
 	}//Cierre del método
 	/**
 	 * Método para llamar al tipo de jugada primitiva en este caso girar a la izquierda
-	 * @return Retorna el ID de la ejecucion de la jugada
+	 * @return Retorna el ID de la ejecución de la jugada
 	 */
 	public int ejecutarGirarIzquierda(){
 		return girarIzquierda.getIdJugada();
 	}//Cierre del método
 	/**
 	 * Método para llamar al tipo de jugada primitiva en este caso chutar
-	 * @return Retorna el ID de la ejecucion de la jugada
+	 * @return Retorna el ID de la ejecución de la jugada
 	 */
 	public int ejecutarChutar(){
 		return chutar.getIdJugada();
 	}//Cierre del método
 	/**
 	 * Método para llamar al tipo de jugada primitiva en este caso patear
-	 * @return Retorna el ID de la ejecucion de la jugada
+	 * @return Retorna el ID de la ejecución de la jugada
 	 */
 	public int ejecutarPatear(){
 		return patear.getIdJugada();

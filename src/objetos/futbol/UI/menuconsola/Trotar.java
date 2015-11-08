@@ -4,20 +4,20 @@ import java.io.IOException;
 
 import objetos.futbol.UI.Main;
 /**
- * Clase qeu define la opcion trotar
+ * Clase que define la opción trotar
  * @author Santiago Peláez
  *
  */
 public class Trotar extends OpcionDeMenu{
 	/**
-	 * Constructor que accesa al tipo de categoria que tiene la opcion trotar
+	 * Constructor que accesa al tipo de categoria que tiene la opción trotar
 	 * @param categoria
 	 */
 	public Trotar(Categoria categoria){
 		super(categoria);
 	}//Cierre del contructor
 	/*
-	 * Método sobreescrito de opcion de menu, que imprime el tipo de opcion, y llama a un método de la clase main del paquete objetos.futbol.UI para enviarla al robot(non-Javadoc)
+	 * Método sobreescrito de opción de menú, que imprime el tipo de opción, y llama a un método de la clase main del paquete objetos.futbol.UI para enviarla al robot
 	 * @see objetos.futbol.UI.menuconsola.OpcionDeMenu#ejecutar()
 	 */
 	@Override
@@ -32,8 +32,8 @@ public class Trotar extends OpcionDeMenu{
 		}
 	}//Cierre del método
 	/**
-	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
-	 * @return Retorna el tipo de opcion
+	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
+	 * @return Retorna el tipo de opción
 	 */
 	@Override
 	public String toString(){

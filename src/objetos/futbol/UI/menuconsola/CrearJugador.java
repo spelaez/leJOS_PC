@@ -11,20 +11,20 @@ import java.lang.NumberFormatException;
 import java.util.Scanner;
 import java.util.ArrayList;
 /**
- * Clase que define la opcion crear jugador, consiste de un ArrayList para guardar las jugadas complejas del jugador nuevo
+ * Clase que define la opción crear jugador, consiste de un ArrayList para guardar las jugadas complejas del jugador nuevo
  * @author Jhon Eider Murrilo
  *
  */
 public class CrearJugador extends OpcionDeMenu {
 	/**
-	 * Constructor que accesa al tipo de categoria que tiene la opcion crear jugador
+	 * Constructor que accesa al tipo de categoria que tiene la opción crear jugador
 	 * @param categoria
 	 */
 	public CrearJugador(Categoria categoria){
 		super(categoria);
 	}//Cierre del constructor
 	/**
-	 * Método que ejecuta el menu de crear jugador
+	 * Método que ejecuta el menú de crear jugador
 	 */
 	@Override
 	public void ejecutar(){
@@ -87,8 +87,8 @@ public class CrearJugador extends OpcionDeMenu {
 		scn.close();
 	}//Cierre del método
 	/**
-	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
-	 * @return Retorna el tipo de opcion
+	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
+	 * @return Retorna el tipo de opción
 	 */
 	@Override
 	public String toString(){

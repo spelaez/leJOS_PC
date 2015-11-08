@@ -25,7 +25,7 @@ public class Chutar extends JugadaPrimitiva {
 		return idJugada;
 	}//Cierre del método
 	/**
-	 * Metodo para modificar el tipo de jugada primitiva
+	 * Método para modificar el tipo de jugada primitiva
 	 */
 	public void setIdJugada(){
 		if(velocidad <= 1 && velocidad > 0){

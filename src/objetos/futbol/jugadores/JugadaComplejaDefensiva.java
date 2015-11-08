@@ -13,7 +13,7 @@ public class JugadaComplejaDefensiva extends JugadaCompleja {
 	private int complejidad;
 	private String descripcion;
 	/**
-	 * Definit una jugada compleja defensiva
+	 * Definir una jugada compleja defensiva
 	 * @param nombreJugada
 	 * @param fechaCreacion
 	 * @param Autor
@@ -33,7 +33,7 @@ public class JugadaComplejaDefensiva extends JugadaCompleja {
 		return "Jugada Defensiva";
 	}//Cierre del método
 	/**
-	 * Método propio para averiguar que dificultad tiene la jugada compleja 
+	 * Método propio para averiguar que dificultad que tiene la jugada compleja 
 	 * @return complejidad
 	 */
 	private String getComplejidad(){
@@ -51,10 +51,10 @@ public class JugadaComplejaDefensiva extends JugadaCompleja {
 		}
 	}//Cierre del método
 	/**
-	 * Método para acceder a la descripcion de la jugada
-	 * @return La descripcion de la jugada
+	 * Método para acceder a la descripción de la jugada
+	 * @return La descripción de la jugada
 	 */
 	public String getDescripcion(){
 		return descripcion;
-	}//Cierre del metodo
+	}//Cierre del método
 }//Cierre de la clase

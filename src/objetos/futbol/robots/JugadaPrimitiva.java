@@ -1,6 +1,6 @@
 package objetos.futbol.robots;
 /**
- * Clase abastracta que permite caracterizar una jugada primitiva
+ * Clase abstracta que permite caracterizar una jugada primitiva
  * @author Santiago Peláez
  *
  */

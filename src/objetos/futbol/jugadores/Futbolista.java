@@ -40,7 +40,7 @@ public abstract class Futbolista {
 		return this.equals(f);
 	}//Cierre del método
 	/**
-	 * Devuelve los elementos de la lista JugadaCompleja que serian la lista de jugadas de un futbolista
+	 * Devuelve los elementos de la lista JugadaCompleja, que serian la lista de jugadas de un futbolista
 	 * @return La lista de jugadas
 	 */
 	public ArrayList<JugadaCompleja> getListaJugadas(){

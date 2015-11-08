@@ -42,8 +42,8 @@ public class JugadaComplejaTiroLibre extends JugadaCompleja {
 		return "Jugada Tiro Libre";
 	}//Cierre del método
 	/**
-	 * Método propio de la clase que muestra que tan fuerte se patea al balon
-	 * @return potencia chite
+	 * Método propio de la clase que muestra que tan fuerte se patea al balón
+	 * @return potencia chute
 	 */
 	private String getPotenciachute(){
 		if(potenciachute>0 && potenciachute <50){
@@ -61,7 +61,7 @@ public class JugadaComplejaTiroLibre extends JugadaCompleja {
 		}
 	}//Cierre del método
 	/**
-	 * Metodo propio de la clase que muestra el efecto que tiene la pelota al chutarse
+	 * Método propio de la clase que muestra el efecto que tiene la pelota al chutarse
 	 * @return efecto
 	 */
 	private String getEfecto(){
@@ -79,7 +79,7 @@ public class JugadaComplejaTiroLibre extends JugadaCompleja {
 		}
 	}//Cierre del método
 	/**
-	 * Método para acceder a la descripcion del tiro
+	 * Método para acceder a la descripción del tiro
 	 * @return descripcion
 	 */
 	public String getDescripcion(){

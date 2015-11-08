@@ -8,20 +8,20 @@ import objetos.futbol.robots.Robot;
 import lejos.pc.comm.*;
 import java.util.Scanner;
 /**
- * Clase que define la opcion incicializar
+ * Clase que define la opción incicializar
  * @author Santiago Peláez
  *
  */
 public class Inicializar extends OpcionDeMenu{
 	/**
-	 * Constructor que accesa al tipo de categoria que tiene la opcion inicializar
+	 * Constructor que accesa al tipo de categoria que tiene la opción inicializar
 	 * @param categoria
 	 */
 	public Inicializar(Categoria categoria){
 		super(categoria);
-	}//Cierre del método
+	}//Cierre del constructor
 	/**
-	 * Método que ejecuta el menu para inicializar
+	 * Método que ejecuta el menú para inicializar
 	 */
 	@Override
 	public void ejecutar(){
@@ -88,8 +88,8 @@ public class Inicializar extends OpcionDeMenu{
 		
 	}//Cierre del método
 	/**
-	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
-	 * @return Retorna el tipo de opcion 
+	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
+	 * @return Retorna el tipo de opción 
 	 */
 	@Override
 	public String toString(){

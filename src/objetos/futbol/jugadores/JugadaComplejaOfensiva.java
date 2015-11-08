@@ -13,7 +13,7 @@ public class JugadaComplejaOfensiva extends JugadaCompleja {
 	private int efectividad;
 	private String descripcion;
 	/**
-	 * Definir una jugda compleja ofensiva
+	 * Definir una jugada compleja ofensiva
 	 * @param nombreJugada
 	 * @param fechaCreacion
 	 * @param Autor
@@ -49,7 +49,7 @@ public class JugadaComplejaOfensiva extends JugadaCompleja {
 		else{
 			return "no existe jugada";
 		}
-	}//Cierre del metodo
+	}//Cierre del método
 	/**
 	 * Método para acceder a la descripcion de la jugada
 	 * @return descripcion

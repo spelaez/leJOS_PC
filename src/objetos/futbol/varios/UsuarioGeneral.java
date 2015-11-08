@@ -64,7 +64,7 @@ public class UsuarioGeneral implements Usuario{
 		//TODO: codigo para agregar los permisos cuando estÃ©n definidos
 	}//Cierre del método
 	/**
-	 * Ejecuta el método asignar menu, que muestra las opciones dependiendo del usuario
+	 * Ejecuta el método asignar menú, que muestra las opciones dependiendo del usuario
 	 */
 	public void asignarMenu(){
 		menu.limpiar();

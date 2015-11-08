@@ -2,13 +2,13 @@ package objetos.futbol.UI.menuconsola;
 
 import objetos.futbol.UI.Main;
 /**
- * Clase que define la opcion  que registra el tiempo del ultimo gol
+ * Clase que define la opción  que registra el tiempo del ultimo gol
  * @author Jhon Eider Murrillo
  *
  */
 public class RegistrarTiempoUltimoGol extends OpcionDeMenu {
 	/**
-	 * Constructor que accesa al tipo de categoria que tiene la opcion registrar tiempo del ultimo gol
+	 * Constructor que accesa al tipo de categoria que tiene la opción registrar tiempo del ultimo gol
 	 * @param categoria
 	 */
 	public RegistrarTiempoUltimoGol(Categoria categoria){
@@ -23,8 +23,8 @@ public class RegistrarTiempoUltimoGol extends OpcionDeMenu {
 		Main.tUltimoGol = System.currentTimeMillis();
 	}//Cierre del método
 	/**
-	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
-	 * @return Retorna el tipo de opcion
+	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
+	 * @return Retorna el tipo de opción
 	 */
 	@Override
 	public String toString(){

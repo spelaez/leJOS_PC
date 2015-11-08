@@ -1,6 +1,6 @@
 package objetos.futbol.UI.menuconsola;
 /**
- * Clase abastracta que lista las opciones de menu por categorias
+ * Clase abastracta que lista las opciones de menú por categorias
  * @author Santiago Peláez
  *
  */
@@ -16,7 +16,7 @@ public abstract class OpcionDeMenu{
 		this.categoria = categoria;
 	}//Cierre del construtor
 	/**
-	 * Método que se ejecuta para imprimi un saludo
+	 * Método que se ejecuta para imprimir un saludo
 	 */
 	public static void bienvenida(){
 		System.out.print("\n\n\n\n\n-------------------------------------------------------\n\t\t\tBIENVENIDO");

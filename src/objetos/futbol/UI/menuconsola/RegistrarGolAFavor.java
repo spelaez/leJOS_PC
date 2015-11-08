@@ -3,17 +3,17 @@ package objetos.futbol.UI.menuconsola;
 import objetos.futbol.UI.Main;
 import objetos.futbol.jugadores.Delantero;
 /**
- * Clase que define la opcion registrar gol a favor
+ * Clase que define la opción registrar gol a favor
  * @author Santiago Peláez
  *
  */
 public class RegistrarGolAFavor extends OpcionDeMenu{
-	//Constructor que accesa al tipo de categoria que tiene la opcion registrar gol a favor
+	//Constructor que accesa al tipo de categoria que tiene la opción registrar gol a favor
 	public RegistrarGolAFavor(Categoria categoria){
 		super(categoria);
 	}//Cierre del constructor
 	/**
-	 * Método que se ejecutar para registrar goles marcados por un delantero
+	 * Método que se ejecuta para registrar goles marcados por un delantero
 	 */
 	@Override
 	public void ejecutar(){
@@ -27,8 +27,8 @@ public class RegistrarGolAFavor extends OpcionDeMenu{
 		else System.out.print("Error: No hay delanteros en el equipo");
 	}//Cierre del método
 	/**
-	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
-	 * @return Retorna el tipo de opcion
+	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
+	 * @return Retorna el tipo de opción
 	 */
 	@Override
 	public String toString(){

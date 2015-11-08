@@ -3,7 +3,7 @@ package objetos.futbol.varios;
 import objetos.futbol.UI.menuconsola.MenuDeConsola;
 import java.util.ArrayList;
 /**
- * Clase para definir un usuario administrados
+ * Clase para definir un usuario administrador
  * @author Santiago Peláez
  *
  */

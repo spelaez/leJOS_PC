@@ -8,14 +8,14 @@ import objetos.futbol.UI.Main;
  */
 public class IniciarPartido extends OpcionDeMenu{
 	/**
-	 * Constructor que accesa al tipo de categoria que tiene la opcion iniciar partido
+	 * Constructor que accesa al tipo de categoria que tiene la opción iniciar partido
 	 * @param categoria
 	 */
 	public IniciarPartido(Categoria categoria) {
 		super(categoria);
 	}//Cierre del constructor
 	/**
-	 * Método que ejecuta el menu para iniciar partido
+	 * Método que ejecuta el menú para iniciar partido
 	 */
 	@Override
 	public void ejecutar() {
@@ -25,8 +25,8 @@ public class IniciarPartido extends OpcionDeMenu{
 		System.out.print("Partido Iniciado\n-----------------------------------------------------------");
 	}//Cierre del método
 	/**
-	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
-	 * @return Retorna el tipo de opcion
+	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
+	 * @return Retorna el tipo de opción
 	 */
 	@Override
 	public String toString(){

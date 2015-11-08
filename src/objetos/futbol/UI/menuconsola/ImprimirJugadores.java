@@ -8,14 +8,14 @@ import objetos.futbol.UI.Main;
  */
 public class ImprimirJugadores extends OpcionDeMenu {
 	/**
-	 * Constructor que accesa al tipo de categoria que tiene la opcion imprimir jugadores
+	 * Constructor que accesa al tipo de categoria que tiene la opción imprimir jugadores
 	 * @param categoria
 	 */
 	public ImprimirJugadores(Categoria categoria){
 		super(categoria);
 	}//Cierre del constructor
 	/**
-	 * Método que ejecuta el menu para imprimir los jugadores
+	 * Método que ejecuta el menú para imprimir los jugadores
 	 */
 	@Override
 	public void ejecutar(){
@@ -26,8 +26,8 @@ public class ImprimirJugadores extends OpcionDeMenu {
 		}
 	}//Cierre del método
 	/**
-	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
-	 * @return Retorna el tipo de opcion
+	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
+	 * @return Retorna el tipo de opción
 	 */
 	@Override
 	public String toString(){

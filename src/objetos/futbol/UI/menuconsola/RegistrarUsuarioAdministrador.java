@@ -13,14 +13,14 @@ public class RegistrarUsuarioAdministrador extends OpcionDeMenu {
 	String Usuario,clave;
 	Scanner scn = new Scanner(System.in);
 	/**
-	 * Constructor que accesa al tipo de categoria que tiene la opcion registrar usuario administrador
+	 * Constructor que accesa al tipo de categoria que tiene la opción registrar usuario administrador
 	 * @param categoria
 	 */
 	public RegistrarUsuarioAdministrador(Categoria categoria){
 		super(categoria);
 	}//Cierre del constructor
 	/**
-	 * Método que ejecuta el menu para registrar un usuario administrador
+	 * Método que ejecuta el menú para registrar un usuario administrador
 	 */
 	public void ejecutar(){
 		System.out.print("---------------------------------------------------\n"+this);
@@ -32,8 +32,8 @@ public class RegistrarUsuarioAdministrador extends OpcionDeMenu {
 		Main.listaUsuarios.put(Usuario,usuario);	
 	}//Cierre del método
 	/**
-	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
-	 * @return Retorna el tipo de opcion
+	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
+	 * @return Retorna el tipo de opción
 	 */
 	public String toString(){
 		return "Registrar usuario administrador";
