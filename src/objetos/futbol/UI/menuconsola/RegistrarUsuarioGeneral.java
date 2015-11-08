@@ -18,10 +18,12 @@ public class RegistrarUsuarioGeneral extends OpcionDeMenu {
 			System.out.print("---------------------------------------------------\n"+this);
 			System.out.println("Por favor ingresa un nombre de usuario");
 			Usuario= scn.next();
-			System.out.println("Porfavor ingresa tu contraseña");
+			System.out.println("Porfavor ingresa tu contraseï¿½a");
 			clave=scn.next();
 			UsuarioGeneral usuario = new UsuarioGeneral(Usuario,clave);
-			Main.listaUsuarios.put(Usuario,usuario);	
+			Main.listaUsuarios.put(Usuario,usuario);
+			Main.usuarioActual = usuario;
+			new Inicializar(categoria).ejecutar();
 		}
 		
 		public String toString(){
