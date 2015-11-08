@@ -114,21 +114,21 @@ public class GestorBDJugadores {
 	public void LeerJugadores(){
 		Delantero A;
 		Arquero B;
-		ArrayList <JugadaCompleja> list = new ArrayList<>();
+		
 		System.out.println("CARGANDO JUGADORES");
 		  try {
 			DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 			File fichero = new File("D:\\XML\\BDjugadores.xml");
-			File fichero2 = new File("C:\\Windows\\Temp\\BDjugadores.xml");
+			File fichero2 = new File("C:\\Temp\\bd\\BDjugadores.xml");
 			if(!fichero.exists()&&!fichero2.exists()){
 				return;
 			}
 			Document document = documentBuilder.parse(new InputSource(new FileInputStream("D:\\XML\\BDjugadores.xml")));
 			if(fichero.exists()){
-				document = documentBuilder.parse(new InputSource(new FileInputStream("C:\\Windows\\Temp\\BDjugadores.xml")));
+				document = documentBuilder.parse(new InputSource(new FileInputStream("D:\\XML\\BDjugadores.xml")));
 			}
 			else{
-				document = documentBuilder.parse(new InputSource(new FileInputStream("D:\\XML\\BDjugadores.xml")));
+				document = documentBuilder.parse(new InputSource(new FileInputStream("C:\\Windows\\Temp\\BDjugadores.xml")));
 			}
 			//Raiz
 			Element raiz = document.getDocumentElement(); 
@@ -141,32 +141,34 @@ public class GestorBDJugadores {
 			//Lista arqueros
 			NodeList Lista_JugadoresA = arquero.getElementsByTagName("Jugador");
 			for(int i = 0; i< Lista_JugadoresD.getLength();i++){
-				list.clear();
+				ArrayList <JugadaCompleja> list = new ArrayList<>();
 				Element jugador =(Element) Lista_JugadoresD.item(i);
 				String nombre = jugador.getElementsByTagName("Nombre").item(0).getTextContent();
 				String dorsal = jugador.getElementsByTagName("Dorsal").item(0).getTextContent();
-				NodeList Lista_jugadas = jugador.getElementsByTagName("Jugadas");
-				for(int j = 0; j<Lista_jugadas.getLength();j++){
-					Element jugada = (Element) Lista_jugadas.item(j);
-					String index = jugada.getElementsByTagName("Jugada").item(0).getTextContent();
+				Element jugadas = (Element) jugador.getLastChild();
+				NodeList lista_jugadas = jugadas.getElementsByTagName("Jugada");
+				for(int j = 0; j<lista_jugadas.getLength();j++){
+					String index =  lista_jugadas.item(j).getTextContent();
 					list.add(Main.listaJugadasComplejas.get(Integer.valueOf(index)));
 				}
 				A = new Delantero(nombre,"Delantero",(short)0,Byte.valueOf(dorsal),list);
 				Main.listaJugadores.add(A);
+				
 			}
 			for(int i = 0; i<Lista_JugadoresA.getLength();i++){
-				list.clear();
+				ArrayList <JugadaCompleja> list = new ArrayList<>();
 				Element jugador = (Element) Lista_JugadoresA.item(i);
 				String nombre = jugador.getElementsByTagName("Nombre").item(0).getTextContent();
 				String dorsal = jugador.getElementsByTagName("Dorsal").item(0).getTextContent();
-				NodeList Lista_jugadas = jugador.getElementsByTagName("Jugadas");
-				for(int j = 0; j<Lista_jugadas.getLength();j++){
-					Element jugada = (Element) Lista_jugadas.item(j);
-					String index = jugada.getElementsByTagName("Jugada").item(0).getTextContent();
+				Element jugadas = (Element) jugador.getLastChild();
+				NodeList lista_jugadas = jugadas.getElementsByTagName("Jugada");
+				for(int j = 0; j<lista_jugadas.getLength();j++){
+					String index =  lista_jugadas.item(j).getTextContent();
 					list.add(Main.listaJugadasComplejas.get(Integer.valueOf(index)));
 				}
 				B = new Arquero(nombre,"Arquero",0,Byte.valueOf(dorsal),list);
 				Main.listaJugadores.add(B);
+				
 			}
 			System.out.println("JUGADORES CARGADOS EXITOSAMENTE");
 		} catch (Exception e) {

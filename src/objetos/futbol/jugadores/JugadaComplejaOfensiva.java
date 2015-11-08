@@ -36,4 +36,7 @@ public class JugadaComplejaOfensiva extends JugadaCompleja {
 	public String getDescripcion(){
 		return descripcion;
 	}
+	public int getNumEfectividad(){
+		return efectividad;
+	}
 }

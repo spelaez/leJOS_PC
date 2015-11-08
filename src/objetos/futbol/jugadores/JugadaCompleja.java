@@ -55,4 +55,8 @@ public abstract class JugadaCompleja {
 	public String getfechaCreacion(){
 		return fechaCreacion;
 	}
+	public String getNombre(){
+		return nombreJugada;
+	}
+	
 }

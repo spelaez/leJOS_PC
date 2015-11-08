@@ -15,10 +15,10 @@ public class Chutar extends JugadaPrimitiva {
 	}
 	public void setIdJugada(){
 		if(velocidad <= 1 && velocidad > 0){
-			idJugada = 5;
+			idJugada = 6;
 		}
 		else{
-			idJugada = 6;
+			idJugada = 7;
 		}
 	}
 	

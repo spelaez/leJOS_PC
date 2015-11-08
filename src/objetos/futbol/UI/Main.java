@@ -19,11 +19,12 @@ import objetos.futbol.jugadores.Futbolista;
 import objetos.futbol.varios.Usuario;
 import objetos.futbol.varios.UsuarioGeneral;
 import objetos.futbol.varios.UsuarioAdministrador;
-import objetos.futbol.jugadores.JugadaCompleja;
 import objetos.futbol.robots.Robot;
 import objetos.futbol.varios.GestorBDJugadores;
 import objetos.futbol.varios.GestorBDUsuarios;
-
+import objetos.futbol.varios.GestorBDJugadores;
+import objetos.futbol.jugadores.*;
+import objetos.futbol.robots.*;
 public class Main {	
 	
 	//Atributos para manejar el tiempo
@@ -66,7 +67,7 @@ public class Main {
 	static GestorBDUsuarios gestorUsuarios = new GestorBDUsuarios();
 	//static GestorBDJugadores gestorJugadores = new GestorBDJugadores();
 	//static GestorBDJugadasComplejas gestorJugadas = new GestorBDJugadasComplejas();
-	
+
 	public static void main(String[] args) throws IOException {
 		gestorUsuarios.leerUsuarios();
 		//gestorJugadores.LeerJugadores();
