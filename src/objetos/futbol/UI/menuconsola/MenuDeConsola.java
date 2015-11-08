@@ -65,6 +65,8 @@ public class MenuDeConsola {
 
 	private void cargarOpciones(){
 		if(opciones2.size() == 0){
+			
+			//Opciones Arquero
 			opciones2.add(new Trotar(Categoria.ARQUERO));// 1
 			opciones2.add(new Correr(Categoria.ARQUERO));// 2
 			opciones2.add(new Retroceder(Categoria.ARQUERO));// 3
@@ -72,11 +74,11 @@ public class MenuDeConsola {
 			opciones2.add(new GirarIzquierda(Categoria.ARQUERO));// 5
 			opciones2.add(new Chutar(Categoria.ARQUERO));// 6
 			opciones2.add(new Patear(Categoria.ARQUERO));// 7
-			//opciones2.add(new EjecutaJugadaCompleja(Categoria.ARQUERO)); //8
+			opciones2.add(new EjecutarJugadaCompleja(Categoria.ARQUERO)); //8
 			opciones2.add(new RegistrarTiempoSinGoles(Categoria.ARQUERO));// 9
 			opciones2.add(new RegistrarTiempoUltimoGol(Categoria.ARQUERO));// 10
 			
-			
+			//Opciones Delantero
 			opciones2.add(new Trotar(Categoria.DELANTERO));//11
 			opciones2.add(new Correr(Categoria.DELANTERO));//12
 			opciones2.add(new Retroceder(Categoria.DELANTERO));//13
@@ -84,9 +86,10 @@ public class MenuDeConsola {
 			opciones2.add(new GirarIzquierda(Categoria.DELANTERO));//15
 			opciones2.add(new Chutar(Categoria.DELANTERO));//16
 			opciones2.add(new Patear(Categoria.DELANTERO));//17	
-			//opciones2.add(new EjecutarJugadaCompleja(Categoria.DELANTERO)); //18
+			opciones2.add(new EjecutarJugadaCompleja(Categoria.DELANTERO)); //18
 			opciones2.add(new RegistrarGolAFavor(Categoria.DELANTERO));//19
 			
+			//Opciones Sistema
 			opciones2.add(new CrearJugador(Categoria.SISTEMA));//20  //Solo admin
 			opciones2.add(new ConsultarExplicacionJugada(Categoria.SISTEMA));//21 //todos
 			opciones2.add(new ConsultarInfoJugador(Categoria.SISTEMA));//22 //todos
@@ -99,7 +102,6 @@ public class MenuDeConsola {
 			opciones2.add(new RegistrarUsuarioAdministrador(Categoria.SISTEMA));//29 solo admin
 			opciones2.add(new RegistrarUsuarioGeneral(Categoria.SISTEMA));//30 // todos
 			opciones2.add(new Salir(Categoria.SISTEMA));//31 //todos
-			opciones2.add(new Salir(Categoria.SISTEMA));
 			}
 		
 	}

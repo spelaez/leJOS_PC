@@ -28,7 +28,7 @@ import objetos.futbol.UI.Main;
 public class GestorBDUsuarios {
 
 
-	public void guardarJugadores(){
+	public void guardarUsuarios(){
 		Usuario g;
 		System.out.println("Guardando usuarios...");
 		Enumeration<Usuario> enumUsu = Main.listaUsuarios.elements(); 
@@ -106,7 +106,7 @@ public class GestorBDUsuarios {
 		}
 	}
 	public void leerUsuarios(){
-		System.out.println("Leyendo base de datos de jugadores");
+		System.out.println("Leyendo base de datos de usuarios");
 		Usuario g;
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		try {

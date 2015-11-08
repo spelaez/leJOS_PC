@@ -12,9 +12,9 @@ public class UsuarioAnonimo {
 	
 	public void asignarMenu(){
 		menu.limpiar();
-		menu.anadirOpcion(MenuDeConsola.opciones2.get(25));
 		menu.anadirOpcion(MenuDeConsola.opciones2.get(27));
-		menu.anadirOpcion(MenuDeConsola.opciones2.get(28));
+		menu.anadirOpcion(MenuDeConsola.opciones2.get(29));
+		menu.anadirOpcion(MenuDeConsola.opciones2.get(30));
 		menu.lanzarMenu();
 	}
 }
