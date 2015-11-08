@@ -37,4 +37,7 @@ public class JugadaComplejaDefensiva extends JugadaCompleja {
 	public String getDescripcion(){
 		return descripcion;
 	}
+	public int getnumcomplejidad(){
+		return complejidad;
+	}
 }

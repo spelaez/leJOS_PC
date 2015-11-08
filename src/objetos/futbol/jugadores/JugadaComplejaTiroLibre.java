@@ -62,4 +62,10 @@ public class JugadaComplejaTiroLibre extends JugadaCompleja {
 	public String getDescripcion(){
 		return descripcion;
 	}
+	public int getNumPotencia(){
+		return potenciachute;
+	}
+	public int getNumEfecto(){
+		return efecto;
+	}
 }
