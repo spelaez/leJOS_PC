@@ -97,7 +97,7 @@ public class MenuDeConsola {
 			opciones2.add(new IniciarSesion(Categoria.SISTEMA));//28 todos
 			opciones2.add(new RegistrarUsuarioAdministrador(Categoria.SISTEMA));//29 solo admin
 			opciones2.add(new RegistrarUsuarioGeneral(Categoria.SISTEMA));//30 // todos
-			//opciones2.add(new Salir(Categoria.SISTEMA));//31 //todos
+			opciones2.add(new Salir(Categoria.SISTEMA));//31 //todos
 			}
 		
 	}
