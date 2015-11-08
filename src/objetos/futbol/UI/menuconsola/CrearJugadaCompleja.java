@@ -82,6 +82,7 @@ public class CrearJugadaCompleja extends OpcionDeMenu {
 			System.out.println("Error: dato incorrecto");
 		}
 		scn.close();
+		Main.usuarioActual.lanzarMenu();
 	}	
 
 	public String toString(){

@@ -84,6 +84,7 @@ public class ConsultarExplicacionJugada extends OpcionDeMenu{
 		}
 	
 		scn.close();
+		Main.usuarioActual.lanzarMenu();
 	}
 	
 	@Override

@@ -76,6 +76,7 @@ public class CrearJugador extends OpcionDeMenu {
 			System.out.println("Dato incorrecto, ingrese un entero");
 		}
 		scn.close();
+		Main.usuarioActual.lanzarMenu();
 	}
 
 	@Override

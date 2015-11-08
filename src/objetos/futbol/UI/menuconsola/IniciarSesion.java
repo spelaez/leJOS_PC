@@ -53,6 +53,7 @@ public class IniciarSesion extends OpcionDeMenu{
 			System.out.println("\nUsuario no encontrado!");
 		}
 		scn.close();
+		Main.usuarioActual.lanzarMenu();
 	}
 
 

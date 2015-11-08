@@ -82,6 +82,7 @@ public class Inicializar extends OpcionDeMenu{
 		Main.dis = new DataInputStream(Main.conn.getInputStream());
 		scn.close();
 		System.out.println();
+		Main.usuarioActual.lanzarMenu();
 	}
 	
 	@Override

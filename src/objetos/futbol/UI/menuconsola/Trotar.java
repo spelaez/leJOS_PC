@@ -20,6 +20,7 @@ public class Trotar extends OpcionDeMenu{
 		catch(IOException e){
 			System.out.print("No se pudo ejecutar la jugada");
 		}
+		Main.usuarioActual.lanzarMenu();
 	}
 	
 	@Override

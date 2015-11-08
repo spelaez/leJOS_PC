@@ -52,6 +52,7 @@ public class ConsultarInfoJugador extends OpcionDeMenu{
 		}
 	
 		scn.close();
+		Main.usuarioActual.lanzarMenu();
 	}
 	
 	@Override
