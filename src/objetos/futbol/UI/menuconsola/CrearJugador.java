@@ -42,7 +42,7 @@ public class CrearJugador extends OpcionDeMenu {
 					try{
 						n = scn.nextInt()-1;
 						while(n < Main.listaJugadasComplejas.size() && n >= -1){
-							System.out.println("Dato fuera de rango, porfavor ingrece un entero");
+							System.out.println("Dato fuera de rango, porfavor ingrese un entero");
 							n = scn.nextInt();
 						}
 						if(n == -1){
