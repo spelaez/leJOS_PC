@@ -14,7 +14,7 @@ public class IniciarSesion extends OpcionDeMenu{
 	
 	@Override
 	public void ejecutar() {
-
+		System.out.println("Elija como desea iniciar sesión");
 		String usuario, clave;
 		Scanner scn = new Scanner(System.in);
 
@@ -58,6 +58,6 @@ public class IniciarSesion extends OpcionDeMenu{
 
 
 	public String toString(){
-		return "Bienvenido!\nElija como desea iniciar Sesion.";
+		return "iniciar Sesion.";
 	}
 }

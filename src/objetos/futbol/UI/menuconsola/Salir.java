@@ -12,11 +12,16 @@ public class Salir extends OpcionDeMenu{
 
 	@Override
 	public void ejecutar() {
+		System.out.println("-----------------------------------------\n"+this);
 		new GestorBDUsuarios().guardarJugadores();
 		new GestorBDJugadores().guardarJugadores();
 		new GestorBDJugadasComplejas().guardarJugadas();
 		//new GestorBDEstado().guardarEstado();
 		System.exit(0);
+	}
+	
+	public String toString(){
+		return "Salir";
 	}
 
 }

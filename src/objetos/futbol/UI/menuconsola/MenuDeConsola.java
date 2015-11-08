@@ -46,13 +46,14 @@ public class MenuDeConsola {
 		for(int i = 0; i < opciones.size(); i++){
 			System.out.println((i+1) +" "+ opciones.get(i));
 		}
-		System.out.print("\n Por favor ingrese el número de la opción que desea ejecutar");
+		System.out.println("\n Por favor ingrese el número de la opción que desea ejecutar");
 		try{
 		option = scn.nextInt();
 		while (option < 0 || option > opciones.size()){
 			System.out.println("Dato fuera del rango, Ingrese el dato de nuevo: ");
 			option = scn.nextInt();
 		}
+		opciones.get(option-1).ejecutar();
 		}
 		catch(NumberFormatException e){
 			System.out.println("Error: Dato incorrecto");
@@ -98,6 +99,7 @@ public class MenuDeConsola {
 			opciones2.add(new RegistrarUsuarioAdministrador(Categoria.SISTEMA));//29 solo admin
 			opciones2.add(new RegistrarUsuarioGeneral(Categoria.SISTEMA));//30 // todos
 			opciones2.add(new Salir(Categoria.SISTEMA));//31 //todos
+			opciones2.add(new Salir(Categoria.SISTEMA));
 			}
 		
 	}
