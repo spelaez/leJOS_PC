@@ -13,6 +13,7 @@ public class ConsultarExplicacionJugada extends OpcionDeMenu{
 	@Override
 	public void ejecutar(){
 		new ImprimirJugadores(Categoria.SISTEMA).ejecutar();
+		if(Main.listaJugadores.isEmpty()) return;
 		System.out.println("------------------------------------------\nConsultar informacion de un jugador");
 		System.out.println("Ingrese el numero del jugador a consultar");
 		int i = 1;
