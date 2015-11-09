@@ -73,7 +73,6 @@ public class CrearJugador extends OpcionDeMenu {
 		}catch(NumberFormatException e){
 			System.out.println("Dato incorrecto, ingrese un entero");
 		}
-		Main.usuarioActual.lanzarMenu();
 	}
 
 	@Override

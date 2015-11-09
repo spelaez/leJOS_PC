@@ -19,7 +19,6 @@ public class RegistrarGolAFavor extends OpcionDeMenu{
 			((Delantero)(Main.r2.getJugador())).registrarGol();
 		}
 		else System.out.print("Error: No hay delanteros en el equipo");
-		Main.usuarioActual.lanzarMenu();
 		}
 	
 	@Override

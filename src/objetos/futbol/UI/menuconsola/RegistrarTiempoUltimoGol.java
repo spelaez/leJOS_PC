@@ -12,7 +12,6 @@ public class RegistrarTiempoUltimoGol extends OpcionDeMenu {
 	public void ejecutar(){
 		System.out.print("---------------------------------------------------\n"+this+"\n");
 		Main.tUltimoGol = System.currentTimeMillis();
-		Main.usuarioActual.lanzarMenu();
 	}
 	
 	@Override

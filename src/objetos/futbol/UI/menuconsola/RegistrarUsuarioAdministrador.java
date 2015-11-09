@@ -19,7 +19,6 @@ public class RegistrarUsuarioAdministrador extends OpcionDeMenu {
 		clave=Main.scn.next();
 		UsuarioAdministrador usuario = new UsuarioAdministrador(Usuario,clave);
 		Main.listaUsuarios.put(Usuario,usuario);
-		Main.usuarioActual.lanzarMenu();
 	}
 
 	public String toString(){

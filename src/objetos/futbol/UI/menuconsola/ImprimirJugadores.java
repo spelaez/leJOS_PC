@@ -19,7 +19,6 @@ public class ImprimirJugadores extends OpcionDeMenu {
 		for(int i=0; i<Main.listaJugadores.size(); i++){
 			System.out.println("\t\t"+Main.listaJugadores.get(i));
 		}
-		Main.usuarioActual.lanzarMenu();
 	}
 	
 	@Override

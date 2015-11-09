@@ -60,7 +60,6 @@ public class EjecutarJugadaCompleja extends OpcionDeMenu{
 				System.out.println("No existe jugada");
 			}
 		}
-		Main.usuarioActual.lanzarMenu();
 	}
 	
 	@Override

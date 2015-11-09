@@ -21,7 +21,6 @@ public class RegistrarTiempoSinGoles extends OpcionDeMenu  {
 		else{
 			System.out.println("Error: No hay Arquero en el equipo");
 		}
-		Main.usuarioActual.lanzarMenu();
 	}
 	
 	@Override

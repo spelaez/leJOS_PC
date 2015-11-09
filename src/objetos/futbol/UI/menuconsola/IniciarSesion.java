@@ -34,12 +34,10 @@ public class IniciarSesion extends OpcionDeMenu{
 				if(option == 1 && Main.listaUsuarios.get(usuario) instanceof UsuarioGeneral){
 					Main.usuarioActual=Main.listaUsuarios.get(usuario);
 					System.out.println("Logueo existoso");
-					Main.usuarioActual.lanzarMenu();
 				}
 				if(option == 2 && Main.listaUsuarios.get(usuario) instanceof UsuarioAdministrador){
 					Main.usuarioActual=Main.listaUsuarios.get(usuario);
 					System.out.println("Logueo exitoso");
-					Main.usuarioActual.lanzarMenu();
 				}
 			}
 			else{

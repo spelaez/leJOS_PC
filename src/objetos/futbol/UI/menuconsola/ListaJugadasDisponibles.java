@@ -44,7 +44,6 @@ public class ListaJugadasDisponibles extends OpcionDeMenu{
 		for(JugadaComplejaTiroLibre x: jTiroLibre){
 			System.out.println((Main.listaJugadasComplejas.indexOf(x)+1)+" "+x);
 		}
-		Main.usuarioActual.lanzarMenu();
 	}
 	@Override
 	public String toString(){

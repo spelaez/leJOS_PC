@@ -17,7 +17,6 @@ public class Correr extends OpcionDeMenu {
 		}catch(IOException e){
 			System.out.println("No se pudo ejecutar la jugada");
 		}
-		Main.usuarioActual.lanzarMenu();
 	}
 	@Override
 	public String toString(){
