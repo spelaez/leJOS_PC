@@ -6,7 +6,6 @@ import objetos.futbol.jugadores.JugadaCompleja;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
-import java.util.Scanner;
 public class EjecutarJugadaCompleja extends OpcionDeMenu{
 
 	public EjecutarJugadaCompleja(Categoria categoria){
@@ -14,7 +13,6 @@ public class EjecutarJugadaCompleja extends OpcionDeMenu{
 	}
 	
 	public void ejecutar(){
-		Scanner scn = new Scanner(System.in);
 		if(categoria == Categoria.ARQUERO){
 			System.out.print("---------------------------------------------------\n"+this+"\n");
 			ArrayList<JugadaCompleja> list = new ArrayList<>();
@@ -24,10 +22,10 @@ public class EjecutarJugadaCompleja extends OpcionDeMenu{
 			}
 			System.out.println("Porfavor escoja una jugada");
 			try{
-				int ind = scn.nextInt();
+				int ind = Main.scn.nextInt();
 				while(ind != 1|| ind!=2||ind!=3){
 					System.out.println("Porfavor ingrese una jugada de la lista");
-					ind = scn.nextInt();
+					ind = Main.scn.nextInt();
 				}
 				Main.r1.ejecutarJugadaCompleja(ind-1);
 			}catch(NumberFormatException e){
@@ -48,10 +46,10 @@ public class EjecutarJugadaCompleja extends OpcionDeMenu{
 			}
 			System.out.println("Porfavor escoja una jugada");
 			try{
-				int ind = scn.nextInt();
+				int ind = Main.scn.nextInt();
 				while(ind != 1|| ind!=2||ind!=3){
 					System.out.println("Porfavor ingrese una jugada de la lista");
-					ind = scn.nextInt();
+					ind = Main.scn.nextInt();
 				}
 				Main.r1.ejecutarJugadaCompleja(ind-1);
 			}catch(NumberFormatException e){
@@ -62,7 +60,6 @@ public class EjecutarJugadaCompleja extends OpcionDeMenu{
 				System.out.println("No existe jugada");
 			}
 		}
-		scn.close();
 		Main.usuarioActual.lanzarMenu();
 	}
 	

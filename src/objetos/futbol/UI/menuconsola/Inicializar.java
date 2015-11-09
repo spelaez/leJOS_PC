@@ -19,7 +19,6 @@ public class Inicializar extends OpcionDeMenu{
 	@Override
 	public void ejecutar(){
 		
-		Scanner scn = new Scanner(System.in);
 		System.out.print("-------------------------------------------------------\n"+this);
 		Main.conn.addLogListener(new NXTCommLogListener(){
 			public void logEvent(String message){
@@ -42,14 +41,14 @@ public class Inicializar extends OpcionDeMenu{
 				System.out.print((i+1)+" "+nxtinfo[i].name);
 			}
 			System.out.print("NXT #: ");
-			int option = scn.nextInt();
+			int option = Main.scn.nextInt();
 			System.out.print("Seleccione de la lista de futbolistas el arquero que desea asignar al robot");
 			for(int i = 0; i < Main.listaJugadores.size(); i++){
 				if(Main.listaJugadores.get(i) instanceof Arquero){
 					System.out.print((i+1)+" "+(Main.listaJugadores.get(i)));
 				}
 			}
-			int jugador = scn.nextInt();
+			int jugador = Main.scn.nextInt();
 			Main.r1 = new Robot((Arquero)Main.listaJugadores.get(jugador-1));
 			Main.conn.connectTo(nxtinfo[option-1], NXTCommFactory.BLUETOOTH);
 			System.out.print("Conexión exitosa!");
@@ -66,21 +65,20 @@ public class Inicializar extends OpcionDeMenu{
 				System.out.print((i+1)+" "+nxtinfo[i].name);
 			}
 			System.out.print("NXT #: ");
-			int option = scn.nextInt();
+			int option = Main.scn.nextInt();
 			System.out.print("Seleccione de la lista de futbolistas el delantero que desea asignar al robot");
 			for(int i = 0; i < Main.listaJugadores.size(); i++){
 				if(Main.listaJugadores.get(i) instanceof Delantero){
 					System.out.print((i+1)+" "+(Main.listaJugadores.get(i)));
 				}
 			}
-			int jugador = scn.nextInt();
+			int jugador = Main.scn.nextInt();
 			Main.r2 = new Robot((Delantero)Main.listaJugadores.get(jugador-1));
 			Main.conn.connectTo(nxtinfo[option-1], NXTCommFactory.BLUETOOTH);
 			System.out.print("Conexión exitosa!");
 		}
 		Main.dos = new DataOutputStream(Main.conn.getOutputStream());
 		Main.dis = new DataInputStream(Main.conn.getInputStream());
-		scn.close();
 		System.out.println();
 		Main.usuarioActual.lanzarMenu();
 	}

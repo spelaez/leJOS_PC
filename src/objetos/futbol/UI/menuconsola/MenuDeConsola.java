@@ -3,13 +3,12 @@ package objetos.futbol.UI.menuconsola;
 import java.util.Comparator;
 import java.util.InputMismatchException;
 import java.util.ArrayList;
-import java.util.Scanner;
+import objetos.futbol.UI.Main;
 import objetos.futbol.UI.menuconsola.Trotar;
 
 public class MenuDeConsola {
 	public static ArrayList<OpcionDeMenu> opciones2 = new ArrayList<>();
 	public ArrayList<OpcionDeMenu> opciones;
-	public static Scanner scn = new Scanner(System.in);
 	
 	public MenuDeConsola(){
 		cargarOpciones();
@@ -46,12 +45,12 @@ public class MenuDeConsola {
 		for(int i = 0; i < opciones.size(); i++){
 			System.out.println((i+1) +" "+ opciones.get(i));
 		}
-		System.out.println("\n Por favor ingrese el número de la opción que desea ejecutar");
+		System.out.println("\n Por favor ingrese el numero de la opcion que desea ejecutar");
 		try{
-		option = scn.nextInt();
+		option = Main.scn.nextInt();
 		while (option < 0 || option > opciones.size()){
 			System.out.println("Dato fuera del rango, Ingrese el dato de nuevo: ");
-			option = scn.nextInt();
+			option = Main.scn.nextInt();
 		}
 		opciones.get(option-1).ejecutar();
 		}
@@ -60,6 +59,10 @@ public class MenuDeConsola {
 		}
 		catch(InputMismatchException e){
 			System.out.println("Error: Dato incorrecto");
+		}
+		catch(Exception e){
+			System.out.println(e.getClass()+" "+e.getCause());
+			System.exit(0);
 		}
 	}
 
