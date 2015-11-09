@@ -85,14 +85,14 @@ public class GestorBDUsuarios {
 				}
 			}
 
-			File folder = new File("gestorBD");
+			File folder = new File("src\\gestorBD");
 			if(!folder.exists()){
 				folder.mkdirs();
 			}
 			
 			Transformer transformer = TransformerFactory.newInstance().newTransformer();
 			DOMSource src = new DOMSource(document);
-			StreamResult fileResult = new StreamResult(new File("gestorBD\\BDUsuarios.xml"));
+			StreamResult fileResult = new StreamResult(new File("src\\gestorBD\\BDUsuarios.xml"));
 			transformer.transform(src, fileResult);	
 			System.out.println("Guardado exitoso.");
 		} catch (ParserConfigurationException e) {
@@ -111,7 +111,7 @@ public class GestorBDUsuarios {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		try {
 			DocumentBuilder builder = factory.newDocumentBuilder();
-			File file = new File("gestorBD\\BDUsuarios.xml");
+			File file = new File("src\\gestorBD\\BDUsuarios.xml");
 			Document doc = builder.parse(new InputSource(new FileInputStream(file)));
 			
 			Element raiz = doc.getDocumentElement();

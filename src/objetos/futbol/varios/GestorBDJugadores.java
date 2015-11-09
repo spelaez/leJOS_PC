@@ -26,7 +26,7 @@ import org.w3c.dom.*;
 public class GestorBDJugadores {
 	
 	public void guardarJugadores(){
-		System.out.println(".... GUARDANDO JUGADORES");
+		System.out.println(".... Guardando jugadores");
 		if(Main.listaJugadores.size() ==0){
 			System.out.println("No hay jugadores");
 			return;
@@ -91,13 +91,13 @@ public class GestorBDJugadores {
 				}
 			}
 			
-			File folder = new File("gestorBD");
+			File folder = new File("src\\gestorBD");
 			if (!folder.exists()){
 				folder.mkdirs();
 			}
 			Transformer transformer = TransformerFactory.newInstance().newTransformer();
 			DOMSource source = new DOMSource(document);
-			StreamResult fileResult = new StreamResult(new File("gestorBD\\BDjugadores.xml"));
+			StreamResult fileResult = new StreamResult(new File("src\\gestorBD\\BDjugadores.xml"));
 			transformer.transform(source, fileResult);
 		} catch (ParserConfigurationException e) {
 			e.printStackTrace();
@@ -108,24 +108,24 @@ public class GestorBDJugadores {
 		} catch (TransformerException e) {
 			e.printStackTrace();
 		}
-		System.out.println("...JUGADORES GUARDADOS EXITOSAMENTE");
+		System.out.println("Jugadores guardados exitosamente");
 	}
 	
 	public void LeerJugadores(){
 		Delantero A;
 		Arquero B;
 		
-		System.out.println("CARGANDO JUGADORES");
+		System.out.println("...Cargando jugadores");
 		  try {
 			DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-			File fichero = new File("gestorBD\\BDjugadores.xml");
+			File fichero = new File("src\\gestorBD\\BDjugadores.xml");
 			File fichero2 = new File("C:\\Temp\\bd\\BDjugadores.xml");
 			if(!fichero.exists()&&!fichero2.exists()){
 				return;
 			}
-			Document document = documentBuilder.parse(new InputSource(new FileInputStream("gestorBD\\BDjugadores.xml")));
+			Document document = documentBuilder.parse(new InputSource(new FileInputStream("scr\\gestorBD\\BDjugadores.xml")));
 			if(fichero.exists()){
-				document = documentBuilder.parse(new InputSource(new FileInputStream("gestorBD\\BDjugadores.xml")));
+				document = documentBuilder.parse(new InputSource(new FileInputStream("src\\gestorBD\\BDjugadores.xml")));
 			}
 			else{
 				document = documentBuilder.parse(new InputSource(new FileInputStream("C:\\Temp\\bd\\BDjugadores.xml")));
@@ -170,7 +170,7 @@ public class GestorBDJugadores {
 				Main.listaJugadores.add(B);
 				
 			}
-			System.out.println("JUGADORES CARGADOS EXITOSAMENTE");
+			System.out.println("Jugadores cargados exitosamente");
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 

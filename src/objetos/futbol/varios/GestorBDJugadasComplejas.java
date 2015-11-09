@@ -26,9 +26,9 @@ import org.w3c.dom.*;
 public class GestorBDJugadasComplejas {
 
 	public void guardarJugadas(){
-		System.out.println(".... GUARDANDO JUGADAS");
+		System.out.println(".... Guarardando jugadas");
 		if(Main.listaJugadasComplejas.size()==0){
-			System.out.println("No hay jugadores");
+			System.out.println("No hay jugadas");
 			return;
 		}
 		try {
@@ -152,13 +152,13 @@ public class GestorBDJugadasComplejas {
 				}
 
 			}
-			File folder = new File("gestorBD");
+			File folder = new File("src\\gestorBD");
 			if (!folder.exists()){
 				folder.mkdirs();
 			}
 			Transformer transformer = TransformerFactory.newInstance().newTransformer();
 			DOMSource source = new DOMSource(document);
-			StreamResult fileResult = new StreamResult(new File("gestorBD\\BDjugadas.xml"));
+			StreamResult fileResult = new StreamResult(new File("src\\gestorBD\\BDjugadas.xml"));
 			transformer.transform(source, fileResult);
 		} catch (ParserConfigurationException e) {
 			e.printStackTrace();
@@ -169,21 +169,22 @@ public class GestorBDJugadasComplejas {
 		} catch (TransformerException e) {
 			e.printStackTrace();
 		}
+		System.out.println("Jugadas guardas exitosamente");
 	}
 
 	public void leerJugadas(){
 		System.out.println("Leyendo usuarios....");
 		try {
 			DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-			File fichero = new File("gestorBD\\BDjugadas.xml");
+			File fichero = new File("src\\gestorBD\\BDjugadas.xml");
 			File fichero2 = new File("C:\\temp\\bd\\BDjugadas.xml");
 
 			if(!fichero.exists() && !fichero2.exists()){
 				return;
 			}
-			Document document= documentBuilder.parse(new InputSource(new FileInputStream("gestorBD\\BDjugadas.xml")));
+			Document document= documentBuilder.parse(new InputSource(new FileInputStream("src\\gestorBD\\BDjugadas.xml")));
 			if(fichero.exists()){
-				document = documentBuilder.parse(new InputSource(new FileInputStream("gestorBD\\BDjugadas.xml")));
+				document = documentBuilder.parse(new InputSource(new FileInputStream("src\\gestorBD\\BDjugadas.xml")));
 			}
 			else{
 				document = documentBuilder.parse(new InputSource(new FileInputStream("C:\\temp\\bd\\BDUsuarios.xml")));
