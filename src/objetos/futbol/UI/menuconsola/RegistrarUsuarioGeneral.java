@@ -20,8 +20,6 @@ public class RegistrarUsuarioGeneral extends OpcionDeMenu {
 			clave=Main.scn.next();
 			UsuarioGeneral usuario = new UsuarioGeneral(Usuario,clave);
 			Main.listaUsuarios.put(Usuario,usuario);
-			Main.usuarioActual = usuario;
-			new Inicializar(categoria).ejecutar();
 		}
 		
 		public String toString(){
