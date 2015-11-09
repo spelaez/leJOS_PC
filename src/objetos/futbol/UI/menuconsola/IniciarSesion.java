@@ -33,28 +33,23 @@ public class IniciarSesion extends OpcionDeMenu{
 			if(Main.listaUsuarios.get(usuario).getClave().equals(clave)){
 				if(option == 1 && Main.listaUsuarios.get(usuario) instanceof UsuarioGeneral){
 					Main.usuarioActual=Main.listaUsuarios.get(usuario);
-					Main.scn.close();
 					System.out.println("Logueo existoso");
 					Main.usuarioActual.lanzarMenu();
 				}
 				if(option == 2 && Main.listaUsuarios.get(usuario) instanceof UsuarioAdministrador){
 					Main.usuarioActual=Main.listaUsuarios.get(usuario);
-					Main.scn.close();
 					System.out.println("Logueo exitoso");
 					Main.usuarioActual.lanzarMenu();
 				}
 			}
 			else{
 				System.out.println("\nContraseña incorrecta!");
-				Main.scn.close();
 				return;
 			}
 		}else{
 			System.out.println("\nUsuario no encontrado!");
-					Main.scn.close();
 					return;
 		}
-		Main.scn.close();
 		System.out.println("El usuario no posee el rol especificado");
 		return;
 	}

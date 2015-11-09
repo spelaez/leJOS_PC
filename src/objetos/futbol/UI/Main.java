@@ -81,7 +81,7 @@ public class Main {
 						"\n-------------------------------------------------------\nMenu:");
 
 				if (usuarioActual == null) {
-					anonimo.menu.lanzarMenu();
+					anonimo.lanzarMenu();
 				} else {
 					usuarioActual.lanzarMenu();
 				}

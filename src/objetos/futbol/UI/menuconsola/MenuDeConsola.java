@@ -43,6 +43,15 @@ public class MenuDeConsola {
 	public void lanzarMenu(){
 		int option;
 		for(int i = 0; i < opciones.size(); i++){
+			if(i == 0){
+				System.out.println("Opciones de Arquero\n----------------------------------");
+			}
+			else if (i == 10){
+				System.out.println("Opciones de Delantero\n----------------------------------");
+			}
+			else if (i == 19){
+				System.out.println("Opciones de Sistema\n----------------------------------");
+			}
 			System.out.println((i+1) +" "+ opciones.get(i));
 		}
 		System.out.println("\n Por favor ingrese el numero de la opcion que desea ejecutar");
@@ -59,10 +68,6 @@ public class MenuDeConsola {
 		}
 		catch(InputMismatchException e){
 			System.out.println("Error: Dato incorrecto");
-		}
-		catch(Exception e){
-			System.out.println(e.getClass()+" "+e.getCause());
-			System.exit(0);
 		}
 	}
 
