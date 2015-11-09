@@ -65,11 +65,16 @@ public class Main {
 
 	//Usuario anónimo
 	static UsuarioAnonimo anonimo = new UsuarioAnonimo();
+	
+	//Scanner
+	public static Scanner scn = new Scanner(System.in);
 
 	public static void main(String[] args) throws IOException {
-		gestorUsuarios.leerUsuarios();
+		//gestorUsuarios.leerUsuarios();
 		//gestorJugadores.LeerJugadores();
 		//gestorJugadas.leerJugadas();
+		UsuarioAdministrador u = new UsuarioAdministrador("holi", "123");
+		listaUsuarios.put("holi", u);
 		try {
 			do {
 				System.out.println("\n-------------------------------------------------------"+

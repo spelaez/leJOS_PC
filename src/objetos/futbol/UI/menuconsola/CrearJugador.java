@@ -22,28 +22,27 @@ public class CrearJugador extends OpcionDeMenu {
 		System.out.print("---------------------------------------------------\n"+this+"\n");
 		System.out.println("Ingrese tipo jugador");
 		System.out.println("1 para delantero \n2 para arquero ");
-		Scanner scn = new Scanner(System.in);
 		try{
-			int tipo = scn.nextInt();
+			int tipo = Main.scn.nextInt();
 			while(tipo < 1 || tipo > 2){
-				System.out.print("Dato fuera de rango, por favor ingréselo de nuevo");
-				tipo = scn.nextInt();
+				System.out.print("Dato fuera de rango, por favor ingrï¿½selo de nuevo");
+				tipo = Main.scn.nextInt();
 			}
 			ArrayList<JugadaCompleja> lista = new ArrayList<>(); 
 			System.out.println("Ingrese Nombre");
-			String nom = scn.next();
+			String nom = Main.scn.next();
 			System.out.println("Ingrese Dorsal");
-			byte dor = scn.nextByte();
+			byte dor = Main.scn.nextByte();
 			if(Main.listaJugadasComplejas.size() > 0 ){
 				int n;
 				while(lista.size()<3){
 					new ListaJugadasDisponibles(Categoria.SISTEMA).ejecutar();
 					System.out.println("0. Salir");
 					try{
-						n = scn.nextInt()-1;
+						n = Main.scn.nextInt()-1;
 						while(n < Main.listaJugadasComplejas.size() && n >= -1){
 							System.out.println("Dato fuera de rango, porfavor ingrese un entero");
-							n = scn.nextInt();
+							n = Main.scn.nextInt();
 						}
 						if(n == -1){
 							break;
@@ -61,7 +60,6 @@ public class CrearJugador extends OpcionDeMenu {
 			}
 			else{
 				System.out.println("No hay jugadas disponibles, porfavor cree una jugada primero");
-				scn.close();
 				return;
 			}
 			if(tipo == 1){
@@ -75,7 +73,6 @@ public class CrearJugador extends OpcionDeMenu {
 		}catch(NumberFormatException e){
 			System.out.println("Dato incorrecto, ingrese un entero");
 		}
-		scn.close();
 		Main.usuarioActual.lanzarMenu();
 	}
 
