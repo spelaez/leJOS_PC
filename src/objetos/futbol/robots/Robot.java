@@ -23,6 +23,7 @@ public class Robot {
 		this.girarIzquierda = Main.girarIzquierda;
 		this.chutar = Main.chutar;
 		this.patear = Main.patear;
+		this.jugador = jugador;
 	}
 	
 	public Futbolista getJugador(){

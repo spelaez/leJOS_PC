@@ -70,11 +70,9 @@ public class Main {
 	public static Scanner scn = new Scanner(System.in);
 
 	public static void main(String[] args) throws IOException {
-		//gestorUsuarios.leerUsuarios();
-		//gestorJugadores.LeerJugadores();
-		//gestorJugadas.leerJugadas();
-		UsuarioAdministrador u = new UsuarioAdministrador("holi", "123");
-		listaUsuarios.put("holi", u);
+		gestorUsuarios.leerUsuarios();
+		gestorJugadas.leerJugadas();
+		gestorJugadores.LeerJugadores();
 		try {
 			do {
 				System.out.println("\n-------------------------------------------------------"+

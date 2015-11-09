@@ -23,7 +23,7 @@ public class EjecutarJugadaCompleja extends OpcionDeMenu{
 			System.out.println("Porfavor escoja una jugada");
 			try{
 				int ind = Main.scn.nextInt();
-				while(ind != 1|| ind!=2||ind!=3){
+				while(ind < 1 || ind > 3){
 					System.out.println("Porfavor ingrese una jugada de la lista");
 					ind = Main.scn.nextInt();
 				}
@@ -47,7 +47,7 @@ public class EjecutarJugadaCompleja extends OpcionDeMenu{
 			System.out.println("Porfavor escoja una jugada");
 			try{
 				int ind = Main.scn.nextInt();
-				while(ind != 1|| ind!=2||ind!=3){
+				while(ind < 1 || ind > 3){
 					System.out.println("Porfavor ingrese una jugada de la lista");
 					ind = Main.scn.nextInt();
 				}

@@ -123,7 +123,7 @@ public class GestorBDJugadores {
 			if(!fichero.exists()&&!fichero2.exists()){
 				return;
 			}
-			Document document = documentBuilder.parse(new InputSource(new FileInputStream("scr\\gestorBD\\BDjugadores.xml")));
+			Document document = documentBuilder.parse(new InputSource(new FileInputStream("src\\gestorBD\\BDjugadores.xml")));
 			if(fichero.exists()){
 				document = documentBuilder.parse(new InputSource(new FileInputStream("src\\gestorBD\\BDjugadores.xml")));
 			}

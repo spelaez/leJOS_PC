@@ -39,11 +39,13 @@ public class CrearJugador extends OpcionDeMenu {
 					new ListaJugadasDisponibles(Categoria.SISTEMA).ejecutar();
 					System.out.println("0. Salir");
 					try{
-						n = Main.scn.nextInt()-1;
-						while(n < Main.listaJugadasComplejas.size() && n >= -1){
+						n = Main.scn.nextInt();
+						System.out.println(Main.listaJugadasComplejas.size());
+						while(n < 0 || n > Main.listaJugadasComplejas.size()){
 							System.out.println("Dato fuera de rango, porfavor ingrese un entero");
 							n = Main.scn.nextInt();
 						}
+						n -= 1;
 						if(n == -1){
 							break;
 						}
@@ -54,6 +56,8 @@ public class CrearJugador extends OpcionDeMenu {
 						System.out.println("Error: Dato incorrecto, ingrese un entero");
 					}catch(NumberFormatException e){
 						System.out.println("Dato incorrecto, ingrese un entero");
+					}catch(IndexOutOfBoundsException e){
+						System.out.println("holi");
 					}
 
 				}
@@ -63,10 +67,10 @@ public class CrearJugador extends OpcionDeMenu {
 				return;
 			}
 			if(tipo == 1){
-				Main.listaJugadores.add(new Delantero(nom,"Delantero",(short)0,dor,lista));
+				Main.listaJugadores.add(new Delantero(nom,"delantero",(short)0,dor,lista));
 			}
 			else if( tipo == 2){
-				Main.listaJugadores.add(new Arquero(nom,"Arquero",0,dor,lista));
+				Main.listaJugadores.add(new Arquero(nom,"arquero",0,dor,lista));
 			}
 		}catch(InputMismatchException e){
 			System.out.println("Error: Dato incorrecto, ingrese un entero");

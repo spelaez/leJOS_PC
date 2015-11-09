@@ -173,7 +173,7 @@ public class GestorBDJugadasComplejas {
 	}
 
 	public void leerJugadas(){
-		System.out.println("Leyendo usuarios....");
+		System.out.println("Leyendo jugadas....");
 		try {
 			DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 			File fichero = new File("src\\gestorBD\\BDjugadas.xml");
