@@ -15,6 +15,9 @@ public class UsuarioAnonimo {
 		menu.anadirOpcion(MenuDeConsola.opciones2.get(27));
 		menu.anadirOpcion(MenuDeConsola.opciones2.get(29));
 		menu.anadirOpcion(MenuDeConsola.opciones2.get(30));
+	}
+	
+	public void lanzarMenu(){
 		menu.lanzarMenu();
 	}
 }
