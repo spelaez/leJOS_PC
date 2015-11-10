@@ -5,8 +5,13 @@ import java.util.InputMismatchException;
 import java.util.ArrayList;
 import objetos.futbol.UI.Main;
 import objetos.futbol.UI.menuconsola.Trotar;
-
+/**
+ * Clase que define al menú de consola 
+ * @author Santiago Peláez
+ *
+ */
 public class MenuDeConsola {
+	//Campos de la clase
 	public static ArrayList<OpcionDeMenu> opciones2 = new ArrayList<>();
 	public ArrayList<OpcionDeMenu> opciones;
 	
@@ -15,31 +20,45 @@ public class MenuDeConsola {
 	}
 	
 	Comparator<OpcionDeMenu> c = new Comparator<OpcionDeMenu>() {
-
+		/**
+		 * Método que compara
+		 */
 		@Override
 		public int compare(OpcionDeMenu o1, OpcionDeMenu o2) {
 			return o1.categoria.compareTo(o2.categoria);
 		}
 		
-	};
-	
+	};//Cierre del método
+	/**
+	 * Método que permite agregar opciones de menú y ordenarla
+	 * @param op
+	 */
 	public void anadirOpcion(OpcionDeMenu op){
 		opciones.add(op);
 		ordenarOpciones();
-	}
-	
+	}//Cierre del método
+	/**
+	 * Método que permite eliminar una opcion de menú
+	 * @param op
+	 */
 	public void eliminarOpcion(OpcionDeMenu op){
 		opciones.remove(op);
-	}
-	
+	}//Cierre del método
+	/**
+	 * Método que permite limpiar la lista de opciones de menú
+	 */
 	public void limpiar(){
 		opciones = new ArrayList<OpcionDeMenu>();
-	}
-	
+	}//Cierre del método
+	/**
+	 * Método que permite ordenar las opciones de menú
+	 */
 	public void ordenarOpciones(){
 		opciones.sort(c);
-	}
-	
+	}//Cierre del método
+	/**
+	 * ejecuta el método lanzar menú que muestra las opciones disponibles a elegir
+	 */
 	public void lanzarMenu(){
 		int option;
 		for(int i = 0; i < opciones.size(); i++){
@@ -69,8 +88,10 @@ public class MenuDeConsola {
 		catch(InputMismatchException e){
 			System.out.println("Error: Dato incorrecto");
 		}
-	}
-
+	}//Cierre del método
+	/**
+	 * Método que agrega todas las opciones de menú a una segunda lista
+	 */
 	private void cargarOpciones(){
 		if(opciones2.size() == 0){
 			
@@ -112,5 +133,5 @@ public class MenuDeConsola {
 			opciones2.add(new Salir(Categoria.SISTEMA));//31 //todos
 			}
 		
-	}
-}
+	}//Cierre del método
+}//Cierre de la clase

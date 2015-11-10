@@ -5,16 +5,26 @@ import java.util.InputMismatchException;
 
 import objetos.futbol.UI.Main;
 import objetos.futbol.UI.menuconsola.MenuDeConsola;
-
+/**
+ * Clase que define un usuario anónimo
+ * @author Santiago Peláez
+ *
+ */
 public class UsuarioAnonimo {
 	public MenuDeConsola menu = new MenuDeConsola();
-	
+	/**
+	 * Constructor que asigna un menú para un usuario anónimo
+	 */
 	public UsuarioAnonimo(){
 		asignarMenu();
-	}
-	
+	}//Cierre del constructor
+	/**
+	 * Método que añade las opciones de menú a un usuario anónimo
+	 */
 	public void asignarMenu(){
 		menu.limpiar();
+	//Cierre del método
+//Cierre de la clase
 		menu.anadirOpcion(MenuDeConsola.opciones2.get(27));
 		menu.anadirOpcion(MenuDeConsola.opciones2.get(29));
 		menu.anadirOpcion(MenuDeConsola.opciones2.get(30));

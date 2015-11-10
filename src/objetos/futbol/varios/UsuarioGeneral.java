@@ -1,6 +1,16 @@
 package objetos.futbol.varios;
 
 import objetos.futbol.UI.menuconsola.MenuDeConsola;
+/**
+ * Clase que define un usuario general
+ * @author Santiago Peláez
+ *
+ */
+	/**
+	 * Constructor que caracteriza un usuario general
+	 * @param nombre
+	 * @param clave
+	 */
 
 public class UsuarioGeneral implements Usuario
 {
@@ -13,22 +23,35 @@ public class UsuarioGeneral implements Usuario
 		this.nombre = nombre;
 		this.clave = clave;
 		asignarMenu();
-	}
-	
+	}//Cierre del constructor
+	/**
+	 * Método que permite modificar el nombre del usuario
+	 */
 	public void setNombre(String nombre){
 		this.nombre = nombre;
-	}
-	
+	}//Cierre del método
+	/**
+	 * Método que permite modificar la clave de usuario
+	 */
 	public void setClave(String clave){
 		this.clave = clave;
-	}
-	
+	}//Cierre del método
+	/**
+	 * Método que permite consultar el nombre de usuario
+	 * @return Retorna el campo nombre
+	 */
 	public String getNombre(){
 		return nombre;
-	}
-	
+	}//Cierre del método
+	/**
+	 * Método que permite consultar la clave de un usuario
+	 * @return Retorna el campo clave
+	 */
 	public String getClave(){
 		return clave;
+	/**
+	 * Ejecuta el método asignar menú, que muestra las opciones dependiendo del usuario
+	 */
 	}
 	
 	public Integer[] getPermisos(){
@@ -46,5 +69,5 @@ public class UsuarioGeneral implements Usuario
 		for(int i=0; i<permisos.length; i++){
 			menu.anadirOpcion(MenuDeConsola.opciones2.get(permisos[i]-1));
 		}
-	}
-}
+	}//Cierre del método
+}//Cierre de la clase

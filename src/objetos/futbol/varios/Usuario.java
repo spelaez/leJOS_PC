@@ -1,6 +1,9 @@
 package objetos.futbol.varios;
-
-import java.util.ArrayList;
+/**
+ * Interfaz para ser implementada por los tipos de usuarios
+ * @author Santiago Peláez
+ *
+ */
 
 public interface Usuario {
 

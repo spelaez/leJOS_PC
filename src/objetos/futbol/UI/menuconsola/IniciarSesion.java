@@ -4,13 +4,22 @@ import objetos.futbol.UI.Main;
 import objetos.futbol.varios.UsuarioAdministrador;
 import objetos.futbol.varios.UsuarioGeneral;
 
-
+/**
+ * Clase que define la opción iniciar sesion
+ * @author Santiago Peláez
+ *
+ */
 public class IniciarSesion extends OpcionDeMenu{
-
+	/**
+	 * Constructor que accesa al tipo de categoria que tiene la opción iniciar sesión
+	 * @param categoria
+	 */
 	public IniciarSesion(Categoria categoria){
 		super(categoria);
-	}
-	
+	}//Cierre del constructor
+	/**
+	 * Método que ejecuta el menú para iniciar sesión
+	 */
 	@Override
 	public void ejecutar() {
 		System.out.println("Elija como desea iniciar sesiÃ³n");
@@ -47,6 +56,13 @@ public class IniciarSesion extends OpcionDeMenu{
 			System.out.println("\nUsuario no encontrado!");
 					return;
 		}
+//Cierre del método
+	/**
+	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
+	 * @return Retorna el tipo de opción
+	 */
+	//Cierre del método
+	//Cierre de la clase
 		System.out.println("El usuario no posee el rol especificado");
 		return;
 	}
@@ -57,3 +73,4 @@ public class IniciarSesion extends OpcionDeMenu{
 		return "iniciar Sesion.";
 	}
 }
+
