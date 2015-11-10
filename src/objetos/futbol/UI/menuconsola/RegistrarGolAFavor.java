@@ -11,7 +11,7 @@ public class RegistrarGolAFavor extends OpcionDeMenu{
 	
 	@Override
 	public void ejecutar(){
-		System.out.print("--------------------------------------------\n"+this);
+		System.out.print("---------------------------------------------------\n"+this+"\n");
 		if(Main.r1.getJugador() instanceof Delantero){
 			((Delantero)(Main.r1.getJugador())).registrarGol();;
 		}

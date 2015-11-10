@@ -11,7 +11,7 @@ public class RegistrarTiempoSinGoles extends OpcionDeMenu  {
 	
 	@Override
 	public void ejecutar(){
-		System.out.print("--------------------------------------------\n"+this);
+		System.out.print("---------------------------------------------------\n"+this+"\n");
 		if(Main.r1.getJugador() instanceof Arquero){
 			((Arquero)(Main.r1.getJugador())).registrarTiempoGol((int)(System.currentTimeMillis()- Main.tUltimoGol)/1000);
 		}

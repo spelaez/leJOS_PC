@@ -10,7 +10,7 @@ public class JugadaComplejaOfensiva extends JugadaCompleja {
 	public JugadaComplejaOfensiva(String nombreJugada,String fechaCreacion,UsuarioAdministrador Autor,ArrayList<JugadaPrimitiva> Jugada,String Explicacion){
 		super(nombreJugada, fechaCreacion, Autor, Jugada, Explicacion);
 		this.efectividad= super.getJugada().size();
-		this.descripcion= "La jugada " + nombreJugada + " es una " + getEfectividad()+  ", fue creada por " + Autor + ", en la fecha " + fechaCreacion;
+		this.descripcion= "La jugada " + nombreJugada + " es una " + getEfectividad()+  ", fue creada por " + Autor.getNombre() + ", en la fecha " + fechaCreacion;
 	}
 	
 	@Override
@@ -35,5 +35,8 @@ public class JugadaComplejaOfensiva extends JugadaCompleja {
 	
 	public String getDescripcion(){
 		return descripcion;
+	}
+	public int getNumEfectividad(){
+		return efectividad;
 	}
 }

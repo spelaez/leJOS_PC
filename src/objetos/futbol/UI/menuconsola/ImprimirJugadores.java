@@ -10,7 +10,11 @@ public class ImprimirJugadores extends OpcionDeMenu {
 	
 	@Override
 	public void ejecutar(){
-		System.out.print("---------------------------------------------------\n"+this);
+		if(Main.listaJugadasComplejas.size()==0){
+			System.out.println("No hay jugadores disponibles");
+			return;
+		}
+		System.out.print("---------------------------------------------------\n"+this+"\n");
 		
 		for(int i=0; i<Main.listaJugadores.size(); i++){
 			System.out.println("\t\t"+Main.listaJugadores.get(i));

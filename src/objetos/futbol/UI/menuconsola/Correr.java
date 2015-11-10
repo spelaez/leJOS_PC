@@ -9,7 +9,7 @@ public class Correr extends OpcionDeMenu {
 	
 	@Override
 	public void ejecutar(){
-		System.out.print("---------------------------------------------------\n"+this);
+		System.out.print("---------------------------------------------------\n"+this+"\n");
 		try{
 			Main.dos.writeInt(Main.correr.getIdJugada());
 			Main.dos.flush();

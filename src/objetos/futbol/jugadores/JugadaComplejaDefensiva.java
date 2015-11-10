@@ -11,7 +11,7 @@ public class JugadaComplejaDefensiva extends JugadaCompleja {
 	public JugadaComplejaDefensiva(String nombreJugada,String fechaCreacion,UsuarioAdministrador Autor,ArrayList<JugadaPrimitiva> Jugada,String Explicacion){
 		super(nombreJugada, fechaCreacion, Autor, Jugada, Explicacion);
 		this.complejidad=super.getJugada().size();
-		this.descripcion = "La jugada " + nombreJugada + " es una " + getComplejidad()+ ", fue creada por " + Autor + ", en la fecha " + fechaCreacion;
+		this.descripcion = "La jugada " + nombreJugada + " es una " + getComplejidad()+ ", fue creada por " + Autor.getNombre() + ", en la fecha " + fechaCreacion;
 		}
 	
 	@Override
@@ -36,5 +36,8 @@ public class JugadaComplejaDefensiva extends JugadaCompleja {
 	
 	public String getDescripcion(){
 		return descripcion;
+	}
+	public int getnumcomplejidad(){
+		return complejidad;
 	}
 }

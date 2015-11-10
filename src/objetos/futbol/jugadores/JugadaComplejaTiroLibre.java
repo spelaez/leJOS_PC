@@ -16,7 +16,7 @@ public class JugadaComplejaTiroLibre extends JugadaCompleja {
 		if(y instanceof Chutar){
 			this.potenciachute=y.getVelocidad();
 			this.efecto=((Chutar) y).getGrados();
-			this.descripcion = "La jugada " + nombreJugada +" es un "+ getPotenciachute() +", con un " +getEfecto()+ ", fue creada por " + Autor + ", en la fecha " + fechaCreacion;
+			this.descripcion = "La jugada " + nombreJugada +" es un "+ getPotenciachute() +", con un " +getEfecto()+ ", fue creada por " + Autor.getNombre() + ", en la fecha " + fechaCreacion;
 		}
 		else{
 			throw new ClassCastException();
@@ -61,5 +61,11 @@ public class JugadaComplejaTiroLibre extends JugadaCompleja {
 	
 	public String getDescripcion(){
 		return descripcion;
+	}
+	public int getNumPotencia(){
+		return potenciachute;
+	}
+	public int getNumEfecto(){
+		return efecto;
 	}
 }

@@ -3,7 +3,6 @@ import objetos.futbol.UI.Main;
 import objetos.futbol.UI.menuconsola.ImprimirJugadores;
 import objetos.futbol.jugadores.*;
 import java.util.InputMismatchException;
-import java.util.Scanner;
 
 public class ConsultarExplicacionJugada extends OpcionDeMenu{
 
@@ -14,15 +13,15 @@ public class ConsultarExplicacionJugada extends OpcionDeMenu{
 	@Override
 	public void ejecutar(){
 		new ImprimirJugadores(Categoria.SISTEMA).ejecutar();
+		if(Main.listaJugadores.isEmpty()) return;
 		System.out.println("------------------------------------------\nConsultar informacion de un jugador");
 		System.out.println("Ingrese el numero del jugador a consultar");
-		Scanner scn = new Scanner(System.in);
 		int i = 1;
 		try{
-			int n = scn.nextInt();
+			int n = Main.scn.nextInt();
 			while(n < 0 || n > Main.listaJugadores.size()){
-				System.out.print("Dato fuera de rango, por favor ingréselo de nuevo");
-				n = scn.nextInt();
+				System.out.print("Dato fuera de rango, por favor ingrï¿½selo de nuevo");
+				n = Main.scn.nextInt();
 			}
 			Futbolista x = Main.listaJugadores.get(n-1);
 			if( x instanceof Delantero){
@@ -34,12 +33,12 @@ public class ConsultarExplicacionJugada extends OpcionDeMenu{
 					i++;
 				}
 				System.out.print(this);
-				System.out.print("Ingrese el número de la jugada para imprimir su explicación");
+				System.out.print("Ingrese el nï¿½mero de la jugada para imprimir su explicaciï¿½n");
 				try{
-				n = scn.nextInt();
+				n = Main.scn.nextInt();
 				while(n < 0 || n > x.getListaJugadas().size()){
-					System.out.print("Dato fuera de rango, por favor ingréselo de nuevo");
-					n = scn.nextInt();
+					System.out.print("Dato fuera de rango, por favor ingrï¿½selo de nuevo");
+					n = Main.scn.nextInt();
 				}
 				System.out.print(x.getListaJugadas().get(n-1).getExplicacion());
 				}
@@ -59,12 +58,12 @@ public class ConsultarExplicacionJugada extends OpcionDeMenu{
 					i++;
 				}
 				System.out.print(this);
-				System.out.print("Ingrese el número de la jugada para imprimir su explicación");
+				System.out.print("Ingrese el nï¿½mero de la jugada para imprimir su explicaciï¿½n");
 				try{
-				n = scn.nextInt();
+				n = Main.scn.nextInt();
 				while(n < 0 || n > x.getListaJugadas().size()){
-					System.out.print("Dato fuera de rango, por favor ingréselo de nuevo");
-					n = scn.nextInt();
+					System.out.print("Dato fuera de rango, por favor ingrï¿½selo de nuevo");
+					n = Main.scn.nextInt();
 				}
 				System.out.print(x.getListaJugadas().get(n-1).getExplicacion());
 				}
@@ -82,12 +81,10 @@ public class ConsultarExplicacionJugada extends OpcionDeMenu{
 		catch(InputMismatchException e){
 			System.out.println("Error: dato incorrecto");
 		}
-	
-		scn.close();
 	}
 	
 	@Override
 	public String toString(){
-		return "Consultar Explicación de una jugada";
+		return "Consultar Explicacion de una jugada";
 	}
 }

@@ -25,7 +25,9 @@ public abstract class Futbolista {
 	public ArrayList<JugadaCompleja> getListaJugadas(){
 		return listaJugadas;
 	}
-	
+	public String getNombre(){
+		return nombre;
+	}
 	public abstract boolean jugarConLasManos();
 	
 }

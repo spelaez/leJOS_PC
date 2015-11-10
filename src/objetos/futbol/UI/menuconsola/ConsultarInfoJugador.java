@@ -14,15 +14,15 @@ public class ConsultarInfoJugador extends OpcionDeMenu{
 	@Override
 	public void ejecutar(){
 		new ImprimirJugadores(Categoria.SISTEMA).ejecutar();
-		System.out.println("------------------------------------------\n"+this);
+		if(Main.listaJugadores.isEmpty()) return;
+		System.out.print("---------------------------------------------------\n"+this+"\n");
 		System.out.println("Ingrese el numero del jugador a consultar");
-		Scanner scn = new Scanner(System.in);
 		int i = 1;
 		try{
-			int n = scn.nextInt();
+			int n = Main.scn.nextInt();
 			while(n < 0 || n > Main.listaJugadores.size()){
-				System.out.print("Dato fuera de rango, por favor ingréselo de nuevo");
-				n = scn.nextInt();
+				System.out.print("Dato fuera de rango, por favor ingrï¿½selo de nuevo");
+				n = Main.scn.nextInt();
 			}
 			Futbolista x = Main.listaJugadores.get(n-1);
 			if( x instanceof Delantero){
@@ -50,12 +50,11 @@ public class ConsultarInfoJugador extends OpcionDeMenu{
 		catch(InputMismatchException e){
 			System.out.println("Error: dato incorrecto");
 		}
-	
-		scn.close();
+
 	}
 	
 	@Override
 	public String toString(){
-		return "Consultar información de un jugador";
+		return "Consultar informacion de un jugador";
 	}
 }
