@@ -3,6 +3,8 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import lejos.pc.comm.NXTConnector;
+import lejos.pc.comm.NXTInfo;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Hashtable;
@@ -10,6 +12,7 @@ import objetos.futbol.robots.MoverAdelante;
 import objetos.futbol.robots.MoverAtras;
 import objetos.futbol.robots.Chutar;
 import objetos.futbol.robots.Girar;
+import objetos.futbol.cancha.Cancha;
 import objetos.futbol.jugadores.Futbolista;
 import objetos.futbol.varios.Usuario;
 import objetos.futbol.varios.UsuarioAnonimo;
@@ -50,7 +53,8 @@ public class Main {
 
 	//Lista de Jugadores
 	public static ArrayList<Futbolista> listaJugadores = new ArrayList<>();
-
+	//Cancha
+	public static Cancha cancha;
 	//Robots
 	public static Robot r1, r2;
 
@@ -63,8 +67,9 @@ public class Main {
 	static GestorBDJugadores gestorJugadores = new GestorBDJugadores();
 	static GestorBDJugadasComplejas gestorJugadas = new GestorBDJugadasComplejas();
 
-	//Usuario anónimo
+	//Usuario anonimo
 	static UsuarioAnonimo anonimo = new UsuarioAnonimo();
+	public static NXTInfo nxt1, nxt2;
 	
 	//Scanner
 	public static Scanner scn = new Scanner(System.in);

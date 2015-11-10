@@ -40,8 +40,9 @@ public class Inicializar extends OpcionDeMenu{
 			for(int i = 0; i < nxtinfo.length; i++){
 				System.out.println((i+1)+" "+nxtinfo[i].name);
 			}
-			System.out.println("NXT #: ");
+			System.out.print("NXT #: ");
 			int option = Main.scn.nextInt();
+			Main.nxt1 = nxtinfo[option-1];
 			System.out.println("Seleccione de la lista de futbolistas el arquero que desea asignar al robot");
 			for(int i = 0; i < Main.listaJugadores.size(); i++){
 				if(Main.listaJugadores.get(i) instanceof Arquero){
