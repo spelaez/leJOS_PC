@@ -18,6 +18,6 @@ public class IniciarPartido extends OpcionDeMenu{
 	
 	@Override
 	public String toString(){
-		return "Iniciar Partido...";
+		return "Iniciar Partido";
 	}
 }

@@ -30,7 +30,7 @@ public class CrearJugador extends OpcionDeMenu {
 			}
 			ArrayList<JugadaCompleja> lista = new ArrayList<>(); 
 			System.out.println("Ingrese Nombre");
-			String nom = Main.scn.next();
+			String nom = Main.scn.nextLine();
 			System.out.println("Ingrese Dorsal");
 			byte dor = Main.scn.nextByte();
 			if(Main.listaJugadasComplejas.size() > 0 ){
@@ -40,7 +40,6 @@ public class CrearJugador extends OpcionDeMenu {
 					System.out.println("0. Salir");
 					try{
 						n = Main.scn.nextInt();
-						System.out.println(Main.listaJugadasComplejas.size());
 						while(n < 0 || n > Main.listaJugadasComplejas.size()){
 							System.out.println("Dato fuera de rango, porfavor ingrese un entero");
 							n = Main.scn.nextInt();

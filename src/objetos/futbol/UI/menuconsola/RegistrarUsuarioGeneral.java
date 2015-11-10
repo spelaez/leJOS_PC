@@ -15,9 +15,9 @@ public class RegistrarUsuarioGeneral extends OpcionDeMenu {
 		public void ejecutar(){
 			System.out.print("---------------------------------------------------\n"+this+"\n");
 			System.out.println("Por favor ingresa un nombre de usuario");
-			Usuario= Main.scn.next();
+			Usuario= Main.scn.nextLine();
 			System.out.println("Porfavor ingresa tu contrase�a");
-			clave=Main.scn.next();
+			clave=Main.scn.nextLine();
 			UsuarioGeneral usuario = new UsuarioGeneral(Usuario,clave);
 			Main.listaUsuarios.put(Usuario,usuario);
 		}

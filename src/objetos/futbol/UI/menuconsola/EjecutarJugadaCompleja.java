@@ -64,7 +64,7 @@ public class EjecutarJugadaCompleja extends OpcionDeMenu{
 	
 	@Override
 	public String toString(){
-		return "Jugadas Disponibles";
+		return "Jugadas Complejas";
 	}
 	
 }

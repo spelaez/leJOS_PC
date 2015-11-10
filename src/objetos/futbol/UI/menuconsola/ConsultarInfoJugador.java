@@ -55,6 +55,6 @@ public class ConsultarInfoJugador extends OpcionDeMenu{
 	
 	@Override
 	public String toString(){
-		return "Consultar informaci�n de un jugador";
+		return "Consultar informacion de un jugador";
 	}
 }

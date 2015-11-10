@@ -24,10 +24,10 @@ public class IniciarSesion extends OpcionDeMenu{
 		System.out.print("1. Usuario Jugador.\n2. Usuario Administrador\n");
 		int option = Main.scn.nextInt();
 		System.out.print("Usuario:\n");
-		usuario=Main.scn.next();
+		usuario=Main.scn.nextLine();
 
 		System.out.print("Contraseña:\n");
-		clave=Main.scn.next();
+		clave=Main.scn.nextLine();
 
 		if(Main.listaUsuarios.get(usuario)!=null){
 			if(Main.listaUsuarios.get(usuario).getClave().equals(clave)){

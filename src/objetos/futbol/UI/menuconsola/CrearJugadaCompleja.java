@@ -28,11 +28,11 @@ public class CrearJugadaCompleja extends OpcionDeMenu {
 				n = Main.scn.nextInt();
 			}			
 			System.out.println("Ingrese nombre de la jugada");
-			String nom = Main.scn.next();
+			String nom = Main.scn.nextLine();
 			System.out.println("Ingrese fecha de creacion Dia-Mes-A�o");
 			String fecha = Main.scn.next();				
 			System.out.println("Ingrese una explicacion");
-			String expl = Main.scn.next();	
+			String expl = Main.scn.nextLine();	
 			ArrayList <JugadaPrimitiva> lista = new ArrayList<>();
 			byte num;
 

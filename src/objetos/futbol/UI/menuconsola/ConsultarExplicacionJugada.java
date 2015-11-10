@@ -85,6 +85,6 @@ public class ConsultarExplicacionJugada extends OpcionDeMenu{
 	
 	@Override
 	public String toString(){
-		return "Consultar Explicaci�n de una jugada";
+		return "Consultar Explicacion de una jugada";
 	}
 }
