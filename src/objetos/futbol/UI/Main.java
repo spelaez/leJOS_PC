@@ -67,7 +67,7 @@ public class Main {
 	static UsuarioAnonimo anonimo = new UsuarioAnonimo();
 	
 	//Scanner
-	public static Scanner scn = new Scanner(System.in).useDelimiter("\\n");
+	public static Scanner scn = new Scanner(System.in);
 
 	public static void main(String[] args) throws IOException {
 		gestorUsuarios.leerUsuarios();
