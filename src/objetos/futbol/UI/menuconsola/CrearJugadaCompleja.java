@@ -17,14 +17,14 @@ public class CrearJugadaCompleja extends OpcionDeMenu {
 
 	@Override
 	public void ejecutar() {		
-		System.out.print("---------------------------------------------------\n"+this+"\n");
-		System.out.print("Ingrese el tipo de jugada compleja");
-		System.out.print("1 Para defensiva \n2 Para ofensiva \n3 Para tiro libre");
+		System.out.println("---------------------------------------------------\n"+this+"\n");
+		System.out.println("Ingrese el tipo de jugada compleja");
+		System.out.println("1 Para defensiva \n2 Para ofensiva \n3 Para tiro libre");
 
 		try{
 			int n = Main.scn.nextInt();
 			while(n < 1 || n > 3){
-				System.out.print("Dato fuera de rango, por favor ingr�selo de nuevo");
+				System.out.println("Dato fuera de rango, por favor ingr�selo de nuevo");
 				n = Main.scn.nextInt();
 			}			
 			System.out.println("Ingrese nombre de la jugada");
