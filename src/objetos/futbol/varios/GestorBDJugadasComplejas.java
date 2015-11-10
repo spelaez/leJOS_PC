@@ -206,32 +206,35 @@ public class GestorBDJugadasComplejas {
 				NodeList primitivas=jugada.getElementsByTagName("Jugadas");
 				ArrayList<JugadaPrimitiva> listajugadas=new ArrayList<>();
 				for(int j=0;j<primitivas.getLength();j++){
-					Element primi = (Element) primitivas.item(j);
-					int id=Integer.valueOf((primi.getElementsByTagName("Jugada_primitiva").item(0).getTextContent()));
-					if (id==1){
-						listajugadas.add(Main.trotar);
-					}
-					else if(id==2){
-						listajugadas.add(Main.correr);
-					}
-					else if(id==3){
-						listajugadas.add(Main.retroceder);
-					}
-					else if(id==4){
-						listajugadas.add(Main.girarDerecha);
-					}
-					else if(id==5){
-						listajugadas.add(Main.girarIzquierda);
-					}
-					else if(id==6){
-						listajugadas.add(Main.chutar);
-					}
-					else if(id==7){
-						listajugadas.add(Main.patear);
+					NodeList prim = primitivas.item(j).getChildNodes();
+					for(int k = 0; k<prim.getLength(); k++){
+						int id = Integer.valueOf(prim.item(k).getTextContent());
+
+						if (id==1){
+							listajugadas.add(Main.trotar);
+						}
+						else if(id==2){
+							listajugadas.add(Main.correr);
+						}
+						else if(id==3){
+							listajugadas.add(Main.retroceder);
+						}
+						else if(id==4){
+							listajugadas.add(Main.girarDerecha);
+						}
+						else if(id==5){
+							listajugadas.add(Main.girarIzquierda);
+						}
+						else if(id==6){
+							listajugadas.add(Main.chutar);
+						}
+						else if(id==7){
+							listajugadas.add(Main.patear);
+						}
 					}
 				}
 				Main.listaJugadasComplejas.add(new JugadaComplejaDefensiva(nombre,fecha,(UsuarioAdministrador)Main.listaUsuarios.get(autor),listajugadas,explicacion));
-				
+
 			}
 
 
