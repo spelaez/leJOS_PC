@@ -1,7 +1,6 @@
 package objetos.futbol.UI.menuconsola;
 
 import objetos.futbol.UI.Main;
-import java.util.Scanner;
 import objetos.futbol.varios.UsuarioAdministrador;
 import objetos.futbol.varios.UsuarioGeneral;
 
@@ -23,55 +22,55 @@ public class IniciarSesion extends OpcionDeMenu{
 	 */
 	@Override
 	public void ejecutar() {
-
+		System.out.println("Elija como desea iniciar sesiÃ³n");
 		String usuario, clave;
-		Scanner scn = new Scanner(System.in);
 
 		if(Main.listaUsuarios.size()==0){
 			System.out.println("No hay usuarios registrados.");
-			scn.close();
 			return;
 		}
-		System.out.println("-------------------------------------------------------\n"+this);
-		System.out.print("1. Usuario Jugador.\n 2. Usuario Administrador");
-		int option = scn.nextInt();
-		System.out.print("Usuario: ");
-		usuario=scn.nextLine();
-
-		System.out.print("ContraseÃ±a: ");
-		clave=scn.nextLine();
+		System.out.print("---------------------------------------------------\n"+this+"\n");
+		System.out.print("1. Usuario Jugador.\n2. Usuario Administrador\n");
+		int option = Main.scn.nextInt();
+		System.out.print("Usuario:\n");
+		usuario=Main.scn.next();
+		System.out.print("ContraseÃ±a:\n");
+		clave=Main.scn.next();
 
 		if(Main.listaUsuarios.get(usuario)!=null){
 			if(Main.listaUsuarios.get(usuario).getClave().equals(clave)){
 				if(option == 1 && Main.listaUsuarios.get(usuario) instanceof UsuarioGeneral){
 					Main.usuarioActual=Main.listaUsuarios.get(usuario);
-				}
-				else {
-					System.out.print("No existe un usuario jugador con esos datos");
-					scn.close();
-					return;
+					System.out.println("Logueo existoso");
 				}
 				if(option == 2 && Main.listaUsuarios.get(usuario) instanceof UsuarioAdministrador){
 					Main.usuarioActual=Main.listaUsuarios.get(usuario);
-				}
-				else{
-					System.out.print("No existe un usuario Administrador con esos datos");
-					scn.close();
-					return;
+					System.out.println("Logueo exitoso");
 				}
 			}
 			else{
-				System.out.println("\nContraseÃ±a incorrecta!");}
+				System.out.println("\nContraseÃ±a incorrecta!");
+				return;
+			}
 		}else{
 			System.out.println("\nUsuario no encontrado!");
+					return;
 		}
-		scn.close();
-	}//Cierre del método
+//Cierre del método
 	/**
 	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
 	 * @return Retorna el tipo de opción
 	 */
+	//Cierre del método
+	//Cierre de la clase
+		System.out.println("El usuario no posee el rol especificado");
+		return;
+	}
+
+
+
 	public String toString(){
-		return "Iniciar Sesion.";
-	}//Cierre del método
-}//Cierre de la clase
+		return "iniciar Sesion.";
+	}
+}
+

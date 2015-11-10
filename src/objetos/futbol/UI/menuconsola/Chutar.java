@@ -19,19 +19,19 @@ public class Chutar extends OpcionDeMenu {
 	 */
 	@Override
 	public void ejecutar(){
-		System.out.print("---------------------------------------------------\n"+this);
+		System.out.print("---------------------------------------------------\n"+this+"\n");
 		try{
 			Main.dos.writeInt(Main.chutar.getIdJugada());
 			Main.dos.flush();
 		}catch(IOException e){
 			System.out.println("No se pudo ejecutar la jugada");
 		}
-		
-	}//Cierre del método
+//Cierre del método
 	/**
 	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
 	 * @return Retorna el tipo opcion
 	 */
+	}
 	@Override
 	public String toString(){
 		return "Chutar";

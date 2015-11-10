@@ -1,30 +1,31 @@
 package objetos.futbol.varios;
 
 import objetos.futbol.UI.menuconsola.MenuDeConsola;
-import java.util.ArrayList;
 /**
  * Clase para definir un usuario administrador
  * @author Santiago Peláez
  *
  */
+
 public class UsuarioAdministrador implements Usuario {
 	//Campos de la clase
 	private String nombre, clave;
 	public MenuDeConsola menu = new MenuDeConsola();
-	public ArrayList<Integer> permisos = new ArrayList<>();
 	/**
 	 * constructor para caracterizar un Usuario administrador
 	 * @param nombre
 	 * @param clave
 	 */
+	//No creamos array de permisos en administrador, porque los tiene todos
 	public UsuarioAdministrador(String nombre, String clave){
 		this.nombre = nombre;
 		this.clave = clave;
 		asignarMenu();
-	}//Cierre del constructor
+	//Cierre del constructor
 	/**
 	 * Método sobreescrito de la interfaz usuario que permite modificar el nombre del usuario
 	 */
+}
 	@Override
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
@@ -52,10 +53,11 @@ public class UsuarioAdministrador implements Usuario {
 	@Override
 	public String getNombre() {
 		return nombre;
-	}//Cierre del método
+//Cierre del método
 	/**
 	 * Método sobreescrito de la interfaz usuario que permite ejecutar el método lanzar menu
 	 */
+	}
 	@Override
 	public void lanzarMenu() {
 		menu.lanzarMenu();	
@@ -65,8 +67,11 @@ public class UsuarioAdministrador implements Usuario {
 	 */
 	public void asignarMenu(){
 		menu.limpiar();
-		for(int i = 0; i < permisos.size(); i++){
-			menu.anadirOpcion(MenuDeConsola.opciones2.get(permisos.get(i)));
+		for(int i = 0; i < MenuDeConsola.opciones2.size(); i++){
+			menu.anadirOpcion(MenuDeConsola.opciones2.get(i));
 		}
-	}//Cierre del método
-}//Cierre de la clase
+//Cierre del método
+//Cierre de la clase
+	}
+}
+

@@ -22,10 +22,16 @@ public class Trotar extends OpcionDeMenu{
 	 */
 	@Override
 	public void ejecutar(){
-		System.out.print("---------------------------------------------------\n"+this);
+		System.out.print("---------------------------------------------------\n"+this+"\n");
 		try{
 		Main.dos.writeInt(Main.trotar.getIdJugada());
 		Main.dos.flush();
+		if(categoria == Categoria.ARQUERO){
+			  Main.cancha.actualizarPosicion(Main.dis.readInt(), Main.dis.readInt(), Main.r1);
+			}
+			else if(categoria == Categoria.DELANTERO){
+				Main.cancha.actualizarPosicion(Main.dis.readInt(), Main.dis.readInt(), Main.r2);
+			}
 		}
 		catch(IOException e){
 			System.out.print("No se pudo ejecutar la jugada");

@@ -23,11 +23,12 @@ public class JugadaComplejaDefensiva extends JugadaCompleja {
 	public JugadaComplejaDefensiva(String nombreJugada,String fechaCreacion,UsuarioAdministrador Autor,ArrayList<JugadaPrimitiva> Jugada,String Explicacion){
 		super(nombreJugada, fechaCreacion, Autor, Jugada, Explicacion);
 		this.complejidad=super.getJugada().size();
-		this.descripcion = "La jugada " + nombreJugada + " es una " + getComplejidad()+ ", fue creada por " + Autor + ", en la fecha " + fechaCreacion;
-		}//Cierre del constructor
+	//Cierre del constructor
 	/**
 	 * Método para dovolver el tipo de jugada (defensiva, ofensiva o tiro libre) sobreescrita de la clase JugadaCompleja
 	 */
+		this.descripcion = "La jugada " + nombreJugada + " es una " + getComplejidad()+ ", fue creada por " + Autor.getNombre() + ", en la fecha " + fechaCreacion;
+		}
 	@Override
 	public String identificarJugada() {
 		return "Jugada Defensiva";
@@ -57,4 +58,8 @@ public class JugadaComplejaDefensiva extends JugadaCompleja {
 	public String getDescripcion(){
 		return descripcion;
 	}//Cierre del método
-}//Cierre de la clase
+//Cierre de la clase
+	public int getnumcomplejidad(){
+		return complejidad;
+	}
+}

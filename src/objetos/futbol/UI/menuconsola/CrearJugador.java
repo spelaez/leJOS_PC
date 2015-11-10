@@ -28,32 +28,32 @@ public class CrearJugador extends OpcionDeMenu {
 	 */
 	@Override
 	public void ejecutar(){
-		System.out.println("---------------------------------------------------\n"+this);
+		System.out.print("---------------------------------------------------\n"+this+"\n");
 		System.out.println("Ingrese tipo jugador");
 		System.out.println("1 para delantero \n2 para arquero ");
-		Scanner scn = new Scanner(System.in);
 		try{
-			int tipo = scn.nextInt();
+			int tipo = Main.scn.nextInt();
 			while(tipo < 1 || tipo > 2){
-				System.out.print("Dato fuera de rango, por favor ingréselo de nuevo");
-				tipo = scn.nextInt();
+				System.out.print("Dato fuera de rango, por favor ingrï¿½selo de nuevo");
+				tipo = Main.scn.nextInt();
 			}
 			ArrayList<JugadaCompleja> lista = new ArrayList<>(); 
 			System.out.println("Ingrese Nombre");
-			String nom = scn.next();
+			String nom = Main.scn.next();
 			System.out.println("Ingrese Dorsal");
-			byte dor = scn.nextByte();
+			byte dor = Main.scn.nextByte();
 			if(Main.listaJugadasComplejas.size() > 0 ){
 				int n;
 				while(lista.size()<3){
 					new ListaJugadasDisponibles(Categoria.SISTEMA).ejecutar();
 					System.out.println("0. Salir");
 					try{
-						n = scn.nextInt()-1;
-						while(n < Main.listaJugadasComplejas.size() && n >= -1){
-							System.out.println("Dato fuera de rango, porfavor ingrece un entero");
-							n = scn.nextInt();
+						n = Main.scn.nextInt();
+						while(n < 0 || n > Main.listaJugadasComplejas.size()){
+							System.out.println("Dato fuera de rango, porfavor ingrese un entero");
+							n = Main.scn.nextInt();
 						}
+						n -= 1;
 						if(n == -1){
 							break;
 						}
@@ -64,32 +64,34 @@ public class CrearJugador extends OpcionDeMenu {
 						System.out.println("Error: Dato incorrecto, ingrese un entero");
 					}catch(NumberFormatException e){
 						System.out.println("Dato incorrecto, ingrese un entero");
+					}catch(IndexOutOfBoundsException e){
+						System.out.println("holi");
 					}
 
 				}
 			}
 			else{
 				System.out.println("No hay jugadas disponibles, porfavor cree una jugada primero");
-				scn.close();
 				return;
 			}
 			if(tipo == 1){
-				Main.listaJugadores.add(new Delantero(nom,"Delantero",(short)0,dor,lista));
+				Main.listaJugadores.add(new Delantero(nom,"delantero",(short)0,dor,lista));
 			}
 			else if( tipo == 2){
-				Main.listaJugadores.add(new Arquero(nom,"Arquero",0,dor,lista));
+				Main.listaJugadores.add(new Arquero(nom,"arquero",0,dor,lista));
 			}
 		}catch(InputMismatchException e){
 			System.out.println("Error: Dato incorrecto, ingrese un entero");
 		}catch(NumberFormatException e){
 			System.out.println("Dato incorrecto, ingrese un entero");
 		}
-		scn.close();
-	}//Cierre del método
+//Cierre del método
 	/**
 	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
 	 * @return Retorna el tipo de opción
 	 */
+	}
+
 	@Override
 	public String toString(){
 		return "Crear nuevo Jugador";

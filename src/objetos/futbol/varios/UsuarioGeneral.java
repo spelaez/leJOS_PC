@@ -1,27 +1,27 @@
 package objetos.futbol.varios;
 
 import objetos.futbol.UI.menuconsola.MenuDeConsola;
-import java.util.ArrayList;
 /**
  * Clase que define un usuario general
  * @author Santiago Peláez
  *
  */
-public class UsuarioGeneral implements Usuario{
-	//Campos de clase
-	private String nombre;
-	private String clave;
-	public MenuDeConsola menu = new MenuDeConsola();
-	public ArrayList<Integer> permisos = new ArrayList<>();
 	/**
 	 * Constructor que caracteriza un usuario general
 	 * @param nombre
 	 * @param clave
 	 */
+
+public class UsuarioGeneral implements Usuario
+{
+	private String nombre;
+	private String clave;
+	public MenuDeConsola menu = new MenuDeConsola();
+	public static Integer[] permisos = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,21,22,24,25,27,28,30,31};
+	
 	public UsuarioGeneral(String nombre, String clave) {
 		this.nombre = nombre;
 		this.clave = clave;
-		agregarPermisos();
 		asignarMenu();
 	}//Cierre del constructor
 	/**
@@ -49,27 +49,25 @@ public class UsuarioGeneral implements Usuario{
 	 */
 	public String getClave(){
 		return clave;
-	}//Cierre del método
-	/**
-	 * Método sobreescrito de la interfaz usuario que permite ejecutar el método lanzar menu
-	 */
-	@Override
-	public void lanzarMenu() {
-		menu.lanzarMenu();
-	}//Cierre del método
-	/**
-	 * Método que asigna permisos a un usuario general
-	 */
-	public void agregarPermisos(){
-		//TODO: codigo para agregar los permisos cuando estÃ©n definidos
-	}//Cierre del método
 	/**
 	 * Ejecuta el método asignar menú, que muestra las opciones dependiendo del usuario
 	 */
+	}
+	
+	public Integer[] getPermisos(){
+		return permisos;
+	}
+
+	@Override
+	public void lanzarMenu() {
+		menu.lanzarMenu();
+	}
+	
+	
 	public void asignarMenu(){
 		menu.limpiar();
-		for(int i=0; i<permisos.size(); i++){
-			menu.anadirOpcion(MenuDeConsola.opciones2.get(permisos.get(i)));
+		for(int i=0; i<permisos.length; i++){
+			menu.anadirOpcion(MenuDeConsola.opciones2.get(permisos[i]-1));
 		}
 	}//Cierre del método
 }//Cierre de la clase

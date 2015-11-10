@@ -44,4 +44,11 @@ public class Arquero extends Futbolista {
 	public void registrarTiempoGol(int tiempo){
 		this.TiempoSinGoles = tiempo;
 	}//Cierre del método
+	public byte getDorsal(){
+		return dorsal;
+	}
+	public int getTiempoSinGoles(){
+		return TiempoSinGoles;
+	}
 }//Cierre de la clase
+

@@ -1,5 +1,11 @@
 package objetos.futbol.cancha;
 
+import java.io.IOException;
+
+import objetos.futbol.UI.Main;
+import objetos.futbol.jugadores.Arquero;
+import objetos.futbol.robots.Robot;
+
 public class Cancha {
 //Medidas en grupos de a 61MM y algunas redondeadas para evitar decimales
 	static final int LARGO_CANCHA = 20;
@@ -10,7 +16,18 @@ public class Cancha {
 	static final int CAMPO = 15;
 	static final int BORDES_EXTERIORES = 5;
 	static final int ZONA_SUP_INF = 6;
+	static int Aposx, Aposy, Aultx, Aulty, Dposx, Dposy, Dultx, Dulty;
 	static String[][] rep;
+	static String[][] repClone;
+	
+	public Cancha(){
+		Aposx = 0;
+		Aposy = LARGO_CANCHA-1;
+		Dposx = 0;
+		Dposy = 0;
+		inicializarCancha();
+		repClone = rep.clone();
+	}
 	
 	public void inicializarCancha(){
 		rep = new String[LARGO_CANCHA][ANCHO_CANCHA];
@@ -35,8 +52,40 @@ public class Cancha {
 		}
 	}
 	
-	public void actualizarPosicion(int i, int j, int anti, int antj){
-		rep[i][j] = "X";
-		rep[anti][antj] = " ";
+	public void actualizarPosicion(int x, int y, Robot r) throws IOException{//Recibido movimiento del robot en milimetros
+		try{
+			if(r.getJugador() instanceof Arquero){
+			rep[Aposx/61][Aposy/61] = repClone[Aposx/61][Aposy/61];
+			Aposx += x;
+			Aposy += y;
+			rep[Aposx/61][Aposy/61] = "A";
+			try{
+			comprobarLimite();
+			}
+			catch(FieldLimitExceededException e){
+				System.out.println(e.getMessage());
+				Main.dos.writeInt(0);
+				rep[Aposx/61][Aposy/61] = repClone[Aposx/61][Aposy/61];
+				Aposx = 0;
+				Aposy = LARGO_CANCHA-1;
+				rep[0][LARGO_CANCHA-1] = "A";
+			}
+		}
+		else{
+			rep[Aposx/61][Aposy/61] = repClone[Aposx/61][Aposy/61];
+			Dposx += x;
+			Dposy += y;
+			rep[Aposx/61][Aposy/61] = "D";
+		}
+		}catch(IndexOutOfBoundsException e){
+			System.out.println("El Robot se ha salido de la cancha, porfavor reposicionarlo");
+		}
+		
+	}
+	
+	public void comprobarLimite() throws FieldLimitExceededException{
+		if(Aposx > ANCHO_CANCHA/2){
+			throw new FieldLimitExceededException();
+		}
 	}
 }

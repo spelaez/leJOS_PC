@@ -19,7 +19,7 @@ public class IniciarPartido extends OpcionDeMenu{
 	 */
 	@Override
 	public void ejecutar() {
-		System.out.print("-----------------------------------------------------------"+this);
+		System.out.print("---------------------------------------------------\n"+this+"\n");
 		Main.tInicio = System.currentTimeMillis();
 		Main.tUltimoGol = Main.tInicio;
 		System.out.print("Partido Iniciado\n-----------------------------------------------------------");
@@ -30,6 +30,9 @@ public class IniciarPartido extends OpcionDeMenu{
 	 */
 	@Override
 	public String toString(){
-		return "Iniciar Partido...";
-	}//Cierre del método
-}//Cierre de la clase
+//Cierre del método
+//Cierre de la clase
+		return "Iniciar Partido";
+	}
+}
+

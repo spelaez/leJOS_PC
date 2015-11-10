@@ -43,4 +43,14 @@ public class Delantero extends Futbolista {
 	public void registrarGol(){
 		this.golesMarcados++;
 	}//Cierre del método
+
+
+
+	public byte getDorsal(){
+		return dorsal;
+	}
+	public short getGolesMarcados(){
+		return golesMarcados;
+	}
 }//Cierre de la clase
+

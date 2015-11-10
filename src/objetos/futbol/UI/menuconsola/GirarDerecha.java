@@ -21,7 +21,7 @@ public class GirarDerecha extends OpcionDeMenu{
 	 */
 	@Override
 	public void ejecutar(){
-		System.out.print("---------------------------------------------------\n"+this);
+		System.out.print("---------------------------------------------------\n"+this+"\n");
 		try{
 		Main.dos.writeInt(Main.girarDerecha.getIdJugada());
 		Main.dos.flush();

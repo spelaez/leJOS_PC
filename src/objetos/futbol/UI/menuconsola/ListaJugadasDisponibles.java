@@ -24,7 +24,7 @@ public class ListaJugadasDisponibles extends OpcionDeMenu{
 	 */
 	@Override
 	public void ejecutar(){
-		System.out.print("------------------------------------------------\n"+this);
+		System.out.print("---------------------------------------------------\n"+this+"\n");
 		
 		ArrayList<JugadaComplejaDefensiva> jDefensivas = new ArrayList<>();
 		ArrayList<JugadaComplejaOfensiva> jOfensivas = new ArrayList<>();
@@ -53,5 +53,11 @@ public class ListaJugadasDisponibles extends OpcionDeMenu{
 		for(JugadaComplejaTiroLibre x: jTiroLibre){
 			System.out.println((Main.listaJugadasComplejas.indexOf(x)+1)+" "+x);
 		}
-	}//Cierre del método
-}//Cierre de la clase
+	//Cierre del método
+//Cierre de la clase
+	}
+	@Override
+	public String toString(){
+		return "Jugadas disponibles";
+	}
+}

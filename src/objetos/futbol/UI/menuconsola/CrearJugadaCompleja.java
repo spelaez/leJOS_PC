@@ -1,7 +1,6 @@
 package objetos.futbol.UI.menuconsola;
 
 import java.util.InputMismatchException;
-import java.util.Scanner;
 import objetos.futbol.UI.Main;
 import java.util.ArrayList;
 import objetos.futbol.robots.JugadaPrimitiva;
@@ -27,29 +26,28 @@ public class CrearJugadaCompleja extends OpcionDeMenu {
 	 */
 	@Override
 	public void ejecutar() {		
-		System.out.print("--------------------------------------------\n"+this);
-		System.out.print("Ingrese el tipo de jugada compleja");
-		System.out.print("1 Para defensiva \n2 Para ofensiva \n3 Para tiro libre");
-		Scanner scn = new Scanner(System.in);
+		System.out.println("---------------------------------------------------\n"+this+"\n");
+		System.out.println("Ingrese el tipo de jugada compleja");
+		System.out.println("1 Para defensiva \n2 Para ofensiva \n3 Para tiro libre");
 
 		try{
-			int n = scn.nextInt();
+			int n = Main.scn.nextInt();
 			while(n < 1 || n > 3){
-				System.out.print("Dato fuera de rango, por favor ingrï¿½selo de nuevo");
-				n = scn.nextInt();
+				System.out.println("Dato fuera de rango, por favor ingrï¿½selo de nuevo");
+				n = Main.scn.nextInt();
 			}			
 			System.out.println("Ingrese nombre de la jugada");
-			String nom = scn.next();
+			String nom = Main.scn.next();
 			System.out.println("Ingrese fecha de creacion Dia-Mes-Aï¿½o");
-			String fecha = scn.next();				
+			String fecha = Main.scn.next();				
 			System.out.println("Ingrese una explicacion");
-			String expl = scn.next();	
+			String expl = Main.scn.next();	
 			ArrayList <JugadaPrimitiva> lista = new ArrayList<>();
 			byte num;
 
 			do{
 				System.out.println("1. Trotar \n2. Correr \n3. Retroceder \n4. Girar derecha \n5. Girar izquierda \n6. Chute normal \n7. Chute fuerte \n0 Para salir" );
-				num = scn.nextByte();						
+				num = Main.scn.nextByte();						
 				if(num == 1){
 					lista.add(Main.trotar);
 				}
@@ -90,12 +88,12 @@ public class CrearJugadaCompleja extends OpcionDeMenu {
 		catch(InputMismatchException e){
 			System.out.println("Error: dato incorrecto");
 		}
-		scn.close();
-	}//Cierre del métod
+//Cierre del métod
 	/**
 	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
 	 * @return Retorna el tipo de opción
 	 */
+	}	
 	public String toString(){
 		return "Crear nueva jugada compleja";
 	}//Cierre del método

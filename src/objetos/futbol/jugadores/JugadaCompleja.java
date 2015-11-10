@@ -29,7 +29,7 @@ public abstract class JugadaCompleja {
 		this.Autor=Autor;
 		this.Jugada=Jugada;
 		this.Explicacion=Explicacion;
-		
+
 	}//Cierre del constructor
 	/**
 	 * Método para devolver sobreescrito del package object
@@ -44,7 +44,7 @@ public abstract class JugadaCompleja {
 	 * @return Retorna verdadero si hay jugadas complejas repetidas
 	 */
 	public boolean equals(JugadaCompleja j){
-		
+
 		if (!(j.Jugada.size() == this.Jugada.size())){
 			return false;
 		}
@@ -52,7 +52,7 @@ public abstract class JugadaCompleja {
 			if(!(this.Jugada.get(i).getIdJugada() == j.Jugada.get(i).getIdJugada())){
 				return false;
 			}
-		
+
 		}
 		return true;
 	}//Cierre del método
@@ -89,4 +89,8 @@ public abstract class JugadaCompleja {
 	public String getfechaCreacion(){
 		return fechaCreacion;
 	}//Cierre del método
+
+	public String getNombre(){
+		return nombreJugada;
+	}
 }//Cierre de la clase

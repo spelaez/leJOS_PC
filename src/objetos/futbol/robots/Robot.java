@@ -31,11 +31,14 @@ public class Robot {
 		this.girarIzquierda = Main.girarIzquierda;
 		this.chutar = Main.chutar;
 		this.patear = Main.patear;
-	}//Cierre del constructor
+//Cierre del constructor
 	/**
 	 * Método para ver si el futbolista es un arquero o un delantero
 	 * @return Retorna el tipo de jugador
 	 */
+		this.jugador = jugador;
+	}
+	
 	public Futbolista getJugador(){
 		return jugador;
 	}//Cierre del método
