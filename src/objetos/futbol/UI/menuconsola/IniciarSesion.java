@@ -25,7 +25,6 @@ public class IniciarSesion extends OpcionDeMenu{
 		int option = Main.scn.nextInt();
 		System.out.print("Usuario:\n");
 		usuario=Main.scn.next();
-
 		System.out.print("Contraseña:\n");
 		clave=Main.scn.next();
 
