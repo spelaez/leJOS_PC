@@ -30,7 +30,7 @@ public class CrearJugador extends OpcionDeMenu {
 			}
 			ArrayList<JugadaCompleja> lista = new ArrayList<>(); 
 			System.out.println("Ingrese Nombre");
-			String nom = Main.scn.nextLine();
+			String nom = Main.scn.next();
 			System.out.println("Ingrese Dorsal");
 			byte dor = Main.scn.nextByte();
 			if(Main.listaJugadasComplejas.size() > 0 ){
