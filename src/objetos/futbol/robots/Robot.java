@@ -2,6 +2,9 @@ package objetos.futbol.robots;
 
 import java.io.IOException;
 import objetos.futbol.UI.Main;
+import objetos.futbol.UI.menuconsola.Categoria;
+import objetos.futbol.jugadores.Arquero;
+import objetos.futbol.jugadores.Delantero;
 import objetos.futbol.jugadores.Futbolista;
 import objetos.futbol.jugadores.JugadaCompleja;
 /**
@@ -109,5 +112,13 @@ public class Robot {
 			Main.dos.writeInt(j.getIdJugada());
 		}
 		Main.dos.flush();
+		for (int i=0;i<x.getJugada().size();i++){
+		if( jugador instanceof Arquero){
+			Main.cancha.actualizarPosicion(Main.dis.readInt(), Main.dis.readInt(),Main.r1);
+		}
+		else if(jugador instanceof Delantero){
+			Main.cancha.actualizarPosicion(Main.dis.readInt(), Main.dis.readInt(),Main.r2);
+		}
+		}
 	}//Cierre del método
 }//Cierr de la clase

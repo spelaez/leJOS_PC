@@ -26,12 +26,12 @@ public class Trotar extends OpcionDeMenu{
 		try{
 		Main.dos.writeInt(Main.trotar.getIdJugada());
 		Main.dos.flush();
-		if(categoria == Categoria.ARQUERO){
-			  Main.cancha.actualizarPosicion(Main.dis.readInt(), Main.dis.readInt(), Main.r1);
-			}
-			else if(categoria == Categoria.DELANTERO){
-				Main.cancha.actualizarPosicion(Main.dis.readInt(), Main.dis.readInt(), Main.r2);
-			}
+		if( categoria == Categoria.ARQUERO){
+			Main.cancha.actualizarPosicion(Main.dis.readInt(), Main.dis.readInt(),Main.r1);
+		}
+		else if(categoria== Categoria.DELANTERO){
+			Main.cancha.actualizarPosicion(Main.dis.readInt(), Main.dis.readInt(),Main.r2);
+		}
 		}
 		catch(IOException e){
 			System.out.print("No se pudo ejecutar la jugada");

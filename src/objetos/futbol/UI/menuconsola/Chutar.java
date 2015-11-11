@@ -1,6 +1,7 @@
 package objetos.futbol.UI.menuconsola;
 import java.io.IOException;
 import objetos.futbol.UI.Main;
+import objetos.futbol.jugadores.Arquero;
 /**
  * Método que define la opción chutar 
  * @author Juan Pablo Betancur
@@ -23,6 +24,12 @@ public class Chutar extends OpcionDeMenu {
 		try{
 			Main.dos.writeInt(Main.chutar.getIdJugada());
 			Main.dos.flush();
+			if( categoria == Categoria.ARQUERO){
+				Main.cancha.actualizarPosicion(Main.dis.readInt(), Main.dis.readInt(),Main.r1);
+			}
+			else if(categoria== Categoria.DELANTERO){
+				Main.cancha.actualizarPosicion(Main.dis.readInt(), Main.dis.readInt(),Main.r2);
+			}
 		}catch(IOException e){
 			System.out.println("No se pudo ejecutar la jugada");
 		}//Cierre del método
