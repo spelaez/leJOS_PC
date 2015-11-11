@@ -80,11 +80,11 @@ public class Cancha {
 		}catch(IndexOutOfBoundsException e){
 			System.out.println("El Robot se ha salido de la cancha, porfavor reposicionarlo");
 		}
-		
+		System.out.println("El robot ha cambiado a la posicion :"+ (Aposx/61) +" "+(Aposy/61));
 	}
 	
 	public void comprobarLimite() throws FieldLimitExceededException{
-		if(Aposx > ANCHO_CANCHA/2){
+		if(Aposx > ANCHO_CANCHA/2*61){
 			throw new FieldLimitExceededException();
 		}
 	}

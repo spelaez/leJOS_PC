@@ -54,7 +54,7 @@ public class Main {
 	//Lista de Jugadores
 	public static ArrayList<Futbolista> listaJugadores = new ArrayList<>();
 	//Cancha
-	public static Cancha cancha;
+	public static Cancha cancha = new Cancha();
 	//Robots
 	public static Robot r1, r2;
 
@@ -92,6 +92,7 @@ public class Main {
 
 		}
 		catch(Exception e){
+			e.printStackTrace();
 			System.out.println("\n\n\nAplicacion terminada\n");
 		}
 	}
