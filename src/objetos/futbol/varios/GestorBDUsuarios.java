@@ -24,10 +24,15 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import objetos.futbol.UI.Main;
-
+/**
+ * Clase que crea, guarda y lee un archivo XML para los usuarios registrados
+ * @author Santiago Pélaez
+ *
+ */
 public class GestorBDUsuarios {
-
-
+	/**
+	 * Método que permite guardar usuarios nuevos
+	 */
 	public void guardarUsuarios(){
 		Usuario g;
 		System.out.println("Guardando usuarios...");
@@ -104,7 +109,10 @@ public class GestorBDUsuarios {
 		} catch (TransformerException e) {
 			e.printStackTrace();
 		}
-	}
+	}//Cierre del método
+	/**
+	 * Método que permite leer un archivo XML con el listado de los usuarios disponibles
+	 */
 	public void leerUsuarios(){
 		System.out.println("Leyendo base de datos de usuarios");
 		Usuario g;
@@ -142,6 +150,6 @@ public class GestorBDUsuarios {
 		} catch (ParserConfigurationException | SAXException | IOException e) {
 			e.printStackTrace();
 		}
-	}
-}
+	}//Cierre del método
+}//Cierre de la clase
 

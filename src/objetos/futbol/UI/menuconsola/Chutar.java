@@ -25,8 +25,7 @@ public class Chutar extends OpcionDeMenu {
 			Main.dos.flush();
 		}catch(IOException e){
 			System.out.println("No se pudo ejecutar la jugada");
-		}
-//Cierre del método
+		}//Cierre del método
 	/**
 	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
 	 * @return Retorna el tipo opcion
@@ -36,5 +35,4 @@ public class Chutar extends OpcionDeMenu {
 	public String toString(){
 		return "Chutar";
 	}//Cierre del método
-
 }//Cierre de la clase

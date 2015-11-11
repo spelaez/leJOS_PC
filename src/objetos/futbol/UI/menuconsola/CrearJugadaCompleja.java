@@ -88,12 +88,12 @@ public class CrearJugadaCompleja extends OpcionDeMenu {
 		catch(InputMismatchException e){
 			System.out.println("Error: dato incorrecto");
 		}
-//Cierre del métod
+
+	}//Cierre del métod
 	/**
 	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
 	 * @return Retorna el tipo de opción
 	 */
-	}	
 	public String toString(){
 		return "Crear nueva jugada compleja";
 	}//Cierre del método

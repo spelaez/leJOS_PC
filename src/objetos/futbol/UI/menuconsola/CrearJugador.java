@@ -12,7 +12,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 /**
  * Clase que define la opción crear jugador, consiste de un ArrayList para guardar las jugadas complejas del jugador nuevo
- * @author Jhon Eider Murrilo
+ * @author Jhon Eider Murilo
  *
  */
 public class CrearJugador extends OpcionDeMenu {
@@ -85,13 +85,12 @@ public class CrearJugador extends OpcionDeMenu {
 		}catch(NumberFormatException e){
 			System.out.println("Dato incorrecto, ingrese un entero");
 		}
-//Cierre del método
+
+	}//Cierre del método
 	/**
 	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
 	 * @return Retorna el tipo de opción
 	 */
-	}
-
 	@Override
 	public String toString(){
 		return "Crear nuevo Jugador";

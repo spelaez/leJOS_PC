@@ -90,19 +90,14 @@ public class ConsultarExplicacionJugada extends OpcionDeMenu{
 		catch(InputMismatchException e){
 			System.out.println("Error: dato incorrecto");
 		}
-//Cierre del método
+	}//Cierre del método
 	/**
 	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
 	 * @return Retorna el tipo de opción
-	 */
-	//Cierre del método
-//Cierre de la clase
-
-	}
-	
+	 */	
 	@Override
 	public String toString(){
 		return "Consultar Explicacion de una jugada";
-	}
-}
+	}//Cierre del método
+}//Cierre de la clase
 

@@ -55,22 +55,16 @@ public class IniciarSesion extends OpcionDeMenu{
 		}else{
 			System.out.println("\nUsuario no encontrado!");
 					return;
-		}
-//Cierre del método
+		}	
+		System.out.println("El usuario no posee el rol especificado");
+		return;
+	}//Cierre del método
 	/**
 	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
 	 * @return Retorna el tipo de opción
 	 */
-	//Cierre del método
-	//Cierre de la clase
-		System.out.println("El usuario no posee el rol especificado");
-		return;
-	}
-
-
-
 	public String toString(){
 		return "iniciar Sesion.";
-	}
-}
+	}//Cierre del método
+}//Cierre de la clase
 

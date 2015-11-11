@@ -46,10 +46,13 @@ public abstract class Futbolista {
 	public ArrayList<JugadaCompleja> getListaJugadas(){
 		return listaJugadas;
 	}//Cierre del método
-	
+	/**
+	 * Método que muestra el nombre del delantero
+	 * @return
+	 */
 	public String getNombre(){
 		return nombre;
-	}
+	}//Cierre del método
 	/**
 	 * Verifica si el jugador juega con las manos
 	 * @return Retorna verdadero si el jugador juega con las manos

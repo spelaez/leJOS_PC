@@ -22,9 +22,15 @@ import javax.xml.transform.stream.StreamResult;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.w3c.dom.*;
-
+/**
+ * Clase para crear, modificar y leer un archivo XML, que guarda los jugadores existentes 
+ * @author Jhon Eider Murillo
+ *
+ */
 public class GestorBDJugadores {
-	
+	/**
+	 * Método que guarda los jugadores creados por el usuario
+	 */
 	public void guardarJugadores(){
 		System.out.println(".... Guardando jugadores");
 		if(Main.listaJugadores.size() ==0){
@@ -109,8 +115,10 @@ public class GestorBDJugadores {
 			e.printStackTrace();
 		}
 		System.out.println("Jugadores guardados exitosamente");
-	}
-	
+	}//Cierre del método
+	/**
+	 * Método que permite leer el archivo XML con el listado de los jugadores
+	 */
 	public void LeerJugadores(){
 		Delantero A;
 		Arquero B;
@@ -174,7 +182,6 @@ public class GestorBDJugadores {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 
-	}  
-
-}
+	}//Cierre del método
+}//Cierre de la clase
 

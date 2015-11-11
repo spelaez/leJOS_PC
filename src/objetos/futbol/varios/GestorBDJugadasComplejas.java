@@ -22,9 +22,15 @@ import javax.xml.transform.stream.StreamResult;
 
 import org.xml.sax.InputSource;
 import org.w3c.dom.*;
-
+/**
+ * Clase que crear un archivo XML para guardar las jugadas complejas
+ * @author Juan Pablo Betancur
+ *
+ */
 public class GestorBDJugadasComplejas {
-
+	/**
+	 * Método de la clase que guarda las jugadas complejas nuevas 
+	 */
 	public void guardarJugadas(){
 		System.out.println(".... Guarardando jugadas");
 		if(Main.listaJugadasComplejas.size()==0){
@@ -170,8 +176,10 @@ public class GestorBDJugadasComplejas {
 			e.printStackTrace();
 		}
 		System.out.println("Jugadas guardas exitosamente");
-	}
-
+	}//Cierre del método
+	/**
+	 * Método para leer las jugadas que ya están guardadas en el XML
+	 */
 	public void leerJugadas(){
 		System.out.println("Leyendo jugadas....");
 		try {
@@ -331,5 +339,5 @@ public class GestorBDJugadasComplejas {
 		}catch(Exception e){
 			System.out.println("el");
 		}
-	}
-}
+	}//Cierre del método
+}//Cierre de la clase

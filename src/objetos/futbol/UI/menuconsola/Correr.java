@@ -42,7 +42,6 @@ public class Correr extends OpcionDeMenu {
 	@Override
 	public String toString(){
 		return "Correr";
-	}//Cierre del método
-	
+	}//Cierre del método	
 }//Cierre de la clase
 

@@ -31,24 +31,32 @@ public class Arquero extends Futbolista {
 		return super.toString()+" con el dorsal "+ dorsal+ " Tiempo Sin Goles "+TiempoSinGoles;
 	}//Cierre del método
 	/**
-	 * Verifica si el jugador juega con las manos, parametro de salida: true
+	 * Verifica si el jugador juega con las manos
 	 * @return Retorna verdadero si el futbolista juega con las manos  
 	 */
 	public boolean jugarConLasManos(){
 		return true;
 	}//Cierre del método
 	/**
-	 * Cuenta el tiempo sin goles que lleva el arquero
+	 * Método que permite modificar el tiempo sin goles que lleva el arquero
 	 * @param tiempo
 	 */
 	public void registrarTiempoGol(int tiempo){
 		this.TiempoSinGoles = tiempo;
 	}//Cierre del método
+	/**
+	 * Muestra la dorsal que lleva el jugador
+	 * @return Retorna el numero de la dorsal
+	 */
 	public byte getDorsal(){
 		return dorsal;
-	}
+	}//Cierre del método
+	/**
+	 * Muestra el tiempo sin goles que lleva el arquero
+	 * @return Retorna el tiempo
+	 */
 	public int getTiempoSinGoles(){
 		return TiempoSinGoles;
-	}
+	}//Cierre del método
 }//Cierre de la clase
 

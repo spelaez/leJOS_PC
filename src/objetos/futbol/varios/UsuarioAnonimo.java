@@ -22,14 +22,14 @@ public class UsuarioAnonimo {
 	 * Método que añade las opciones de menú a un usuario anónimo
 	 */
 	public void asignarMenu(){
-		menu.limpiar();
-	//Cierre del método
-//Cierre de la clase
+		menu.limpiar();	
 		menu.anadirOpcion(MenuDeConsola.opciones2.get(27));
 		menu.anadirOpcion(MenuDeConsola.opciones2.get(29));
 		menu.anadirOpcion(MenuDeConsola.opciones2.get(30));
-	}
-	
+	}//Cierre de la clase
+	/**
+	 * Método que Lanza el menú para un usuario anónimo
+	 */
 	public void lanzarMenu(){
 		int option;
 		for(int i = 0; i < menu.opciones.size(); i++){
@@ -53,5 +53,6 @@ public class UsuarioAnonimo {
 		catch(InputMismatchException e){
 			System.out.println("Error: Dato incorrecto");
 		}
-	}
-}
+	}//Cierre del método
+}//Cierre de la clase
+

@@ -33,5 +33,4 @@ public class MoverAdelante extends JugadaPrimitiva {
 			idJugada = 2;
 		}
 	}//Cierre del método
-
 }//Cierre de la clase

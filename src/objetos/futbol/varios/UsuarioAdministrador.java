@@ -6,7 +6,6 @@ import objetos.futbol.UI.menuconsola.MenuDeConsola;
  * @author Santiago Peláez
  *
  */
-
 public class UsuarioAdministrador implements Usuario {
 	//Campos de la clase
 	private String nombre, clave;
@@ -24,12 +23,10 @@ public class UsuarioAdministrador implements Usuario {
 	//Cierre del constructor
 	/**
 	 * Método sobreescrito de la interfaz usuario que permite modificar el nombre del usuario
-	 */
-}
+	 */}
 	@Override
 	public void setNombre(String nombre) {
-		this.nombre = nombre;
-		
+		this.nombre = nombre;		
 	}//Cierre del método
 	/**
 	 * Método sobreescrito de la interfaz usuario que permite modificar la clave del usuario
@@ -53,11 +50,10 @@ public class UsuarioAdministrador implements Usuario {
 	@Override
 	public String getNombre() {
 		return nombre;
-//Cierre del método
+	}//Cierre del método
 	/**
 	 * Método sobreescrito de la interfaz usuario que permite ejecutar el método lanzar menu
 	 */
-	}
 	@Override
 	public void lanzarMenu() {
 		menu.lanzarMenu();	
@@ -70,8 +66,6 @@ public class UsuarioAdministrador implements Usuario {
 		for(int i = 0; i < MenuDeConsola.opciones2.size(); i++){
 			menu.anadirOpcion(MenuDeConsola.opciones2.get(i));
 		}
-//Cierre del método
-//Cierre de la clase
-	}
-}
+	}//Cierre del método
+}//Cierre de la clase
 

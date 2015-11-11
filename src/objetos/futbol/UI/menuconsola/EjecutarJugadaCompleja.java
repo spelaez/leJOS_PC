@@ -6,12 +6,22 @@ import objetos.futbol.jugadores.JugadaCompleja;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
+/**
+ * Clase para ejecutar la opción de menú
+ * @author Jhon Eider Murillo, Santiago Pélaez
+ *
+ */
 public class EjecutarJugadaCompleja extends OpcionDeMenu{
-
+	/**
+	 * Constructor de la clase que devuelve de la categoria opción
+	 * @param categoria
+	 */
 	public EjecutarJugadaCompleja(Categoria categoria){
 		super(categoria);
-	}
-	
+	}//Cierre del contructor
+	/**
+	 * Método que ejecuta el menú para ejecurtar una jugada compleja
+	 */
 	public void ejecutar(){
 		if(categoria == Categoria.ARQUERO){
 			System.out.print("---------------------------------------------------\n"+this+"\n");
@@ -60,11 +70,13 @@ public class EjecutarJugadaCompleja extends OpcionDeMenu{
 				System.out.println("No existe jugada");
 			}
 		}
-	}
-	
+	}//Cierre del método
+	/**
+	 *  Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
+	 *  @return Retorna el tipo de opción
+	 */
 	@Override
 	public String toString(){
 		return "Jugadas Complejas";
-	}
-	
-}
+	}//Cierre del método	
+}//Cierre de la clase

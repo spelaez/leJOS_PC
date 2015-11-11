@@ -43,14 +43,19 @@ public class Delantero extends Futbolista {
 	public void registrarGol(){
 		this.golesMarcados++;
 	}//Cierre del método
-
-
-
+	/**
+	 * Método que muestra la dorsal del delantero
+	 * @return Retorna el numero del dorsal del delantero
+	 */
 	public byte getDorsal(){
 		return dorsal;
-	}
+	}//Cierre del método
+	/**
+	 * Método que permite ver la cantidad de goles marcador por el delantero
+	 * @return Retorna la cantidad de goles marcados
+	 */
 	public short getGolesMarcados(){
 		return golesMarcados;
-	}
+	}//Cierre del método
 }//Cierre de la clase
 

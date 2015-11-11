@@ -5,7 +5,7 @@ import objetos.futbol.robots.JugadaPrimitiva;
 import objetos.futbol.robots.Chutar;
 import objetos.futbol.varios.UsuarioAdministrador;
 /**
- * clase para definir una jugada compleja de tipo tiro libre, consta de un ArrayList que contiene la cantidad de jugadas primitivas que contiene una jugada compleja
+ * Clase para definir una jugada compleja de tipo tiro libre, consta de un ArrayList que contiene la cantidad de jugadas primitivas que contiene una jugada compleja
  * @author Santiagon Saldarriaga, Jhon Eider Murillo, Juan Pablo Betancur, Santiago Peláez
  *
  */
@@ -85,12 +85,19 @@ public class JugadaComplejaTiroLibre extends JugadaCompleja {
 	public String getDescripcion(){
 		return descripcion;
 	}//Cierre del método
-//Cierre de la clase
+	/**
+	 * Método que permite obtener el número de la potencia del chute que tiene la jugada
+	 * @return
+	 */
 	public int getNumPotencia(){
 		return potenciachute;
-	}
+	}//Cierre del método
+	/**
+	 * Método que permite obtener el número del efecto que tiene la jugada
+	 * @return
+	 */
 	public int getNumEfecto(){
 		return efecto;
-	}
-}
+	}//Cierre del método
+}//Cierre de la clase
 

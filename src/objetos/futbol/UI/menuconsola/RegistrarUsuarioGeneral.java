@@ -29,14 +29,12 @@ public class RegistrarUsuarioGeneral extends OpcionDeMenu {
 			System.out.println("Porfavor ingresa tu contraseï¿½a");
 			clave=Main.scn.next();
 			UsuarioGeneral usuario = new UsuarioGeneral(Usuario,clave);
-			//Cierre del método
+			Main.listaUsuarios.put(Usuario,usuario);
+		}//Cierre del método
 		/**
 		 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
 		 *@return Retorna el tipo de opción
 		 */
-
-			Main.listaUsuarios.put(Usuario,usuario);
-		}
 		public String toString(){
 			return "Registrar usuario general";
 		}//Cierre del método

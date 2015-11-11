@@ -4,7 +4,6 @@ package objetos.futbol.varios;
  * @author Santiago Peláez
  *
  */
-
 public interface Usuario {
 
 public void setNombre(String nombre);

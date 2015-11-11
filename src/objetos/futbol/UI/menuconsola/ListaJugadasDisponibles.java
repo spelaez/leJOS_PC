@@ -53,11 +53,13 @@ public class ListaJugadasDisponibles extends OpcionDeMenu{
 		for(JugadaComplejaTiroLibre x: jTiroLibre){
 			System.out.println((Main.listaJugadasComplejas.indexOf(x)+1)+" "+x);
 		}
-	//Cierre del método
-//Cierre de la clase
-	}
+	}//Cierre del método
+	/**
+	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
+	 * @return Retorna el tipo de opción
+	 */
 	@Override
 	public String toString(){
 		return "Jugadas disponibles";
-	}
-}
+	}//Cierre del método
+}//Cierre de la clase

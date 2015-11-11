@@ -38,6 +38,5 @@ public class RegistrarTiempoSinGoles extends OpcionDeMenu  {
 	@Override
 	public String toString(){
 		return "Registrar tiempo sin goles";
-	}//Cierre del método
-	
+	}//Cierre del método	
 }//Cierre de la clase

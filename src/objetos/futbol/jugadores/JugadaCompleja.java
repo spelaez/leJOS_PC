@@ -89,8 +89,11 @@ public abstract class JugadaCompleja {
 	public String getfechaCreacion(){
 		return fechaCreacion;
 	}//Cierre del método
-
+	/**
+	 * Método que muestra el nombre de la jugada compleja
+	 * @return Retorna el nombre de la jugada
+	 */
 	public String getNombre(){
 		return nombreJugada;
-	}
+	}//Cierre del método
 }//Cierre de la clase

@@ -11,14 +11,17 @@ import objetos.futbol.UI.menuconsola.MenuDeConsola;
 	 * @param nombre
 	 * @param clave
 	 */
-
-public class UsuarioGeneral implements Usuario
-{
+public class UsuarioGeneral implements Usuario{
+	//Campos de la clase
 	private String nombre;
 	private String clave;
 	public MenuDeConsola menu = new MenuDeConsola();
 	public static Integer[] permisos = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,21,22,24,25,27,28,30,31};
-	
+	/**
+	 * Constructor que asigna un menú, un nombre y una contraseña a un usuario general
+	 * @param nombre
+	 * @param clave
+	 */
 	public UsuarioGeneral(String nombre, String clave) {
 		this.nombre = nombre;
 		this.clave = clave;
@@ -48,22 +51,25 @@ public class UsuarioGeneral implements Usuario
 	 * @return Retorna el campo clave
 	 */
 	public String getClave(){
-		return clave;
+		return clave;	
+	}//Cierre del método
 	/**
-	 * Ejecuta el método asignar menú, que muestra las opciones dependiendo del usuario
+	 * Método que accede a los permisos que tiene un usuario general
+	 * @return
 	 */
-	}
-	
 	public Integer[] getPermisos(){
 		return permisos;
-	}
-
+	}//Cierre del método
+	/**
+	 * Método que ejecutar la opcion lanzar menú del usuario general
+	 */
 	@Override
 	public void lanzarMenu() {
 		menu.lanzarMenu();
-	}
-	
-	
+	}//Cierre del método
+	/**
+	 * Ejecuta el método asignar menú, que muestra las opciones dependiendo del usuario
+	 */	
 	public void asignarMenu(){
 		menu.limpiar();
 		for(int i=0; i<permisos.length; i++){

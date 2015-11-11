@@ -26,15 +26,13 @@ public class RegistrarUsuarioAdministrador extends OpcionDeMenu {
 		Usuario = Main.scn.next();
 		System.out.println("Porfavor ingresa tu contraseï¿½a");
 		clave=Main.scn.next();
-		UsuarioAdministrador usuario = new UsuarioAdministrador(Usuario,clave);
-		//Cierre del método
+		UsuarioAdministrador usuario = new UsuarioAdministrador(Usuario,clave);		
+		Main.listaUsuarios.put(Usuario,usuario);
+	}//Cierre del método
 	/**
 	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
 	 * @return Retorna el tipo de opción
 	 */
-		Main.listaUsuarios.put(Usuario,usuario);
-	}
-
 	public String toString(){
 		return "Registrar usuario administrador";
 	}//Cierre del método

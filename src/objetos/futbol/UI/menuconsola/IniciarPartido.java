@@ -30,9 +30,7 @@ public class IniciarPartido extends OpcionDeMenu{
 	 */
 	@Override
 	public String toString(){
-//Cierre del método
-//Cierre de la clase
 		return "Iniciar Partido";
-	}
-}
+	}//Cierre del método
+}//Cierre de la clase
 
