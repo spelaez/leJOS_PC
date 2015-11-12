@@ -22,7 +22,7 @@ public class IniciarSesion extends OpcionDeMenu{
 	 */
 	@Override
 	public void ejecutar() {
-		System.out.println("Elija como desea iniciar sesión");
+		System.out.println("Elija como desea iniciar sesion");
 		String usuario, clave;
 
 		if(Main.listaUsuarios.size()==0){
@@ -31,25 +31,25 @@ public class IniciarSesion extends OpcionDeMenu{
 		}
 		System.out.print("---------------------------------------------------\n"+this+"\n");
 		System.out.print("1. Usuario Jugador.\n2. Usuario Administrador\n");
-		int option = Main.scn.nextInt();
+		String option = Main.scn.nextLine();
 		System.out.print("Usuario:\n");
-		usuario=Main.scn.next();
-		System.out.print("Contraseña:\n");
-		clave=Main.scn.next();
+		usuario=Main.scn.nextLine();
+		System.out.print("Contrasena:\n");
+		clave=Main.scn.nextLine();
 
 		if(Main.listaUsuarios.get(usuario)!=null){
 			if(Main.listaUsuarios.get(usuario).getClave().equals(clave)){
-				if(option == 1 && Main.listaUsuarios.get(usuario) instanceof UsuarioGeneral){
+				if(Integer.valueOf(option) == 1 && Main.listaUsuarios.get(usuario) instanceof UsuarioGeneral){
 					Main.usuarioActual=Main.listaUsuarios.get(usuario);
 					System.out.println("Logueo existoso");
 				}
-				if(option == 2 && Main.listaUsuarios.get(usuario) instanceof UsuarioAdministrador){
+				if(Integer.valueOf(option) == 2 && Main.listaUsuarios.get(usuario) instanceof UsuarioAdministrador){
 					Main.usuarioActual=Main.listaUsuarios.get(usuario);
 					System.out.println("Logueo exitoso");
 				}
 			}
 			else{
-				System.out.println("\nContraseña incorrecta!");
+				System.out.println("\nContrasena incorrecta!");
 				return;
 			}
 		}else{

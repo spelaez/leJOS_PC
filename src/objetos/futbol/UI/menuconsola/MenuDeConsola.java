@@ -60,7 +60,7 @@ public class MenuDeConsola {
 	 * ejecuta el método lanzar menú que muestra las opciones disponibles a elegir
 	 */
 	public void lanzarMenu(){
-		int option;
+		String option;
 		for(int i = 0; i < opciones.size(); i++){
 			if(i == 0){
 				System.out.println("Opciones de Arquero\n----------------------------------");
@@ -75,12 +75,12 @@ public class MenuDeConsola {
 		}
 		System.out.println("\n Por favor ingrese el numero de la opcion que desea ejecutar");
 		try{
-		option = Main.scn.nextInt();
-		while (option < 0 || option > opciones.size()){
+		option = Main.scn.nextLine();
+		while (Integer.valueOf(option) < 0 || Integer.valueOf(option) > opciones.size()){
 			System.out.println("Dato fuera del rango, Ingrese el dato de nuevo: ");
-			option = Main.scn.nextInt();
+			option = Main.scn.nextLine();
 		}
-		opciones.get(option-1).ejecutar();
+		opciones.get(Integer.valueOf(option)-1).ejecutar();
 		}
 		catch(NumberFormatException e){
 			System.out.println("Error: Dato incorrecto");

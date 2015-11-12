@@ -41,6 +41,10 @@ public class UsuarioAnonimo {
 		System.out.println("\n Por favor ingrese el numero de la opcion que desea ejecutar");
 		try{
 		option = Main.scn.nextLine();
+		while(Integer.valueOf(option)<0 || Integer.valueOf(option)> menu.opciones.size()){
+			System.out.println("Dato fuera de rango ingrece una opcion valida");
+			option = Main.scn.nextLine();
+		}
 		menu.opciones.get(Integer.valueOf(option)-1).ejecutar();
 		}
 		catch(NumberFormatException e){
