@@ -32,7 +32,7 @@ public class GestorBDJugadores {
 	 * Método que guarda los jugadores creados por el usuario
 	 */
 	public void guardarJugadores(){
-		System.out.println(".... Guardando jugadores");
+		System.out.println("Guardando jugadores...");
 		if(Main.listaJugadores.size() ==0){
 			System.out.println("No hay jugadores");
 			return;
@@ -123,7 +123,7 @@ public class GestorBDJugadores {
 		Delantero A;
 		Arquero B;
 		
-		System.out.println("...Cargando jugadores");
+		System.out.println("Leyendo base de datos de jugadores");
 		  try {
 			DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 			File fichero = new File("src\\gestorBD\\BDjugadores.xml");

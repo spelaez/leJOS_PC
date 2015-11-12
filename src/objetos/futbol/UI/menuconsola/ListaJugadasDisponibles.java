@@ -38,7 +38,7 @@ public class ListaJugadasDisponibles extends OpcionDeMenu{
 					jOfensivas.add((JugadaComplejaOfensiva) x);
 				}
 				else if(x instanceof JugadaComplejaTiroLibre){
-					jTiroLibre = new ArrayList<>();
+					jTiroLibre.add((JugadaComplejaTiroLibre)x);
 				}
 		}
 		System.out.println("\t\t\tJugadas Defensivas");

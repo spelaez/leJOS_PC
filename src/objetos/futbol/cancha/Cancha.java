@@ -53,7 +53,7 @@ public class Cancha {
 	}
 	
 	public void actualizarPosicion(int x, int y, Robot r) throws IOException{//Recibido movimiento del robot en milimetros
-		try{
+		/*try{
 			if(r.getJugador() instanceof Arquero){
 			rep[Aposx/61][Aposy/61] = repClone[Aposx/61][Aposy/61];
 			Aposx += x;
@@ -80,7 +80,7 @@ public class Cancha {
 		}catch(IndexOutOfBoundsException e){
 			System.out.println("El Robot se ha salido de la cancha, porfavor reposicionarlo");
 		}
-		System.out.println("El robot ha cambiado a la posicion :"+ (Aposx/61) +" "+(Aposy/61));
+		System.out.println("El robot ha cambiado a la posicion :"+ (Aposx/61) +" "+(Aposy/61));*/
 	}
 	
 	public void comprobarLimite() throws FieldLimitExceededException{

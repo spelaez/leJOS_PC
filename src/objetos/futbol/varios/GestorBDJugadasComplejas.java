@@ -32,7 +32,7 @@ public class GestorBDJugadasComplejas {
 	 * Método de la clase que guarda las jugadas complejas nuevas 
 	 */
 	public void guardarJugadas(){
-		System.out.println(".... Guarardando jugadas");
+		System.out.println("Guarardando jugadas complejas...");
 		if(Main.listaJugadasComplejas.size()==0){
 			System.out.println("No hay jugadas");
 			return;
@@ -175,13 +175,13 @@ public class GestorBDJugadasComplejas {
 		} catch (TransformerException e) {
 			e.printStackTrace();
 		}
-		System.out.println("Jugadas guardas exitosamente");
+		System.out.println("Jugadas complejas guardadas exitosamente");
 	}//Cierre del método
 	/**
 	 * Método para leer las jugadas que ya están guardadas en el XML
 	 */
 	public void leerJugadas(){
-		System.out.println("Leyendo jugadas....");
+		System.out.println("Leyendo base de datos de jugadas complejas");
 		try {
 			DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 			File fichero = new File("src\\gestorBD\\BDjugadas.xml");
@@ -337,7 +337,8 @@ public class GestorBDJugadasComplejas {
 
 
 		}catch(Exception e){
-			System.out.println("el");
+			System.out.println("Error");
 		}
+		System.out.println("Jugadas complejas cargadas exitosamente");
 	}//Cierre del método
 }//Cierre de la clase
