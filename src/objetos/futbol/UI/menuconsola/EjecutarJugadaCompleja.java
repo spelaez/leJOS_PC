@@ -32,12 +32,12 @@ public class EjecutarJugadaCompleja extends OpcionDeMenu{
 			}
 			System.out.println("Porfavor escoja una jugada");
 			try{
-				int ind = Main.scn.nextInt();
-				while(ind < 1 || ind > 3){
+				String ind = Main.scn.nextLine();
+				while(Integer.valueOf(ind) < 1 || Integer.valueOf(ind) > 3){
 					System.out.println("Porfavor ingrese una jugada de la lista");
-					ind = Main.scn.nextInt();
+					ind = Main.scn.nextLine();
 				}
-				Main.r1.ejecutarJugadaCompleja(ind-1);
+				Main.r1.ejecutarJugadaCompleja(Integer.valueOf(ind)-1);
 			}catch(NumberFormatException e){
 				System.out.println("Porfavor ingrese una jugada de la lista");
 			}catch(InputMismatchException e){
@@ -56,12 +56,12 @@ public class EjecutarJugadaCompleja extends OpcionDeMenu{
 			}
 			System.out.println("Porfavor escoja una jugada");
 			try{
-				int ind = Main.scn.nextInt();
-				while(ind < 1 || ind > 3){
+				String ind = Main.scn.nextLine();
+				while(Integer.valueOf(ind) < 1 || Integer.valueOf(ind) > 3){
 					System.out.println("Porfavor ingrese una jugada de la lista");
-					ind = Main.scn.nextInt();
+					ind = Main.scn.nextLine();
 				}
-				Main.r1.ejecutarJugadaCompleja(ind-1);
+				Main.r2.ejecutarJugadaCompleja(Integer.valueOf(ind)-1);
 			}catch(NumberFormatException e){
 				System.out.println("Porfavor ingrese una jugada de la lista");
 			}catch(InputMismatchException e){

@@ -25,31 +25,31 @@ public class ConsultarExplicacionJugada extends OpcionDeMenu{
 		if(Main.listaJugadores.isEmpty()) return;
 		System.out.println("------------------------------------------\nConsultar informacion de un jugador");
 		System.out.println("Ingrese el numero del jugador a consultar");
-		int i = 1;
+		String i = "1";
 		try{
-			int n = Main.scn.nextInt();
-			while(n < 0 || n > Main.listaJugadores.size()){
+			String n = Main.scn.nextLine();
+			while(Integer.valueOf(n) < 0 || Integer.valueOf(n) > Main.listaJugadores.size()){
 				System.out.print("Dato fuera de rango, por favor ingreselo de nuevo");
-				n = Main.scn.nextInt();
+				n = Main.scn.nextLine();
 			}
-			Futbolista x = Main.listaJugadores.get(n-1);
+			Futbolista x = Main.listaJugadores.get(Integer.valueOf(n)-1);
 			if( x instanceof Delantero){
 				x = (Delantero)x;
 				System.out.println(x);
 				for(JugadaCompleja c : x.getListaJugadas()){
 					
 					System.out.println(i + " " + c);
-					i++;
+					i=String.valueOf((Integer.valueOf(i)+1));
 				}
 				System.out.print(this);
 				System.out.print("Ingrese el numero de la jugada para imprimir su explicacion");
 				try{
-				n = Main.scn.nextInt();
-				while(n < 0 || n > x.getListaJugadas().size()){
+				n = Main.scn.nextLine();
+				while(Integer.valueOf(n) < 0 || Integer.valueOf(n) > x.getListaJugadas().size()){
 					System.out.print("Dato fuera de rango, por favor ingreselo de nuevo");
-					n = Main.scn.nextInt();
+					n = Main.scn.nextLine();
 				}
-				System.out.print(x.getListaJugadas().get(n-1).getExplicacion());
+				System.out.print(x.getListaJugadas().get(Integer.valueOf(n)-1).getExplicacion());
 				}
 				catch(NumberFormatException e){
 					System.out.println("Dato incorrecto, ingrese un entero");
@@ -64,17 +64,17 @@ public class ConsultarExplicacionJugada extends OpcionDeMenu{
 				for(JugadaCompleja c : x.getListaJugadas()){
 					
 					System.out.println(i + " " + c);
-					i++;
+					i=String.valueOf((Integer.valueOf(i)+1));
 				}
 				System.out.print(this);
 				System.out.print("Ingrese el numero de la jugada para imprimir su explicacion");
 				try{
-				n = Main.scn.nextInt();
-				while(n < 0 || n > x.getListaJugadas().size()){
+				n = Main.scn.nextLine();
+				while(Integer.valueOf(n) < 0 || Integer.valueOf(n) > x.getListaJugadas().size()){
 					System.out.print("Dato fuera de rango, por favor ingreselo de nuevo");
-					n = Main.scn.nextInt();
+					n = Main.scn.nextLine();
 				}
-				System.out.print(x.getListaJugadas().get(n-1).getExplicacion());
+				System.out.print(x.getListaJugadas().get(Integer.valueOf(n)-1).getExplicacion());
 				}
 				catch(NumberFormatException e){
 					System.out.println("Dato incorrecto, ingrese un entero");

@@ -28,57 +28,57 @@ public class CrearJugadaCompleja extends OpcionDeMenu {
 	public void ejecutar() {		
 		System.out.println("---------------------------------------------------\n"+this+"\n");
 		System.out.println("Ingrese el tipo de jugada compleja");
-		System.out.println("1 Para defensiva \n2 Para ofensiva \n3 Para tiro libre");
+		System.out.println("1 Defensiva \n2 Ofensiva \n3 Tiro libre");
 
 		try{
-			int n = Main.scn.nextInt();
-			while(n < 1 || n > 3){
-				System.out.println("Dato fuera de rango, por favor ingrï¿½selo de nuevo");
-				n = Main.scn.nextInt();
+			String n = Main.scn.nextLine();
+			while(Integer.valueOf(n) < 1 || Integer.valueOf(n) > 3){
+				System.out.println("Dato fuera de rango, por favor ingreselo de nuevo");
+				n = Main.scn.nextLine();
 			}			
 			System.out.println("Ingrese nombre de la jugada");
-			String nom = Main.scn.next();
-			System.out.println("Ingrese fecha de creacion Dia-Mes-Aï¿½o");
-			String fecha = Main.scn.next();				
+			String nom = Main.scn.nextLine();
+			System.out.println("Ingrese fecha de creacion Dia-Mes-Año");
+			String fecha = Main.scn.nextLine();				
 			System.out.println("Ingrese una explicacion");
-			String expl = Main.scn.next();	
+			String expl = Main.scn.nextLine();	
 			ArrayList <JugadaPrimitiva> lista = new ArrayList<>();
-			byte num;
+			String num;
 
 			do{
-				System.out.println("1. Trotar \n2. Correr \n3. Retroceder \n4. Girar derecha \n5. Girar izquierda \n6. Chute normal \n7. Chute fuerte \n0 Para salir" );
-				num = Main.scn.nextByte();						
-				if(num == 1){
+				System.out.println("1. Trotar \n2. Correr \n3. Retroceder \n4. Girar derecha \n5. Girar izquierda \n6. Chute normal \n7. Chute fuerte \n0 Salir" );
+				num = Main.scn.nextLine();						
+				if(Byte.valueOf(num) == 1){
 					lista.add(Main.trotar);
 				}
-				else if(num == 2){
+				else if(Byte.valueOf(num)== 2){
 					lista.add(Main.correr);
 				}
-				else if(num == 3){
+				else if(Byte.valueOf(num)== 3){
 					lista.add(Main.retroceder);
 				}
-				else if(num == 4){
+				else if(Byte.valueOf(num) == 4){
 					lista.add(Main.girarDerecha);
 				}
-				else if(num == 5){
+				else if(Byte.valueOf(num) == 5){
 					lista.add(Main.girarIzquierda);
 				}
-				else if(num == 6){
+				else if(Byte.valueOf(num)== 6){
 					lista.add(Main.chutar);
 				}
-				else if(num == 7){
+				else if(Byte.valueOf(num) == 7){
 					lista.add(Main.patear);
 				}
-			}while(num != 0);
+			}while(Byte.valueOf(num) != 0);
 
 
-			if(n == 1){				
+			if(Integer.valueOf(n) == 1){				
 				Main.listaJugadasComplejas.add(new JugadaComplejaDefensiva(nom, fecha,  (UsuarioAdministrador)Main.usuarioActual, lista, expl ));				
 			}
-			else if( n == 2){
+			else if( Integer.valueOf(n) == 2){
 				Main.listaJugadasComplejas.add(new JugadaComplejaOfensiva(nom, fecha,  (UsuarioAdministrador)Main.usuarioActual, lista, expl ));
 			}
-			else if(n == 3){
+			else if(Integer.valueOf(n) == 3){
 				Main.listaJugadasComplejas.add(new JugadaComplejaTiroLibre(nom, fecha,  (UsuarioAdministrador)Main.usuarioActual, lista, expl ));		
 			}	
 		}

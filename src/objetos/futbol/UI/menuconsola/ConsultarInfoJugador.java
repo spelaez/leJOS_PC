@@ -26,21 +26,21 @@ public class ConsultarInfoJugador extends OpcionDeMenu{
 		if(Main.listaJugadores.isEmpty()) return;
 		System.out.print("---------------------------------------------------\n"+this+"\n");
 		System.out.println("Ingrese el numero del jugador a consultar");
-		int i = 1;
+		String i = "1";
 		try{
-			int n = Main.scn.nextInt();
-			while(n < 0 || n > Main.listaJugadores.size()){
-				System.out.print("Dato fuera de rango, por favor ingr�selo de nuevo");
-				n = Main.scn.nextInt();
+			String n = Main.scn.nextLine();
+			while(Integer.valueOf(n) < 0 || Integer.valueOf(n) > Main.listaJugadores.size()){
+				System.out.print("Dato fuera de rango, por favor ingreselo de nuevo");
+				n = Main.scn.nextLine();
 			}
-			Futbolista x = Main.listaJugadores.get(n-1);
+			Futbolista x = Main.listaJugadores.get(Integer.valueOf(n)-1);
 			if( x instanceof Delantero){
 				x = (Delantero)x;
 				System.out.println(x);
 				for(JugadaCompleja c : x.getListaJugadas()){
 					
 					System.out.println(i + " " + c);
-					i++;
+					i=String.valueOf((Integer.valueOf(i)+1));
 				}
 			}
 			else if( x instanceof Arquero){
@@ -49,7 +49,7 @@ public class ConsultarInfoJugador extends OpcionDeMenu{
 				for(JugadaCompleja c : x.getListaJugadas()){
 					
 					System.out.println(i + " " + c);
-					i++;
+					i=String.valueOf((Integer.valueOf(i)+1));
 				}
 			}
 		}
