@@ -29,7 +29,7 @@ public class ConsultarExplicacionJugada extends OpcionDeMenu{
 		try{
 			int n = Main.scn.nextInt();
 			while(n < 0 || n > Main.listaJugadores.size()){
-				System.out.print("Dato fuera de rango, por favor ingr�selo de nuevo");
+				System.out.print("Dato fuera de rango, por favor ingreselo de nuevo");
 				n = Main.scn.nextInt();
 			}
 			Futbolista x = Main.listaJugadores.get(n-1);
@@ -42,11 +42,11 @@ public class ConsultarExplicacionJugada extends OpcionDeMenu{
 					i++;
 				}
 				System.out.print(this);
-				System.out.print("Ingrese el n�mero de la jugada para imprimir su explicaci�n");
+				System.out.print("Ingrese el numero de la jugada para imprimir su explicacion");
 				try{
 				n = Main.scn.nextInt();
 				while(n < 0 || n > x.getListaJugadas().size()){
-					System.out.print("Dato fuera de rango, por favor ingr�selo de nuevo");
+					System.out.print("Dato fuera de rango, por favor ingreselo de nuevo");
 					n = Main.scn.nextInt();
 				}
 				System.out.print(x.getListaJugadas().get(n-1).getExplicacion());
@@ -67,11 +67,11 @@ public class ConsultarExplicacionJugada extends OpcionDeMenu{
 					i++;
 				}
 				System.out.print(this);
-				System.out.print("Ingrese el n�mero de la jugada para imprimir su explicaci�n");
+				System.out.print("Ingrese el numero de la jugada para imprimir su explicacion");
 				try{
 				n = Main.scn.nextInt();
 				while(n < 0 || n > x.getListaJugadas().size()){
-					System.out.print("Dato fuera de rango, por favor ingr�selo de nuevo");
+					System.out.print("Dato fuera de rango, por favor ingreselo de nuevo");
 					n = Main.scn.nextInt();
 				}
 				System.out.print(x.getListaJugadas().get(n-1).getExplicacion());
