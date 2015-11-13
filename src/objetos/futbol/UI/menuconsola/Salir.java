@@ -2,6 +2,7 @@ package objetos.futbol.UI.menuconsola;
 
 import objetos.futbol.varios.GestorBDUsuarios;
 import objetos.futbol.varios.GestorBDJugadores;
+import objetos.futbol.varios.GestorBDEstado;
 import objetos.futbol.varios.GestorBDJugadasComplejas;
 /**
  * Clase que permite salir del programa, guardando los cambios hechos por el usuario
@@ -25,7 +26,7 @@ public class Salir extends OpcionDeMenu{
 		new GestorBDUsuarios().guardarUsuarios();
 		new GestorBDJugadores().guardarJugadores();
 		new GestorBDJugadasComplejas().guardarJugadas();
-		//new GestorBDEstado().guardarEstado();
+		new GestorBDEstado().guardarEstado();
 		System.exit(0);
 	}//Cierre del método
 	/**

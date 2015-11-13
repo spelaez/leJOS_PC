@@ -19,6 +19,7 @@ import objetos.futbol.varios.UsuarioAnonimo;
 import objetos.futbol.robots.Robot;
 import objetos.futbol.varios.GestorBDJugadores;
 import objetos.futbol.varios.GestorBDUsuarios;
+import objetos.futbol.varios.GestorBDEstado;
 import objetos.futbol.varios.GestorBDJugadasComplejas;
 import objetos.futbol.jugadores.*;
 import objetos.futbol.robots.*;
@@ -66,7 +67,8 @@ public class Main {
 	static GestorBDUsuarios gestorUsuarios = new GestorBDUsuarios();
 	static GestorBDJugadores gestorJugadores = new GestorBDJugadores();
 	static GestorBDJugadasComplejas gestorJugadas = new GestorBDJugadasComplejas();
-
+	public static GestorBDEstado gestorEstado = new GestorBDEstado();
+	
 	//Usuario anonimo
 	static UsuarioAnonimo anonimo = new UsuarioAnonimo();
 	public static NXTInfo nxt1, nxt2;
@@ -78,6 +80,7 @@ public class Main {
 		gestorUsuarios.leerUsuarios();
 		gestorJugadas.leerJugadas();
 		gestorJugadores.LeerJugadores();
+		
 		try {
 			do {
 				System.out.println("\n-------------------------------------------------------"+

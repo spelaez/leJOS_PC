@@ -1,0 +1,9 @@
+Arquero
+Correr a defender
+10
+Arquero
+Despejar el balon
+18
+Arquero
+Tiro directo
+29

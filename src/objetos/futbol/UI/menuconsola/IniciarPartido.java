@@ -19,6 +19,7 @@ public class IniciarPartido extends OpcionDeMenu{
 	 */
 	@Override
 	public void ejecutar() {
+		Main.gestorEstado.borrarBuffer();
 		System.out.print("---------------------------------------------------\n"+this+"\n");
 		Main.tInicio = System.currentTimeMillis();
 		Main.tUltimoGol = Main.tInicio;
