@@ -18,7 +18,7 @@ public class Inicializar extends OpcionDeMenu{
 	
 	@Override
 	public void ejecutar(){
-		
+		int option=0;
 		System.out.print("-------------------------------------------------------\n"+this);
 		Main.conn.addLogListener(new NXTCommLogListener(){
 			public void logEvent(String message){
@@ -30,7 +30,7 @@ public class Inicializar extends OpcionDeMenu{
 				throwable.printStackTrace();
 			}
 		});
-		NXTInfo[] nxtinfo = Main.conn.search("NXT_3", null, NXTCommFactory.BLUETOOTH);
+		NXTInfo[] nxtinfo = Main.conn.search(null, null, NXTCommFactory.BLUETOOTH);
 		System.out.print("Buscando NXT disponibles para conexion...\n");
 		if(nxtinfo.length == 0){
 			System.out.println("No se han encontrado NXT, asegurese de tener el bluetooth activado y visible en los NXT y en el PC\n");
@@ -41,7 +41,7 @@ public class Inicializar extends OpcionDeMenu{
 				System.out.println((i+1)+" "+nxtinfo[i].name);
 			}
 			System.out.print("NXT #: ");
-			int option = Main.scn.nextInt();
+			option = Main.scn.nextInt();
 			Main.nxt1 = nxtinfo[option-1];
 			System.out.println("Seleccione de la lista de futbolistas el arquero que desea asignar al robot");
 			for(int i = 0; i < Main.listaJugadores.size(); i++){
@@ -50,26 +50,17 @@ public class Inicializar extends OpcionDeMenu{
 				}
 			}
 			int jugador = Main.scn.nextInt();
-			System.out.println(Main.listaJugadores.get(jugador-1));
 			Main.r1 = new Robot(Main.listaJugadores.get(jugador-1));
-			boolean connected = Main.conn.connectTo("NXT_3","001653128C89", NXTCommFactory.BLUETOOTH);
-			if(connected)System.out.print("Conexion exitosa!");
-			Main.dis = new DataInputStream(Main.conn.getInputStream());
-			Main.dos = new DataOutputStream(Main.conn.getOutputStream());
+			
 		}
-		/*
-		nxtinfo = Main.conn.search(null, null, NXTCommFactory.BLUETOOTH);
-		System.out.print("Buscando NXT disponibles para conexion...\n");
-		if(nxtinfo.length == 0){
+		
+		if(nxtinfo.length == 1){
 			System.out.println("No se han encontrado NXT, asegurese de tener el bluetooth activado y visible en los NXT y en el PC\n");
 		}
 		else{
-			System.out.println("Estos son los NXT encontrados, por favor seleccione uno para configurar el Delantero");
-			for(int i = 0; i < nxtinfo.length; i++){
-				System.out.println((i+1)+" "+nxtinfo[i].name);
-			}
-			System.out.println("NXT #: ");
-			int option = Main.scn.nextInt();
+			System.out.println("Usando el otro robot para configurar el delantero...");
+
+			option = option-1 == 0 ? 1 : 0;
 			System.out.println("Seleccione de la lista de futbolistas el delantero que desea asignar al robot");
 			for(int i = 0; i < Main.listaJugadores.size(); i++){
 				if(Main.listaJugadores.get(i) instanceof Delantero){
@@ -78,13 +69,8 @@ public class Inicializar extends OpcionDeMenu{
 			}
 			int jugador = Main.scn.nextInt();
 			Main.r2 = new Robot((Delantero)Main.listaJugadores.get(jugador-1));
-			boolean connected = Main.conn.connectTo(nxtinfo[option-1], NXTCommFactory.BLUETOOTH);
-			if(connected)System.out.print("Conexion exitosa!");
+			Main.nxt2 = nxtinfo[option];
 		}
-		Main.dos = new DataOutputStream(Main.conn.getOutputStream());
-		Main.dis = new DataInputStream(Main.conn.getInputStream());
-		System.out.println();*/
-
 	}
 	
 	@Override
