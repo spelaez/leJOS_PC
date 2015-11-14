@@ -71,6 +71,8 @@ public class Inicializar extends OpcionDeMenu{
 			Main.r2 = new Robot((Delantero)Main.listaJugadores.get(jugador-1));
 			Main.nxt2 = nxtinfo[option];
 		}
+		Main.conn.connectTo(Main.nxt1.name, Main.nxt1.deviceAddress, NXTCommFactory.BLUETOOTH);
+		Main.connectedTo = 1;
 	}
 	
 	@Override
