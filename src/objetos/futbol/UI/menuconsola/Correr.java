@@ -27,11 +27,17 @@ public class Correr extends OpcionDeMenu {
 		System.out.print("---------------------------------------------------\n"+this+"\n");
 		try{
 			if(categoria == Categoria.ARQUERO && Main.connectedTo == 2){
+				Main.dos.writeInt(0);
+				Main.dos.close();
+				Main.dis.close();
 				Main.conn.close();
 				Main.conn.connectTo(Main.nxt1.name, Main.nxt1.deviceAddress, NXTCommFactory.BLUETOOTH);
 				Main.connectedTo = 1;
 			}
 			else if(categoria == Categoria.DELANTERO && Main.connectedTo == 1){
+				Main.dos.writeInt(0);
+				Main.dos.close();
+				Main.dis.close();
 				Main.conn.close();
 				Main.conn.connectTo(Main.nxt2.name, Main.nxt2.deviceAddress, NXTCommFactory.BLUETOOTH);
 				Main.connectedTo = 2;
