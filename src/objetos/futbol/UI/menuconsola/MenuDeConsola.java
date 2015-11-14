@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import objetos.futbol.UI.Main;
 import objetos.futbol.UI.menuconsola.Trotar;
 /**
- * Clase que define al menú de consola 
- * @author Santiago Peláez
+ * Clase que define al menï¿½ de consola 
+ * @author Santiago Pelï¿½ez
  *
  */
 public class MenuDeConsola {
@@ -21,43 +21,43 @@ public class MenuDeConsola {
 	
 	Comparator<OpcionDeMenu> c = new Comparator<OpcionDeMenu>() {
 		/**
-		 * Método que compara
+		 * Mï¿½todo que compara
 		 */
 		@Override
 		public int compare(OpcionDeMenu o1, OpcionDeMenu o2) {
 			return o1.categoria.compareTo(o2.categoria);
 		}
 		
-	};//Cierre del método
+	};//Cierre del mï¿½todo
 	/**
-	 * Método que permite agregar opciones de menú y ordenarla
+	 * Mï¿½todo que permite agregar opciones de menï¿½ y ordenarla
 	 * @param op
 	 */
 	public void anadirOpcion(OpcionDeMenu op){
 		opciones.add(op);
 		ordenarOpciones();
-	}//Cierre del método
+	}//Cierre del mï¿½todo
 	/**
-	 * Método que permite eliminar una opcion de menú
+	 * Mï¿½todo que permite eliminar una opcion de menï¿½
 	 * @param op
 	 */
 	public void eliminarOpcion(OpcionDeMenu op){
 		opciones.remove(op);
-	}//Cierre del método
+	}//Cierre del mï¿½todo
 	/**
-	 * Método que permite limpiar la lista de opciones de menú
+	 * Mï¿½todo que permite limpiar la lista de opciones de menï¿½
 	 */
 	public void limpiar(){
 		opciones = new ArrayList<OpcionDeMenu>();
-	}//Cierre del método
+	}//Cierre del mï¿½todo
 	/**
-	 * Método que permite ordenar las opciones de menú
+	 * Mï¿½todo que permite ordenar las opciones de menï¿½
 	 */
 	public void ordenarOpciones(){
 		opciones.sort(c);
-	}//Cierre del método
+	}//Cierre del mï¿½todo
 	/**
-	 * ejecuta el método lanzar menú que muestra las opciones disponibles a elegir
+	 * ejecuta el mï¿½todo lanzar menï¿½ que muestra las opciones disponibles a elegir
 	 */
 	public void lanzarMenu(){
 		String option;
@@ -88,9 +88,9 @@ public class MenuDeConsola {
 		catch(InputMismatchException e){
 			System.out.println("Error: Dato incorrecto");
 		}
-	}//Cierre del método
+	}//Cierre del mï¿½todo
 	/**
-	 * Método que agrega todas las opciones de menú a una segunda lista
+	 * Mï¿½todo que agrega todas las opciones de menï¿½ a una segunda lista
 	 */
 	private void cargarOpciones(){
 		if(opciones2.size() == 0){
@@ -119,19 +119,20 @@ public class MenuDeConsola {
 			opciones2.add(new RegistrarGolAFavor(Categoria.DELANTERO));//19
 			
 			//Opciones Sistema
-			opciones2.add(new CrearJugador(Categoria.SISTEMA));//20  //Solo admin
-			opciones2.add(new ConsultarExplicacionJugada(Categoria.SISTEMA));//21 //todos
-			opciones2.add(new ConsultarInfoJugador(Categoria.SISTEMA));//22 //todos
-			opciones2.add(new CrearJugadaCompleja(Categoria.SISTEMA));//23 //solo admin
-			opciones2.add(new ImprimirJugadores(Categoria.SISTEMA));//24  // todos
-			opciones2.add(new IniciarPartido(Categoria.SISTEMA));//25 //todos
-			opciones2.add(new ListaJugadasDisponibles(Categoria.SISTEMA));//26 //solo admin
-			opciones2.add(new Inicializar(Categoria.SISTEMA));//27 //todos
-			opciones2.add(new IniciarSesion(Categoria.SISTEMA));//28 todos
-			opciones2.add(new RegistrarUsuarioAdministrador(Categoria.SISTEMA));//29 solo admin
-			opciones2.add(new RegistrarUsuarioGeneral(Categoria.SISTEMA));//30 // todos
-			opciones2.add(new Salir(Categoria.SISTEMA));//31 //todos
+			opciones2.add(new MostrarCancha(Categoria.SISTEMA));//20 todos
+			opciones2.add(new CrearJugador(Categoria.SISTEMA));//21  //Solo admin
+			opciones2.add(new ConsultarExplicacionJugada(Categoria.SISTEMA));//22 //todos
+			opciones2.add(new ConsultarInfoJugador(Categoria.SISTEMA));//23 //todos
+			opciones2.add(new CrearJugadaCompleja(Categoria.SISTEMA));//24 //solo admin
+			opciones2.add(new ImprimirJugadores(Categoria.SISTEMA));//25  // todos
+			opciones2.add(new IniciarPartido(Categoria.SISTEMA));//26 //todos
+			opciones2.add(new ListaJugadasDisponibles(Categoria.SISTEMA));//27 //solo admin
+			opciones2.add(new Inicializar(Categoria.SISTEMA));//28 //todos
+			opciones2.add(new IniciarSesion(Categoria.SISTEMA));//29 todos
+			opciones2.add(new RegistrarUsuarioAdministrador(Categoria.SISTEMA));//30 solo admin
+			opciones2.add(new RegistrarUsuarioGeneral(Categoria.SISTEMA));//31 // todos
+			opciones2.add(new Salir(Categoria.SISTEMA));//32 //todos
 			}
 		
-	}//Cierre del método
+	}//Cierre del mï¿½todo
 }//Cierre de la clase

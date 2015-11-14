@@ -3,7 +3,7 @@ package objetos.futbol.varios;
 import objetos.futbol.UI.menuconsola.MenuDeConsola;
 /**
  * Clase que define un usuario general
- * @author Santiago Peláez
+ * @author Santiago Pelï¿½ez
  *
  */
 	/**
@@ -16,9 +16,9 @@ public class UsuarioGeneral implements Usuario{
 	private String nombre;
 	private String clave;
 	public MenuDeConsola menu = new MenuDeConsola();
-	public static Integer[] permisos = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,21,22,24,25,27,28,30,31};
+	public static Integer[] permisos = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,23,25,26,28,29,31,32};
 	/**
-	 * Constructor que asigna un menú, un nombre y una contraseña a un usuario general
+	 * Constructor que asigna un menï¿½, un nombre y una contraseï¿½a a un usuario general
 	 * @param nombre
 	 * @param clave
 	 */
@@ -28,52 +28,52 @@ public class UsuarioGeneral implements Usuario{
 		asignarMenu();
 	}//Cierre del constructor
 	/**
-	 * Método que permite modificar el nombre del usuario
+	 * Mï¿½todo que permite modificar el nombre del usuario
 	 */
 	public void setNombre(String nombre){
 		this.nombre = nombre;
-	}//Cierre del método
+	}//Cierre del mï¿½todo
 	/**
-	 * Método que permite modificar la clave de usuario
+	 * Mï¿½todo que permite modificar la clave de usuario
 	 */
 	public void setClave(String clave){
 		this.clave = clave;
-	}//Cierre del método
+	}//Cierre del mï¿½todo
 	/**
-	 * Método que permite consultar el nombre de usuario
+	 * Mï¿½todo que permite consultar el nombre de usuario
 	 * @return Retorna el campo nombre
 	 */
 	public String getNombre(){
 		return nombre;
-	}//Cierre del método
+	}//Cierre del mï¿½todo
 	/**
-	 * Método que permite consultar la clave de un usuario
+	 * Mï¿½todo que permite consultar la clave de un usuario
 	 * @return Retorna el campo clave
 	 */
 	public String getClave(){
 		return clave;	
-	}//Cierre del método
+	}//Cierre del mï¿½todo
 	/**
-	 * Método que accede a los permisos que tiene un usuario general
+	 * Mï¿½todo que accede a los permisos que tiene un usuario general
 	 * @return
 	 */
 	public Integer[] getPermisos(){
 		return permisos;
-	}//Cierre del método
+	}//Cierre del mï¿½todo
 	/**
-	 * Método que ejecutar la opcion lanzar menú del usuario general
+	 * Mï¿½todo que ejecutar la opcion lanzar menï¿½ del usuario general
 	 */
 	@Override
 	public void lanzarMenu() {
 		menu.lanzarMenu();
-	}//Cierre del método
+	}//Cierre del mï¿½todo
 	/**
-	 * Ejecuta el método asignar menú, que muestra las opciones dependiendo del usuario
+	 * Ejecuta el mï¿½todo asignar menï¿½, que muestra las opciones dependiendo del usuario
 	 */	
 	public void asignarMenu(){
 		menu.limpiar();
 		for(int i=0; i<permisos.length; i++){
 			menu.anadirOpcion(MenuDeConsola.opciones2.get(permisos[i]-1));
 		}
-	}//Cierre del método
+	}//Cierre del mï¿½todo
 }//Cierre de la clase
