@@ -22,8 +22,6 @@ import objetos.futbol.varios.GestorBDUsuarios;
 import objetos.futbol.varios.GestorBDEstado;
 import objetos.futbol.varios.GestorBDJugadasComplejas;
 import objetos.futbol.jugadores.*;
-import objetos.futbol.robots.*;
-import objetos.futbol.varios.UsuarioAdministrador;
 public class Main {	
 
 	//Atributos para manejar el tiempo
@@ -71,7 +69,10 @@ public class Main {
 	
 	//Usuario anonimo
 	static UsuarioAnonimo anonimo = new UsuarioAnonimo();
+	
+	//Objetos con datos para conexion con los robots
 	public static NXTInfo nxt1, nxt2;
+	public static int connectedTo;
 	
 	//Scanner
 	public static Scanner scn = new Scanner(System.in);
