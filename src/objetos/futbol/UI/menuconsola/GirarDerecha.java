@@ -46,12 +46,10 @@ public class GirarDerecha extends OpcionDeMenu{
 			Main.dos = new DataOutputStream(Main.conn.getOutputStream());
 			Main.dos.writeInt(Main.girarDerecha.getIdJugada());
 			Main.dos.flush();
-			if( categoria == Categoria.ARQUERO){
-				Main.cancha.actualizarPosicion(Main.dis.readInt(), Main.dis.readInt(),Main.r1);
-			}
-			else if(categoria== Categoria.DELANTERO){
-				Main.cancha.actualizarPosicion(Main.dis.readInt(), Main.dis.readInt(),Main.r2);
-			}
+			
+			//Hacemos caso omiso de los datos mandados por el robot ya que al girar la posicion no se actualiza
+			Main.dis.readInt();
+			Main.dis.readInt();
 		}
 		catch(IOException e){
 			System.out.print("No se pudo ejecutar la jugada");
