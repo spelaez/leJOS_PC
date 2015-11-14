@@ -1,10 +1,13 @@
 package objetos.futbol.UI.menuconsola;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 
+import lejos.pc.comm.NXTCommFactory;
 import objetos.futbol.UI.Main;
 /**
- * Clase para definir la opción patear
+ * Clase para definir la opciï¿½n patear
  * @author Juan Pablo Betancur
  *
  */
@@ -17,31 +20,43 @@ public class Patear extends OpcionDeMenu{
 		super(categoria);
 	}//Cierre del cosntructor
 	/**
-	 * Método sobreescrito de opción de menú, que imprime el tipo de opción, y llama a un método de la clase main del paquete objetos.futbol.UI para enviarla al robot 
+	 * Mï¿½todo sobreescrito de opciï¿½n de menï¿½, que imprime el tipo de opciï¿½n, y llama a un mï¿½todo de la clase main del paquete objetos.futbol.UI para enviarla al robot 
 	 */
 	@Override
 	public void ejecutar(){
 		System.out.print("---------------------------------------------------\n"+this+"\n");
 		try{
-		Main.dos.writeInt(Main.patear.getIdJugada());
-		Main.dos.flush();
-		if( categoria == Categoria.ARQUERO){
-			Main.cancha.actualizarPosicion(Main.dis.readInt(), Main.dis.readInt(),Main.r1);
-		}
-		else if(categoria== Categoria.DELANTERO){
-			Main.cancha.actualizarPosicion(Main.dis.readInt(), Main.dis.readInt(),Main.r2);
-		}
+			if(categoria == Categoria.ARQUERO && Main.connectedTo == 2){
+				Main.conn.close();
+				Main.conn.connectTo(Main.nxt1.name, Main.nxt1.deviceAddress, NXTCommFactory.BLUETOOTH);
+				Main.connectedTo = 1;
+			}
+			else if(categoria == Categoria.DELANTERO && Main.connectedTo == 1){
+				Main.conn.close();
+				Main.conn.connectTo(Main.nxt2.name, Main.nxt2.deviceAddress, NXTCommFactory.BLUETOOTH);
+				Main.connectedTo = 2;
+			}
+			Main.dis = new DataInputStream(Main.conn.getInputStream());
+			Main.dos = new DataOutputStream(Main.conn.getOutputStream());
+			Main.dos.writeInt(Main.patear.getIdJugada());
+			Main.dos.flush();
+			if( categoria == Categoria.ARQUERO){
+				Main.cancha.actualizarPosicion(Main.dis.readInt(), Main.dis.readInt(),Main.r1);
+			}
+			else if(categoria== Categoria.DELANTERO){
+				Main.cancha.actualizarPosicion(Main.dis.readInt(), Main.dis.readInt(),Main.r2);
+			}
 		}
 		catch(IOException e){
 			System.out.print("No se pudo ejecutar la jugada");
 		}
-	}//Cierre del método
+	}//Cierre del mï¿½todo
 	/**
-	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
-	 * Retorna el tipo de opción
+	 * Mï¿½todo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opciï¿½n
+	 * Retorna el tipo de opciï¿½n
 	 */
 	@Override
 	public String toString(){
 		return "Patear";
-	}//Cierre del método
+	}//Cierre del mï¿½todo
 }//Cierre de la clase

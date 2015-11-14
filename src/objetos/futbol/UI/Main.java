@@ -66,14 +66,14 @@ public class Main {
 	static GestorBDJugadores gestorJugadores = new GestorBDJugadores();
 	static GestorBDJugadasComplejas gestorJugadas = new GestorBDJugadasComplejas();
 	public static GestorBDEstado gestorEstado = new GestorBDEstado();
-	
+
 	//Usuario anonimo
 	static UsuarioAnonimo anonimo = new UsuarioAnonimo();
-	
+
 	//Objetos con datos para conexion con los robots
 	public static NXTInfo nxt1, nxt2;
 	public static int connectedTo;
-	
+
 	//Scanner
 	public static Scanner scn = new Scanner(System.in);
 
@@ -81,7 +81,7 @@ public class Main {
 		gestorUsuarios.leerUsuarios();
 		gestorJugadas.leerJugadas();
 		gestorJugadores.LeerJugadores();
-		
+
 		try {
 			do {
 				System.out.println("\n-------------------------------------------------------"+
