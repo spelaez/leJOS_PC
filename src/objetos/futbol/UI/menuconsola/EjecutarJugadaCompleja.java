@@ -3,26 +3,53 @@ package objetos.futbol.UI.menuconsola;
 import objetos.futbol.UI.Main;
 import objetos.futbol.jugadores.JugadaCompleja;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
+
+import lejos.pc.comm.NXTCommFactory;
 /**
- * Clase para ejecutar la opción de menú
- * @author Jhon Eider Murillo, Santiago Pélaez
+ * Clase para ejecutar la opciï¿½n de menï¿½
+ * @author Jhon Eider Murillo, Santiago Pï¿½laez
  *
  */
 public class EjecutarJugadaCompleja extends OpcionDeMenu{
 	/**
-	 * Constructor de la clase que devuelve de la categoria opción
+	 * Constructor de la clase que devuelve de la categoria opciï¿½n
 	 * @param categoria
 	 */
 	public EjecutarJugadaCompleja(Categoria categoria){
 		super(categoria);
 	}//Cierre del contructor
 	/**
-	 * Método que ejecuta el menú para ejecurtar una jugada compleja
+	 * Mï¿½todo que ejecuta el menï¿½ para ejecurtar una jugada compleja
 	 */
 	public void ejecutar(){
+		try{
+		if(categoria == Categoria.ARQUERO && Main.connectedTo == 2){
+			Main.dos.writeInt(0);
+			Main.dos.close();
+			Main.dis.close();
+			Main.conn.close();
+			Main.conn.connectTo(Main.nxt1.name, Main.nxt1.deviceAddress, NXTCommFactory.BLUETOOTH);
+			Main.connectedTo = 1;
+		}
+		else if(categoria == Categoria.DELANTERO && Main.connectedTo == 1){
+			Main.dos.writeInt(0);
+			Main.dos.close();
+			Main.dis.close();
+			Main.conn.close();
+			Main.conn.connectTo(Main.nxt2.name, Main.nxt2.deviceAddress, NXTCommFactory.BLUETOOTH);
+			Main.connectedTo = 2;
+		}
+		}
+		catch(IOException e){
+			e.printStackTrace();
+		}
+		Main.dis = new DataInputStream(Main.conn.getInputStream());
+		Main.dos = new DataOutputStream(Main.conn.getOutputStream());
 		if(categoria == Categoria.ARQUERO){
 			System.out.print("---------------------------------------------------\n"+this+"\n");
 			ArrayList<JugadaCompleja> list = new ArrayList<>();
@@ -71,13 +98,13 @@ public class EjecutarJugadaCompleja extends OpcionDeMenu{
 				System.out.println("No existe jugada");
 			}
 		}
-	}//Cierre del método
+	}//Cierre del mï¿½todo
 	/**
-	 *  Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
-	 *  @return Retorna el tipo de opción
+	 *  Mï¿½todo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opciï¿½n
+	 *  @return Retorna el tipo de opciï¿½n
 	 */
 	@Override
 	public String toString(){
 		return "Jugadas Complejas";
-	}//Cierre del método	
+	}//Cierre del mï¿½todo	
 }//Cierre de la clase
