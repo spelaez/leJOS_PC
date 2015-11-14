@@ -90,6 +90,7 @@ public class EjecutarJugadaCompleja extends OpcionDeMenu{
 					ind = Main.scn.nextLine();
 				}
 				Main.r2.ejecutarJugadaCompleja(Integer.valueOf(ind)-1);
+				Main.gestorEstado.crearBuffer(Main.r2.getJugador(), Main.r2.getJugador().getListaJugadas().get(Integer.valueOf(ind)-1));
 			}catch(NumberFormatException e){
 				System.out.println("Porfavor ingrese una jugada de la lista");
 			}catch(InputMismatchException e){

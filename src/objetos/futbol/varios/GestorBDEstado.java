@@ -41,12 +41,12 @@ public class GestorBDEstado {
 					bw.write(t );
 					bw.newLine();
 					String n = y.getNombre();
-					bw.write(n );
+					bw.write(n);
 					bw.newLine();
 					String time =Long.toString(((System.currentTimeMillis() - Main.tInicio)/ 1000));
 					bw.write(time);
 					bw.newLine();
-					bw.close();
+					
 				}
 				else if (x instanceof Delantero){
 					String t = "Delantero";
@@ -58,9 +58,9 @@ public class GestorBDEstado {
 					String time =Long.toString(((System.currentTimeMillis() - Main.tInicio)/ 1000));
 					bw.write(time);
 					bw.newLine();
-					bw.close();
-				}
 				
+				}
+				bw.close();
 			}
 			else{
 				BufferedWriter bw = new BufferedWriter(new FileWriter(fich));
@@ -74,7 +74,7 @@ public class GestorBDEstado {
 					String time =Long.toString(((System.currentTimeMillis() - Main.tInicio)/ 1000));
 					bw.write(time);
 					bw.newLine();
-					bw.close();
+				
 				}
 				else if (x instanceof Delantero){
 					String t = "Delantero";
@@ -86,8 +86,9 @@ public class GestorBDEstado {
 					String time =Long.toString(((System.currentTimeMillis() - Main.tInicio)/ 1000));
 					bw.write(time);
 					bw.newLine();
-					bw.close();
+					
 				}
+				bw.close();
 			}
 			
 		
@@ -103,6 +104,12 @@ public class GestorBDEstado {
 		}
 	}
 	
+	public void borrarEstado(){
+		File fich = new File("src\\gestorBD\\Estado.xml");
+		if(fich.exists()){
+			fich.delete();
+		}
+	}
 	public void guardarEstado(){
 		try {
 			DocumentBuilderFactory Factory = DocumentBuilderFactory.newInstance();
@@ -118,7 +125,10 @@ public class GestorBDEstado {
 			raiz.appendChild(delantero);
 			Element nombred = document.createElement("Nombre");
 			delantero.appendChild(nombred);
-			//nombred.appendChild(document.createTextNode(Main.r2.getJugador().getNombre()));
+			nombred.appendChild(document.createTextNode(Main.r2.getJugador().getNombre()));
+			Element goles = document.createElement("GolesMarcados");
+			nombred.appendChild(goles);
+			goles.appendChild(document.createTextNode(Short.toString(((Delantero)Main.r2.getJugador()).getGolesMarcados())));
 			
 			//Elemento Arquero
 			Element arquero =  document.createElement("Arquero");
@@ -126,6 +136,9 @@ public class GestorBDEstado {
 			Element nombrea = document.createElement("Nombre");
 			arquero.appendChild(nombrea);
 			nombrea.appendChild(document.createTextNode(Main.r1.getJugador().getNombre()));
+			Element TiempoSin = document.createElement("TiempoSinGol");
+			nombrea.appendChild(TiempoSin);
+			TiempoSin.appendChild(document.createTextNode(Integer.toString(((Arquero)(Main.r1.getJugador())).getTiempoSinGoles())));
 			
 			//lectura
 			File archivo = new File("src\\gestorBD\\Buffer.txt");
@@ -136,9 +149,7 @@ public class GestorBDEstado {
 			while((linea = br.readLine())!= null){
 				if(linea.equals("Arquero")){
 					
-					Element TiempoSin = document.createElement("TiempoSinGol");
-					nombrea.appendChild(TiempoSin);
-					TiempoSin.appendChild(document.createTextNode(Integer.toString(((Arquero)(Main.r1.getJugador())).getTiempoSinGoles())));
+					
 					Element Jugada = document.createElement("Jugadarealizadas");
 					nombrea.appendChild(Jugada);
 					Jugada.appendChild(document.createTextNode(br.readLine()));
@@ -147,11 +158,9 @@ public class GestorBDEstado {
 					tiempo.appendChild(document.createTextNode(br.readLine()));
 				}
 				else if(linea.equals("Delantero")){
-					Element goles = document.createElement("GolesMarcados");
-					nombred.appendChild(goles);
-					goles.appendChild(document.createTextNode(Short.toString(((Delantero)Main.r2.getJugador()).getGolesMarcados())));
+					
 					Element Jugada = document.createElement("JugadaRealizadas");
-					nombrea.appendChild(Jugada);
+					nombred.appendChild(Jugada);
 					Jugada.appendChild(document.createTextNode(br.readLine()));
 					Element tiempo = document.createElement("TiempoEnQueSeEjecuto");
 					Jugada.appendChild(tiempo);
