@@ -88,8 +88,8 @@ public class Cancha {
 	}
 
 	public void mostrarCancha(){
-		for(int i = 0; i < ANCHO_CANCHA; i++){
-			for(int j = 0; j < LARGO_CANCHA; j++){
+		for(int i = 0; i < LARGO_CANCHA; i++){
+			for(int j = 0; j < ANCHO_CANCHA; j++){
 				System.out.print(rep[i][j]);
 			}
 			System.out.print("\n");

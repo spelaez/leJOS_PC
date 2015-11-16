@@ -131,7 +131,8 @@ public class MenuDeConsola {
 			opciones2.add(new IniciarSesion(Categoria.SISTEMA));//29 todos
 			opciones2.add(new RegistrarUsuarioAdministrador(Categoria.SISTEMA));//30 solo admin
 			opciones2.add(new RegistrarUsuarioGeneral(Categoria.SISTEMA));//31 // todos
-			opciones2.add(new Salir(Categoria.SISTEMA));//32 //todos
+			opciones2.add(new FinalizarPartido(Categoria.SISTEMA));//32//todos
+			opciones2.add(new Salir(Categoria.SISTEMA));//33 //todos
 			}
 		
 	}//Cierre del m�todo
