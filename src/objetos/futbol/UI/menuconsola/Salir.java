@@ -2,6 +2,7 @@ package objetos.futbol.UI.menuconsola;
 
 import objetos.futbol.varios.GestorBDUsuarios;
 import objetos.futbol.varios.GestorBDJugadores;
+import objetos.futbol.UI.Main;
 import objetos.futbol.varios.GestorBDEstado;
 import objetos.futbol.varios.GestorBDJugadasComplejas;
 /**
@@ -23,11 +24,25 @@ public class Salir extends OpcionDeMenu{
 	@Override
 	public void ejecutar() {
 		System.out.print("---------------------------------------------------\n"+this+"\n");
+		String option;
+		System.out.println("Porfavor seleccione una opcion");
+		System.out.println("1.Pausar partido \n" + "2.Salir del sistema");
+		option = Main.scn.nextLine();
+		while(Integer.valueOf(option)< 1 || Integer.valueOf(option)> 2){
+			System.out.println("Dato fuera de rango, porfavor ingrece una opcion valida");
+			option = Main.scn.nextLine();
+		}
+		if(Integer.valueOf(option) == 1){
+			new GestorBDEstado().guardarEstado();
+			return;
+		}
+		else if(Integer.valueOf(option)==2){
 		new GestorBDUsuarios().guardarUsuarios();
 		new GestorBDJugadores().guardarJugadores();
 		new GestorBDJugadasComplejas().guardarJugadas();
-		new GestorBDEstado().guardarEstado();
+		System.out.println("Gracias por jugar.");
 		System.exit(0);
+		}
 	}//Cierre del método
 	/**
 	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
