@@ -1,12 +1,12 @@
 Arquero
-Tiro directo
+Correr a defender
 14
-Arquero
+Delantero
+Despejar el balon
+31
+Delantero
 Tiro directo
-32
-Delantero
-Gambeta Brasileña
-50
-Delantero
-Gambeta Brasileña
-67
+62
+Arquero
+Despejar el balon
+87

@@ -8,6 +8,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -23,6 +24,7 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
@@ -155,16 +157,20 @@ public class GestorBDEstado {
 					
 					Element Jugada = document.createElement("Jugadarealizadas");
 					arquero.appendChild(Jugada);
-					Jugada.appendChild(document.createTextNode(br.readLine()));
+					Element NOM = document.createElement("NombreJugada");
+					Jugada.appendChild(NOM);
+					NOM.appendChild(document.createTextNode(br.readLine()));
 					Element tiempo = document.createElement("TiempoEnQueSeEjecuto");
 					Jugada.appendChild(tiempo);
 					tiempo.appendChild(document.createTextNode(br.readLine()));
 				}
 				else if(linea.equals("Delantero")){
 					
-					Element Jugada = document.createElement("JugadaRealizadas");
+					Element Jugada = document.createElement("Jugadarealizadas");
 					delantero.appendChild(Jugada);
-					Jugada.appendChild(document.createTextNode(br.readLine()));
+					Element NOM = document.createElement("NombreJugada");
+					Jugada.appendChild(NOM);
+					NOM.appendChild(document.createTextNode(br.readLine()));
 					Element tiempo = document.createElement("TiempoEnQueSeEjecuto");
 					Jugada.appendChild(tiempo);
 					tiempo.appendChild(document.createTextNode(br.readLine()));
@@ -214,15 +220,104 @@ public class GestorBDEstado {
 			Element delantero = (Element) raiz.getFirstChild();
 			//Arquero 
 			Element arquero = (Element) raiz.getLastChild();
+			//nombre arquero
+			Element nombreA = (Element) arquero.getFirstChild();
+			String name = nombreA.getTextContent();
+			System.out.println("Arquero");
+			System.out.println(name);
+			NodeList x= arquero.getChildNodes();
+			Element tiempoSin = (Element)  x.item(1);
+			String time = tiempoSin.getTextContent();
+			System.out.println("Tiempo sin goles: "+ time );
+			NodeList jugadas = arquero.getElementsByTagName("Jugadarealizadas");
+		
+			for(int i=0;i<Main.r1.getJugador().getListaJugadas().size();i++){
+				int cont=0;
+				ArrayList<String> tiempos = new ArrayList<>();
+				for(int j=0; j<jugadas.getLength();j++){
+					
+					Element jug =(Element) jugadas.item(j);
+					String nomj = jug.getElementsByTagName("NombreJugada").item(0).getTextContent();
+					if(Main.r1.getJugador().getListaJugadas().get(i).getNombre().equals(nomj)){
+						cont++;
+						String tiempo = jug.getElementsByTagName("TiempoEnQueSeEjecuto").item(0).getTextContent();
+						tiempos.add(tiempo);
+					}
+				}
+				if(cont > 0){
+					System.out.println("La jugada: " + Main.r1.getJugador().getListaJugadas().get(i).getNombre() + " Se realizo" );
+					System.out.println(cont + " Veces \n" + "En los tiempos:");
+					for(int j =0 ; j<tiempos.size();j++){
+						System.out.println(tiempos.get(j) + " Segundos");
+					}
+				}
+			}
+			
 			//nombre delantero
 			Element nombreD = (Element) delantero.getFirstChild();
-			String name = nombreD.getTextContent();
+			String named = nombreD.getTextContent();
 			System.out.println("Delantero");
-			System.out.println(name);
+			System.out.println(named);
+			NodeList y = delantero.getChildNodes();
+			Element goles = (Element) y.item(1);
+			String numgoles = goles.getTextContent();
+			System.out.println("Goles marcados: " + numgoles );
+			NodeList jugadasR = delantero.getElementsByTagName("Jugadarealizadas");
+			for(int i = 0;i<Main.r2.getJugador().getListaJugadas().size(); i++){
+				int cont =0;
+				ArrayList<String> tiempos = new ArrayList<>();
+				for(int j=0;j<jugadasR.getLength();j++){
+					Element jug = (Element) jugadasR.item(j);
+					String nomj = jug.getElementsByTagName("NombreJugada").item(0).getTextContent();
+					if(Main.r2.getJugador().getListaJugadas().get(i).getNombre().equals(nomj)){
+						cont++;
+						String tiempo = jug.getElementsByTagName("TiempoEnQueSeEjecuto").item(0).getTextContent();
+						tiempos.add(tiempo);
+					}
+				}
+				if(cont > 0){
+					System.out.println("La jugada: " + Main.r2.getJugador().getListaJugadas().get(i).getNombre() + " Se realizo" );
+					System.out.println(cont + " Veces \n" + "En los tiempos:");
+					for(int j =0 ; j<tiempos.size();j++){
+						System.out.println(tiempos.get(j) + " Segundos");
+					}
+				}
+			}
 		} catch (ParserConfigurationException | SAXException | IOException e) {
 			e.printStackTrace();
-		}
+			}
 		
+	}
+	
+	public void cargarEstado(){
+		try {
+			DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+			File fichero = new File("src\\gestorBD\\Estado.xml");
+			if(!fichero.exists()){
+				return;
+			}
+			Document document = documentBuilder.parse(new InputSource(new FileInputStream("src\\gestorBD\\Estado.xml")));
+			if(fichero.exists()){
+				document = documentBuilder.parse(new InputSource(new FileInputStream("src\\gestorBD\\Estado.xml")));
+			}
+			//Raiz
+			Element raiz = document.getDocumentElement(); 
+			//Delantero
+			Element delantero = (Element) raiz.getFirstChild();
+			//Arquero 
+			Element arquero = (Element) raiz.getLastChild();
+			//nombre arquero
+			Element nombreA = (Element) arquero.getFirstChild();
+			String name = nombreA.getTextContent();
+		} catch (ParserConfigurationException e) {
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (SAXException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

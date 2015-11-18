@@ -81,6 +81,7 @@ public class Main {
 		gestorUsuarios.leerUsuarios();
 		gestorJugadas.leerJugadas();
 		gestorJugadores.LeerJugadores();
+	
 
 		try {
 			do {

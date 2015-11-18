@@ -65,7 +65,9 @@ public class EjecutarJugadaCompleja extends OpcionDeMenu{
 					ind = Main.scn.nextLine();
 				}
 				Main.r1.ejecutarJugadaCompleja(Integer.valueOf(ind)-1);
+				if(Main.tInicio != 0){
 				Main.gestorEstado.crearBuffer(Main.r1.getJugador(), Main.r1.getJugador().getListaJugadas().get(Integer.valueOf(ind)-1));
+				}
 			}catch(NumberFormatException e){
 				System.out.println("Porfavor ingrese una jugada de la lista");
 			}catch(InputMismatchException e){
@@ -90,7 +92,9 @@ public class EjecutarJugadaCompleja extends OpcionDeMenu{
 					ind = Main.scn.nextLine();
 				}
 				Main.r2.ejecutarJugadaCompleja(Integer.valueOf(ind)-1);
+				if(Main.tInicio != 0){
 				Main.gestorEstado.crearBuffer(Main.r2.getJugador(), Main.r2.getJugador().getListaJugadas().get(Integer.valueOf(ind)-1));
+				}
 			}catch(NumberFormatException e){
 				System.out.println("Porfavor ingrese una jugada de la lista");
 			}catch(InputMismatchException e){
