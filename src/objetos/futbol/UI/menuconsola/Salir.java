@@ -7,19 +7,20 @@ import objetos.futbol.varios.GestorBDEstado;
 import objetos.futbol.varios.GestorBDJugadasComplejas;
 /**
  * Clase que permite salir del programa, guardando los cambios hechos por el usuario
- * @author Santiago Pélaez
+ * @author Santiago Pï¿½laez
  *
  */
 public class Salir extends OpcionDeMenu{
+	long tPausa = Main.tInicio;
 	/**
-	 * Construtor de la clase que determina la categoria de la opción
+	 * Construtor de la clase que determina la categoria de la opciï¿½n
 	 * @param categoria
 	 */
 	public Salir(Categoria categoria) {
 		super(categoria);
 	}//Cierre del constructor
 	/**
-	 * Método que ejecuta la opción salir que guarda los cambios
+	 * Mï¿½todo que ejecuta la opciï¿½n salir que guarda los cambios
 	 */
 	@Override
 	public void ejecutar() {
@@ -34,6 +35,7 @@ public class Salir extends OpcionDeMenu{
 		}
 		if(Integer.valueOf(option) == 1){
 			new GestorBDEstado().guardarEstado();
+			tPausa += (System.currentTimeMillis() - tPausa);
 			return;
 		}
 		else if(Integer.valueOf(option)==2){
@@ -43,12 +45,12 @@ public class Salir extends OpcionDeMenu{
 		System.out.println("Gracias por jugar.");
 		System.exit(0);
 		}
-	}//Cierre del método
+	}//Cierre del mï¿½todo
 	/**
-	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
-	 * @return Retorna el tipo de opción
+	 * Mï¿½todo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opciï¿½n
+	 * @return Retorna el tipo de opciï¿½n
 	 */
 	public String toString(){
 		return "Salir";
-	}//Cierre del método
+	}//Cierre del mï¿½todo
 }//Cierre de la clase
