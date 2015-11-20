@@ -35,8 +35,8 @@ public class Salir extends OpcionDeMenu{
 		}
 		if(Integer.valueOf(option) == 1){
 			new GestorBDEstado().guardarEstado();
-			Main.tPausa = System.currentTimeMillis() - Main.tInicio;
-			tPausa += Main.tPausa;
+			Main.tPausa = (System.currentTimeMillis() - Main.tInicio);
+			Main.pausa =true;
 			return;
 		}
 		else if(Integer.valueOf(option)==2){
