@@ -24,38 +24,38 @@ public class Delantero extends Futbolista {
 		this.dorsal = dorsal;
 	}//Cierre del constructor
 	/**
-	 * Método para devolver, sobreescrito del package object
+	 * Metodo para devolver, sobreescrito del package object
 	 */
 	@Override
 	public String toString(){
 		return super.toString() + " con el dorsal " + dorsal + " ha marcado " + golesMarcados + " goles";
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
 	 * Verifica si el jugador juega con las manos, parametro de salida: false
 	 * @return Retorna verdadero si el futbolista juega con las manos
 	 */
 	public boolean jugarConLasManos(){
 		return false;
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
 	 * Marca los goles hechos por el delantero
 	 */
 	public void registrarGol(){
 		this.golesMarcados++;
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método que muestra la dorsal del delantero
+	 * Metodo que muestra la dorsal del delantero
 	 * @return Retorna el numero del dorsal del delantero
 	 */
 	public byte getDorsal(){
 		return dorsal;
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método que permite ver la cantidad de goles marcador por el delantero
+	 * Metodo que permite ver la cantidad de goles marcador por el delantero
 	 * @return Retorna la cantidad de goles marcados
 	 */
 	public short getGolesMarcados(){
 		return golesMarcados;
-	}//Cierre del método
+	}//Cierre del metodo
 }//Cierre de la clase
 

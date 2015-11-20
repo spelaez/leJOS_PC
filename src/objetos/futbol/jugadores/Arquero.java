@@ -24,39 +24,39 @@ public class Arquero extends Futbolista {
 		this.dorsal = dorsal;
 	}//Cierre del constructor
 	/**
-	 * Método para devolver, sobreescrito del package object
+	 * Metodo para devolver, sobreescrito del package object
 	 */
 	@Override
 	public String toString(){
 		return super.toString()+" con el dorsal "+ dorsal+ " Tiempo Sin Goles "+TiempoSinGoles;
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
 	 * Verifica si el jugador juega con las manos
 	 * @return Retorna verdadero si el futbolista juega con las manos  
 	 */
 	public boolean jugarConLasManos(){
 		return true;
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método que permite modificar el tiempo sin goles que lleva el arquero
+	 * Metodo que permite modificar el tiempo sin goles que lleva el arquero
 	 * @param tiempo
 	 */
 	public void registrarTiempoGol(int tiempo){
 		this.TiempoSinGoles = tiempo;
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
 	 * Muestra la dorsal que lleva el jugador
 	 * @return Retorna el numero de la dorsal
 	 */
 	public byte getDorsal(){
 		return dorsal;
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
 	 * Muestra el tiempo sin goles que lleva el arquero
 	 * @return Retorna el tiempo
 	 */
 	public int getTiempoSinGoles(){
 		return TiempoSinGoles;
-	}//Cierre del método
+	}//Cierre del metodo
 }//Cierre de la clase
 

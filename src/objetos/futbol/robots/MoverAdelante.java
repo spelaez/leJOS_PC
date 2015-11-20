@@ -1,7 +1,7 @@
 package objetos.futbol.robots;
 /**
  * Clase para definir la jugada mover adelante
- * @author Santiago Peláez
+ * @author Santiago Pelaez
  *
  */
 public class MoverAdelante extends JugadaPrimitiva {
@@ -16,14 +16,14 @@ public class MoverAdelante extends JugadaPrimitiva {
 		setIdJugada();
 	}//Cierre del constructor
 	/**
-	 * Método para consultar el tipo de jugada
+	 * Metodo para consultar el tipo de jugada
 	 * @return Retorna el Id de la jugada
 	 */
 	public int getIdJugada(){
 		return idJugada;
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método para modificar el tipo de jugada
+	 * Metodo para modificar el tipo de jugada
 	 */
 	public void setIdJugada(){
 		if(velocidad <= 1 && velocidad > 0){
@@ -32,5 +32,5 @@ public class MoverAdelante extends JugadaPrimitiva {
 		else{
 			idJugada = 2;
 		}
-	}//Cierre del método
+	}//Cierre del metodo
 }//Cierre de la clase

@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.9" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="objetos.futbol.UI.menuconsola.Inicializar" project="leJOS_PC" 
+    file="/leJOS_PC/src/objetos/futbol/UI/menuconsola/Inicializar.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="359" y="125"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="objetos.futbol.UI.menuconsola.RegistrarUsuarioAdministrador" project="leJOS_PC" 
+    file="/leJOS_PC/src/objetos/futbol/UI/menuconsola/RegistrarUsuarioAdministrador.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="595" y="136"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="objetos.futbol.UI.menuconsola.RegistrarTiempoSinGoles" project="leJOS_PC" 
+    file="/leJOS_PC/src/objetos/futbol/UI/menuconsola/RegistrarTiempoSinGoles.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="857" y="124"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="objetos.futbol.UI.menuconsola.Retroceder" project="leJOS_PC" 
+    file="/leJOS_PC/src/objetos/futbol/UI/menuconsola/Retroceder.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1088" y="121"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="objetos.futbol.UI.menuconsola.RegistrarUsuarioGeneral" project="leJOS_PC" 
+    file="/leJOS_PC/src/objetos/futbol/UI/menuconsola/RegistrarUsuarioGeneral.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1315" y="139"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="objetos.futbol.UI.menuconsola.Chutar" project="leJOS_PC" 
+    file="/leJOS_PC/src/objetos/futbol/UI/menuconsola/Chutar.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1539" y="118"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="objetos.futbol.UI.menuconsola.MenuDeConsola" project="leJOS_PC" 
+    file="/leJOS_PC/src/objetos/futbol/UI/menuconsola/MenuDeConsola.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="200" x="2598" y="-346"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="objetos.futbol.UI.menuconsola.IniciarPartido" project="leJOS_PC" 
+    file="/leJOS_PC/src/objetos/futbol/UI/menuconsola/IniciarPartido.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1722" y="117"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="9" language="java" name="objetos.futbol.UI.menuconsola.Categoria" project="leJOS_PC" 
+    file="/leJOS_PC/src/objetos/futbol/UI/menuconsola/Categoria.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2443" y="-226"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="10" language="java" name="objetos.futbol.UI.menuconsola.ConsultarExplicacionJugada" project="leJOS_PC" 
+    file="/leJOS_PC/src/objetos/futbol/UI/menuconsola/ConsultarExplicacionJugada.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="215" x="1863" y="58"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="objetos.futbol.UI.menuconsola.CrearJugadaCompleja" project="leJOS_PC" 
+    file="/leJOS_PC/src/objetos/futbol/UI/menuconsola/CrearJugadaCompleja.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="185" x="2118" y="58"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="objetos.futbol.UI.menuconsola.Trotar" project="leJOS_PC" 
+    file="/leJOS_PC/src/objetos/futbol/UI/menuconsola/Trotar.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="138" x="2343" y="58"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="objetos.futbol.UI.menuconsola.EjecutarJugadaCompleja" project="leJOS_PC" 
+    file="/leJOS_PC/src/objetos/futbol/UI/menuconsola/EjecutarJugadaCompleja.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="197" x="2521" y="58"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="objetos.futbol.UI.menuconsola.Patear" project="leJOS_PC" 
+    file="/leJOS_PC/src/objetos/futbol/UI/menuconsola/Patear.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="138" x="2758" y="58"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="objetos.futbol.UI.menuconsola.CrearJugador" project="leJOS_PC" 
+    file="/leJOS_PC/src/objetos/futbol/UI/menuconsola/CrearJugador.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="146" x="2936" y="58"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="16" language="java" name="objetos.futbol.UI.menuconsola" project="leJOS_PC" 
+    file="/leJOS_PC/src/objetos/futbol/UI/menuconsola" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="195" x="3881" y="-346"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="17" language="java" name="objetos.futbol.UI.menuconsola.GirarDerecha" project="leJOS_PC" 
+    file="/leJOS_PC/src/objetos/futbol/UI/menuconsola/GirarDerecha.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="145" x="3122" y="58"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="objetos.futbol.UI.menuconsola.ImprimirJugadores" project="leJOS_PC" 
+    file="/leJOS_PC/src/objetos/futbol/UI/menuconsola/ImprimirJugadores.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="167" x="3307" y="58"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="objetos.futbol.UI.menuconsola.Salir" project="leJOS_PC" 
+    file="/leJOS_PC/src/objetos/futbol/UI/menuconsola/Salir.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="138" x="3514" y="58"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="objetos.futbol.UI.menuconsola.IniciarSesion" project="leJOS_PC" 
+    file="/leJOS_PC/src/objetos/futbol/UI/menuconsola/IniciarSesion.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="141" x="3692" y="58"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="objetos.futbol.UI.menuconsola.ConsultarInfoJugador" project="leJOS_PC" 
+    file="/leJOS_PC/src/objetos/futbol/UI/menuconsola/ConsultarInfoJugador.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="183" x="3873" y="58"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="objetos.futbol.UI.menuconsola.RegistrarGolAFavor" project="leJOS_PC" 
+    file="/leJOS_PC/src/objetos/futbol/UI/menuconsola/RegistrarGolAFavor.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="176" x="4096" y="58"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="objetos.futbol.UI.menuconsola.Correr" project="leJOS_PC" 
+    file="/leJOS_PC/src/objetos/futbol/UI/menuconsola/Correr.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="138" x="4312" y="58"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="objetos.futbol.UI.menuconsola.OpcionDeMenu" project="leJOS_PC" 
+    file="/leJOS_PC/src/objetos/futbol/UI/menuconsola/OpcionDeMenu.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2703" y="-38"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="objetos.futbol.UI.menuconsola.GirarIzquierda" project="leJOS_PC" 
+    file="/leJOS_PC/src/objetos/futbol/UI/menuconsola/GirarIzquierda.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="148" x="4490" y="58"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="objetos.futbol.UI.menuconsola.RegistrarTiempoUltimoGol" project="leJOS_PC" 
+    file="/leJOS_PC/src/objetos/futbol/UI/menuconsola/RegistrarTiempoUltimoGol.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="202" x="4678" y="58"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="objetos.futbol.UI.menuconsola.ListaJugadasDisponibles" project="leJOS_PC" 
+    file="/leJOS_PC/src/objetos/futbol/UI/menuconsola/ListaJugadasDisponibles.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="199" x="4920" y="58"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <generalization id="28">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="29">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="30">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="31">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <association id="32">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="33" name="opciones2"/>      
+      <multiplicity id="34" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="35">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="36">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="37">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="38">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="39">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <association id="40">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="41" name="opciones"/>      
+      <multiplicity id="42" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="43">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="44" name="categoria"/>      
+      <multiplicity id="45" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="46">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="47">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="48">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="49">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="50">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="51">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="52">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="53">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="54">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="55">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="56">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="57">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="58">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="59">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

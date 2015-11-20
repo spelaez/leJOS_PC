@@ -6,20 +6,20 @@ import java.util.InputMismatchException;
 import objetos.futbol.UI.Main;
 import objetos.futbol.UI.menuconsola.MenuDeConsola;
 /**
- * Clase que define un usuario anï¿½nimo
- * @author Santiago Pelï¿½ez
+ * Clase que define un usuario anonimo
+ * @author Santiago Pelaez
  *
  */
 public class UsuarioAnonimo {
 	public MenuDeConsola menu = new MenuDeConsola();
 	/**
-	 * Constructor que asigna un menï¿½ para un usuario anï¿½nimo
+	 * Constructor que asigna un menu para un usuario anonimo
 	 */
 	public UsuarioAnonimo(){
 		asignarMenu();
 	}//Cierre del constructor
 	/**
-	 * Mï¿½todo que aï¿½ade las opciones de menï¿½ a un usuario anï¿½nimo
+	 * Metodo que añade las opciones de menu a un usuario anonimo
 	 */
 	public void asignarMenu(){
 		menu.limpiar();	
@@ -28,7 +28,7 @@ public class UsuarioAnonimo {
 		menu.anadirOpcion(MenuDeConsola.opciones2.get(33));
 	}//Cierre de la clase
 	/**
-	 * Mï¿½todo que Lanza el menï¿½ para un usuario anï¿½nimo
+	 * Metodo que Lanza el menu para un usuario anonimo
 	 */
 	public void lanzarMenu(){
 		String option;
@@ -55,6 +55,6 @@ public class UsuarioAnonimo {
 		}catch(IndexOutOfBoundsException e){
 			System.out.println("Error: Opcion no existente");
 		}
-	}//Cierre del mï¿½todo
+	}//Cierre del metodo
 }//Cierre de la clase
 

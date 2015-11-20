@@ -1,7 +1,7 @@
 package objetos.futbol.robots;
 /**
  * Clase que define la jugada primitiva girar
- * @author Santiago Peláez
+ * @author Santiago Pelaez
  *
  */
 public class Girar extends JugadaPrimitiva {
@@ -19,13 +19,13 @@ public class Girar extends JugadaPrimitiva {
 		setIdJugada();
 	}//Cierre del constructor
 	/**
-	 * Método para consultar el tipo de jugada
+	 * Metodo para consultar el tipo de jugada
 	 */
 	public int getIdJugada(){
 		return idJugada;
-	}//Ciere del método
+	}//Ciere del metodo
 	/**
-	 * Método para modificar el tipo de jugada
+	 * Metodo para modificar el tipo de jugada
 	 */
 	public void setIdJugada(){
 		if(grados == 45){
@@ -33,12 +33,12 @@ public class Girar extends JugadaPrimitiva {
 		}else if (grados == -45){
 			idJugada = 5;
 		}
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método para consultar los grados a los que gira el robot
+	 * Metodo para consultar los grados a los que gira el robot
 	 * @return Retorna el campo grados dependiendo del Id de jugada
 	 */
 	public int getGrados(){
 		return idJugada == 4 ? 45 : -45;
-	}//Cierre del método
+	}//Cierre del metodo
 }//Ciere de la clase

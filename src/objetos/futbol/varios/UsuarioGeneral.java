@@ -18,7 +18,7 @@ public class UsuarioGeneral implements Usuario{
 	public MenuDeConsola menu = new MenuDeConsola();
 	public static Integer[] permisos = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,21,22,24,25,27,28,30,31,32,33};
 	/**
-	 * Constructor que asigna un menï¿½, un nombre y una contraseï¿½a a un usuario general
+	 * Constructor que asigna un menu un nombre y una contraseña a un usuario general
 	 * @param nombre
 	 * @param clave
 	 */
@@ -28,52 +28,52 @@ public class UsuarioGeneral implements Usuario{
 		asignarMenu();
 	}//Cierre del constructor
 	/**
-	 * Mï¿½todo que permite modificar el nombre del usuario
+	 * Metodo que permite modificar el nombre del usuario
 	 */
 	public void setNombre(String nombre){
 		this.nombre = nombre;
-	}//Cierre del mï¿½todo
+	}//Cierre del metodo
 	/**
-	 * Mï¿½todo que permite modificar la clave de usuario
+	 * Metodo que permite modificar la clave de usuario
 	 */
 	public void setClave(String clave){
 		this.clave = clave;
-	}//Cierre del mï¿½todo
+	}//Cierre del metodo
 	/**
-	 * Mï¿½todo que permite consultar el nombre de usuario
+	 * Metodo que permite consultar el nombre de usuario
 	 * @return Retorna el campo nombre
 	 */
 	public String getNombre(){
 		return nombre;
-	}//Cierre del mï¿½todo
+	}//Cierre del metodo
 	/**
-	 * Mï¿½todo que permite consultar la clave de un usuario
+	 * Metodo que permite consultar la clave de un usuario
 	 * @return Retorna el campo clave
 	 */
 	public String getClave(){
 		return clave;	
-	}//Cierre del mï¿½todo
+	}//Cierre del metodo
 	/**
-	 * Mï¿½todo que accede a los permisos que tiene un usuario general
+	 * Metodo que accede a los permisos que tiene un usuario general
 	 * @return
 	 */
 	public Integer[] getPermisos(){
 		return permisos;
-	}//Cierre del mï¿½todo
+	}//Cierre del metodo
 	/**
-	 * Mï¿½todo que ejecutar la opcion lanzar menï¿½ del usuario general
+	 * Metodo que ejecutar la opcion lanzar menu del usuario general
 	 */
 	@Override
 	public void lanzarMenu() {
 		menu.lanzarMenu();
-	}//Cierre del mï¿½todo
+	}//Cierre del metodo
 	/**
-	 * Ejecuta el mï¿½todo asignar menï¿½, que muestra las opciones dependiendo del usuario
+	 * Ejecuta el metodo asignar menu, que muestra las opciones dependiendo del usuario
 	 */	
 	public void asignarMenu(){
 		menu.limpiar();
 		for(int i=0; i<permisos.length; i++){
 			menu.anadirOpcion(MenuDeConsola.opciones2.get(permisos[i]-1));
 		}
-	}//Cierre del mï¿½todo
+	}//Cierre del metodo
 }//Cierre de la clase

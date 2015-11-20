@@ -29,7 +29,7 @@ import org.w3c.dom.*;
  */
 public class GestorBDJugadasComplejas {
 	/**
-	 * Método de la clase que guarda las jugadas complejas nuevas 
+	 * Metodo de la clase que guarda las jugadas complejas nuevas 
 	 */
 	public void guardarJugadas(){
 		System.out.println("Guarardando jugadas complejas...");
@@ -176,9 +176,9 @@ public class GestorBDJugadasComplejas {
 			e.printStackTrace();
 		}
 		System.out.println("Jugadas complejas guardadas exitosamente");
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método para leer las jugadas que ya están guardadas en el XML
+	 * Metodo para leer las jugadas que ya estan guardadas en el XML
 	 */
 	public void leerJugadas(){
 		System.out.println("Leyendo base de datos de jugadas complejas");
@@ -256,7 +256,7 @@ public class GestorBDJugadasComplejas {
 				String fecha=jugada.getElementsByTagName("Fecha_creacion").item(0).getTextContent();
 				String autor=jugada.getElementsByTagName("Autor").item(0).getTextContent();
 				String explicacion=jugada.getElementsByTagName("Explicacion").item(0).getTextContent();
-				//int complejidad=Integer.valueOf(jugada.getElementsByTagName("Complejidad").item(0).getTextContent());
+				//int efectividad=Integer.valueOf(jugada.getElementsByTagName("Efectividad").item(0).getTextContent());
 				//String descripcion=jugada.getElementsByTagName("Descripcion").item(0).getTextContent();
 				NodeList primitivas=jugada.getElementsByTagName("Jugadas");
 				ArrayList<JugadaPrimitiva> listajugadas=new ArrayList<>();
@@ -300,7 +300,8 @@ public class GestorBDJugadasComplejas {
 				String fecha=jugada.getElementsByTagName("Fecha_creacion").item(0).getTextContent();
 				String autor=jugada.getElementsByTagName("Autor").item(0).getTextContent();
 				String explicacion=jugada.getElementsByTagName("Explicacion").item(0).getTextContent();
-				//int complejidad=Integer.valueOf(jugada.getElementsByTagName("Complejidad").item(0).getTextContent());
+				//int potencia=Integer.valueOf(jugada.getElementsByTagName("Potencia").item(0).getTextContent());
+				//int efecto=Integer.valueOf(jugada.getElementsByTagName("Efecto").item(0).getTextContent());
 				//String descripcion=jugada.getElementsByTagName("Descripcion").item(0).getTextContent();
 				NodeList primitivas=jugada.getElementsByTagName("Jugadas");
 				ArrayList<JugadaPrimitiva> listajugadas=new ArrayList<>();
@@ -340,5 +341,5 @@ public class GestorBDJugadasComplejas {
 			System.out.println("Error");
 		}
 		System.out.println("Jugadas complejas cargadas exitosamente");
-	}//Cierre del método
+	}//Cierre del metodo
 }//Cierre de la clase

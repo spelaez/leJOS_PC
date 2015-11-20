@@ -9,7 +9,7 @@ import objetos.futbol.jugadores.Futbolista;
 import objetos.futbol.jugadores.JugadaCompleja;
 /**
  * Clase para definir las jugadas primitivas de un robot
- * @author Santiago Pel�ez
+ * @author Santiago Pelaez
  *
  */
 public class Robot {
@@ -34,75 +34,74 @@ public class Robot {
 		this.girarIzquierda = Main.girarIzquierda;
 		this.chutar = Main.chutar;
 		this.patear = Main.patear;
-//Cierre del constructor
+		this.jugador = jugador;
+	}//Cierre del constructor
 	/**
-	 * M�todo para ver si el futbolista es un arquero o un delantero
+	 * Metodo para ver si el futbolista es un arquero o un delantero
 	 * @return Retorna el tipo de jugador
 	 */
-		this.jugador = jugador;
-	}
 	
 	public Futbolista getJugador(){
 		return jugador;
-	}//Cierre del m�todo
+	}//Cierre del metodo
 	/**
-	 * M�todo para modificar al futbolista
+	 * Metodo para modificar al futbolista
 	 * @param jugador
 	 */
 	public void setJugador(Futbolista jugador){
 		this.jugador = jugador;
-	}//Cierre del m�todo
+	}//Cierre del metodo
 	/**
-	 * M�todo para llamar al tipo de jugada primitiva en este caso trotar
+	 * Metodo para llamar al tipo de jugada primitiva en este caso trotar
 	 * @return Retorna el ID de la jugada
 	 */
 	public int ejecutarTrotar(){
 		return trotar.getIdJugada();
-	}//Cierre del m�todo
+	}//Cierre del metodo
 	/**
-	 * M�todo para llamar al tipo de jugada primitiva en este caso correr
-	 * @return Retorna el ID de la ejecucui�n de lajugada
+	 * Metodo para llamar al tipo de jugada primitiva en este caso correr
+	 * @return Retorna el ID de la ejecucion de lajugada
 	 */
 	public int ejecutarCorrer(){
 		return correr.getIdJugada();
-	}//Cierre del m�todo
+	}//Cierre del metodo
 	/**
-	 * M�todo para llamar al tipo de jugada primitiva en este caso retroceder
-	 * @return Retorna el ID de la ejecuci�n de la jugada
+	 * Metodo para llamar al tipo de jugada primitiva en este caso retroceder
+	 * @return Retorna el ID de la ejecucion de la jugada
 	 */
 	public int ejecutarRetroceder(){
 		return retroceder.getIdJugada();
-	}//Cierre del m�todo
+	}//Cierre del metodo
 	/**
-	 * M�todo para llamar al tipo de jugada primitiva en este caso girar a la derecha
-	 * @return Retorna el ID de la ejecuci�n de la jugada
+	 * Metodo para llamar al tipo de jugada primitiva en este caso girar a la derecha
+	 * @return Retorna el ID de la ejecucion de la jugada
 	 */
 	public int ejecutarGirarDerecha(){
 		return girarDerecha.getIdJugada();
-	}//Cierre del m�todo
+	}//Cierre del metodo
 	/**
-	 * M�todo para llamar al tipo de jugada primitiva en este caso girar a la izquierda
-	 * @return Retorna el ID de la ejecuci�n de la jugada
+	 * Metodo para llamar al tipo de jugada primitiva en este caso girar a la izquierda
+	 * @return Retorna el ID de la ejecucion de la jugada
 	 */
 	public int ejecutarGirarIzquierda(){
 		return girarIzquierda.getIdJugada();
-	}//Cierre del m�todo
+	}//Cierre del metodo
 	/**
-	 * M�todo para llamar al tipo de jugada primitiva en este caso chutar
+	 * Metodo para llamar al tipo de jugada primitiva en este caso chutar
 	 * @return Retorna el ID de la ejecuci�n de la jugada
 	 */
 	public int ejecutarChutar(){
 		return chutar.getIdJugada();
-	}//Cierre del m�todo
+	}//Cierre del metodo
 	/**
-	 * M�todo para llamar al tipo de jugada primitiva en este caso patear
-	 * @return Retorna el ID de la ejecuci�n de la jugada
+	 * Metodo para llamar al tipo de jugada primitiva en este caso patear
+	 * @return Retorna el ID de la ejecucion de la jugada
 	 */
 	public int ejecutarPatear(){
 		return patear.getIdJugada();
-	}//Cierre del m�todo
+	}//Cierre del metodo
 	/**
-	 * M�todo para asignarle las jugadas primitivas que componen una jugada compleja
+	 * Metodo para asignarle las jugadas primitivas que componen una jugada compleja
 	 * @param index
 	 * @throws IOException
 	 */
@@ -128,5 +127,5 @@ public class Robot {
 			Main.dis.readInt();
 		}
 		}
-	}//Cierre del m�todo
-}//Cierr de la clase
+	}//Cierre del metodo
+}//Cierre de la clase

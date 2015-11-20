@@ -26,14 +26,14 @@ public class JugadaComplejaOfensiva extends JugadaCompleja {
 		this.descripcion= "La jugada " + nombreJugada + " es una " + getEfectividad()+  ", fue creada por " + Autor.getNombre() + ", en la fecha " + fechaCreacion;
 	}//Cierre del constructor
 	/**
-	 * Método para dovolver el tipo de jugada (defensiva, ofensiva o tiro libre) sobreescrita de la clase JugadaCompleja
+	 * Metodo para dovolver el tipo de jugada (defensiva, ofensiva o tiro libre) sobreescrita de la clase JugadaCompleja
 	 */	
 	@Override
 	public String identificarJugada() {
 		return "Jugada Ofensiva";
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método propio de la jugada compleja ofensiva que muestra que tan efectiva es una jugada dependiendo de la cantidad de jugadas primitivas que contenga
+	 * Metodo propio de la jugada compleja ofensiva que muestra que tan efectiva es una jugada dependiendo de la cantidad de jugadas primitivas que contenga
 	 * @return Efectividad
 	 */
 	private String getEfectividad(){
@@ -49,19 +49,19 @@ public class JugadaComplejaOfensiva extends JugadaCompleja {
 		else{
 			return "no existe jugada";
 		}
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método para acceder a la descripcion de la jugada
+	 * Metodo para acceder a la descripcion de la jugada
 	 * @return descripcion
 	 */
 	public String getDescripcion(){
 		return descripcion;
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método que permite obtener el número de la efectividad que tiene la jugada
+	 * Metodo que permite obtener el numero de la efectividad que tiene la jugada
 	 * @return
 	 */
 	public int getNumEfectividad(){
 		return efectividad;
-	}//Cierre del método
+	}//Cierre del metodo
 }//cierre de la clase

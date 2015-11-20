@@ -4,8 +4,8 @@ import objetos.futbol.robots.JugadaPrimitiva;
 import java.util.ArrayList;
 import objetos.futbol.varios.UsuarioAdministrador;
 /**
- * Clase abstracta que define un tipo de jugada compleja, consta de un ArrayList que contiene la cantidad de jugadas primitivas que tendrá la jugada compleja
- * @author santiago Peláez
+ * Clase abstracta que define un tipo de jugada compleja, consta de un ArrayList que contiene la cantidad de jugadas primitivas que tendra la jugada compleja
+ * @author santiago Pelaez
  *
  */
 public abstract class JugadaCompleja {
@@ -32,14 +32,14 @@ public abstract class JugadaCompleja {
 
 	}//Cierre del constructor
 	/**
-	 * Método para devolver sobreescrito del package object
+	 * Metodo para devolver sobreescrito del package object
 	 */
 	@Override
 	public String toString(){
 		return "Jugada "+ nombreJugada;
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método para verificar si hay jugadas complejas iguales
+	 * Metodo para verificar si hay jugadas complejas iguales
 	 * @param j
 	 * @return Retorna verdadero si hay jugadas complejas repetidas
 	 */
@@ -55,45 +55,45 @@ public abstract class JugadaCompleja {
 
 		}
 		return true;
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método abtracto que permite averiguar el tipo de jugada compleja
+	 * Metodo abtracto que permite averiguar el tipo de jugada compleja
 	 * @return Retorna el tipo de jugada
 	 */
 	public abstract String identificarJugada();
 	/**
-	 * Método para acceder a la lista de las jugadas
+	 * Metodo para acceder a la lista de las jugadas
 	 * @return Retorna la jugada
 	 */
 	public ArrayList<JugadaPrimitiva> getJugada(){
 		return Jugada;
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método para acceder a la explicación de la jugada
+	 * Metodo para acceder a la explicacion de la jugada
 	 * @return Retorna la explicacion de la jugada
 	 */
 	public String getExplicacion(){
 		return Explicacion;
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método para acceder al autor de una jugada compleja
+	 * Metodo para acceder al autor de una jugada compleja
 	 * @return Retorna el autor
 	 */
 	public UsuarioAdministrador getAutor(){
 		return Autor;
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método para accerde a la fecha en la que se creo una jugada compleja
+	 * Metodo para accerde a la fecha en la que se creo una jugada compleja
 	 * @return Retorna la fecha de creacion de la jugada
 	 */
 	public String getfechaCreacion(){
 		return fechaCreacion;
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método que muestra el nombre de la jugada compleja
+	 * Metodo que muestra el nombre de la jugada compleja
 	 * @return Retorna el nombre de la jugada
 	 */
 	public String getNombre(){
 		return nombreJugada;
-	}//Cierre del método
+	}//Cierre del metodo
 }//Cierre de la clase

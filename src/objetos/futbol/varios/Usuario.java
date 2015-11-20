@@ -1,7 +1,7 @@
 package objetos.futbol.varios;
 /**
  * Interfaz para ser implementada por los tipos de usuarios
- * @author Santiago Peláez
+ * @author Santiago Pelaez
  *
  */
 public interface Usuario {

@@ -5,7 +5,7 @@ import objetos.futbol.varios.UsuarioAdministrador;
 import objetos.futbol.robots.JugadaPrimitiva;
 /**
  * clase para definir una jugada compleja defensiva, consta de un ArrayList que contiene la cantidad de jugadas primitivas que contiene una jugada compleja
- * @author Santiago Saldarriaga, Juan Pablo Betancur, Jhon Eider Murillo, Santiago Peláez
+ * @author Santiago Saldarriaga, Juan Pablo Betancur, Jhon Eider Murillo, Santiago Pelaez
  *
  */
 public class JugadaComplejaDefensiva extends JugadaCompleja {
@@ -26,14 +26,14 @@ public class JugadaComplejaDefensiva extends JugadaCompleja {
 		this.descripcion = "La jugada " + nombreJugada + " es una " + getComplejidad()+ ", fue creada por " + Autor.getNombre() + ", en la fecha " + fechaCreacion;
 		}//Cierre del constructor
 	/**
-	 * Método para dovolver el tipo de jugada (defensiva, ofensiva o tiro libre) sobreescrita de la clase JugadaCompleja
+	 * Metodo para dovolver el tipo de jugada (defensiva, ofensiva o tiro libre) sobreescrita de la clase JugadaCompleja
 	 */	
 	@Override
 	public String identificarJugada() {
 		return "Jugada Defensiva";
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método propio para averiguar que dificultad que tiene la jugada compleja 
+	 * Metodo propio para averiguar que dificultad que tiene la jugada compleja 
 	 * @return complejidad
 	 */
 	private String getComplejidad(){
@@ -49,19 +49,19 @@ public class JugadaComplejaDefensiva extends JugadaCompleja {
 		else{
 			return "no existe jugada";
 		}
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método para acceder a la descripción de la jugada
-	 * @return La descripción de la jugada
+	 * Metodo para acceder a la descripcion de la jugada
+	 * @return La descripcion de la jugada
 	 */
 	public String getDescripcion(){
 		return descripcion;
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método que permite obtener el número de complejidad que tiene la jugada
+	 * Metodo que permite obtener el numero de complejidad que tiene la jugada
 	 * @return
 	 */
 	public int getnumcomplejidad(){
 		return complejidad;
-	}//Cierre del método
+	}//Cierre del metodo
 }//Cierre de la clase

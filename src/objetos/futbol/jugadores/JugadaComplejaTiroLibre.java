@@ -6,7 +6,7 @@ import objetos.futbol.robots.Chutar;
 import objetos.futbol.varios.UsuarioAdministrador;
 /**
  * Clase para definir una jugada compleja de tipo tiro libre, consta de un ArrayList que contiene la cantidad de jugadas primitivas que contiene una jugada compleja
- * @author Santiagon Saldarriaga, Jhon Eider Murillo, Juan Pablo Betancur, Santiago Peláez
+ * @author Santiagon Saldarriaga, Jhon Eider Murillo, Juan Pablo Betancur, Santiago Pelaez
  *
  */
 public class JugadaComplejaTiroLibre extends JugadaCompleja {
@@ -15,7 +15,7 @@ public class JugadaComplejaTiroLibre extends JugadaCompleja {
 	private int efecto;
 	private String descripcion;
 	/**
-	 * Método para definir un tiro libre
+	 * Metodo para definir un tiro libre
 	 * @param nombreJugada
 	 * @param fechaCreacion
 	 * @param Autor
@@ -35,33 +35,27 @@ public class JugadaComplejaTiroLibre extends JugadaCompleja {
 		}
 	}//Cierre del constructor
 	/**
-	 * Método para dovolver el tipo de jugada (defensiva, ofensiva o tiro libre) sobreescrita de la clase JugadaCompleja
+	 * Metodo para dovolver el tipo de jugada (defensiva, ofensiva o tiro libre) sobreescrita de la clase JugadaCompleja
 	 */
 	@Override
  	public String identificarJugada() {
 		return "Jugada Tiro Libre";
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método propio de la clase que muestra que tan fuerte se patea al balón
+	 * Metodo propio de la clase que muestra que tan fuerte se patea al balon
 	 * @return potencia chute
 	 */
 	private String getPotenciachute(){
-		if(potenciachute>0 && potenciachute <50){
+		if(potenciachute>0 && potenciachute <=1){
 			return "chute suave";
 		}
-		else if(potenciachute>=50 && potenciachute<100){
-			return "chute medio";
-   
-		}
-		else if (potenciachute>=100){
-			return "chute fuerte";
-		}
+
 		else{
-			return"chute sin potencia";
+			return"chute fuerte";
 		}
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método propio de la clase que muestra el efecto que tiene la pelota al chutarse
+	 * Metodo propio de la clase que muestra el efecto que tiene la pelota al chutarse
 	 * @return efecto
 	 */
 	private String getEfecto(){
@@ -77,27 +71,27 @@ public class JugadaComplejaTiroLibre extends JugadaCompleja {
 		else{
 			return "tiro sin efecto";
 		}
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método para acceder a la descripción del tiro
+	 * Metodo para acceder a la descripcion del tiro
 	 * @return descripcion
 	 */
 	public String getDescripcion(){
 		return descripcion;
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método que permite obtener el número de la potencia del chute que tiene la jugada
+	 * Metodo que permite obtener el numero de la potencia del chute que tiene la jugada
 	 * @return
 	 */
 	public int getNumPotencia(){
 		return potenciachute;
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método que permite obtener el número del efecto que tiene la jugada
+	 * Metodo que permite obtener el numero del efecto que tiene la jugada
 	 * @return
 	 */
 	public int getNumEfecto(){
 		return efecto;
-	}//Cierre del método
+	}//Cierre del metodo
 }//Cierre de la clase
 

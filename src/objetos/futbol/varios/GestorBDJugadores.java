@@ -29,7 +29,7 @@ import org.w3c.dom.*;
  */
 public class GestorBDJugadores {
 	/**
-	 * Método que guarda los jugadores creados por el usuario
+	 * Metodo que guarda los jugadores creados por el usuario
 	 */
 	public void guardarJugadores(){
 		System.out.println("Guardando jugadores...");
@@ -115,9 +115,9 @@ public class GestorBDJugadores {
 			e.printStackTrace();
 		}
 		System.out.println("Jugadores guardados exitosamente");
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método que permite leer el archivo XML con el listado de los jugadores
+	 * Metodo que permite leer el archivo XML con el listado de los jugadores
 	 */
 	public void LeerJugadores(){
 		Delantero A;
@@ -182,6 +182,6 @@ public class GestorBDJugadores {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 
-	}//Cierre del método
+	}//Cierre del metodo
 }//Cierre de la clase
 

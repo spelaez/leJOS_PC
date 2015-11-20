@@ -1,7 +1,7 @@
 package objetos.futbol.robots;
 /**
  * Clase para definir la jugada primitiva chutar 
- * @author Santiago Peláez
+ * @author Santiago Pelaez
  *
  */
 public class Chutar extends JugadaPrimitiva {
@@ -9,7 +9,7 @@ public class Chutar extends JugadaPrimitiva {
 	private int idJugada;
 	private int grados;
 	/**
-	 * Constructor para asígnar la velocidad y los grados con los que chuta 
+	 * Constructor para asignar la velocidad y los grados con los que chuta 
 	 * @param velocidad
 	 * @param grados
 	 */
@@ -19,13 +19,13 @@ public class Chutar extends JugadaPrimitiva {
 		setIdJugada();
 	}//Cierre del cosntructor
 	/**
-	 * Método para consultar el tipo de jugada
+	 * Metodo para consultar el tipo de jugada
 	 */
 	public int getIdJugada(){
 		return idJugada;
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método para modificar el tipo de jugada primitiva
+	 * Metodo para modificar el tipo de jugada primitiva
 	 */
 	public void setIdJugada(){
 		if(velocidad <= 1 && velocidad > 0){
@@ -34,12 +34,12 @@ public class Chutar extends JugadaPrimitiva {
 		else{
 			idJugada = 7;
 		}
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
 	 * Metodo para cosultar los grados 
 	 * @return Retorna el campo grados
 	 */
 	public int getGrados(){
 		return grados;
-	}//Cierre del método
+	}//Cierre del metodo
 }//Cierre de la clase

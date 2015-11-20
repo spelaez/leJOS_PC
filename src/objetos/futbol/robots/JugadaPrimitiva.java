@@ -1,7 +1,7 @@
 package objetos.futbol.robots;
 /**
  * Clase abstracta que permite caracterizar una jugada primitiva
- * @author Santiago Peláez
+ * @author Santiago Pelaez
  *
  */
 public abstract class JugadaPrimitiva {
@@ -15,14 +15,14 @@ public abstract class JugadaPrimitiva {
 		this.velocidad = velocidad;
 	}//Cierre del constructor
 	/**
-	 * Método para ver la velocidad de la jugada
+	 * Metodo para ver la velocidad de la jugada
 	 * @return Retorna el campo velocidad
 	 */
 	public int getVelocidad(){
 		return velocidad;
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método para identificar el tipo de jugada 	 
+	 * Metodo para identificar el tipo de jugada 	 
 	 */
 	public abstract int getIdJugada();
 }//Cierre de la clase

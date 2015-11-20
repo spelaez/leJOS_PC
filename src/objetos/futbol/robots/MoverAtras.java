@@ -1,7 +1,7 @@
 package objetos.futbol.robots;
 /**
  * Clase que define mover atras 
- * @author Santiago Peláez
+ * @author Santiago Pelaez
  *
  */
 public class MoverAtras extends JugadaPrimitiva {
@@ -15,10 +15,10 @@ public class MoverAtras extends JugadaPrimitiva {
 		super(velocidad);
 	}//Cierre del constructor
 	/**
-	 * Método para consultar el tipo de jugada
+	 * Metodo para consultar el tipo de jugada
 	 * @return Retorna el ID de la jugada
 	 */
 	public int getIdJugada(){
 		return idJugada;
-	}//Cierre del método
+	}//Cierre del metodo
 }//Cierre de la clase
