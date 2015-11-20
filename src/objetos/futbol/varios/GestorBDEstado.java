@@ -48,9 +48,16 @@ public class GestorBDEstado {
 					String n = y.getNombre();
 					bw.write(n);
 					bw.newLine();
-					String time =Long.toString(((System.currentTimeMillis() - Main.tInicio)/ 1000));
-					bw.write(time);
-					bw.newLine();
+					if(Main.tPausa == 0){
+						String time =Long.toString(((System.currentTimeMillis() - Main.tInicio)/ 1000));
+						bw.write(time);
+						bw.newLine();
+					}
+					else if(Main.tPausa>0){
+						String time =Long.toString((((System.currentTimeMillis() - Main.tInicio)+Main.tPausa)/ 1000));
+						bw.write(time);
+						bw.newLine();
+					}
 					
 				}
 				else if (x instanceof Delantero){
@@ -60,9 +67,16 @@ public class GestorBDEstado {
 					String n = y.getNombre();
 					bw.write(n );
 					bw.newLine();
-					String time =Long.toString(((System.currentTimeMillis() - Main.tInicio)/ 1000));
-					bw.write(time);
-					bw.newLine();
+					if(Main.tPausa == 0){
+						String time =Long.toString(((System.currentTimeMillis() - Main.tInicio)/ 1000));
+						bw.write(time);
+						bw.newLine();
+					}
+					else if(Main.tPausa>0){
+						String time =Long.toString((((System.currentTimeMillis() - Main.tInicio)+Main.tPausa)/ 1000));
+						bw.write(time);
+						bw.newLine();
+					}
 				
 				}
 				bw.close();

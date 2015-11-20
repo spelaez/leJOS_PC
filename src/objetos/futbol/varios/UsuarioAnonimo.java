@@ -25,7 +25,7 @@ public class UsuarioAnonimo {
 		menu.limpiar();	
 		menu.anadirOpcion(MenuDeConsola.opciones2.get(28));
 		menu.anadirOpcion(MenuDeConsola.opciones2.get(30));
-		menu.anadirOpcion(MenuDeConsola.opciones2.get(32));
+		menu.anadirOpcion(MenuDeConsola.opciones2.get(33));
 	}//Cierre de la clase
 	/**
 	 * M�todo que Lanza el men� para un usuario an�nimo

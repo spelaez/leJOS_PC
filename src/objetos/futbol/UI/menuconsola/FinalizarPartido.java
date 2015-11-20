@@ -22,6 +22,7 @@ public class FinalizarPartido extends OpcionDeMenu {
 		}
 		Main.gestorEstado.guardarEstado();
 		Main.gestorEstado.leerEstado();
+		Main.pausa = false;
 	}
 	
 	@Override

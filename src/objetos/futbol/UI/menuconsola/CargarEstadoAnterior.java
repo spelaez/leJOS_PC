@@ -2,6 +2,8 @@ package objetos.futbol.UI.menuconsola;
 
 import java.io.File;
 
+import objetos.futbol.UI.Main;
+
 public  class CargarEstadoAnterior extends OpcionDeMenu {
 
 	public CargarEstadoAnterior(Categoria categoria) {
@@ -15,12 +17,16 @@ public  class CargarEstadoAnterior extends OpcionDeMenu {
 		if(!fichero.exists()){
 			System.out.println("Porfavor inicie un partido antes");
 			return;
+			
 		}
+		System.out.println("Partido reanudado");
+		Main.pausa = false;
+		Main.tInicio = System.currentTimeMillis();
 	}
 	
 	@Override
 	public String toString(){
-		return "Cargar partido";
+		return "Reanudar partido";
 	}
 
 	

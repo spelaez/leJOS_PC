@@ -29,6 +29,7 @@ public class Main {
 	public static long tPausa;
 	public static long tFinal;
 	public static long tUltimoGol;
+	public static boolean pausa = false;
 
 	//Objetos de lectura y escritura hacia los robots
 	public static DataOutputStream dos;
