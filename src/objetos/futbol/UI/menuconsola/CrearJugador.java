@@ -17,14 +17,14 @@ import java.util.ArrayList;
  */
 public class CrearJugador extends OpcionDeMenu {
 	/**
-	 * Constructor que accesa al tipo de categoria que tiene la opción crear jugador
+	 * Constructor que accesa al tipo de categoria que tiene la opcion crear jugador
 	 * @param categoria
 	 */
 	public CrearJugador(Categoria categoria){
 		super(categoria);
 	}//Cierre del constructor
 	/**
-	 * Método que ejecuta el menú de crear jugador
+	 * Metodo que ejecuta el menu de crear jugador
 	 */
 	@Override
 	public void ejecutar(){
@@ -67,7 +67,6 @@ public class CrearJugador extends OpcionDeMenu {
 					}catch(IndexOutOfBoundsException e){
 						System.out.println("Dato fuera de rango");
 					}
-
 				}
 			}
 			else{
@@ -86,13 +85,13 @@ public class CrearJugador extends OpcionDeMenu {
 			System.out.println("Dato incorrecto, ingrese un entero");
 		}
 
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
-	 * @return Retorna el tipo de opción
+	 * Metodo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
+	 * @return Retorna el tipo de opcion
 	 */
 	@Override
 	public String toString(){
 		return "Crear nuevo Jugador";
-	}//Cierre del método
+	}//Cierre del metodo
 }//Cierre de la clase

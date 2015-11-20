@@ -15,7 +15,7 @@ public class ImprimirJugadores extends OpcionDeMenu {
 		super(categoria);
 	}//Cierre del constructor
 	/**
-	 * Método que ejecuta el menú para imprimir los jugadores
+	 * Metodo que ejecuta la opción de menu para imprimir los jugadores
 	 */
 	@Override
 	public void ejecutar(){
@@ -28,13 +28,13 @@ public class ImprimirJugadores extends OpcionDeMenu {
 		for(int i=0; i<Main.listaJugadores.size(); i++){
 			System.out.println("\t\t"+Main.listaJugadores.get(i));
 		}
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
-	 * @return Retorna el tipo de opción
+	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
+	 * @return Retorna el tipo de opcion
 	 */
 	@Override
 	public String toString(){
 		return "Lista de jugadores";
-	}//Cierre del método
+	}//Cierre del metodo
 }//Cierre de la clase

@@ -6,4 +6,4 @@ package objetos.futbol.UI.menuconsola;
  */
 public enum Categoria {
 	ARQUERO, DELANTERO, SISTEMA
-}//Cierre de la clase enumeración
+}//Cierre de la clase enumeracion

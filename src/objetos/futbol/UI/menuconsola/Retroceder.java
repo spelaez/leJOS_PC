@@ -7,20 +7,20 @@ import java.io.IOException;
 import lejos.pc.comm.NXTCommFactory;
 import objetos.futbol.UI.Main;
 /**
- * Clase que define la opci�n retroceder
+ * Clase que define la opcion retroceder
  * @author Juan Pablo Betancur
  *
  */
 public class Retroceder extends OpcionDeMenu{
 	/**
-	 * Constructor que accesa al tipo de categoria que tiene la opci�n retroceder
+	 * Constructor que accesa al tipo de categoria que tiene la opcion retroceder
 	 * @param categoria
 	 */
 	public Retroceder(Categoria categoria){
 		super(categoria);
 	}//Cierre del constructor
 	/**
-	 * M�todo sobreescrito de opcion de men�, que imprime el tipo de opci�n, y llama a un m�todo de la clase main del paquete objetos.futbol.UI para enviarla al robot
+	 * Metodo sobreescrito de opcion de menu, que imprime el tipo de opcion, y llama a un metodo de la clase main del paquete objetos.futbol.UI para enviarla al robot
 	 */
 	@Override
 	public void ejecutar(){
@@ -61,13 +61,13 @@ public class Retroceder extends OpcionDeMenu{
 		else if(Main.pausa == true){
 			System.out.println("Porfavor reanude el prtido dando la opcion Reanudar partido");
 		}
-	}//Cierre del m�todo
+	}//Cierre del metodo
 	/**
-	 * M�todo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opci�n
-	 * @return Retrona el tipo de opci�n
+	 * Metodo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
+	 * @return Retrona el tipo de opcion
 	 */
 	@Override
 	public String toString(){
 		return "Retroceder";
-	}//Cierre del m�todo
+	}//Cierre del metodo
 }//Cierre de la clase

@@ -33,9 +33,17 @@ import objetos.futbol.jugadores.Arquero;
 import objetos.futbol.jugadores.Delantero;
 import objetos.futbol.jugadores.Futbolista;
 import objetos.futbol.jugadores.JugadaCompleja;
-
+/**
+ * Clase para crear, guardar, borrar, leer y cargar el estado de un partido
+ * @author Jhon Eider Murillo Usuga
+ *
+ */
 public class GestorBDEstado {
-
+	/**
+	 * Metodo para crear un buffer con las caracteristicas necesitadas
+	 * @param x
+	 * @param y
+	 */
 	public void crearBuffer(Futbolista x, JugadaCompleja y){
 		try {
 			File fich = new File("src\\gestorBD\\Buffer.txt");
@@ -114,21 +122,28 @@ public class GestorBDEstado {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
-	
+	}//Cierre del metodo
+	/**
+	 * Metodo para borrar el buffer
+	 */
 	public void borrarBuffer(){
 		File fich = new File("src\\gestorBD\\Buffer.txt");
 		if(fich.exists()){
 			fich.delete();
 		}
-	}
-	
+	}//Cierre del metodo
+	/**
+	 * Metodo para borrar el estado guardado en el buffer
+	 */
 	public void borrarEstado(){
 		File fich = new File("src\\gestorBD\\Estado.xml");
 		if(fich.exists()){
 			fich.delete();
 		}
-	}
+	}//Cierre del metodo
+	/**
+	 * Metodo para guardar el estado del partido en el buffer
+	 */
 	public void guardarEstado(){
 		try {
 			DocumentBuilderFactory Factory = DocumentBuilderFactory.newInstance();
@@ -214,8 +229,10 @@ public class GestorBDEstado {
 		} catch (TransformerException e) {
 			e.printStackTrace();
 		}
-	}
-	
+	}//Cierre del metodo
+	/**
+	 * Metodo para leer el estado guardado en el buffer
+	 */
 	public void leerEstado(){
 		try {
 			DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
@@ -299,10 +316,11 @@ public class GestorBDEstado {
 			}
 		} catch (ParserConfigurationException | SAXException | IOException e) {
 			e.printStackTrace();
-			}
-		
-	}
-	
+			}		
+	}//Cierre del metodo
+	/**
+	 * Metodo para cargar el estado del partido que se guardo en el buffer
+	 */
 	public void cargarEstado(){
 		try {
 			DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
@@ -332,6 +350,5 @@ public class GestorBDEstado {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
-
-}
+	}//Cierre del metodo
+}//Cierre de la clase

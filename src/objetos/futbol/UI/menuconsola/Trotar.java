@@ -7,21 +7,20 @@ import java.io.IOException;
 import lejos.pc.comm.NXTCommFactory;
 import objetos.futbol.UI.Main;
 /**
- * Clase que define la opci�n trotar
- * @author Santiago Pel�ez
+ * Clase que define la opcion trotar
+ * @author Santiago Pelaez
  *
  */
 public class Trotar extends OpcionDeMenu{
 	/**
-	 * Constructor que accesa al tipo de categoria que tiene la opci�n trotar
+	 * Constructor que accesa al tipo de categoria que tiene la opcion trotar
 	 * @param categoria
 	 */
 	public Trotar(Categoria categoria){
 		super(categoria);
 	}//Cierre del contructor
 	/*
-	 * M�todo sobreescrito de opci�n de men�, que imprime el tipo de opci�n, y llama a un m�todo de la clase main del paquete objetos.futbol.UI para enviarla al robot
-	 * @see objetos.futbol.UI.menuconsola.OpcionDeMenu#ejecutar()
+	 * Metodo sobreescrito de opcion de menu, que imprime el tipo de opcion, y llama a un metodo de la clase main del paquete objetos.futbol.UI para enviarla al robot	 
 	 */
 	@Override
 	public void ejecutar(){
@@ -60,15 +59,15 @@ public class Trotar extends OpcionDeMenu{
 			}
 		}
 		else if(Main.pausa == true){
-			System.out.println("Porfavor reanude el prtido dando la opcion Reanudar partido");
+			System.out.println("Porfavor reanude el partido dando la opcion Reanudar partido");
 		}
-	}//Cierre del m�todo
+	}//Cierre del metodo
 	/**
-	 * M�todo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opci�n
-	 * @return Retorna el tipo de opci�n
+	 * Metodo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
+	 * @return Retorna el tipo de opcion
 	 */
 	@Override
 	public String toString(){
 		return "Trotar";
-	}//Cierre del m�todo
+	}//Cierre del metodo
 }//Cierre de la clase

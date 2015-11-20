@@ -1,7 +1,7 @@
 package objetos.futbol.UI.menuconsola;
 /**
  * Clase abastracta que lista las opciones de menú por categorias
- * @author Santiago Peláez
+ * @author Santiago Pelaez
  *
  */
 public abstract class OpcionDeMenu{
@@ -15,7 +15,7 @@ public abstract class OpcionDeMenu{
 	public OpcionDeMenu(Categoria categoria){
 		this.categoria = categoria;//Cierre del método
 	/**
-	 * Método abastracto que sera implementado en otras clases
+	 * Metodo abastracto que sera implementado en otras clases
 	 */
 	}
 	public abstract void ejecutar();

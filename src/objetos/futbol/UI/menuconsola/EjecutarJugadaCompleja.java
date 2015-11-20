@@ -11,20 +11,20 @@ import java.util.InputMismatchException;
 
 import lejos.pc.comm.NXTCommFactory;
 /**
- * Clase para ejecutar la opci�n de men�
- * @author Jhon Eider Murillo, Santiago P�laez
+ * Clase para ejecutar la opcion de menu
+ * @author Jhon Eider Murillo, Santiago Pelaez
  *
  */
 public class EjecutarJugadaCompleja extends OpcionDeMenu{
 	/**
-	 * Constructor de la clase que devuelve de la categoria opci�n
+	 * Constructor de la clase que devuelve de la categoria opcion
 	 * @param categoria
 	 */
 	public EjecutarJugadaCompleja(Categoria categoria){
 		super(categoria);
 	}//Cierre del contructor
 	/**
-	 * M�todo que ejecuta el men� para ejecurtar una jugada compleja
+	 * Metodo que ejecuta el menu para ejecurtar una jugada compleja
 	 */
 	public void ejecutar(){
 		if(Main.pausa==false){
@@ -108,13 +108,13 @@ public class EjecutarJugadaCompleja extends OpcionDeMenu{
 		else if(Main.pausa == true){
 			System.out.println("Porfavor reanude el prtido dando la opcion Reanudar partido");
 		}
-	}//Cierre del m�todo
+	}//Cierre del metodo
 	/**
-	 *  M�todo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opci�n
-	 *  @return Retorna el tipo de opci�n
+	 *  Metodo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
+	 *  @return Retorna el tipo de opcion
 	 */
 	@Override
 	public String toString(){
 		return "Jugadas Complejas";
-	}//Cierre del m�todo	
+	}//Cierre del metodo	
 }//Cierre de la clase

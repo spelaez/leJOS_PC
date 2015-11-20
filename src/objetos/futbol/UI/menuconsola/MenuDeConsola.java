@@ -6,58 +6,60 @@ import java.util.ArrayList;
 import objetos.futbol.UI.Main;
 import objetos.futbol.UI.menuconsola.Trotar;
 /**
- * Clase que define al men� de consola 
- * @author Santiago Pel�ez
+ * Clase que define al menu de consola 
+ * @author Santiago Pelaez
  *
  */
 public class MenuDeConsola {
 	//Campos de la clase
 	public static ArrayList<OpcionDeMenu> opciones2 = new ArrayList<>();
 	public ArrayList<OpcionDeMenu> opciones;
-	
+	/**
+	 * Metodo que carga las opciones del menu
+	 */
 	public MenuDeConsola(){
 		cargarOpciones();
-	}
+	}//Cierre del metodo
 	
 	Comparator<OpcionDeMenu> c = new Comparator<OpcionDeMenu>() {
 		/**
-		 * M�todo que compara
+		 * Metodo que compara si las opciones son iguales
 		 */
 		@Override
 		public int compare(OpcionDeMenu o1, OpcionDeMenu o2) {
 			return o1.categoria.compareTo(o2.categoria);
-		}
+		}//Cierre del metodo
 		
-	};//Cierre del m�todo
+	};
 	/**
-	 * M�todo que permite agregar opciones de men� y ordenarla
+	 * Metodo que permite agregar opciones de menu y ordenarla
 	 * @param op
 	 */
 	public void anadirOpcion(OpcionDeMenu op){
 		opciones.add(op);
 		ordenarOpciones();
-	}//Cierre del m�todo
+	}//Cierre del metodo
 	/**
-	 * M�todo que permite eliminar una opcion de men�
+	 * Metodo que permite eliminar una opcion de menu
 	 * @param op
 	 */
 	public void eliminarOpcion(OpcionDeMenu op){
 		opciones.remove(op);
-	}//Cierre del m�todo
+	}//Cierre del metodo
 	/**
-	 * M�todo que permite limpiar la lista de opciones de men�
+	 * Metodo que permite limpiar la lista de opciones de menu
 	 */
 	public void limpiar(){
 		opciones = new ArrayList<OpcionDeMenu>();
-	}//Cierre del m�todo
+	}//Cierre del metodo
 	/**
-	 * M�todo que permite ordenar las opciones de men�
+	 * Metodo que permite ordenar las opciones de menu
 	 */
 	public void ordenarOpciones(){
 		opciones.sort(c);
-	}//Cierre del m�todo
+	}//Cierre del metodo
 	/**
-	 * ejecuta el m�todo lanzar men� que muestra las opciones disponibles a elegir
+	 * ejecuta el metodo lanzar menu que muestra las opciones disponibles a elegir
 	 */
 	public void lanzarMenu(){
 		String option;
@@ -88,9 +90,9 @@ public class MenuDeConsola {
 		catch(InputMismatchException e){
 			System.out.println("Error: Dato incorrecto");
 		}
-	}//Cierre del m�todo
+	}//Cierre del metodo
 	/**
-	 * M�todo que agrega todas las opciones de men� a una segunda lista
+	 * Metodo que agrega todas las opciones de men� a una segunda lista
 	 */
 	private void cargarOpciones(){
 		if(opciones2.size() == 0){
@@ -136,5 +138,5 @@ public class MenuDeConsola {
 			opciones2.add(new Salir(Categoria.SISTEMA));//34 //todos
 			}
 		
-	}//Cierre del m�todo
+	}//Cierre del metodo
 }//Cierre de la clase

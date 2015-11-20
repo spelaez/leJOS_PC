@@ -7,20 +7,20 @@ import java.io.IOException;
 import lejos.pc.comm.NXTCommFactory;
 import objetos.futbol.UI.Main;
 /**
- * Clase para definir la opci�n correr
- * @author Santiago Pel�ez
+ * Clase para definir la opcion correr
+ * @author Santiago Pelaez
  *
  */
 public class Correr extends OpcionDeMenu {
 	/**
-	 * Constructor que accesa al tipo de categoria que tiene la opci�n correr
+	 * Constructor que accesa al tipo de categoria que tiene la opcion correr
 	 * @param categoria
 	 */
 	public Correr(Categoria categoria){
 		super(categoria);
 	}//Cierre del constructor
 	/**
-	 * M�todo sobreescrito de opci�n de men�, que imprime el tipo de opci�n, y llama a un m�todo de la clase main del paquete objetos.futbol.UI para enviarla al robot 
+	 * Metodo sobreescrito de opcion de menu, que imprime el tipo de opcion, y llama a un metodo de la clase main del paquete objetos.futbol.UI para enviarla al robot 
 	 */
 	@Override
 	public void ejecutar(){
@@ -61,14 +61,14 @@ public class Correr extends OpcionDeMenu {
 		else if(Main.pausa == true){
 			System.out.println("Porfavor reanude el prtido dando la opcion Reanudar partido");
 		}
-	}//Cierre del m�todo
+	}//Cierre del metodo
 	/**
-	 * M�todo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opci�n
-	 * @return Retorna el tipo de opci�n
+	 * Metodo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
+	 * @return Retorna el tipo de opcion
 	 */
 	@Override
 	public String toString(){
 		return "Correr";
-	}//Cierre del m�todo	
+	}//Cierre del metodo	
 }//Cierre de la clase
 

@@ -4,9 +4,14 @@ import java.io.IOException;
 
 import objetos.futbol.jugadores.Arquero;
 import objetos.futbol.robots.Robot;
-
+/**
+ * Clase para definir la cancha
+ * @author Santiago Pelaez
+ *
+ */
 public class Cancha {
-//Medidas en grupos de a 61MM y algunas redondeadas para evitar decimales
+	//Campos de clase
+	//Medidas en grupos de a 61MM y algunas redondeadas para evitar decimales
 	static final int LARGO_CANCHA = 20;
 	static final int ANCHO_CANCHA = 30;
 	static final int ARCO_ANCHO = 1;
@@ -18,7 +23,9 @@ public class Cancha {
 	static int Aposx, Aposy, Aultx, Aulty, Dposx, Dposy, Dultx, Dulty;
 	static String[][] rep;
 	static String[][] repClone;
-	
+	/**
+	 * Constructor de la clase
+	 */
 	public Cancha(){
 		Aposx = 0;
 		Aposy = LARGO_CANCHA-1;
@@ -26,8 +33,10 @@ public class Cancha {
 		Dposy = 0;
 		inicializarCancha();
 		repClone = rep.clone();
-	}
-	
+	}//Cierre del constructor
+	/**
+	 * Metodo que inicializa la cancha
+	 */
 	public void inicializarCancha(){
 		rep = new String[LARGO_CANCHA][ANCHO_CANCHA];
 		for(int i=0; i<LARGO_CANCHA; i++){
@@ -49,9 +58,16 @@ public class Cancha {
 			rep[i][7] = "# ";
 			rep[i][22] = "# ";
 		}
-	}
-	
-	public void actualizarPosicion(int x, int y, Robot r) throws IOException{//Recibido movimiento del robot en milimetros
+	}//Cierre del metodo
+	/**
+	 * Metodo para actulizar la posicion de la cancha en la que se encuentra el robot
+	 * @param x
+	 * @param y
+	 * @param r
+	 * @throws IOException
+	 */
+	public void actualizarPosicion(int x, int y, Robot r) throws IOException{
+		//Recibido movimiento del robot en milimetros
 		try{
 			if(r.getJugador() instanceof Arquero){
 			rep[Aposx/61][Aposy/61] = repClone[Aposx/61][Aposy/61];
@@ -79,14 +95,19 @@ public class Cancha {
 			System.out.println("El Robot se ha salido de la cancha, porfavor reposicionarlo");
 		}
 		System.out.println("El robot ha cambiado a la posicion :"+ (Aposx/61) +" "+(Aposy/61));
-	}
-	
+	}//Cierre del metodo
+	/**
+	 * Metodo para verificar si el robot esta por fuera de los limites de la cancha
+	 * @throws FieldLimitExceededException
+	 */
 	public void comprobarLimite() throws FieldLimitExceededException{
 		if(Aposx > ANCHO_CANCHA/2*61){
 			throw new FieldLimitExceededException();
 		}
-	}
-
+	}//Cierre del metodo
+	/**
+	 * Metodo para mostrar la cancha 
+	 */
 	public void mostrarCancha(){
 		for(int i = 0; i < LARGO_CANCHA; i++){
 			for(int j = 0; j < ANCHO_CANCHA; j++){
@@ -94,5 +115,5 @@ public class Cancha {
 			}
 			System.out.print("\n");
 		}
-	}
-}
+	}//Cierre del metodo
+}//Cierre de la clase

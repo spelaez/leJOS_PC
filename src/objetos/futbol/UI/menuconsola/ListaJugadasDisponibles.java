@@ -7,20 +7,20 @@ import objetos.futbol.jugadores.JugadaComplejaOfensiva;
 import objetos.futbol.jugadores.JugadaComplejaTiroLibre;
 import java.util.ArrayList;
 /**
- * Clase que define la opción de lista de jugadas disponibles
- * @author Santiago Peláez
+ * Clase que define la opcion de lista de jugadas disponibles
+ * @author Santiago Pelaez
  *
  */
 public class ListaJugadasDisponibles extends OpcionDeMenu{
 	/**
-	 * Constructor que accesa al tipo de categoria que tiene la opción lista de jugadas disponibles
+	 * Constructor que accesa al tipo de categoria que tiene la opcion lista de jugadas disponibles
 	 * @param categoria
 	 */
 	public ListaJugadasDisponibles(Categoria categoria){
 		super(categoria);
 	}//Cierre del constructor
 	/**
-	 * Método que se ejecuta para mostrar las jugadas disponibles
+	 * Metodo que ejecuta la opcion de menu para mostrar las jugadas disponibles
 	 */
 	@Override
 	public void ejecutar(){
@@ -53,13 +53,13 @@ public class ListaJugadasDisponibles extends OpcionDeMenu{
 		for(JugadaComplejaTiroLibre x: jTiroLibre){
 			System.out.println((Main.listaJugadasComplejas.indexOf(x)+1)+" "+x);
 		}
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
-	 * @return Retorna el tipo de opción
+	 * Metodo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
+	 * @return Retorna el tipo de opcion
 	 */
 	@Override
 	public String toString(){
 		return "Jugadas disponibles";
-	}//Cierre del método
+	}//Cierre del metodo
 }//Cierre de la clase

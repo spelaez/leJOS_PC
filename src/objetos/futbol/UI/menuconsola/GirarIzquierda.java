@@ -7,20 +7,20 @@ import java.io.IOException;
 import lejos.pc.comm.NXTCommFactory;
 import objetos.futbol.UI.Main;
 /**
- * Clase que define la opci�n girar a la izquierda
+ * Clase que define la opcion girar a la izquierda
  * @author Juan Pablo Betancur
  *
  */
 public class GirarIzquierda extends OpcionDeMenu {
 	/**
-	 * Constructor que accesa al tipo de categoria que tiene la opci�n girar a la izquierda
+	 * Constructor que accesa al tipo de categoria que tiene la opcion girar a la izquierda
 	 * @param categoria
 	 */
 	public GirarIzquierda(Categoria categoria){
 		super(categoria);
 	}//Cierre del constructor
 	/**
-	 * M�todo que ejecuta el men� para girar a la izquerda
+	 * Metodo que ejecuta el menu para girar a la izquerda
 	 */
 	@Override
 	public void ejecutar(){
@@ -58,13 +58,13 @@ public class GirarIzquierda extends OpcionDeMenu {
 		else if(Main.pausa == true){
 			System.out.println("Porfavor reanude el prtido dando la opcion Reanudar partido");
 		}
-	}//Cierre del m�todo
+	}//Cierre del metodo
 	/**
-	 * M�todo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opci�n
-	 * @return Retorna el tipo de opci�n
+	 * Metodo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
+	 * @return Retorna el tipo de opcion
 	 */
 	@Override
 	public String toString(){
 		return "Girar a la izquierda";
-	}//Cierre del m�todo
+	}//Cierre del metodo
 }//cierre de la clase

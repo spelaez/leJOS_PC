@@ -9,13 +9,22 @@ import lejos.pc.comm.*;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.util.Scanner;
-
+/**
+ * Clase para inicializar el sistema con los robots
+ * @author Santiago Pélaez
+ *
+ */
 public class Inicializar extends OpcionDeMenu{
-
+	/**
+	 * Contructor de la clase que accesa al tipo de categoria que tiene la opcion inicializar
+	 * @param categoria
+	 */
 	public Inicializar(Categoria categoria){
 		super(categoria);
-	}
-
+	}//Cierre del constructor
+	/**
+	 * Metodo que ejecuta la opcion de menu inicializar
+	 */
 	@Override
 	public void ejecutar(){
 		if(Main.pausa == false){
@@ -78,11 +87,13 @@ public class Inicializar extends OpcionDeMenu{
 		else if(Main.pausa == true){
 			System.out.println("Porfavor reanude el prtido dando la opcion Reanudar partido");
 		}
-	}
-
+	}//Cierre del método
+	/**
+	 * Metodo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
+	 * @return Retorna el tipo de opcion
+	 */
 	@Override
 	public String toString(){
 		return "Inicializar sistema";
-	}
-
-}
+	}//Cierre del metodo
+}//Cierre de la clase

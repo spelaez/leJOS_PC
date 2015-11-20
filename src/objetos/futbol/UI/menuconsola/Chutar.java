@@ -7,20 +7,20 @@ import lejos.pc.comm.NXTCommFactory;
 import objetos.futbol.UI.Main;
 
 /**
- * M�todo que define la opci�n chutar 
+ * Metodo que define la opcion chutar 
  * @author Juan Pablo Betancur
  *
  */
 public class Chutar extends OpcionDeMenu {
 	/**
-	 * Constructor que accesa al tipo de categoria que tiene la opci�n chutar
+	 * Constructor que accesa al tipo de categoria que tiene la opcion chutar
 	 * @param categoria
 	 */
 	public Chutar(Categoria categoria){
 		super(categoria);
 	}//Cierre del constructor
 	/**
-	 * M�todo sobreescrito de opci�n de men�, que imprime el tipo de opcion, y llama a un m�todo de la clase main del paquete objetos.futbol.UI para enviarla al robot 
+	 * Metodo sobreescrito de opcion de menu, que imprime el tipo de opcion, y llama a un metodo de la clase main del paquete objetos.futbol.UI para enviarla al robot 
 	 */
 	@Override
 	public void ejecutar(){
@@ -60,12 +60,11 @@ public class Chutar extends OpcionDeMenu {
 		}
 	}//Cierre del m�todo
 	/**
-	 * M�todo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opci�n
+	 * Metodo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
 	 * @return Retorna el tipo opcion
 	 */
-
 	@Override
 	public String toString(){
 		return "Chutar";
-	}//Cierre del m�todo
+	}//Cierre del metodo
 }//Cierre de la clase

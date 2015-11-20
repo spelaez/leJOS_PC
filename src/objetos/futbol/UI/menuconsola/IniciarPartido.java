@@ -3,19 +3,19 @@ package objetos.futbol.UI.menuconsola;
 import objetos.futbol.UI.Main;
 /**
  * Clase que defnie la opcion iniciar partido
- * @author Santiago Peláez
+ * @author Santiago Pelaez
  *
  */
 public class IniciarPartido extends OpcionDeMenu{
 	/**
-	 * Constructor que accesa al tipo de categoria que tiene la opción iniciar partido
+	 * Constructor que accesa al tipo de categoria que tiene la opcion iniciar partido
 	 * @param categoria
 	 */
 	public IniciarPartido(Categoria categoria) {
 		super(categoria);
 	}//Cierre del constructor
 	/**
-	 * Método que ejecuta el menú para iniciar partido
+	 * Metodo que ejecuta el menu para iniciar partido
 	 */
 	@Override
 	public void ejecutar() {
@@ -31,14 +31,14 @@ public class IniciarPartido extends OpcionDeMenu{
 		else if(Main.pausa == true){
 			System.out.println("Porfavor reanude el prtido dando la opcion Reanudar partido");
 		}
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
-	 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
-	 * @return Retorna el tipo de opción
+	 * Metodo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
+	 * @return Retorna el tipo de opcion
 	 */
 	@Override
 	public String toString(){
 		return "Iniciar Partido";
-	}//Cierre del método
+	}//Cierre del metodo
 }//Cierre de la clase
 

@@ -22,8 +22,13 @@ import objetos.futbol.varios.GestorBDUsuarios;
 import objetos.futbol.varios.GestorBDEstado;
 import objetos.futbol.varios.GestorBDJugadasComplejas;
 import objetos.futbol.jugadores.*;
+/**
+ * Clase para ejecutar el menu
+ * @author Santiago Pélaez
+ *
+ */
 public class Main {	
-
+	//Campos de clase
 	//Atributos para manejar el tiempo
 	public static long tInicio;
 	public static long tPausa;
@@ -77,13 +82,15 @@ public class Main {
 
 	//Scanner
 	public static Scanner scn = new Scanner(System.in);
-
+	/**
+	 * Método Main para mostrar al usuario las caracteristicas del juego y el menu
+	 * @param args
+	 * @throws IOException
+	 */
 	public static void main(String[] args) throws IOException {
 		gestorUsuarios.leerUsuarios();
 		gestorJugadas.leerJugadas();
 		gestorJugadores.LeerJugadores();
-	
-
 		try {
 			do {
 				System.out.println("\n-------------------------------------------------------"+
@@ -101,5 +108,5 @@ public class Main {
 			e.printStackTrace();
 			System.out.println("\n\n\nAplicacion terminada\n");
 		}
-	}
-}
+	}//Cierre del metodo
+}//Cierre de la clase

@@ -3,7 +3,7 @@ package objetos.futbol.UI.menuconsola;
 import objetos.futbol.UI.Main;
 import objetos.futbol.varios.UsuarioGeneral;
 /**
- * Clase que define la opción registrar usuario general
+ * Clase que define la opcion registrar usuario general
  * @author Juan Pablo Betancur
  *
  */
@@ -13,14 +13,14 @@ public class RegistrarUsuarioGeneral extends OpcionDeMenu {
 	
 	int opcion;
 	/**
-	 * Constructor que accesa al tipo de categoria que tiene la opción registrar usuario general
+	 * Constructor que accesa al tipo de categoria que tiene la opcion registrar usuario general
 	 * @param categoria
 	 */
 		public RegistrarUsuarioGeneral(Categoria categoria){
 			super(categoria);
 		}//Cierre del constructor
 		/**
-		 * Método que ejecuta el menú para registrar un usuario general
+		 * Metodo que ejecuta el menú para registrar un usuario general
 		 */
 		public void ejecutar(){
 			System.out.print("---------------------------------------------------\n"+this+"\n");
@@ -30,12 +30,12 @@ public class RegistrarUsuarioGeneral extends OpcionDeMenu {
 			clave=Main.scn.nextLine();
 			UsuarioGeneral usuario = new UsuarioGeneral(Usuario,clave);
 			Main.listaUsuarios.put(Usuario,usuario);
-		}//Cierre del método
+		}//Cierre del metodo
 		/**
-		 * Método sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opción
-		 *@return Retorna el tipo de opción
+		 * Metodo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
+		 *@return Retorna el tipo de opcion
 		 */
 		public String toString(){
 			return "Registrar usuario general";
-		}//Cierre del método
+		}//Cierre del metodo
 }//Cierre de la clase
