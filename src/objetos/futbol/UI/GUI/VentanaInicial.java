@@ -19,7 +19,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class VentanaInicial extends JFrame implements ActionListener {
-	
+
 	Container contenedor;
 	JPanel p1,p2,p3,p4,p5,p6,p7,p8,p9,p10;
 	JButton b1,b2,b3;
@@ -28,7 +28,7 @@ public class VentanaInicial extends JFrame implements ActionListener {
 	JLabel l1,l2;
 	JTextField tf1,tf2;
 	int opcion;
-    public static int cont =0;
+	public static int cont =0;
 	public VentanaInicial(){
 		super("Usuario");
 		contenedor = this.getContentPane();
@@ -75,7 +75,7 @@ public class VentanaInicial extends JFrame implements ActionListener {
 		p1.add(p4);
 		p3.add(new JLabel("Bienvenido al sistema"), BorderLayout.CENTER);
 		b1.setLayout(new BorderLayout());
-	
+
 		p4.add(b1, BorderLayout.CENTER);
 		//elementos panel2
 		p2.add(p5);
@@ -84,19 +84,19 @@ public class VentanaInicial extends JFrame implements ActionListener {
 		p5.add(l1);
 		p6.add(p7);
 		p6.add(p8);
-		
+
 		p7.add(b2);
 		p7.add(l2);
 		p8.add(p9);
 		p8.add(p10);
-		
+
 		p9.add(new JLabel("Codigo de usuario:"));
 		p9.add(tf1);
 		p9.add(new JLabel("Clave:"));
 		p9.add(tf2);
 		p10.add(b3, BorderLayout.CENTER);
-		
-		
+
+
 		//Eventos
 		b1.addActionListener(this);
 		b2.addActionListener(this);
@@ -105,59 +105,73 @@ public class VentanaInicial extends JFrame implements ActionListener {
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
-	
+
 	@Override
 	public void actionPerformed(ActionEvent accion) {
 		String s = (String)accion.getActionCommand();
 		if(s.equals("Ingresar Usuario")){
-			
+
+			String usuario = tf1.getText();
+			if(usuario.length() == 0){
+				
+			}
+			else{
+				String clave = tf2.getText();
+				if(Main.listaUsuarios.containsKey(usuario) && clave.equals(Main.listaUsuarios.get(usuario).getClave())){
+
+				}
+				else{
+					JOptionPane.showMessageDialog(null,"Porfavor ingrese un usuario y clave validos","ERROR",JOptionPane.ERROR_MESSAGE);
+				}
+			}
 		}
 		else if(s.equals("Salir")){
+			opcion = 0;
 			Object [] textOpcion = { "Si", "NO"};
-			 opcion = JOptionPane.showOptionDialog(null, "¿Desea salir del sistema?", "salir del sistema",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,textOpcion,null);
-			 if(opcion == 0){
-				 new Salir(Categoria.SISTEMA).ejecutar();
-			 }
+			opcion = JOptionPane.showOptionDialog(null, "¿Desea salir del sistema?", "salir del sistema",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,textOpcion,null);
+			if(opcion == 0){
+				new Salir(Categoria.SISTEMA).ejecutar();
+			}
 		}
 		else{
-		cont ++;
-		if(cont > Main.listaJugadores.size()){
-			cont =0;
+			cont ++;
+			if(cont > Main.listaJugadores.size()){
+				cont =0;
+			}
+			if (cont == 0){
+				b1.setIcon(new ImageIcon("src\\images\\0.gif"));
+			}
+			else if(cont == 1){
+				b1.setIcon(new ImageIcon("src\\images\\1.gif"));
+			}
+			else if (cont == 2){
+				b1.setIcon(new ImageIcon("src\\images\\2.gif"));
+			}
+			else if (cont == 3){
+				b1.setIcon(new ImageIcon("src\\images\\3.gif"));
+			}
+			else if (cont == 4){
+				b1.setIcon(new ImageIcon("src\\images\\4.gif"));
+			}
+			else if (cont == 5){
+				b1.setIcon(new ImageIcon("src\\images\\5.gif"));
+			}
+			else if (cont == 6){
+				b1.setIcon(new ImageIcon("src\\images\\6.gif"));
+			}
+			else if (cont == 7){
+				b1.setIcon(new ImageIcon("src\\images\\7.gif"));
+			}
+			else if (cont == 8){
+				b1.setIcon(new ImageIcon("src\\images\\8.gif"));
+			}
+			else if (cont == 9){
+				b1.setIcon(new ImageIcon("src\\images\\9.gif"));
+			}
+			else if (cont == 10){
+				b1.setIcon(new ImageIcon("src\\images\\10.gif"));
+			}
 		}
-		if (cont == 0){
-			b1.setIcon(new ImageIcon("src\\images\\0.gif"));
-		}
-		else if(cont == 1){
-			b1.setIcon(new ImageIcon("src\\images\\1.gif"));
-		}
-		else if (cont == 2){
-			b1.setIcon(new ImageIcon("src\\images\\2.gif"));
-		}
-		else if (cont == 3){
-			b1.setIcon(new ImageIcon("src\\images\\3.gif"));
-		}
-		else if (cont == 4){
-			b1.setIcon(new ImageIcon("src\\images\\4.gif"));
-		}
-		else if (cont == 5){
-			b1.setIcon(new ImageIcon("src\\images\\5.gif"));
-		}
-		else if (cont == 6){
-			b1.setIcon(new ImageIcon("src\\images\\6.gif"));
-		}
-		else if (cont == 7){
-			b1.setIcon(new ImageIcon("src\\images\\7.gif"));
-		}
-		else if (cont == 8){
-			b1.setIcon(new ImageIcon("src\\images\\8.gif"));
-		}
-		else if (cont == 9){
-			b1.setIcon(new ImageIcon("src\\images\\9.gif"));
-		}
-		else if (cont == 10){
-			b1.setIcon(new ImageIcon("src\\images\\10.gif"));
-		}
-	}
 	}
 
 }
