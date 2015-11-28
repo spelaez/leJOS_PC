@@ -3,6 +3,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -10,6 +11,8 @@ import javax.swing.JTextField;
 import javax.swing.ScrollPaneConstants;
 
 import objetos.futbol.UI.Main;
+import objetos.futbol.UI.menuconsola.Categoria;
+import objetos.futbol.UI.menuconsola.Salir;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -24,6 +27,7 @@ public class VentanaInicial extends JFrame implements ActionListener {
 	JScrollPane s1;
 	JLabel l1,l2;
 	JTextField tf1,tf2;
+	int opcion;
     public static int cont =0;
 	public VentanaInicial(){
 		super("Usuario");
@@ -109,7 +113,11 @@ public class VentanaInicial extends JFrame implements ActionListener {
 			
 		}
 		else if(s.equals("Salir")){
-			
+			Object [] textOpcion = { "Si", "NO"};
+			 opcion = JOptionPane.showOptionDialog(null, "¿Desea salir del sistema?", "salir del sistema",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,textOpcion,null);
+			 if(opcion == 0){
+				 new Salir(Categoria.SISTEMA).ejecutar();
+			 }
 		}
 		else{
 		cont ++;
