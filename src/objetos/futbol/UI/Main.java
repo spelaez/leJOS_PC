@@ -12,6 +12,7 @@ import objetos.futbol.robots.MoverAdelante;
 import objetos.futbol.robots.MoverAtras;
 import objetos.futbol.robots.Chutar;
 import objetos.futbol.robots.Girar;
+import objetos.futbol.UI.GUI.VentanaInicial;
 import objetos.futbol.cancha.Cancha;
 import objetos.futbol.jugadores.Futbolista;
 import objetos.futbol.varios.Usuario;
@@ -91,7 +92,8 @@ public class Main {
 		gestorUsuarios.leerUsuarios();
 		gestorJugadas.leerJugadas();
 		gestorJugadores.LeerJugadores();
-		try {
+		new VentanaInicial();
+		/*try {
 			do {
 				System.out.println("\n-------------------------------------------------------"+
 						"\n-------------------------------------------------------\nMenu:");
@@ -107,6 +109,6 @@ public class Main {
 		catch(Exception e){
 			e.printStackTrace();
 			System.out.println("\n\n\nAplicacion terminada\n");
-		}
-	}//Cierre del metodo
+		}*/
+	}//Cierre del metodo 
 }//Cierre de la clase
