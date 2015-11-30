@@ -26,7 +26,7 @@ import objetos.futbol.varios.GestorBDJugadasComplejas;
 import objetos.futbol.jugadores.*;
 /**
  * Clase para ejecutar el menu
- * @author Santiago Pélaez
+ * @author Santiago Pï¿½laez
  *
  */
 public class Main {	
@@ -87,9 +87,9 @@ public class Main {
 	public static VentanaInicial v1 = new VentanaInicial();
 	public static VentanaPrincipalUsuarioGeneral  v2 = new VentanaPrincipalUsuarioGeneral();
 	//tipo delantero o arquero 
-	public static int tipo =0;
+	public static int tipo = 0;
 	/**
-	 * Método Main para mostrar al usuario las caracteristicas del juego y el menu
+	 * Mï¿½todo Main para mostrar al usuario las caracteristicas del juego y el menu
 	 * @param args
 	 * @throws IOException
 	 */

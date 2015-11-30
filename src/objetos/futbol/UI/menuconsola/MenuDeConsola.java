@@ -1,10 +1,14 @@
 package objetos.futbol.UI.menuconsola;
 
 import java.util.Comparator;
+
+import javax.swing.JButton;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JPanel;
 
+import java.awt.Component;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -37,7 +41,8 @@ public class MenuDeConsola extends JMenuBar{
 			
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				//Aqui llamo al metodo que me coje y me crea los botoncitos
+				System.out.println("Entre a delantero");
+				generarBotones(Main.v2.getP3(), delantero);
 				
 			}
 
@@ -94,7 +99,8 @@ public class MenuDeConsola extends JMenuBar{
 			
 			@Override
 			public void mouseClicked(MouseEvent e) {
-			//Aqui llamo al metodo que me coge y me crea los botoncitos
+				System.out.println("Entre a arquero");
+				generarBotones(Main.v2.getP3(), arquero);
 				
 			}
 		});
@@ -155,6 +161,7 @@ public class MenuDeConsola extends JMenuBar{
 	/**
 	 * Metodo que agrega todas las opciones de menu a una segunda lista
 	 */
+	//Cierre del metodo
 	private void cargarOpciones(){
 		if(opciones2.size() == 0){
 
@@ -219,5 +226,15 @@ public class MenuDeConsola extends JMenuBar{
 			}
 		}
 	}
-	//Cierre del metodo
+	
+	public void generarBotones(JPanel panel, JMenu menu){
+		Component[] items = menu.getComponents();
+		for(Component t: items){
+			JButton btn = new JButton(((JMenuItem)t).getText());
+			btn.setAlignmentX(Component.CENTER_ALIGNMENT);
+			panel.add(btn);
+			panel.repaint();
+		}
+		
+	}
 }//Cierre de la clase
