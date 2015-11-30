@@ -5,7 +5,10 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import java.util.ArrayList;
+
+import objetos.futbol.UI.Main;
 import objetos.futbol.UI.menuconsola.Trotar;
+import objetos.futbol.varios.UsuarioGeneral;
 /**
  * Clase que define al menu de consola 
  * @author Santiago Pelaez
@@ -36,7 +39,7 @@ public class MenuDeConsola extends JMenuBar{
 		setVisible(true);
 		cargarOpciones();
 	}//Cierre del metodo
-	
+
 	Comparator<OpcionDeMenu> c = new Comparator<OpcionDeMenu>() {
 		/**
 		 * Metodo que compara si las opciones son iguales
@@ -45,7 +48,7 @@ public class MenuDeConsola extends JMenuBar{
 		public int compare(OpcionDeMenu o1, OpcionDeMenu o2) {
 			return o1.categoria.compareTo(o2.categoria);
 		}//Cierre del metodo
-		
+
 	};
 	/**
 	 * Metodo que permite agregar opciones de menu y ordenarla
@@ -106,7 +109,7 @@ public class MenuDeConsola extends JMenuBar{
 		catch(InputMismatchException e){
 			System.out.println("Error: Dato incorrecto");
 		}
-		
+
 	}*/
 	//Cierre del metodo
 	/**
@@ -114,7 +117,7 @@ public class MenuDeConsola extends JMenuBar{
 	 */
 	private void cargarOpciones(){
 		if(opciones2.size() == 0){
-			
+
 			//Opciones Arquero
 			opciones2.add(new Trotar(Categoria.ARQUERO));// 1
 			opciones2.add(new Correr(Categoria.ARQUERO));// 2
@@ -126,7 +129,7 @@ public class MenuDeConsola extends JMenuBar{
 			opciones2.add(new EjecutarJugadaCompleja(Categoria.ARQUERO)); //8
 			opciones2.add(new RegistrarTiempoSinGoles(Categoria.ARQUERO));// 9
 			opciones2.add(new RegistrarTiempoUltimoGol(Categoria.ARQUERO));// 10
-			
+
 			//Opciones Delantero
 			opciones2.add(new Trotar(Categoria.DELANTERO));//11
 			opciones2.add(new Correr(Categoria.DELANTERO));//12
@@ -137,7 +140,7 @@ public class MenuDeConsola extends JMenuBar{
 			opciones2.add(new Patear(Categoria.DELANTERO));//17	
 			opciones2.add(new EjecutarJugadaCompleja(Categoria.DELANTERO)); //18
 			opciones2.add(new RegistrarGolAFavor(Categoria.DELANTERO));//19
-			
+
 			//Opciones Sistema
 			opciones2.add(new MostrarCancha(Categoria.SISTEMA));//20 todos
 			opciones2.add(new CrearJugador(Categoria.SISTEMA));//21  //Solo admin
@@ -153,20 +156,26 @@ public class MenuDeConsola extends JMenuBar{
 			opciones2.add(new FinalizarPartido(Categoria.SISTEMA));//31//todos
 			opciones2.add(new CargarEstadoAnterior(Categoria.SISTEMA));//32//todos
 			opciones2.add(new Salir(Categoria.SISTEMA));//33 //todos
-			}
-		
+		}
+
 	}
-	
+
 	public void cargarItems(){
 		for(int i = 0; i < opciones.size(); i++){
 			if(i < 10){
-				this.arquero.add(opciones2.get(i));
+				this.arquero.add(opciones.get(i));
 			}
 			else if (i < 19){
-				this.delantero.add(opciones2.get(i));
+				this.delantero.add(opciones.get(i));
 			}
 			else{
-				this.archivo.add(opciones2.get(i));
+				if(Main.usuarioActual instanceof UsuarioGeneral){
+					
+					this.archivo.add(opciones.get(i));
+				}
+				else{
+					this.archivo.add(opciones.get(i));
+				}
 			}
 		}
 	}
