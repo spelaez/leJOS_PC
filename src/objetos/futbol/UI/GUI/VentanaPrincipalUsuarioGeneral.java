@@ -121,5 +121,7 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame   {
 		setLocationRelativeTo (null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
-	
+	public JPanel getP3(){
+		return p3;
+	}
 }
