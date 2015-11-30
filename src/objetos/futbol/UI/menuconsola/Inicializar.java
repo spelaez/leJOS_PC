@@ -26,8 +26,8 @@ public class Inicializar extends OpcionDeMenu{
 	 * Metodo que ejecuta la opcion de menu inicializar
 	 */
 	@Override
-	public void ejecutar(){
-		if(Main.pausa == false){
+	public void ejecutar(){}
+		/*if(Main.pausa == false){
 			int option=0;
 			System.out.print("-------------------------------------------------------\n"+this);
 			Main.conn.addLogListener(new NXTCommLogListener(){

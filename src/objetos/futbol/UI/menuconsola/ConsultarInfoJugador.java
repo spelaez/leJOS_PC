@@ -21,8 +21,8 @@ public class ConsultarInfoJugador extends OpcionDeMenu{
 	 * Metodo sobreescrito de opciones de menu que ejecuta el menu para consultar la informacion de un jugador
 	 */
 	@Override
-	public void ejecutar(){
-		new ImprimirJugadores(Categoria.SISTEMA).ejecutar();
+	public void ejecutar(){}
+		/*new ImprimirJugadores(Categoria.SISTEMA).ejecutar();
 		if(Main.listaJugadores.isEmpty()) return;
 		System.out.print("---------------------------------------------------\n"+this+"\n");
 		System.out.println("Ingrese el numero del jugador a consultar");

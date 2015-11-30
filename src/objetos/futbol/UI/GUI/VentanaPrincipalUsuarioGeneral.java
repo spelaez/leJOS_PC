@@ -20,7 +20,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class VentanaPrincipalUsuarioGeneral extends JFrame implements ActionListener  {
+public class VentanaPrincipalUsuarioGeneral extends JFrame   {
 	Container contenedor;
 	JPanel p1,p2,p3,p4,p5,p6,p7,p8,p9;
 	JButton b1,b2,b3,enviar;
@@ -31,7 +31,7 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame implements ActionList
 	JMenuBar menubar;
 	JMenu menu1,menu2,menu3;
 	JMenuItem delantero,arquero;
-    public static int rec =0;
+    OyenteMenu Oyente = new OyenteMenu();
     
 	public VentanaPrincipalUsuarioGeneral(){
 		super("Futbol");}
@@ -109,7 +109,7 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame implements ActionList
 		p7.add(p4, BorderLayout.WEST);
 		p6.add(p3, BorderLayout.EAST);
 		p3.add(l1);
-		if(rec == 1){
+		if(Main.tipo == 1 || Main.tipo == 2){
 			p3.add(b1);
 			p3.add(b2);
 			p3.add(b3);
@@ -124,24 +124,12 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame implements ActionList
 		p4.add(s2, BorderLayout.CENTER);
 		p5.add(cancha, BorderLayout.CENTER);
 		//eventos
-		delantero.addActionListener(this);
+		delantero.addActionListener(Oyente);
+		arquero.addActionListener(Oyente);
 		setSize(650,600);
 		setVisible(true);
 		setLocationRelativeTo (null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 	
-
-	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		rec = 1;
-		Main.v2.dispose();
-		Main.v2 = new VentanaPrincipalUsuarioGeneral();
-		Main.v2.lanzar();
-		
-	}
-
-
-	
-
 }

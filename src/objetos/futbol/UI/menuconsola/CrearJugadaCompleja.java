@@ -25,8 +25,8 @@ public class CrearJugadaCompleja extends OpcionDeMenu {
 	 * Metodo sobreescrito que ejecuta el menu para crear una jugada compleja
 	 */
 	@Override
-	public void ejecutar() {		
-		System.out.println("---------------------------------------------------\n"+this+"\n");
+	public void ejecutar() {}		
+	/*	System.out.println("---------------------------------------------------\n"+this+"\n");
 		System.out.println("Ingrese el tipo de jugada compleja");
 		System.out.println("1 Defensiva \n2 Ofensiva \n3 Tiro libre");
 

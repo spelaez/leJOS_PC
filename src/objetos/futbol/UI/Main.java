@@ -82,11 +82,12 @@ public class Main {
 	public static NXTInfo nxt1, nxt2;
 	public static int connectedTo;
 
-	//Scanner
-	public static Scanner scn = new Scanner(System.in);
+	
 	//ventanas
 	public static VentanaInicial v1 = new VentanaInicial();
 	public static VentanaPrincipalUsuarioGeneral  v2 = new VentanaPrincipalUsuarioGeneral();
+	//tipo delantero o arquero 
+	public static int tipo =0;
 	/**
 	 * Método Main para mostrar al usuario las caracteristicas del juego y el menu
 	 * @param args

@@ -7,35 +7,6 @@ import objetos.futbol.varios.UsuarioGeneral;
  * @author Juan Pablo Betancur
  *
  */
-public class RegistrarUsuarioGeneral extends OpcionDeMenu {
-	//Campos de la clase
-	String Usuario,clave;
+public class RegistrarUsuarioGeneral  {
 	
-	int opcion;
-	/**
-	 * Constructor que accesa al tipo de categoria que tiene la opcion registrar usuario general
-	 * @param categoria
-	 */
-		public RegistrarUsuarioGeneral(Categoria categoria){
-			super(categoria);
-		}//Cierre del constructor
-		/**
-		 * Metodo que ejecuta el menú para registrar un usuario general
-		 */
-		public void ejecutar(){
-			System.out.print("---------------------------------------------------\n"+this+"\n");
-			System.out.println("Por favor ingresa un nombre de usuario");
-			Usuario= Main.scn.nextLine();
-			System.out.println("Porfavor ingresa tu contrasena");
-			clave=Main.scn.nextLine();
-			UsuarioGeneral usuario = new UsuarioGeneral(Usuario,clave);
-			Main.listaUsuarios.put(Usuario,usuario);
-		}//Cierre del metodo
-		/**
-		 * Metodo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
-		 *@return Retorna el tipo de opcion
-		 */
-		public String toString(){
-			return "Registrar usuario general";
-		}//Cierre del metodo
 }//Cierre de la clase

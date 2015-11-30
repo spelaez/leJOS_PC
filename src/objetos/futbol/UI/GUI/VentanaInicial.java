@@ -15,6 +15,7 @@ import javafx.scene.paint.Color;
 import objetos.futbol.UI.Main;
 import objetos.futbol.UI.menuconsola.Categoria;
 import objetos.futbol.UI.menuconsola.Salir;
+import objetos.futbol.varios.UsuarioGeneral;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;

@@ -27,8 +27,8 @@ public class CrearJugador extends OpcionDeMenu {
 	 * Metodo que ejecuta el menu de crear jugador
 	 */
 	@Override
-	public void ejecutar(){
-		System.out.print("---------------------------------------------------\n"+this+"\n");
+	public void ejecutar(){}
+		/*System.out.print("---------------------------------------------------\n"+this+"\n");
 		System.out.println("Ingrese tipo jugador");
 		System.out.println("1 Delantero \n2 Arquero ");
 		try{

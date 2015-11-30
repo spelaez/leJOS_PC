@@ -26,8 +26,8 @@ public class EjecutarJugadaCompleja extends OpcionDeMenu{
 	/**
 	 * Metodo que ejecuta el menu para ejecurtar una jugada compleja
 	 */
-	public void ejecutar(){
-		if(Main.pausa==false){
+	public void ejecutar(){}
+		/*if(Main.pausa==false){
 			try{
 				if(categoria == Categoria.ARQUERO && Main.connectedTo == 2){
 					Main.dos.writeInt(0);
