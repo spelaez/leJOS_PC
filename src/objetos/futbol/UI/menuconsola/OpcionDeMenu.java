@@ -1,10 +1,14 @@
 package objetos.futbol.UI.menuconsola;
+
+import javax.swing.JMenuItem;
+
 /**
- * Clase abastracta que lista las opciones de menú por categorias
+ * Clase abastracta que lista las opciones de menï¿½ por categorias
  * @author Santiago Pelaez
  *
  */
-public abstract class OpcionDeMenu{
+@SuppressWarnings("serial")
+public abstract class OpcionDeMenu extends JMenuItem{
 	//Campos de clase
 	String nombre;
 	Categoria categoria;
@@ -13,10 +17,14 @@ public abstract class OpcionDeMenu{
 	 * @param categoria
 	 */
 	public OpcionDeMenu(Categoria categoria){
-		this.categoria = categoria;//Cierre del método
+		this.categoria = categoria;//Cierre del mï¿½todo
 	/**
 	 * Metodo abastracto que sera implementado en otras clases
 	 */
 	}
 	public abstract void ejecutar();
+	public String toString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }//Cierre de la clase

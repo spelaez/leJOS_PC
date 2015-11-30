@@ -1,24 +1,40 @@
 package objetos.futbol.UI.menuconsola;
 
 import java.util.Comparator;
-import java.util.InputMismatchException;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
 import java.util.ArrayList;
-import objetos.futbol.UI.Main;
 import objetos.futbol.UI.menuconsola.Trotar;
 /**
  * Clase que define al menu de consola 
  * @author Santiago Pelaez
  *
  */
-public class MenuDeConsola {
+@SuppressWarnings("serial")
+public class MenuDeConsola extends JMenu{
 	//Campos de la clase
 	public static ArrayList<OpcionDeMenu> opciones2 = new ArrayList<>();
 	public ArrayList<OpcionDeMenu> opciones;
+	private JMenuItem archivo;
+	private JMenuItem acciones;
+	private JMenuItem delantero;
+	private JMenuItem arquero;
 	/**
 	 * Metodo que carga las opciones del menu
 	 */
 	public MenuDeConsola(){
+		super("Acciones");
+		delantero = new JMenuItem("Delantero");
+		arquero = new JMenuItem("Arquero");
+		acciones = new JMenuItem("Acciones");
+		archivo = new JMenuItem("Archivo");
+		this.add(archivo);
+		this.add(acciones);
+		acciones.add(delantero);
+		acciones.add(arquero);
+		setVisible(true);
 		cargarOpciones();
+		cargarItems();
 	}//Cierre del metodo
 	
 	Comparator<OpcionDeMenu> c = new Comparator<OpcionDeMenu>() {
@@ -61,7 +77,7 @@ public class MenuDeConsola {
 	/**
 	 * ejecuta el metodo lanzar menu que muestra las opciones disponibles a elegir
 	 */
-	public void lanzarMenu(){
+	/*public void lanzarMenu(){
 		String option;
 		for(int i = 0; i < opciones.size(); i++){
 			if(i == 0){
@@ -90,9 +106,11 @@ public class MenuDeConsola {
 		catch(InputMismatchException e){
 			System.out.println("Error: Dato incorrecto");
 		}
-	}//Cierre del metodo
+		
+	}*/
+	//Cierre del metodo
 	/**
-	 * Metodo que agrega todas las opciones de men� a una segunda lista
+	 * Metodo que agrega todas las opciones de menu a una segunda lista
 	 */
 	private void cargarOpciones(){
 		if(opciones2.size() == 0){
@@ -132,11 +150,25 @@ public class MenuDeConsola {
 			opciones2.add(new Inicializar(Categoria.SISTEMA));//28 //todos
 			opciones2.add(new IniciarSesion(Categoria.SISTEMA));//29 todos
 			opciones2.add(new RegistrarUsuarioAdministrador(Categoria.SISTEMA));//30 solo admin
-			opciones2.add(new RegistrarUsuarioGeneral(Categoria.SISTEMA));//31 // todos
-			opciones2.add(new FinalizarPartido(Categoria.SISTEMA));//32//todos
-			opciones2.add(new CargarEstadoAnterior(Categoria.SISTEMA));//33//todos
-			opciones2.add(new Salir(Categoria.SISTEMA));//34 //todos
+			opciones2.add(new FinalizarPartido(Categoria.SISTEMA));//31//todos
+			opciones2.add(new CargarEstadoAnterior(Categoria.SISTEMA));//32//todos
+			opciones2.add(new Salir(Categoria.SISTEMA));//33 //todos
 			}
 		
-	}//Cierre del metodo
+	}
+	
+	private void cargarItems(){
+		for(int i = 0; i < opciones.size(); i++){
+			if(i < 10){
+				this.arquero.add(opciones2.get(i));
+			}
+			else if (i < 19){
+				this.arquero.add(opciones2.get(i));
+			}
+			else{
+				this.archivo.add(opciones2.get(i));
+			}
+		}
+	}
+	//Cierre del metodo
 }//Cierre de la clase
