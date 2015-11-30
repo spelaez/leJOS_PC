@@ -53,11 +53,7 @@ public class UsuarioAdministrador implements Usuario {
 	}//Cierre del metodo
 	/**
 	 * Metodo sobreescrito de la interfaz usuario que permite ejecutar el metodo lanzar menu
-	 */
-	@Override
-	public void lanzarMenu() {
-		menu.lanzarMenu();	
-	}//Cierre del metodo
+	 *///Cierre del metodo
 	/**
 	 * Ejecuta el metodo asignar menu, que muestra las opciones dependiendo del usuario
 	 */
@@ -66,6 +62,11 @@ public class UsuarioAdministrador implements Usuario {
 		for(int i = 0; i < MenuDeConsola.opciones2.size(); i++){
 			menu.anadirOpcion(MenuDeConsola.opciones2.get(i));
 		}
+		menu.cargarItems();
 	}//Cierre del metodo
+	@Override
+	public MenuDeConsola getMenu() {
+		return this.menu;
+	}
 }//Cierre de la clase
 

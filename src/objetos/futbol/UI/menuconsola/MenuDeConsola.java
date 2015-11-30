@@ -23,6 +23,7 @@ public class MenuDeConsola extends JMenuBar{
 	private JMenu acciones;
 	private JMenu delantero;
 	private JMenu arquero;
+	private JMenu ayuda;
 	/**
 	 * Metodo que carga las opciones del menu
 	 */
@@ -32,8 +33,10 @@ public class MenuDeConsola extends JMenuBar{
 		arquero = new JMenu("Arquero");
 		acciones = new JMenu("Acciones");
 		archivo = new JMenu("Archivo");
+		ayuda = new JMenu("Ayuda");
 		this.add(archivo);
 		this.add(acciones);
+		this.add(ayuda);
 		acciones.add(arquero);
 		acciones.add(delantero);
 		setVisible(true);
@@ -80,37 +83,7 @@ public class MenuDeConsola extends JMenuBar{
 	/**
 	 * ejecuta el metodo lanzar menu que muestra las opciones disponibles a elegir
 	 */
-	/*public void lanzarMenu(){
-		String option;
-		for(int i = 0; i < opciones.size(); i++){
-			if(i == 0){
-				System.out.println("Opciones de Arquero\n----------------------------------");
-			}
-			else if (i == 10){
-				System.out.println("Opciones de Delantero\n----------------------------------");
-			}
-			else if (i == 19){
-				System.out.println("Opciones de Sistema\n----------------------------------");
-			}
-			System.out.println((i+1) +" "+ opciones.get(i));
-		}
-		System.out.println("\n Por favor ingrese el numero de la opcion que desea ejecutar");
-		try{
-		option = Main.scn.nextLine();
-		while (Integer.valueOf(option) < 0 || Integer.valueOf(option) > opciones.size()){
-			System.out.println("Dato fuera del rango, Ingrese el dato de nuevo: ");
-			option = Main.scn.nextLine();
-		}
-		opciones.get(Integer.valueOf(option)-1).ejecutar();
-		}
-		catch(NumberFormatException e){
-			System.out.println("Error: Dato incorrecto");
-		}
-		catch(InputMismatchException e){
-			System.out.println("Error: Dato incorrecto");
-		}
-
-	}*/
+	
 	//Cierre del metodo
 	/**
 	 * Metodo que agrega todas las opciones de menu a una segunda lista

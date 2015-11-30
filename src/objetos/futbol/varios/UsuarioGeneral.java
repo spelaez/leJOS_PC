@@ -77,13 +77,6 @@ public class UsuarioGeneral implements Usuario{
 		}
 		menu.cargarItems();
 	}//Cierre del metodo
-	@Override
-	public void lanzarMenu() {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	
 	public MenuDeConsola getMenu(){
 		return this.menu;
 	}
