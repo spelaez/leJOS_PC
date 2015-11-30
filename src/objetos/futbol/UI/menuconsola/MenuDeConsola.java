@@ -34,7 +34,6 @@ public class MenuDeConsola extends JMenu{
 		acciones.add(arquero);
 		setVisible(true);
 		cargarOpciones();
-		cargarItems();
 	}//Cierre del metodo
 	
 	Comparator<OpcionDeMenu> c = new Comparator<OpcionDeMenu>() {
@@ -157,7 +156,7 @@ public class MenuDeConsola extends JMenu{
 		
 	}
 	
-	private void cargarItems(){
+	public void cargarItems(){
 		for(int i = 0; i < opciones.size(); i++){
 			if(i < 10){
 				this.arquero.add(opciones2.get(i));

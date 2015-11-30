@@ -55,7 +55,7 @@ public class VentanaInicial extends JFrame implements ActionListener, MouseListe
 		b3 = new JButton("Salir");
 		tf1 = new JTextField();
 		tf2 = new JTextField();
-		l1 = new JLabel("<html><body>Dar click al botón ingresar usuario si desea ingresar como UsuarioGeneral. Si desea ingresar como Administrador ingrese su código de usuario y su clave</body></html>" );
+		l1 = new JLabel("<html><body>Dar click al botï¿½n ingresar usuario si desea ingresar como UsuarioGeneral. Si desea ingresar como Administrador ingrese su cï¿½digo de usuario y su clave</body></html>" );
 		l2 = new JLabel("Usuario Administrador", SwingConstants.CENTER);
 		l3 = new JLabel("Bienvenido al sistema", SwingConstants.CENTER);
 		
@@ -63,7 +63,7 @@ public class VentanaInicial extends JFrame implements ActionListener, MouseListe
 		ta1.setEditable(false);
 		ta1.setLineWrap(true);
 		ta1.setWrapStyleWord(true);
-		ta1.setText("Este programa fue realizado por Santiago Peláez Rúa, Juan Pablo Betancur Giraldo, Jhon Eider Murillo Usuga y Santiago Saldarriaga Sucerquia El objetivo de este es administrar un partido de futbol  por medio de una interfaz gráfica, donde el usuario pueda jugar el partido  protagonizado por robots LeJos y estar al tanto de las estadísticas de juego, poder ver claramente las jugadas, la posición de cada jugador en la cancha y todas las actividades relacionadas con el partido. Básicamente el programa funciona por medio de eventos en donde el usuario interactúe con la interfaz gráfica y se ejecuten métodos que contribuyan al desarrollo del partido.");
+		ta1.setText("Este programa fue realizado por Santiago Pelï¿½ez Rï¿½a, Juan Pablo Betancur Giraldo, Jhon Eider Murillo Usuga y Santiago Saldarriaga Sucerquia El objetivo de este es administrar un partido de futbol  por medio de una interfaz grï¿½fica, donde el usuario pueda jugar el partido  protagonizado por robots LeJos y estar al tanto de las estadï¿½sticas de juego, poder ver claramente las jugadas, la posiciï¿½n de cada jugador en la cancha y todas las actividades relacionadas con el partido. Bï¿½sicamente el programa funciona por medio de eventos en donde el usuario interactï¿½e con la interfaz grï¿½fica y se ejecuten mï¿½todos que contribuyan al desarrollo del partido.");
 		s1 = new JScrollPane(ta1);
 		s1.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		contenedor.setLayout(new GridLayout(1,2,10,10));
@@ -129,6 +129,7 @@ public class VentanaInicial extends JFrame implements ActionListener, MouseListe
 			if(usuario.length() == 0 && clave.length()==0){
 				Main.v1.dispose();
 				Main.v1 = new VentanaInicial();
+				Main.usuarioActual = new UsuarioGeneral("","");
 				Main.v2.lanzar();
 			}
 			else{
@@ -144,7 +145,7 @@ public class VentanaInicial extends JFrame implements ActionListener, MouseListe
 		else if(s.equals("Salir")){
 			opcion = 0;
 			Object [] textOpcion = { "Si", "NO"};
-			opcion = JOptionPane.showOptionDialog(null, "¿Desea salir del sistema?", "salir del sistema",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,textOpcion,null);
+			opcion = JOptionPane.showOptionDialog(null, "ï¿½Desea salir del sistema?", "salir del sistema",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,textOpcion,null);
 			if(opcion == 0){
 				new Salir(Categoria.SISTEMA).ejecutar();
 			}

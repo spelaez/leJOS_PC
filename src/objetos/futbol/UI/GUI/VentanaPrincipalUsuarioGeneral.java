@@ -15,11 +15,13 @@ import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
 
 import objetos.futbol.UI.Main;
+import objetos.futbol.varios.UsuarioGeneral;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+@SuppressWarnings("serial")
 public class VentanaPrincipalUsuarioGeneral extends JFrame   {
 	Container contenedor;
 	JPanel p1,p2,p3,p4,p5,p6,p7,p8,p9;
@@ -29,7 +31,6 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame   {
 	JLabel l1,l2;
 	JTextField tf1;
 	JMenuBar menubar;
-	JMenu menu1,menu2,menu3;
 	JMenuItem delantero,arquero;
     OyenteMenu Oyente = new OyenteMenu();
     
@@ -90,16 +91,7 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame   {
 		s2.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		menubar = new JMenuBar();
 		
-		menu1 = new JMenu("File");
-		menu2 = new JMenu("Acciones");
-		delantero = new JMenuItem("Delantero");
-		arquero = new JMenuItem("Arquero");
-		menu2.add(delantero);
-		menu2.add(arquero);
-		menu3 = new JMenu("Ayuda");
-		menubar.add(menu1);
-		menubar.add(menu2);
-		menubar.add(menu3);
+		menubar.add(((UsuarioGeneral)Main.usuarioActual).getMenu());
 		contenedor.add(p1, BorderLayout.NORTH );
 		contenedor.add(p2, BorderLayout.SOUTH);
 		contenedor.add(p6, BorderLayout.WEST);

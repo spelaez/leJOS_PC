@@ -16,9 +16,9 @@ public class UsuarioGeneral implements Usuario{
 	private String nombre;
 	private String clave;
 	public MenuDeConsola menu = new MenuDeConsola();
-	public static Integer[] permisos = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,21,22,24,25,27,28,30,31,32,33};
+	public static Integer[] permisos = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,21,22,24,25,27,28,31,32,33};
 	/**
-	 * Constructor que asigna un menu un nombre y una contraseña a un usuario general
+	 * Constructor que asigna un menu un nombre y una contraseï¿½a a un usuario general
 	 * @param nombre
 	 * @param clave
 	 */
@@ -63,10 +63,10 @@ public class UsuarioGeneral implements Usuario{
 	/**
 	 * Metodo que ejecutar la opcion lanzar menu del usuario general
 	 */
-	@Override
-	public void lanzarMenu() {
-		menu.lanzarMenu();
-	}//Cierre del metodo
+	//@Override
+	//public void lanzarMenu() {
+	//	menu.lanzarMenu();
+	//}//Cierre del metodo
 	/**
 	 * Ejecuta el metodo asignar menu, que muestra las opciones dependiendo del usuario
 	 */	
@@ -75,5 +75,16 @@ public class UsuarioGeneral implements Usuario{
 		for(int i=0; i<permisos.length; i++){
 			menu.anadirOpcion(MenuDeConsola.opciones2.get(permisos[i]-1));
 		}
+		menu.cargarItems();
 	}//Cierre del metodo
+	@Override
+	public void lanzarMenu() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	public MenuDeConsola getMenu(){
+		return this.menu;
+	}
 }//Cierre de la clase
