@@ -35,7 +35,8 @@ public class VentanaInicial extends JFrame implements ActionListener, MouseListe
 	int opcion;
 	public static int cont =0;
 	public VentanaInicial(){
-		super("Usuario");}
+		super("Usuario");
+	}
 	public void lanzar(){
 		contenedor = this.getContentPane();
 		p1 = new JPanel();
@@ -113,7 +114,8 @@ public class VentanaInicial extends JFrame implements ActionListener, MouseListe
 		setSize(450,400);
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-	
+		setLocationRelativeTo (null);
+
 	}
 
 	@Override

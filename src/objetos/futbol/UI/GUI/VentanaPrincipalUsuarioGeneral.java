@@ -127,6 +127,7 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame implements ActionList
 		delantero.addActionListener(this);
 		setSize(650,600);
 		setVisible(true);
+		setLocationRelativeTo (null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 	
