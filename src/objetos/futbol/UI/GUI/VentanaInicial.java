@@ -9,7 +9,9 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ScrollPaneConstants;
+import javax.swing.SwingConstants;
 
+import javafx.scene.paint.Color;
 import objetos.futbol.UI.Main;
 import objetos.futbol.UI.menuconsola.Categoria;
 import objetos.futbol.UI.menuconsola.Salir;
@@ -17,20 +19,24 @@ import objetos.futbol.UI.menuconsola.Salir;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
-public class VentanaInicial extends JFrame implements ActionListener {
+public class VentanaInicial extends JFrame implements ActionListener, MouseListener {
 
 	Container contenedor;
 	JPanel p1,p2,p3,p4,p5,p6,p7,p8,p9,p10;
 	JButton b1,b2,b3;
 	JTextArea ta1;
 	JScrollPane s1;
-	JLabel l1,l2;
+	JLabel l1,l2,l3;
 	JTextField tf1,tf2;
 	int opcion;
 	public static int cont =0;
 	public VentanaInicial(){
-		super("Usuario");
+		super("Usuario");}
+	public void lanzar(){
 		contenedor = this.getContentPane();
 		p1 = new JPanel();
 		p2 = new JPanel();
@@ -48,12 +54,14 @@ public class VentanaInicial extends JFrame implements ActionListener {
 		tf1 = new JTextField();
 		tf2 = new JTextField();
 		l1 = new JLabel("<html><body>Dar click al botón ingresar usuario si desea ingresar como UsuarioGeneral. Si desea ingresar como Administrador ingrese su código de usuario y su clave</body></html>" );
-		l2 = new JLabel("Usuario Administrador");
+		l2 = new JLabel("Usuario Administrador", SwingConstants.CENTER);
+		l3 = new JLabel("Bienvenido al sistema", SwingConstants.CENTER);
+		
 		ta1 = new JTextArea(8,10);
 		ta1.setEditable(false);
 		ta1.setLineWrap(true);
 		ta1.setWrapStyleWord(true);
-		ta1.setText("");
+		ta1.setText("Este programa fue realizado por Santiago Peláez Rúa, Juan Pablo Betancur Giraldo, Jhon Eider Murillo Usuga y Santiago Saldarriaga Sucerquia El objetivo de este es administrar un partido de futbol  por medio de una interfaz gráfica, donde el usuario pueda jugar el partido  protagonizado por robots LeJos y estar al tanto de las estadísticas de juego, poder ver claramente las jugadas, la posición de cada jugador en la cancha y todas las actividades relacionadas con el partido. Básicamente el programa funciona por medio de eventos en donde el usuario interactúe con la interfaz gráfica y se ejecuten métodos que contribuyan al desarrollo del partido.");
 		s1 = new JScrollPane(ta1);
 		s1.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		contenedor.setLayout(new GridLayout(1,2,10,10));
@@ -73,7 +81,7 @@ public class VentanaInicial extends JFrame implements ActionListener {
 		//elementos panel1
 		p1.add(p3);
 		p1.add(p4);
-		p3.add(new JLabel("Bienvenido al sistema"), BorderLayout.CENTER);
+		p3.add(l3, BorderLayout.CENTER);
 		b1.setLayout(new BorderLayout());
 
 		p4.add(b1, BorderLayout.CENTER);
@@ -101,9 +109,11 @@ public class VentanaInicial extends JFrame implements ActionListener {
 		b1.addActionListener(this);
 		b2.addActionListener(this);
 		b3.addActionListener(this);
+		l3.addMouseListener(this);
 		setSize(450,400);
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+	
 	}
 
 	@Override
@@ -112,13 +122,16 @@ public class VentanaInicial extends JFrame implements ActionListener {
 		if(s.equals("Ingresar Usuario")){
 
 			String usuario = tf1.getText();
-			if(usuario.length() == 0){
-				
+			String clave = tf2.getText();
+			if(usuario.length() == 0 && clave.length()==0){
+				Main.v1.dispose();
+				Main.v1 = new VentanaInicial();
+				Main.v2.lanzar();
 			}
 			else{
-				String clave = tf2.getText();
+				
 				if(Main.listaUsuarios.containsKey(usuario) && clave.equals(Main.listaUsuarios.get(usuario).getClave())){
-
+					
 				}
 				else{
 					JOptionPane.showMessageDialog(null,"Porfavor ingrese un usuario y clave validos","ERROR",JOptionPane.ERROR_MESSAGE);
@@ -135,7 +148,7 @@ public class VentanaInicial extends JFrame implements ActionListener {
 		}
 		else{
 			cont ++;
-			if(cont > Main.listaJugadores.size()){
+			if(cont >10){
 				cont =0;
 			}
 			if (cont == 0){
@@ -174,4 +187,22 @@ public class VentanaInicial extends JFrame implements ActionListener {
 		}
 	}
 
+	@Override
+	public void mouseClicked(MouseEvent arg0) {}
+
+	@Override
+	public void mouseEntered(MouseEvent arg0) {
+		l3.setForeground(java.awt.Color.YELLOW);
+	}
+
+	@Override
+	public void mouseExited(MouseEvent arg0) {
+		l3.setForeground(java.awt.Color.BLACK);
+	}
+
+	@Override
+	public void mousePressed(MouseEvent arg0) {}
+
+	@Override
+	public void mouseReleased(MouseEvent arg0) {}
 }
