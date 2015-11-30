@@ -17,6 +17,7 @@ public abstract class OpcionDeMenu extends JMenuItem{
 	 * @param categoria
 	 */
 	public OpcionDeMenu(Categoria categoria){
+		super.setText(toString());
 		this.categoria = categoria;//Cierre del m�todo
 	/**
 	 * Metodo abastracto que sera implementado en otras clases

@@ -30,8 +30,6 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame   {
 	JScrollPane s1,s2;
 	JLabel l1,l2;
 	JTextField tf1;
-	JMenuBar menubar;
-	JMenuItem delantero,arquero;
     OyenteMenu Oyente = new OyenteMenu();
     
 	public VentanaPrincipalUsuarioGeneral(){
@@ -89,15 +87,15 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame   {
 		s1.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		s2 = new JScrollPane(ta2);
 		s2.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		menubar = new JMenuBar();
-		
-		menubar.add(((UsuarioGeneral)Main.usuarioActual).getMenu());
+		//menubar = new JMenuBar();
+		this.setJMenuBar(((UsuarioGeneral)Main.usuarioActual).getMenu());
+		//menubar.add(((UsuarioGeneral)Main.usuarioActual).getMenu());
 		contenedor.add(p1, BorderLayout.NORTH );
 		contenedor.add(p2, BorderLayout.SOUTH);
 		contenedor.add(p6, BorderLayout.WEST);
 		contenedor.add(p7, BorderLayout.EAST);
 		contenedor.add(p5, BorderLayout.CENTER);
-		p1.add(menubar,BorderLayout.NORTH);
+		//p1.add(menubar,BorderLayout.NORTH);
 		p7.add(p4, BorderLayout.WEST);
 		p6.add(p3, BorderLayout.EAST);
 		p3.add(l1);
@@ -116,8 +114,8 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame   {
 		p4.add(s2, BorderLayout.CENTER);
 		p5.add(cancha, BorderLayout.CENTER);
 		//eventos
-		delantero.addActionListener(Oyente);
-		arquero.addActionListener(Oyente);
+		//delantero.addActionListener(Oyente);
+		//arquero.addActionListener(Oyente);
 		setSize(650,600);
 		setVisible(true);
 		setLocationRelativeTo (null);

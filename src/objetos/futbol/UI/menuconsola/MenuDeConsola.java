@@ -2,6 +2,7 @@ package objetos.futbol.UI.menuconsola;
 
 import java.util.Comparator;
 import javax.swing.JMenu;
+import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import java.util.ArrayList;
 import objetos.futbol.UI.menuconsola.Trotar;
@@ -11,27 +12,27 @@ import objetos.futbol.UI.menuconsola.Trotar;
  *
  */
 @SuppressWarnings("serial")
-public class MenuDeConsola extends JMenu{
+public class MenuDeConsola extends JMenuBar{
 	//Campos de la clase
 	public static ArrayList<OpcionDeMenu> opciones2 = new ArrayList<>();
 	public ArrayList<OpcionDeMenu> opciones;
-	private JMenuItem archivo;
-	private JMenuItem acciones;
-	private JMenuItem delantero;
-	private JMenuItem arquero;
+	private JMenu archivo;
+	private JMenu acciones;
+	private JMenu delantero;
+	private JMenu arquero;
 	/**
 	 * Metodo que carga las opciones del menu
 	 */
 	public MenuDeConsola(){
-		super("Acciones");
-		delantero = new JMenuItem("Delantero");
-		arquero = new JMenuItem("Arquero");
-		acciones = new JMenuItem("Acciones");
-		archivo = new JMenuItem("Archivo");
+		super();
+		delantero = new JMenu("Delantero");
+		arquero = new JMenu("Arquero");
+		acciones = new JMenu("Acciones");
+		archivo = new JMenu("Archivo");
 		this.add(archivo);
 		this.add(acciones);
-		acciones.add(delantero);
 		acciones.add(arquero);
+		acciones.add(delantero);
 		setVisible(true);
 		cargarOpciones();
 	}//Cierre del metodo
@@ -162,7 +163,7 @@ public class MenuDeConsola extends JMenu{
 				this.arquero.add(opciones2.get(i));
 			}
 			else if (i < 19){
-				this.arquero.add(opciones2.get(i));
+				this.delantero.add(opciones2.get(i));
 			}
 			else{
 				this.archivo.add(opciones2.get(i));
