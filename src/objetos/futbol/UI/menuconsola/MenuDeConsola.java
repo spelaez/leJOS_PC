@@ -3,12 +3,14 @@ package objetos.futbol.UI.menuconsola;
 import java.util.Comparator;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -229,10 +231,14 @@ public class MenuDeConsola extends JMenuBar{
 	
 	public void generarBotones(JPanel panel, Categoria categoria){
 		panel.removeAll();
+		JLabel l = new JLabel("Acciones");
+		l.setAlignmentX(Component.LEFT_ALIGNMENT);
+		panel.add(l);
 		for(int i = 0; i < opciones.size(); i++){
 			if(categoria == opciones.get(i).categoria){
 			JButton btn = new JButton(opciones.get(i).toString());
-			btn.setAlignmentX(Component.LEFT_ALIGNMENT);
+			btn.setAlignmentX(Component.TOP_ALIGNMENT);
+			
 			panel.add(btn);
 			}
 		}

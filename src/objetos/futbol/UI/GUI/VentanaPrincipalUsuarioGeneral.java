@@ -45,6 +45,7 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame   {
 		p3 = new JPanel();
 		p3.setBackground(Color.lightGray);
 		p3.setLayout(new BoxLayout(p3,BoxLayout.Y_AXIS));
+		
 		p4 = new JPanel();
 		p4.setBackground(Color.lightGray);
 		p4.setLayout(new BorderLayout());
@@ -99,11 +100,6 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame   {
 		p7.add(p4, BorderLayout.WEST);
 		p6.add(p3, BorderLayout.EAST);
 		p3.add(l1);
-		if(Main.tipo == 1 || Main.tipo == 2){
-			p3.add(b1);
-			p3.add(b2);
-			p3.add(b3);
-		}
 		p4.add(l2);
 		p2.add(new JLabel("Accion n : Dato J"), BorderLayout.NORTH);
 		p2.add(p9, BorderLayout.CENTER);
@@ -113,10 +109,8 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame   {
 		p4.add(l2,BorderLayout.NORTH);
 		p4.add(s2, BorderLayout.CENTER);
 		p5.add(cancha, BorderLayout.CENTER);
-		//eventos
-		//delantero.addActionListener(Oyente);
-		//arquero.addActionListener(Oyente);
-		setSize(650,600);
+		
+		setSize(850,600);
 		setVisible(true);
 		setLocationRelativeTo (null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
