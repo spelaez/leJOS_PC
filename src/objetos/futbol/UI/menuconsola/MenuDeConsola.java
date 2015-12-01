@@ -16,6 +16,8 @@ import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
 import objetos.futbol.UI.Main;
+import objetos.futbol.UI.GUI.OyenteBotones;
+import objetos.futbol.UI.GUI.OyenteMenu;
 import objetos.futbol.UI.menuconsola.Trotar;
 import objetos.futbol.varios.UsuarioGeneral;
 /**
@@ -76,28 +78,16 @@ public class MenuDeConsola extends JMenuBar{
 		arquero.addMouseListener(new MouseListener() {
 			
 			@Override
-			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
+			public void mouseReleased(MouseEvent e) {}
 			
 			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
+			public void mousePressed(MouseEvent e) {}
 			
 			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
+			public void mouseExited(MouseEvent e) {}
 			
 			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
+			public void mouseEntered(MouseEvent e) {}
 			
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -211,22 +201,26 @@ public class MenuDeConsola extends JMenuBar{
 
 	public void cargarItems(){
 		for(int i = 0; i < opciones.size(); i++){
+			JMenuItem op = opciones.get(i);
+			//op.addActionListener(new OyenteMenu());
 			if(i < 10){
-				this.arquero.add(opciones.get(i));
+				
+				this.arquero.add(op);
 			}
 			else if (i < 19){
-				this.delantero.add(opciones.get(i));
+				this.delantero.add(op);
 			}
 			else{
 				if(Main.usuarioActual instanceof UsuarioGeneral){
 					
-					this.archivo.add(opciones.get(i));
+					this.archivo.add(op);
 				}
 				else{
-					this.archivo.add(opciones.get(i));
+					this.archivo.add(op);
 				}
 			}
 		}
+	
 	}
 	
 	public void generarBotones(JPanel panel, Categoria categoria){
@@ -238,7 +232,7 @@ public class MenuDeConsola extends JMenuBar{
 			if(categoria == opciones.get(i).categoria){
 			JButton btn = new JButton(opciones.get(i).toString());
 			btn.setAlignmentX(Component.TOP_ALIGNMENT);
-			
+			btn.addActionListener(new OyenteBotones());
 			panel.add(btn);
 			}
 		}
