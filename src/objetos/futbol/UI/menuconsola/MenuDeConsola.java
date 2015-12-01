@@ -42,7 +42,7 @@ public class MenuDeConsola extends JMenuBar{
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				System.out.println("Entre a delantero");
-				generarBotones(Main.v2.getP3(), delantero);
+				generarBotones(Main.v2.getP3(), Categoria.DELANTERO);
 				
 			}
 
@@ -100,7 +100,7 @@ public class MenuDeConsola extends JMenuBar{
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				System.out.println("Entre a arquero");
-				generarBotones(Main.v2.getP3(), arquero);
+				generarBotones(Main.v2.getP3(), Categoria.ARQUERO);
 				
 			}
 		});
@@ -227,14 +227,16 @@ public class MenuDeConsola extends JMenuBar{
 		}
 	}
 	
-	public void generarBotones(JPanel panel, JMenu menu){
-		Component[] items = menu.getComponents();
-		for(Component t: items){
-			JButton btn = new JButton(((JMenuItem)t).getText());
-			btn.setAlignmentX(Component.CENTER_ALIGNMENT);
+	public void generarBotones(JPanel panel, Categoria categoria){
+		panel.removeAll();
+		for(int i = 0; i < opciones.size(); i++){
+			if(categoria == opciones.get(i).categoria){
+			JButton btn = new JButton(opciones.get(i).toString());
+			btn.setAlignmentX(Component.LEFT_ALIGNMENT);
 			panel.add(btn);
-			panel.repaint();
+			}
 		}
-		
+		Main.v2.repaint();
+		Main.v2.revalidate();
 	}
 }//Cierre de la clase
