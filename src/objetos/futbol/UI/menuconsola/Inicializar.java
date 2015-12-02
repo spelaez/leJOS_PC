@@ -15,6 +15,7 @@ import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.beans.PropertyChangeListener;
@@ -37,7 +38,7 @@ import javax.swing.SwingConstants;
  *
  */
 @SuppressWarnings("serial")
-public class Inicializar extends OpcionDeMenu{
+public class Inicializar extends OpcionDeMenu implements ActionListener{
 	JFrame jugadores = new JFrame("Seleccion de jugadores");
 	Container contenedor;
 	JPanel p1,p2;
@@ -62,14 +63,7 @@ public class Inicializar extends OpcionDeMenu{
 		p2 = new JPanel();
 		p2.setLayout(new GridLayout(10,1));
 		aceptar = new JButton("Aceptar");
-		aceptar.setAction(new AbstractAction() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				jugadores.dispose();
-				
-			}
-		});
+		aceptar.addActionListener(this);;
 		jugadores.add(p1);
 		jugadores.add(p2);
 		jugadores.setSize(400, 400);
@@ -148,5 +142,11 @@ public class Inicializar extends OpcionDeMenu{
 			
 		}
 		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+	
+		jugadores.setVisible(false);
 	}
 }//Cierre de la clase
