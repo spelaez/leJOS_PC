@@ -28,6 +28,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.SwingConstants;
 /**
  * Clase para inicializar el sistema con los robots
@@ -114,7 +115,7 @@ public class Inicializar extends OpcionDeMenu{
 		JLabel ind2 = new JLabel("Escoja un Delantero");
 		p1.add(ind1);
 		p2.add(ind2);
-		generarCheckBox(Main.listaJugadores);
+		generarRadioButton(Main.listaJugadores);
 		p1.add(aceptar);
 		jugadores.setVisible(true);
 				
@@ -139,32 +140,33 @@ public class Inicializar extends OpcionDeMenu{
 		return "Inicializar sistema";
 	}//Cierre del metodo
 
-	public void generarCheckBox(ArrayList<Futbolista> j){
+	public void generarRadioButton(ArrayList<Futbolista> j){
 		for(int i=0; i<j.size(); i++){
-			JCheckBox x = new JCheckBox(j.get(i).getNombre());
-			x.setName(i+"");
-			x.addItemListener(new ItemListener() {
+			JRadioButton z = new JRadioButton(j.get(i).getNombre());
+			z.setName(i+"");
+			z.addItemListener(new ItemListener() {
 				
 				@Override
 				public void itemStateChanged(ItemEvent e) {
-					if(x.isSelected()){
-					if(Main.listaJugadores.get(Integer.parseInt(x.getName())) instanceof Arquero)
-					{
-						Main.r1 = new Robot(Main.listaJugadores.get(Integer.parseInt(x.getName())));
-						System.out.println(Main.r1.getJugador().getNombre());
-					}
-					else if (Main.listaJugadores.get(Integer.parseInt(x.getName())) instanceof Delantero){
-						Main.r2 = new Robot(Main.listaJugadores.get(Integer.parseInt(x.getName())));
-						System.out.println(Main.r2.getJugador().getNombre());
-					}
-					}
+					if(z.isSelected()){
+						if(Main.listaJugadores.get(Integer.parseInt(z.getName())) instanceof Arquero)
+						{
+							Main.r1 = new Robot(Main.listaJugadores.get(Integer.parseInt(z.getName())));
+							System.out.println(Main.r1.getJugador().getNombre());
+						}
+						else if (Main.listaJugadores.get(Integer.parseInt(z.getName())) instanceof Delantero){
+							Main.r2 = new Robot(Main.listaJugadores.get(Integer.parseInt(z.getName())));
+							System.out.println(Main.r2.getJugador().getNombre());
+						}
+						}
+					
 				}
 			});
 			if(j.get(i) instanceof Arquero){
-			p1.add(x);
+			p1.add(z);
 			}
 			else if (j.get(i) instanceof Delantero){
-				p2.add(x);
+				p2.add(z);
 			}
 		}
 	}
