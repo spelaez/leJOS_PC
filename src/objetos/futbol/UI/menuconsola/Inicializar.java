@@ -91,12 +91,14 @@ public class Inicializar extends OpcionDeMenu{
 	public void generarCheckBox(ArrayList<Futbolista> j){
 		for(int i=0; i<j.size(); i++){
 			JCheckBox x = new JCheckBox(j.get(i).getNombre());
+			x.setName(i+"");
 			if(j.get(i) instanceof Arquero){
 			p1.add(x);
 			}
 			else if (j.get(i) instanceof Delantero){
 				p2.add(x);
 			}
+			System.out.println(x.getName() + " " + x.getText());
 		}
 	}
 }//Cierre de la clase
