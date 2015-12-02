@@ -38,8 +38,8 @@ public class Main {
 	public static boolean pausa = false;
 
 	//Objetos de lectura y escritura hacia los robots
-	public static DataOutputStream dos;
-	public static DataInputStream dis;
+	public static DataOutputStream dos1, dos2;
+	public static DataInputStream dis1, dis2;
 
 	//Jugadas primitivas definidas para todos
 	public static MoverAdelante trotar = new MoverAdelante(1);
@@ -65,7 +65,7 @@ public class Main {
 	public static Robot r1, r2;
 
 	//Variables de conexion a los robots
-	public static NXTConnector conn = new NXTConnector();
+	public static NXTConnector conn1 = new NXTConnector();
 	public static NXTConnector conn2 = new NXTConnector();
 	public static boolean connected;
 

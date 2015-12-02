@@ -14,6 +14,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.util.ArrayList;
 
 import javax.swing.AbstractAction;
@@ -72,7 +74,7 @@ public class Inicializar extends OpcionDeMenu implements ActionListener{
 		p1.add(aceptar);
 		jugadores.setVisible(true);
 				
-			Main.conn.addLogListener(new NXTCommLogListener(){
+			Main.conn1.addLogListener(new NXTCommLogListener(){
 				public void logEvent(String message){
 					System.out.println("BTSend Log.listener: "+message);
 				}
@@ -158,7 +160,7 @@ public class Inicializar extends OpcionDeMenu implements ActionListener{
 	
 	public void conectar(){
 		
-		NXTInfo info[] = Main.conn.search(null, null, NXTCommFactory.BLUETOOTH);
+		NXTInfo info[] = Main.conn1.search(null, null, NXTCommFactory.BLUETOOTH);
 		
 		if(info.length > 0){
 		if(info[0].name.equals("NXT_3")){
@@ -169,9 +171,13 @@ public class Inicializar extends OpcionDeMenu implements ActionListener{
 			Main.nxt1=info[1];
 			Main.nxt2=info[0];
 		}
-		Main.conn.connectTo(Main.nxt1.name, Main.nxt1.deviceAddress, NXTCommFactory.BLUETOOTH);
+		Main.conn1.connectTo(Main.nxt1.name, Main.nxt1.deviceAddress, NXTCommFactory.BLUETOOTH);
+		Main.dis1 = new DataInputStream(Main.conn1.getInputStream());
+		Main.dos1 = new DataOutputStream(Main.conn1.getOutputStream());
+		
 		Main.conn2.connectTo(Main.nxt2.name, Main.nxt2.deviceAddress, NXTCommFactory.BLUETOOTH);
-		Main.connectedTo = 1;
+		Main.dis2 = new DataInputStream(Main.conn1.getInputStream());
+		Main.dos2 = new DataOutputStream(Main.conn1.getOutputStream());
 		return;
 		}
 	}
