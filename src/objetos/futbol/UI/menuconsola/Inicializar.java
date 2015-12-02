@@ -82,6 +82,18 @@ public class Inicializar extends OpcionDeMenu implements ActionListener{
 					throwable.printStackTrace();
 				}
 			});
+			
+			Main.conn2.addLogListener(new NXTCommLogListener(){
+				public void logEvent(String message){
+					System.out.println("BTSend Log.listener: "+message);
+				}
+
+				public void logEvent(Throwable throwable){
+					System.out.print("BTSend Log.listener - stack trace: ");
+					throwable.printStackTrace();
+				}
+			});
+			
 
 	}//Cierre del m�todo
 	/**
@@ -158,6 +170,7 @@ public class Inicializar extends OpcionDeMenu implements ActionListener{
 			Main.nxt2=info[0];
 		}
 		Main.conn.connectTo(Main.nxt1.name, Main.nxt1.deviceAddress, NXTCommFactory.BLUETOOTH);
+		Main.conn2.connectTo(Main.nxt2.name, Main.nxt2.deviceAddress, NXTCommFactory.BLUETOOTH);
 		Main.connectedTo = 1;
 		return;
 		}

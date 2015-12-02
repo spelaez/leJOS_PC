@@ -66,6 +66,7 @@ public class Main {
 
 	//Variables de conexion a los robots
 	public static NXTConnector conn = new NXTConnector();
+	public static NXTConnector conn2 = new NXTConnector();
 	public static boolean connected;
 
 	//Gestores bd
