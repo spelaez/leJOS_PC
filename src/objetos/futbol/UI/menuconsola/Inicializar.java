@@ -22,6 +22,7 @@ import java.util.ArrayList;
 
 import javax.swing.AbstractAction;
 import javax.swing.Action;
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
@@ -41,6 +42,7 @@ public class Inicializar extends OpcionDeMenu{
 	Container contenedor;
 	JPanel p1,p2;
 	JButton aceptar;
+	ButtonGroup bg1, bg2;
 	/**
 	 * Contructor de la clase que accesa al tipo de categoria que tiene la opcion inicializar
 	 * @param categoria
@@ -60,48 +62,11 @@ public class Inicializar extends OpcionDeMenu{
 		p2 = new JPanel();
 		p2.setLayout(new GridLayout(10,1));
 		aceptar = new JButton("Aceptar");
-		aceptar.setAction(new Action() {
+		aceptar.setAction(new AbstractAction() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				jugadores.dispose();
-				return;
-				
-			}
-			
-			@Override
-			public void setEnabled(boolean b) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void removePropertyChangeListener(PropertyChangeListener listener) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void putValue(String key, Object value) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public boolean isEnabled() {
-				// TODO Auto-generated method stub
-				return false;
-			}
-			
-			@Override
-			public Object getValue(String key) {
-				// TODO Auto-generated method stub
-				return null;
-			}
-			
-			@Override
-			public void addPropertyChangeListener(PropertyChangeListener listener) {
-				// TODO Auto-generated method stub
 				
 			}
 		});
@@ -115,6 +80,8 @@ public class Inicializar extends OpcionDeMenu{
 		JLabel ind2 = new JLabel("Escoja un Delantero");
 		p1.add(ind1);
 		p2.add(ind2);
+		bg1 = new ButtonGroup();
+		bg2 = new ButtonGroup();
 		generarRadioButton(Main.listaJugadores);
 		p1.add(aceptar);
 		jugadores.setVisible(true);
@@ -163,9 +130,11 @@ public class Inicializar extends OpcionDeMenu{
 				}
 			});
 			if(j.get(i) instanceof Arquero){
+				bg1.add(z);
 			p1.add(z);
 			}
 			else if (j.get(i) instanceof Delantero){
+				bg2.add(z);
 				p2.add(z);
 			}
 		}
