@@ -14,8 +14,14 @@ import java.awt.Component;
 import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
@@ -53,6 +59,51 @@ public class Inicializar extends OpcionDeMenu{
 		p2 = new JPanel();
 		p2.setLayout(new GridLayout(10,1));
 		aceptar = new JButton("Aceptar");
+		aceptar.setAction(new Action() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				jugadores.dispose();
+				return;
+				
+			}
+			
+			@Override
+			public void setEnabled(boolean b) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void removePropertyChangeListener(PropertyChangeListener listener) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void putValue(String key, Object value) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public boolean isEnabled() {
+				// TODO Auto-generated method stub
+				return false;
+			}
+			
+			@Override
+			public Object getValue(String key) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			@Override
+			public void addPropertyChangeListener(PropertyChangeListener listener) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 		jugadores.add(p1);
 		jugadores.add(p2);
 		jugadores.setSize(400, 400);
@@ -92,13 +143,39 @@ public class Inicializar extends OpcionDeMenu{
 		for(int i=0; i<j.size(); i++){
 			JCheckBox x = new JCheckBox(j.get(i).getNombre());
 			x.setName(i+"");
+			x.addItemListener(new ItemListener() {
+				
+				@Override
+				public void itemStateChanged(ItemEvent e) {
+					if(x.isSelected()){
+					if(Main.listaJugadores.get(Integer.parseInt(x.getName())) instanceof Arquero)
+					{
+						Main.r1 = new Robot(Main.listaJugadores.get(Integer.parseInt(x.getName())));
+						System.out.println(Main.r1.getJugador().getNombre());
+					}
+					else if (Main.listaJugadores.get(Integer.parseInt(x.getName())) instanceof Delantero){
+						Main.r2 = new Robot(Main.listaJugadores.get(Integer.parseInt(x.getName())));
+						System.out.println(Main.r2.getJugador().getNombre());
+					}
+					}
+				}
+			});
 			if(j.get(i) instanceof Arquero){
 			p1.add(x);
 			}
 			else if (j.get(i) instanceof Delantero){
 				p2.add(x);
 			}
-			System.out.println(x.getName() + " " + x.getText());
 		}
+	}
+	
+	class oyenteAceptar extends AbstractAction{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			
+			
+		}
+		
 	}
 }//Cierre de la clase
