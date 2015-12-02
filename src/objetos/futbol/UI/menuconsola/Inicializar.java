@@ -42,7 +42,7 @@ public class Inicializar extends OpcionDeMenu{
 	public void ejecutar(){
 		jugadores.setSize(400, 400);
 		//jugadores.setLayout(new FlowLayout(FlowLayout.LEFT));
-		setLayout(new FlowLayout());
+		jugadores.setLayout(new GridLayout(10,1));
 		jugadores.setLocationRelativeTo(null);
 		JLabel title = new JLabel("Lista de jugadores");
 		jugadores.add(title);
