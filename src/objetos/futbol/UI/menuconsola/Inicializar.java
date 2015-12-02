@@ -6,6 +6,8 @@ import objetos.futbol.jugadores.Delantero;
 import objetos.futbol.jugadores.Futbolista;
 import objetos.futbol.robots.Robot;
 import lejos.pc.comm.*;
+
+import java.awt.Component;
 import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -19,6 +21,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 /**
@@ -79,21 +82,7 @@ public class Inicializar extends OpcionDeMenu implements ActionListener{
 					throwable.printStackTrace();
 				}
 			});
-			
-			NXTInfo info[] = Main.conn.search(null, null, NXTCommFactory.BLUETOOTH);
-			
-			if(info.length > 0){
-			if(info[0].name.equals("NXT_3")){
-				Main.nxt1=info[0];
-				Main.nxt2=info[1];
-			}
-			else{
-				Main.nxt1=info[1];
-				Main.nxt2=info[0];
-			}
-			Main.conn.connectTo(Main.nxt1.name, Main.nxt1.deviceAddress, NXTCommFactory.BLUETOOTH);
-			return;
-			}
+
 	}//Cierre del m�todo
 	/**
 	 * Metodo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opci�n
@@ -149,7 +138,27 @@ public class Inicializar extends OpcionDeMenu implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-	
 		jugadores.dispose();
+		JOptionPane.showMessageDialog(this.jugadores, "Conectando a los NXT...");
+		conectar();
+		jugadores.removeAll();
+	}
+	
+	public void conectar(){
+		
+		NXTInfo info[] = Main.conn.search(null, null, NXTCommFactory.BLUETOOTH);
+		
+		if(info.length > 0){
+		if(info[0].name.equals("NXT_3")){
+			Main.nxt1=info[0];
+			Main.nxt2=info[1];
+		}
+		else{
+			Main.nxt1=info[1];
+			Main.nxt2=info[0];
+		}
+		Main.conn.connectTo(Main.nxt1.name, Main.nxt1.deviceAddress, NXTCommFactory.BLUETOOTH);
+		return;
+		}
 	}
 }//Cierre de la clase
