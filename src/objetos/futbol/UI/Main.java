@@ -6,7 +6,6 @@ import lejos.pc.comm.NXTConnector;
 import lejos.pc.comm.NXTInfo;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.Hashtable;
 import objetos.futbol.robots.MoverAdelante;
 import objetos.futbol.robots.MoverAtras;

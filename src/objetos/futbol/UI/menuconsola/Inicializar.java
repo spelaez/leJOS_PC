@@ -158,6 +158,7 @@ public class Inicializar extends OpcionDeMenu implements ActionListener{
 			Main.nxt2=info[0];
 		}
 		Main.conn.connectTo(Main.nxt1.name, Main.nxt1.deviceAddress, NXTCommFactory.BLUETOOTH);
+		Main.connectedTo = 1;
 		return;
 		}
 	}
