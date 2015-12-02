@@ -10,7 +10,6 @@ import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JMenuItem;
 
-import objetos.futbol.UI.GUI.OyenteMenu;
 
 /**
  * Clase abastracta que lista las opciones de men� por categorias

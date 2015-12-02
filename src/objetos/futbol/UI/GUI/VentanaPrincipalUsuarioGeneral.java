@@ -30,7 +30,6 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame   {
 	JScrollPane s1,s2;
 	JLabel l1,l2;
 	JTextField tf1;
-    OyenteMenu Oyente = new OyenteMenu();
     
 	public VentanaPrincipalUsuarioGeneral(){
 		super("Futbol");}

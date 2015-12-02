@@ -10,14 +10,11 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 import java.awt.Component;
-import java.awt.Dimension;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
 import objetos.futbol.UI.Main;
-import objetos.futbol.UI.GUI.OyenteBotones;
-import objetos.futbol.UI.GUI.OyenteMenu;
 import objetos.futbol.UI.menuconsola.Trotar;
 import objetos.futbol.varios.UsuarioGeneral;
 /**
