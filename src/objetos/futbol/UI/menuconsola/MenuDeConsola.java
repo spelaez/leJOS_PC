@@ -230,9 +230,8 @@ public class MenuDeConsola extends JMenuBar{
 		panel.add(l);
 		for(int i = 0; i < opciones.size(); i++){
 			if(categoria == opciones.get(i).categoria){
-			JButton btn = new JButton(opciones.get(i).toString());
+			OpcionBoton btn = new OpcionBoton(opciones.get(i).toString(), opciones.get(i));
 			btn.setAlignmentX(Component.TOP_ALIGNMENT);
-			btn.addActionListener(new OyenteBotones());
 			panel.add(btn);
 			}
 		}
