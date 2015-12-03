@@ -26,31 +26,8 @@ public class EjecutarJugadaCompleja extends OpcionDeMenu{
 	/**
 	 * Metodo que ejecuta el menu para ejecurtar una jugada compleja
 	 */
-	public void ejecutar(){}
-		/*if(Main.pausa==false){
-			try{
-				if(categoria == Categoria.ARQUERO && Main.connectedTo == 2){
-					Main.dos.writeInt(0);
-					Main.dos.close();
-					Main.dis.close();
-					Main.conn.close();
-					Main.conn.connectTo(Main.nxt1.name, Main.nxt1.deviceAddress, NXTCommFactory.BLUETOOTH);
-					Main.connectedTo = 1;
-				}
-				else if(categoria == Categoria.DELANTERO && Main.connectedTo == 1){
-					Main.dos.writeInt(0);
-					Main.dos.close();
-					Main.dis.close();
-					Main.conn.close();
-					Main.conn.connectTo(Main.nxt2.name, Main.nxt2.deviceAddress, NXTCommFactory.BLUETOOTH);
-					Main.connectedTo = 2;
-				}
-			}
-			catch(IOException e){
-				e.printStackTrace();
-			}
-			Main.dis = new DataInputStream(Main.conn.getInputStream());
-			Main.dos = new DataOutputStream(Main.conn.getOutputStream());
+	public void ejecutar(){
+		if(Main.pausa==false){
 			if(categoria == Categoria.ARQUERO){
 				System.out.print("---------------------------------------------------\n"+this+"\n");
 				ArrayList<JugadaCompleja> list = new ArrayList<>();
@@ -65,7 +42,7 @@ public class EjecutarJugadaCompleja extends OpcionDeMenu{
 						System.out.println("Porfavor ingrese una jugada de la lista");
 						ind = Main.scn.nextLine();
 					}
-					Main.r1.ejecutarJugadaCompleja(Integer.valueOf(ind)-1);
+					Main.r1.ejecutarJugadaCompleja(Integer.valueOf(ind)-1, Main.dis1, Main.dos1);
 					if(Main.tInicio != 0){
 						Main.gestorEstado.crearBuffer(Main.r1.getJugador(), Main.r1.getJugador().getListaJugadas().get(Integer.valueOf(ind)-1));
 					}

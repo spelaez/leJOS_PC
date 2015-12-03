@@ -1,6 +1,4 @@
 package objetos.futbol.UI.menuconsola;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
 import objetos.futbol.UI.Main;
 

@@ -1,8 +1,9 @@
 package objetos.futbol.robots;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import objetos.futbol.UI.Main;
-import objetos.futbol.UI.menuconsola.Categoria;
 import objetos.futbol.jugadores.Arquero;
 import objetos.futbol.jugadores.Delantero;
 import objetos.futbol.jugadores.Futbolista;
@@ -105,26 +106,26 @@ public class Robot {
 	 * @param index
 	 * @throws IOException
 	 */
-	public void ejecutarJugadaCompleja(int index) throws IOException{
+	public void ejecutarJugadaCompleja(int index, DataInputStream dis, DataOutputStream dos) throws IOException{
 		int id;
 		JugadaCompleja x = jugador.getListaJugadas().get(index);
 		for(JugadaPrimitiva j: x.getJugada()){
-			Main.dos.writeInt(j.getIdJugada());
+			dos.writeInt(j.getIdJugada());
 		}
-		Main.dos.flush();
+		dos.flush();
 		for (int i=0;i<x.getJugada().size();i++){
 			//Hacemos caso omiso cuando el robot envia datos para cuando realiza jugadas que no involucran desplazamiento
 		if(x.getJugada().get(i).getIdJugada() == 1 || x.getJugada().get(i).getIdJugada() == 2 || x.getJugada().get(i).getIdJugada() == 3){
 		if( jugador instanceof Arquero){
-			Main.cancha.actualizarPosicion(Main.dis.readInt(), Main.dis.readInt(),Main.r1);
+			Main.cancha.actualizarPosicion(dis.readInt(), dis.readInt(),Main.r1);
 		}
 		else if(jugador instanceof Delantero ){
-			Main.cancha.actualizarPosicion(Main.dis.readInt(), Main.dis.readInt(),Main.r2);
+			Main.cancha.actualizarPosicion(dis.readInt(), dis.readInt(),Main.r2);
 		}
 		}
 		else{
-			Main.dis.readInt();
-			Main.dis.readInt();
+			dis.readInt();
+			dis.readInt();
 		}
 		}
 	}//Cierre del metodo

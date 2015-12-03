@@ -2,7 +2,6 @@ package objetos.futbol.UI.menuconsola;
 
 import java.util.Comparator;
 
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
