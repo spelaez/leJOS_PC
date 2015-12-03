@@ -15,6 +15,7 @@ import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
 
 import objetos.futbol.UI.Main;
+import objetos.futbol.varios.UsuarioAdministrador;
 import objetos.futbol.varios.UsuarioGeneral;
 
 import java.awt.*;
@@ -88,7 +89,11 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame   {
 		s2 = new JScrollPane(ta2);
 		s2.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		//menubar = new JMenuBar();
-		this.setJMenuBar(((UsuarioGeneral)Main.usuarioActual).getMenu());
+		if(Main.tipo ==1){
+			this.setJMenuBar(((UsuarioGeneral)Main.usuarioActual).getMenu());}
+		else if(Main.tipo == 2){
+			this.setJMenuBar(((UsuarioAdministrador)Main.usuarioActual).getMenu());
+		}
 		//menubar.add(((UsuarioGeneral)Main.usuarioActual).getMenu());
 		contenedor.add(p1, BorderLayout.NORTH );
 		contenedor.add(p2, BorderLayout.SOUTH);

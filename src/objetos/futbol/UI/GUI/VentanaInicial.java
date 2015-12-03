@@ -15,6 +15,7 @@ import javafx.scene.paint.Color;
 import objetos.futbol.UI.Main;
 import objetos.futbol.UI.menuconsola.Categoria;
 import objetos.futbol.UI.menuconsola.Salir;
+import objetos.futbol.varios.UsuarioAdministrador;
 import objetos.futbol.varios.UsuarioGeneral;
 
 import java.awt.*;
@@ -127,6 +128,7 @@ public class VentanaInicial extends JFrame implements ActionListener, MouseListe
 			String usuario = tf1.getText();
 			String clave = tf2.getText();
 			if(usuario.length() == 0 && clave.length()==0){
+				Main.tipo = 1;
 				Main.v1.dispose();
 				Main.v1 = new VentanaInicial();
 				Main.usuarioActual = new UsuarioGeneral("","");
@@ -135,7 +137,11 @@ public class VentanaInicial extends JFrame implements ActionListener, MouseListe
 			else{
 				
 				if(Main.listaUsuarios.containsKey(usuario) && clave.equals(Main.listaUsuarios.get(usuario).getClave())){
-					
+					Main.tipo =2;
+					Main.v1.dispose();
+					Main.v1 = new VentanaInicial();
+					Main.usuarioActual = (UsuarioAdministrador)Main.listaUsuarios.get(usuario);
+					Main.v2.lanzar();
 				}
 				else{
 					JOptionPane.showMessageDialog(null,"Porfavor ingrese un usuario y clave validos","ERROR",JOptionPane.ERROR_MESSAGE);
