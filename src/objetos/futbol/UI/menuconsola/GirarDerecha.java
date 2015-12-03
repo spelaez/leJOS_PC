@@ -28,29 +28,20 @@ public class GirarDerecha extends OpcionDeMenu{
 			System.out.print("---------------------------------------------------\n"+this+"\n");
 			try{
 				if(categoria == Categoria.ARQUERO && Main.connectedTo == 2){
-					Main.dos.writeInt(0);
-					Main.dos.close();
-					Main.dis.close();
-					Main.conn.close();
-					Main.conn.connectTo(Main.nxt1.name, Main.nxt1.deviceAddress, NXTCommFactory.BLUETOOTH);
-					Main.connectedTo = 1;
+					
+					Main.dos1.writeInt(Main.girarDerecha.getIdJugada());
+					Main.dos1.flush();
+					Main.dis1.readInt();
+					Main.dis1.readInt();
 				}
 				else if(categoria == Categoria.DELANTERO && Main.connectedTo == 1){
-					Main.dos.writeInt(0);
-					Main.dos.close();
-					Main.dis.close();
-					Main.conn.close();
-					Main.conn.connectTo(Main.nxt2.name, Main.nxt2.deviceAddress, NXTCommFactory.BLUETOOTH);
-					Main.connectedTo = 2;
+					Main.dos2.writeInt(Main.girarDerecha.getIdJugada());
+					Main.dos2.flush();
+					Main.dis2.readInt();
+					Main.dis2.readInt();
 				}
-				Main.dis = new DataInputStream(Main.conn.getInputStream());
-				Main.dos = new DataOutputStream(Main.conn.getOutputStream());
-				Main.dos.writeInt(Main.girarDerecha.getIdJugada());
-				Main.dos.flush();
-
-				//Hacemos caso omiso de los datos mandados por el robot ya que al girar la posicion no se actualiza
-				Main.dis.readInt();
-				Main.dis.readInt();
+				
+			
 			}
 			catch(IOException e){
 				System.out.print("No se pudo ejecutar la jugada");
