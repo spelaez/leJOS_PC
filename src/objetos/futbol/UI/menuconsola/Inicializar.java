@@ -35,7 +35,7 @@ import javax.swing.JRadioButton;
 public class Inicializar extends OpcionDeMenu implements ActionListener{
 	JFrame jugadores = new JFrame("Seleccion de jugadores");
 	Container contenedor;
-	JPanel p1,p2;
+	JPanel p1,p2,pg;
 	JButton aceptar;
 	ButtonGroup bg1, bg2;
 	/**
@@ -50,19 +50,19 @@ public class Inicializar extends OpcionDeMenu implements ActionListener{
 	 */
 	@Override
 	public void ejecutar(){
-		contenedor = this.getRootPane();
-		jugadores.setLayout(new GridLayout(1,2));
+		contenedor = jugadores.getContentPane();
+		pg = new JPanel();
+		pg.setLayout(new GridLayout(1,2));
+		contenedor.add(pg);
 		p1 = new JPanel();
 		p1.setLayout(new GridLayout(10,1));
 		p2 = new JPanel();
 		p2.setLayout(new GridLayout(10,1));
 		aceptar = new JButton("Aceptar");
-		aceptar.addActionListener(this);;
-		jugadores.add(p1);
-		jugadores.add(p2);
+		aceptar.addActionListener(this);
+		pg.add(p1);
+		pg.add(p2);
 		jugadores.setSize(400, 400);
-		//jugadores.setLayout(new FlowLayout(FlowLayout.LEFT));
-		//jugadores.setLayout(new GridLayout(10,1));
 		jugadores.setLocationRelativeTo(null);
 		JLabel ind1 = new JLabel("Escoja un Arquero");
 		JLabel ind2 = new JLabel("Escoja un Delantero");
@@ -140,22 +140,15 @@ public class Inicializar extends OpcionDeMenu implements ActionListener{
 		}
 	}
 	
-	class oyenteAceptar extends AbstractAction{
 
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			
-			
-		}
 		
-	}
-
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		jugadores.dispose();
 		JOptionPane.showMessageDialog(this.jugadores, "Conectando a los NXT...");
 		conectar();
-		jugadores.removeAll();
+		
 	}
 	
 	public void conectar(){

@@ -2,13 +2,36 @@ package objetos.futbol.UI.menuconsola;
 import objetos.futbol.UI.Main;
 import objetos.futbol.UI.menuconsola.ImprimirJugadores;
 import objetos.futbol.jugadores.*;
+
+import java.awt.Container;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.WindowConstants;
 /**
  * Clase que define la opcion de consultar explicacion de una jugada
  * @author Santiago Pelaez
  *
  */
-public class ConsultarExplicacionJugada extends OpcionDeMenu{
+public class ConsultarExplicacionJugada extends OpcionDeMenu implements ActionListener{
+	JFrame jugadores = new JFrame("Seleccion de jugadores");
+	Container contenedor;
+	JPanel p1,p2;
+	JButton aceptar;
+	ButtonGroup bg1, bg2;
+	String explicacion;
 	/**
 	 * Constructor que accesa al tipo de categoria que tiene la opción de consutar la explicacion de una jugada
 	 * @param categoria
@@ -20,7 +43,23 @@ public class ConsultarExplicacionJugada extends OpcionDeMenu{
 	 * Metodo sobreescrito de opncion de menu que ejecuta el menu para consultar la explicacion de una jugada
 	 */
 	@Override
-	public void ejecutar(){}
+	public void ejecutar(){
+		contenedor = jugadores.getContentPane();
+		p1 = new JPanel();
+		p1.setLayout(new GridLayout(10,2));
+		contenedor.add(p1);
+		aceptar = new JButton("Aceptar");
+		aceptar.addActionListener(this);
+		JLabel ind1 = new JLabel("Escoja un jugador");
+		p1.add(ind1);
+		bg1 = new ButtonGroup();
+		generarRadioButton(Main.listaJugadasComplejas);
+		p1.add(aceptar);
+		jugadores.setSize(400, 400);
+		jugadores.setVisible(true);
+		
+		
+	}
 		/*new ImprimirJugadores(Categoria.SISTEMA).ejecutar();
 		if(Main.listaJugadores.isEmpty()) return;
 		System.out.println("------------------------------------------\nConsultar informacion de un jugador");
@@ -99,5 +138,26 @@ public class ConsultarExplicacionJugada extends OpcionDeMenu{
 	public String toString(){
 		return "Consultar Explicacion de una jugada";
 	}//Cierre del metodo
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		jugadores.dispose();
+		JOptionPane.showMessageDialog(this.jugadores, explicacion);
+	}
+	public void generarRadioButton(ArrayList<JugadaCompleja> j){
+		for(int i=0; i<j.size(); i++){
+			JRadioButton z = new JRadioButton(j.get(i).getNombre());
+			z.setName(i+"");
+			z.addItemListener(new ItemListener(){
+				public void itemStateChanged(ItemEvent e) {
+					if(z.isSelected()){
+						explicacion = Main.listaJugadasComplejas.get(Integer.parseInt(z.getName())).getExplicacion();
+					}
+				}
+			});
+			bg1.add(z);
+			p1.add(z);
+		}
+		
+	}
 }//Cierre de la clase
 
