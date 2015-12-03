@@ -25,13 +25,8 @@ import javax.swing.JRadioButton;
  * @author Santiago Pelaez
  *
  */
-public class ConsultarInfoJugador extends OpcionDeMenu implements ActionListener{
-	JFrame jugadores= new JFrame("Seleccion jugador");
-	Container contenedor;
-	JPanel p1;
-	JButton aceptar;
-	ButtonGroup bg1;
-	String info;
+public class ConsultarInfoJugador extends OpcionDeMenu {
+
 	/**
 	 * Constructor que accesa al tipo de categoria que tiene la opcion de consutar la informacion de un jugador
 	 * @param categoria
@@ -44,34 +39,24 @@ public class ConsultarInfoJugador extends OpcionDeMenu implements ActionListener
 	 */
 	@Override
 	public void ejecutar(){
-		contenedor = jugadores.getContentPane();
-		p1 = new JPanel();
-		p1.setLayout(new GridLayout(12,1));
-		contenedor.add(p1);
-		aceptar = new JButton("Aceptar");
-		aceptar.addActionListener(this);
-		JLabel ind1 = new JLabel("Escoja un jugador");
-		p1.add(ind1);
-		bg1 = new ButtonGroup();
-		generarRadioButton(Main.listaJugadores);
-		p1.add(aceptar);
-		jugadores.setSize(500,500);
-		jugadores.setVisible(true);
-		
-		
-	}
-		
-		/*new ImprimirJugadores(Categoria.SISTEMA).ejecutar();
+	
+		new ImprimirJugadores(Categoria.SISTEMA).ejecutar();
 		if(Main.listaJugadores.isEmpty()) return;
-		System.out.print("---------------------------------------------------\n"+this+"\n");
-		System.out.println("Ingrese el numero del jugador a consultar");
-		String i = "1";
+		Main.v2.ta1.append("\n Ingrese el numero del jugador a consultar");
+		Main.tipoOpcion = 1;
+		}
+		/*String i = "1";
 		try{
-			String n = Main.scn.nextLine();
+			String n = null;
+				
+				
+				
+			n = Main.s;
 			while(Integer.valueOf(n) < 0 || Integer.valueOf(n) > Main.listaJugadores.size()){
-				System.out.print("Dato fuera de rango, por favor ingreselo de nuevo");
-				n = Main.scn.nextLine();
+			System.out.print("Dato fuera de rango, por favor ingreselo de nuevo");
+			n = Main.s;
 			}
+			
 			Futbolista x = Main.listaJugadores.get(Integer.valueOf(n)-1);
 			if( x instanceof Delantero){
 				x = (Delantero)x;
@@ -98,6 +83,8 @@ public class ConsultarInfoJugador extends OpcionDeMenu implements ActionListener
 		catch(InputMismatchException e){
 			System.out.println("Error: dato incorrecto");
 		}
+		
+		
 	}//Cierre del metodo
 	/**
 	 * Metodo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
@@ -108,23 +95,6 @@ public class ConsultarInfoJugador extends OpcionDeMenu implements ActionListener
 		return "Consultar informacion de un jugador";
 	}//Cierre del metodo
 	
-	public void actionPerformed(ActionEvent arg0) {
-		jugadores.dispose();
-		JOptionPane.showMessageDialog(this.jugadores, info);
-	}
-	public void generarRadioButton(ArrayList<Futbolista> j){
-		for(int i=0; i<j.size(); i++){
-			JRadioButton z = new JRadioButton(j.get(i).getNombre());
-			z.setName(i+"");
-			z.addItemListener(new ItemListener(){
-				public void itemStateChanged(ItemEvent e) {
-					if(z.isSelected()){
-						info = Main.listaJugadores.get(Integer.parseInt(z.getName())).toString();
-					}
-				}
-			});
-			bg1.add(z);
-			p1.add(z);
-		}
-}}//Cierre de la clase
+	
+}//Cierre de la clase
 

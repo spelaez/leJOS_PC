@@ -15,19 +15,24 @@ import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
 
 import objetos.futbol.UI.Main;
+import objetos.futbol.jugadores.Arquero;
+import objetos.futbol.jugadores.Delantero;
+import objetos.futbol.jugadores.Futbolista;
+import objetos.futbol.jugadores.JugadaCompleja;
 import objetos.futbol.varios.UsuarioAdministrador;
 import objetos.futbol.varios.UsuarioGeneral;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.InputMismatchException;
 
 @SuppressWarnings("serial")
-public class VentanaPrincipalUsuarioGeneral extends JFrame   {
+public class VentanaPrincipalUsuarioGeneral extends JFrame implements ActionListener  {
 	Container contenedor;
 	JPanel p1,p2,p3,p4,p5,p6,p7,p8,p9;
-	JButton b1,b2,b3,enviar;
-	JTextArea ta1,ta2;
+	public JButton b1,b2,b3,enviar;
+    public JTextArea ta1,ta2;
 	JScrollPane s1,s2;
 	JLabel l1,l2;
 	JTextField tf1;
@@ -113,7 +118,7 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame   {
 		p4.add(l2,BorderLayout.NORTH);
 		p4.add(s2, BorderLayout.CENTER);
 		p5.add(cancha, BorderLayout.CENTER);
-		
+		enviar.addActionListener(this);
 		setSize(850,600);
 		setVisible(true);
 		setLocationRelativeTo (null);
@@ -121,5 +126,70 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame   {
 	}
 	public JPanel getP3(){
 		return p3;
+	}
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		if(Main.tipoOpcion==1){
+		Main.s = tf1.getText();
+		tf1.setText(null);
+		ta1.setText(null);
+		String i = "1";
+		try{
+			String n = Main.s;
+			while(Integer.valueOf(n) < 0 || Integer.valueOf(n) > Main.listaJugadores.size()){
+			System.out.print("Dato fuera de rango, por favor ingreselo de nuevo");
+			n = Main.s;
+			}
+			
+			Futbolista x = Main.listaJugadores.get(Integer.valueOf(n)-1);
+			if( x instanceof Delantero){
+				x = (Delantero)x;
+				ta1.append(x.toString());
+				for(JugadaCompleja c : x.getListaJugadas()){
+					
+					ta1.append("\n"+i + " " + c);
+					i=String.valueOf((Integer.valueOf(i)+1));
+				}
+			}
+			else if( x instanceof Arquero){
+				x = (Arquero)x;
+				ta1.append(x.toString());
+				for(JugadaCompleja c : x.getListaJugadas()){
+					
+					ta1.append("\n"+i + " " + c);
+					i=String.valueOf((Integer.valueOf(i)+1));
+				}
+			}
+		}
+		catch(NumberFormatException e){
+			System.out.println("Dato incorrecto, ingrese un entero");
+		}
+		catch(InputMismatchException e){
+			System.out.println("Error: dato incorrecto");
+		}
+		
+	}
+		else if(Main.tipoOpcion==2){
+			Main.s = tf1.getText();
+			tf1.setText(null);
+			ta1.setText(null);
+			try{
+				String n = Main.s;
+				while(Integer.valueOf(n) < 0 || Integer.valueOf(n) > Main.listaJugadores.size()){
+					System.out.print("Dato fuera de rango, por favor ingreselo de nuevo");
+					n = Main.s;
+				}
+				
+				
+				ta1.append(Main.listaJugadasComplejas.get(Integer.valueOf(n)-1).getExplicacion());
+				
+			}
+			catch(NumberFormatException e){
+				System.out.println("Dato incorrecto, ingrese un entero");
+			}
+			catch(InputMismatchException e){
+				System.out.println("Error: dato incorrecto");
+			}
+		}
 	}
 }

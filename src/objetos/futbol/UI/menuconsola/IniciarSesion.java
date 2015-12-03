@@ -1,6 +1,22 @@
 package objetos.futbol.UI.menuconsola;
 
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 import objetos.futbol.UI.Main;
+import objetos.futbol.UI.GUI.VentanaInicial;
+import objetos.futbol.UI.GUI.VentanaPrincipalUsuarioGeneral;
 import objetos.futbol.varios.UsuarioAdministrador;
 import objetos.futbol.varios.UsuarioGeneral;
 
@@ -9,7 +25,13 @@ import objetos.futbol.varios.UsuarioGeneral;
  * @author Santiago Pelaez
  *
  */
-public class IniciarSesion extends OpcionDeMenu{
+public class IniciarSesion extends OpcionDeMenu implements ActionListener{
+	JFrame usr = new JFrame("Iniciar secion");
+	Container contenedor;
+	JTextField usuario,clave;
+	JLabel l2,l3;
+	JPanel p1,p2,pg;
+	JButton aceptar;
 	/**
 	 * Constructor que accesa al tipo de categoria que tiene la opción iniciar sesion
 	 * @param categoria
@@ -22,42 +44,37 @@ public class IniciarSesion extends OpcionDeMenu{
 	 */
 	@Override
 	public void ejecutar() {
-		System.out.println("Elija como desea iniciar sesion");
-		String usuario, clave;
-
 		if(Main.listaUsuarios.size()==0){
-			System.out.println("No hay usuarios registrados.");
+			Main.v2.ta1.append("No hay usuarios registrados.");
 			return;
 		}
-		System.out.print("---------------------------------------------------\n"+this+"\n");
-		System.out.print("1. Usuario Jugador.\n2. Usuario Administrador\n");
-		//String option = Main.scn.nextLine();
-		System.out.print("Usuario:\n");
-		//usuario=Main.scn.nextLine();
-		System.out.print("Contrasena:\n");
-		//clave=Main.scn.nextLine();
-
-		/*if(Main.listaUsuarios.get(usuario)!=null){
-			if(Main.listaUsuarios.get(usuario).getClave().equals(clave)){
-				//if(Integer.valueOf(option) == 1 && Main.listaUsuarios.get(usuario) instanceof UsuarioGeneral){
-					Main.usuarioActual=Main.listaUsuarios.get(usuario);
-					System.out.println("Logueo existoso");
-				}
-				//if(Integer.valueOf(option) == 2 && Main.listaUsuarios.get(usuario) instanceof UsuarioAdministrador){
-					Main.usuarioActual=Main.listaUsuarios.get(usuario);
-					System.out.println("Logueo exitoso");
-				}*/
-			}
-			/*else{
-				System.out.println("\nContrasena incorrecta!");
-				return;
-			}
-		}else{
-			System.out.println("\nUsuario no encontrado!");
-					return;
-		}	
-		System.out.println("El usuario no posee el rol especificado");
-		return;
+		contenedor =usr.getContentPane();
+		
+		
+		l2 = new JLabel("Usuario");
+		l3 = new JLabel("Clave");
+		aceptar =new JButton("Iniciar secion");
+		usuario = new JTextField();
+		clave = new JTextField();
+		pg = new JPanel();
+		
+		p2  = new JPanel();
+		p2.setLayout(new GridLayout(3,2));
+		
+		contenedor.add(p2);
+		
+		
+		
+		p2.add(l2);
+		p2.add(usuario);
+		p2.add(l3);
+		p2.add(clave);
+		p2.add(aceptar);
+		aceptar.addActionListener(this);
+		usr.setLocationRelativeTo(null);
+		usr.setSize(400, 150);
+		usr.setVisible(true);
+	
 	}//Cierre del metodo
 	/**
 	 * Metodo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
@@ -66,5 +83,22 @@ public class IniciarSesion extends OpcionDeMenu{
 	public String toString(){
 		return "iniciar Sesion.";
 	}//Cierre del metodo
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		String usuarios = usuario.getText();
+		String claves = clave.getText();
+		if(Main.listaUsuarios.containsKey(usuarios) && claves.equals(Main.listaUsuarios.get(usuarios).getClave())){
+			Main.tipo =2;
+			//Main.v2.dispose();
+			Main.v2 = new VentanaPrincipalUsuarioGeneral();
+			Main.usuarioActual = (UsuarioAdministrador)Main.listaUsuarios.get(usuarios);
+			Main.v2.repaint();
+			usr.dispose();
+		}
+		else{
+			usr.dispose();
+			JOptionPane.showMessageDialog(null,"Porfavor ingrese un usuario y clave validos","ERROR",JOptionPane.ERROR_MESSAGE);
+		}
+	}
 }//Cierre de la clase
 

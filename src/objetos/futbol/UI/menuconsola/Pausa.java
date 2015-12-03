@@ -21,7 +21,6 @@ public class Pausa extends OpcionDeMenu{
 	@Override
 	public void ejecutar() {
 		new GestorBDEstado().guardarEstado();
-		System.out.println("dio no joda");
 		Main.tPausa = (System.currentTimeMillis() - Main.tInicio);
 		Main.pausa =true;
 	}//Cierre del metodo

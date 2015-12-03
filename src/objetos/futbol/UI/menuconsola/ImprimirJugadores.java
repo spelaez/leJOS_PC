@@ -19,14 +19,16 @@ public class ImprimirJugadores extends OpcionDeMenu {
 	 */
 	@Override
 	public void ejecutar(){
-		if(Main.listaJugadasComplejas.size()==0){
-			System.out.println("No hay jugadores disponibles");
+		if(Main.listaJugadores.size()==0){
+			Main.v2.ta1.setText(null);
+			Main.v2.ta1.setText("No hay jugadores disponibles");
 			return;
 		}
-		System.out.print("---------------------------------------------------\n"+this+"\n");
-		
+		Main.v2.ta1.setText(null);
+		Main.v2.ta1.setText("Jugadores:");
 		for(int i=0; i<Main.listaJugadores.size(); i++){
-			System.out.println("\t\t"+Main.listaJugadores.get(i));
+			
+			Main.v2.ta1.append(("\n"+(i+1)+"."+Main.listaJugadores.get(i).getNombre()));
 		}
 	}//Cierre del metodo
 	/**

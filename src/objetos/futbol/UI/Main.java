@@ -30,6 +30,7 @@ import objetos.futbol.jugadores.*;
  */
 public class Main {	
 	//Campos de clase
+	public static String s = "-1";
 	//Atributos para manejar el tiempo
 	public static long tInicio;
 	public static long tPausa;
@@ -88,6 +89,7 @@ public class Main {
 	public static VentanaPrincipalUsuarioGeneral  v2 = new VentanaPrincipalUsuarioGeneral();
 	//tipo delantero o arquero 
 	public static int tipo = 0;
+	public static int tipoOpcion = 0;
 	/**
 	 * M�todo Main para mostrar al usuario las caracteristicas del juego y el menu
 	 * @param args
