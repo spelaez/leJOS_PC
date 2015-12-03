@@ -1,17 +1,18 @@
 package objetos.futbol.UI.menuconsola;
 
 import objetos.futbol.UI.Main;
+import objetos.futbol.varios.GestorBDEstado;
 /**
  * Clase para mostrar la cancha
  * @author Santiago Pelaez
  *
  */
-public class MostrarCancha extends OpcionDeMenu{
+public class Pausa extends OpcionDeMenu{
 	/**
 	 * Metodo que accede al tipo de categoria que tiene la opcion mostrar cancha
 	 * @param categoria
 	 */
-	public MostrarCancha(Categoria categoria){
+	public Pausa(Categoria categoria){
 		super(categoria);
 	}//Cierre del metodo
 	/**
@@ -19,8 +20,10 @@ public class MostrarCancha extends OpcionDeMenu{
 	 */
 	@Override
 	public void ejecutar() {
-		System.out.print("---------------------------------------------------\n"+this+"\n");
-		Main.cancha.mostrarCancha();
+		new GestorBDEstado().guardarEstado();
+		System.out.println("dio no joda");
+		Main.tPausa = (System.currentTimeMillis() - Main.tInicio);
+		Main.pausa =true;
 	}//Cierre del metodo
 	/**
 	 * Metodo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
@@ -28,6 +31,6 @@ public class MostrarCancha extends OpcionDeMenu{
 	 */
 	@Override
 	public String toString(){
-		return "Mostrar Cancha";
+		return "Pausar";
 	}//Cierre del metodo	
 }//Cierre de la clase

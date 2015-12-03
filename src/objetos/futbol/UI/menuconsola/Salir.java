@@ -2,6 +2,9 @@ package objetos.futbol.UI.menuconsola;
 
 import objetos.futbol.varios.GestorBDUsuarios;
 import objetos.futbol.varios.GestorBDJugadores;
+
+import javax.swing.JOptionPane;
+
 import objetos.futbol.UI.Main;
 import objetos.futbol.varios.GestorBDEstado;
 import objetos.futbol.varios.GestorBDJugadasComplejas;
@@ -24,13 +27,16 @@ public class Salir extends OpcionDeMenu{
 	 */
 	@Override
 	public void ejecutar() {
-	
+		
+		Object [] textOpcion = { "Si", "NO"};
+		int opcion = JOptionPane.showOptionDialog(null, "�Desea salir del sistema?", "salir del sistema",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,textOpcion,null);
+		if(opcion == 0){
 		new GestorBDUsuarios().guardarUsuarios();
 		new GestorBDJugadores().guardarJugadores();
 		new GestorBDJugadasComplejas().guardarJugadas();
 		System.out.println("Gracias por jugar.");
 		System.exit(0);
-		
+		}
 	}//Cierre del metodo
 	/**
 	 * Metodo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion

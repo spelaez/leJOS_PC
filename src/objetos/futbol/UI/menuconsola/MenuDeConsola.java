@@ -177,7 +177,7 @@ public class MenuDeConsola extends JMenuBar{
 			opciones2.add(new RegistrarGolAFavor(Categoria.DELANTERO));//19
 
 			//Opciones Sistema
-			opciones2.add(new MostrarCancha(Categoria.SISTEMA));//20 todos
+			opciones2.add(new Pausa(Categoria.SISTEMA));//20 todos
 			opciones2.add(new CrearJugador(Categoria.SISTEMA));//21  //Solo admin
 			opciones2.add(new ConsultarExplicacionJugada(Categoria.SISTEMA));//22 //todos
 			opciones2.add(new ConsultarInfoJugador(Categoria.SISTEMA));//23 //todos

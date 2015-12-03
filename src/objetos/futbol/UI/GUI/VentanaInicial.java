@@ -149,12 +149,7 @@ public class VentanaInicial extends JFrame implements ActionListener, MouseListe
 			}
 		}
 		else if(s.equals("Salir")){
-			opcion = 0;
-			Object [] textOpcion = { "Si", "NO"};
-			opcion = JOptionPane.showOptionDialog(null, "�Desea salir del sistema?", "salir del sistema",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,textOpcion,null);
-			if(opcion == 0){
-				new Salir(Categoria.SISTEMA).ejecutar();
-			}
+			new Salir(Categoria.SISTEMA).ejecutar();
 		}
 		else{
 			cont ++;
