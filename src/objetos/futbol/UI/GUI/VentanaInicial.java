@@ -56,7 +56,7 @@ public class VentanaInicial extends JFrame implements ActionListener, MouseListe
 		b3 = new JButton("Salir");
 		tf1 = new JTextField();
 		tf2 = new JTextField();
-		l1 = new JLabel("<html><body>Dar click al bot�n ingresar usuario si desea ingresar como UsuarioGeneral. Si desea ingresar como Administrador ingrese su c�digo de usuario y su clave</body></html>" );
+		l1 = new JLabel("<html><body>Dar click al boton ingresar usuario si desea ingresar como UsuarioGeneral. Si desea ingresar como Administrador ingrese su codigo de usuario y su clave</body></html>" );
 		l2 = new JLabel("Usuario Administrador", SwingConstants.CENTER);
 		l3 = new JLabel("Bienvenido al sistema", SwingConstants.CENTER);
 		
@@ -64,7 +64,7 @@ public class VentanaInicial extends JFrame implements ActionListener, MouseListe
 		ta1.setEditable(false);
 		ta1.setLineWrap(true);
 		ta1.setWrapStyleWord(true);
-		ta1.setText("Este programa fue realizado por Santiago Pel�ez R�a, Juan Pablo Betancur Giraldo, Jhon Eider Murillo Usuga y Santiago Saldarriaga Sucerquia El objetivo de este es administrar un partido de futbol  por medio de una interfaz gr�fica, donde el usuario pueda jugar el partido  protagonizado por robots LeJos y estar al tanto de las estad�sticas de juego, poder ver claramente las jugadas, la posici�n de cada jugador en la cancha y todas las actividades relacionadas con el partido. B�sicamente el programa funciona por medio de eventos en donde el usuario interact�e con la interfaz gr�fica y se ejecuten m�todos que contribuyan al desarrollo del partido.");
+		ta1.setText("Este programa fue realizado por Santiago Pelaez Rua, Juan Pablo Betancur Giraldo, Jhon Eider Murillo Usuga y Santiago Saldarriaga Sucerquia El objetivo de este es administrar un partido de futbol  por medio de una interfaz grafica, donde el usuario pueda jugar el partido  protagonizado por robots LeJos y estar al tanto de las estadisticas de juego, poder ver claramente las jugadas, la posicion de cada jugador en la cancha y todas las actividades relacionadas con el partido. Basicamente el programa funciona por medio de eventos en donde el usuario interactue con la interfaz grafica y se ejecuten metodos que contribuyan al desarrollo del partido.");
 		s1 = new JScrollPane(ta1);
 		s1.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		contenedor.setLayout(new GridLayout(1,2,10,10));
