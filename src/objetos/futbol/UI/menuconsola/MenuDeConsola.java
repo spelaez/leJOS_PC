@@ -14,6 +14,7 @@ import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
 import objetos.futbol.UI.Main;
+import objetos.futbol.UI.GUI.VentanaAcercaDe;
 import objetos.futbol.UI.menuconsola.Trotar;
 import objetos.futbol.varios.UsuarioGeneral;
 /**
@@ -31,6 +32,7 @@ public class MenuDeConsola extends JMenuBar{
 	private JMenu delantero;
 	private JMenu arquero;
 	private JMenu ayuda;
+	private JMenuItem acercaDe;
 	/**
 	 * Metodo que carga las opciones del menu
 	 */
@@ -95,6 +97,41 @@ public class MenuDeConsola extends JMenuBar{
 		acciones = new JMenu("Acciones");
 		archivo = new JMenu("Archivo");
 		ayuda = new JMenu("Ayuda");
+		acercaDe= new JMenuItem("Acerca De");
+		ayuda.add(acercaDe);
+		acercaDe.addMouseListener(new MouseListener(){
+
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				new VentanaAcercaDe();
+				
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseExited(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				new VentanaAcercaDe();
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
 		this.add(archivo);
 		this.add(acciones);
 		this.add(ayuda);

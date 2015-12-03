@@ -42,6 +42,5 @@ public class VentanaAcercaDe extends JFrame {
 			
 		setSize(700,300);
 		setVisible(true);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 }
