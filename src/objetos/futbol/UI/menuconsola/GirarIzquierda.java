@@ -1,16 +1,13 @@
 package objetos.futbol.UI.menuconsola;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
-
-import lejos.pc.comm.NXTCommFactory;
 import objetos.futbol.UI.Main;
 /**
  * Clase que define la opcion girar a la izquierda
  * @author Juan Pablo Betancur
  *
  */
+@SuppressWarnings("serial")
 public class GirarIzquierda extends OpcionDeMenu {
 	/**
 	 * Constructor que accesa al tipo de categoria que tiene la opcion girar a la izquierda
@@ -27,13 +24,13 @@ public class GirarIzquierda extends OpcionDeMenu {
 		if(Main.pausa == false){
 			System.out.print("---------------------------------------------------\n"+this+"\n");
 			try{
-				if(categoria == Categoria.ARQUERO && Main.connectedTo == 2){
+				if(categoria == Categoria.ARQUERO){
 					Main.dos1.writeInt(Main.girarIzquierda.getIdJugada());
 					Main.dos1.flush();
 					Main.dis1.readInt();
 					Main.dis1.readInt();
 				}
-				else if(categoria == Categoria.DELANTERO && Main.connectedTo == 1){
+				else if(categoria == Categoria.DELANTERO){
 					Main.dos2.writeInt(Main.girarIzquierda.getIdJugada());
 					Main.dos2.flush();
 					Main.dis2.readInt();

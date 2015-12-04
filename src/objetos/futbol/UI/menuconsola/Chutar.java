@@ -30,7 +30,7 @@ public class Chutar extends OpcionDeMenu {
 					Main.dis1.readInt();
 					Main.dis1.readInt();
 				}
-				else if(categoria == Categoria.DELANTERO && Main.connectedTo == 1){
+				else if(categoria == Categoria.DELANTERO){
 					Main.dos2.writeInt(Main.chutar.getIdJugada());
 					Main.dos2.flush();
 					Main.dis2.readInt();

@@ -1,16 +1,13 @@
 package objetos.futbol.UI.menuconsola;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
-
-import lejos.pc.comm.NXTCommFactory;
 import objetos.futbol.UI.Main;
 /**
  * Clase para definir la opcion correr
  * @author Santiago Pelaez
  *
  */
+@SuppressWarnings("serial")
 public class Correr extends OpcionDeMenu {
 	/**
 	 * Constructor que accesa al tipo de categoria que tiene la opcion correr
@@ -27,14 +24,14 @@ public class Correr extends OpcionDeMenu {
 		if(Main.pausa == false){
 			System.out.print("---------------------------------------------------\n"+this+"\n");
 			try{
-				if(categoria == Categoria.ARQUERO && Main.connectedTo == 2){
+				if(categoria == Categoria.ARQUERO){
 					Main.dos1.writeInt(Main.correr.getIdJugada());
 					Main.dos1.flush();
 					Main.dis1.readInt();
 					Main.dis1.readInt();
 					Main.cancha.actualizarPosicion(Main.dis1.readInt(), Main.dis1.readInt(), Main.r1);
 				}
-				else if(categoria == Categoria.DELANTERO && Main.connectedTo == 1){
+				else if(categoria == Categoria.DELANTERO){
 					Main.dos2.writeInt(Main.correr.getIdJugada());
 					Main.dos2.flush();
 					Main.dis2.readInt();
