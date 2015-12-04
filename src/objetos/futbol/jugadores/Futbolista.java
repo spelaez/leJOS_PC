@@ -20,11 +20,11 @@ public abstract class Futbolista {
 	 * @param posicion
 	 * @param listaJugadas
 	 */
-	public Futbolista(String nombre, String posicion, ArrayList<JugadaCompleja> listaJugadas,String imagen){
+	public Futbolista(String nombre, String posicion, ArrayList<JugadaCompleja> listaJugadas){
 		this.nombre = nombre;
 		this.posicion = posicion;
 		this.listaJugadas = listaJugadas;
-		this.imagen = imagen;
+		
 	}//Cierre del constructor
 	/**
 	 * Metodo para devolver, sobreescrito del package object

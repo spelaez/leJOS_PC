@@ -18,8 +18,8 @@ public class Arquero extends Futbolista {
 	 * @param dorsal
 	 * @param listaJugadas
 	 */
-	public Arquero (String nombre, String posicion, int TiempoSinGoles,byte dorsal, ArrayList <JugadaCompleja> listaJugadas,String imagen){
-		super(nombre,posicion,listaJugadas,imagen);
+	public Arquero (String nombre, String posicion, int TiempoSinGoles,byte dorsal, ArrayList <JugadaCompleja> listaJugadas){
+		super(nombre,posicion,listaJugadas);
 		this.TiempoSinGoles = TiempoSinGoles;
 		this.dorsal = dorsal;
 	}//Cierre del constructor

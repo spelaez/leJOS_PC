@@ -24,6 +24,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.io.IOException;
 
 public class VentanaInicial extends JFrame implements ActionListener, MouseListener {
 
@@ -132,7 +133,11 @@ public class VentanaInicial extends JFrame implements ActionListener, MouseListe
 				Main.v1.dispose();
 				Main.v1 = new VentanaInicial();
 				Main.usuarioActual = new UsuarioGeneral("","");
-				Main.v2.lanzar();
+				try {
+					Main.v2.lanzar();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 			else{
 				
@@ -141,7 +146,12 @@ public class VentanaInicial extends JFrame implements ActionListener, MouseListe
 					Main.v1.dispose();
 					Main.v1 = new VentanaInicial();
 					Main.usuarioActual = (UsuarioAdministrador)Main.listaUsuarios.get(usuario);
-					Main.v2.lanzar();
+					try {
+						Main.v2.lanzar();
+					} catch (IOException e) {
+						
+						e.printStackTrace();
+					}
 				}
 				else{
 					JOptionPane.showMessageDialog(null,"Porfavor ingrese un usuario y clave validos","ERROR",JOptionPane.ERROR_MESSAGE);

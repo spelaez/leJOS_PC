@@ -18,8 +18,8 @@ public class Delantero extends Futbolista {
 	 * @param dorsal
 	 * @param listaJugadas
 	 */
-	public Delantero(String nombre, String posicion, short golesMarcados, byte dorsal, ArrayList <JugadaCompleja> listaJugadas, String imagen ){
-		super(nombre,posicion,listaJugadas,imagen);
+	public Delantero(String nombre, String posicion, short golesMarcados, byte dorsal, ArrayList <JugadaCompleja> listaJugadas){
+		super(nombre,posicion,listaJugadas);
 		this.golesMarcados = golesMarcados;
 		this.dorsal = dorsal;
 	}//Cierre del constructor

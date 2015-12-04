@@ -16,6 +16,7 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.swing.AbstractAction;
@@ -148,7 +149,11 @@ public class Inicializar extends OpcionDeMenu implements ActionListener{
 		jugadores.dispose();
 		JOptionPane.showMessageDialog(this.jugadores, "Conectando a los NXT...");
 		conectar();
-		Main.cancha.cargarImagenes();
+		try {
+			Main.cancha.cargarImagenes();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
 	}
 	
 	public void conectar(){
