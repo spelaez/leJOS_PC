@@ -31,7 +31,7 @@ import java.util.InputMismatchException;
 @SuppressWarnings("serial")
 public class VentanaPrincipalUsuarioGeneral extends JFrame implements ActionListener  {
 	Container contenedor;
-	JPanel p1,p2,p3,p4,p5,p6,p7,p8,p9,p10;
+	JPanel p1,p2,p3,p4,p5,p6,p7,p8,p9;
 	public JButton b1,b2,b3,enviar;
     public JTextArea ta1,ta2;
 	JScrollPane s1,s2;
@@ -72,8 +72,6 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame implements ActionList
 		p7.setLayout(new BorderLayout(5,5));
 		p9 = new JPanel();
 		p9.setLayout(new GridLayout(1,2));
-		p10 = new JPanel();
-		p10.setLayout(null);
 		
 		l1 = new JLabel("Acciones");
 		l1.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -133,8 +131,8 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame implements ActionList
 		return p3;
 	}
 	
-	public JPanel getPanelCancha(){
-		return p10;
+	public JPanel getCancha(){
+		return p5;
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {

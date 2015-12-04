@@ -145,8 +145,8 @@ public class Cancha {
 		m2.setIcon(new ImageIcon(resized2));
 		m1.setLocation(0, 0);
 		m2.setLocation(0, 100);
-		Main.v2.getPanelCancha().add(m1);
-		Main.v2.getPanelCancha().add(m2);
-		Main.v2.getPanelCancha().revalidate();
+		Main.v2.getCancha().add(m1);
+		Main.v2.getCancha().add(m2);
+		Main.v2.getCancha().revalidate();
 	}
 }//Cierre de la clase
