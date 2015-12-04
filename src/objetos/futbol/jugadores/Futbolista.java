@@ -12,6 +12,7 @@ public abstract class Futbolista {
 	private String nombre;
 	private final String posicion;
 	private ArrayList<JugadaCompleja> listaJugadas;
+	private String imagen;
 	
 	/**
 	 *  Definir un futbolista
@@ -19,10 +20,11 @@ public abstract class Futbolista {
 	 * @param posicion
 	 * @param listaJugadas
 	 */
-	public Futbolista(String nombre, String posicion, ArrayList<JugadaCompleja> listaJugadas){
+	public Futbolista(String nombre, String posicion, ArrayList<JugadaCompleja> listaJugadas,String imagen){
 		this.nombre = nombre;
 		this.posicion = posicion;
 		this.listaJugadas = listaJugadas;
+		this.imagen = imagen;
 	}//Cierre del constructor
 	/**
 	 * Metodo para devolver, sobreescrito del package object
@@ -50,6 +52,9 @@ public abstract class Futbolista {
 	 * Metodo que muestra el nombre del delantero
 	 * @return
 	 */
+	public String getImagen(){
+		return imagen;
+	}
 	public String getNombre(){
 		return nombre;
 	}//Cierre del metodo

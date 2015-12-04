@@ -25,7 +25,7 @@ public class FinalizarPartido extends OpcionDeMenu {
 		System.out.print("---------------------------------------------------\n"+this+"\n");
 		File fichero = new File("src\\gestorBD\\Buffer.txt");
 		if(!fichero.exists()){
-			System.out.println("Porfavor inicie un partido antes");
+			Main.v2.ta2.append("Porfavor inicie un partido antes");
 			return;
 		}
 		Main.gestorEstado.guardarEstado();

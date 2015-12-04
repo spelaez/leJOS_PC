@@ -89,10 +89,10 @@ public class IniciarSesion extends OpcionDeMenu implements ActionListener{
 		String claves = clave.getText();
 		if(Main.listaUsuarios.containsKey(usuarios) && claves.equals(Main.listaUsuarios.get(usuarios).getClave())){
 			Main.tipo =2;
-			//Main.v2.dispose();
+			Main.v2.dispose();
 			Main.v2 = new VentanaPrincipalUsuarioGeneral();
 			Main.usuarioActual = (UsuarioAdministrador)Main.listaUsuarios.get(usuarios);
-			Main.v2.repaint();
+			Main.v2.lanzar();
 			usr.dispose();
 		}
 		else{

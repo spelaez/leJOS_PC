@@ -234,6 +234,7 @@ public class GestorBDEstado {
 	 * Metodo para leer el estado guardado en el buffer
 	 */
 	public void leerEstado(){
+		Main.v2.ta2.setText(null);
 		try {
 			DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 			File fichero = new File("src\\gestorBD\\Estado.xml");
@@ -244,7 +245,7 @@ public class GestorBDEstado {
 			if(fichero.exists()){
 				document = documentBuilder.parse(new InputSource(new FileInputStream("src\\gestorBD\\Estado.xml")));
 			}
-			System.out.println("Estadisticas");
+			Main.v2.ta2.append("Estadisticas");
 			//Raiz
 			Element raiz = document.getDocumentElement(); 
 			//Delantero
@@ -254,12 +255,12 @@ public class GestorBDEstado {
 			//nombre arquero
 			Element nombreA = (Element) arquero.getFirstChild();
 			String name = nombreA.getTextContent();
-			System.out.println("Arquero");
-			System.out.println(name);
+			Main.v2.ta2.append("\n Arquero");
+			Main.v2.ta2.append("\n"+name);
 			NodeList x= arquero.getChildNodes();
 			Element tiempoSin = (Element)  x.item(1);
 			String time = tiempoSin.getTextContent();
-			System.out.println("Tiempo sin goles: "+ time );
+			Main.v2.ta2.append("\n Tiempo sin goles: "+ time );
 			NodeList jugadas = arquero.getElementsByTagName("Jugadarealizadas");
 		
 			for(int i=0;i<Main.r1.getJugador().getListaJugadas().size();i++){
@@ -276,10 +277,10 @@ public class GestorBDEstado {
 					}
 				}
 				if(cont > 0){
-					System.out.println("La jugada: " + Main.r1.getJugador().getListaJugadas().get(i).getNombre() + " Se realizo" );
-					System.out.println(cont + " Veces \n" + "En los tiempos:");
+					Main.v2.ta2.append("\n La jugada: " + Main.r1.getJugador().getListaJugadas().get(i).getNombre() + " Se realizo" );
+					Main.v2.ta2.append("\n"+cont + " Veces \n" + "En los tiempos:");
 					for(int j =0 ; j<tiempos.size();j++){
-						System.out.println(tiempos.get(j) + " Segundos");
+						Main.v2.ta2.append("\n"+tiempos.get(j) + " Segundos");
 					}
 				}
 			}
@@ -287,12 +288,12 @@ public class GestorBDEstado {
 			//nombre delantero
 			Element nombreD = (Element) delantero.getFirstChild();
 			String named = nombreD.getTextContent();
-			System.out.println("Delantero");
-			System.out.println(named);
+			Main.v2.ta2.append("\n Delantero");
+			Main.v2.ta2.append("\n"+named);
 			NodeList y = delantero.getChildNodes();
 			Element goles = (Element) y.item(1);
 			String numgoles = goles.getTextContent();
-			System.out.println("Goles marcados: " + numgoles );
+			Main.v2.ta2.append("\n Goles marcados: " + numgoles );
 			NodeList jugadasR = delantero.getElementsByTagName("Jugadarealizadas");
 			for(int i = 0;i<Main.r2.getJugador().getListaJugadas().size(); i++){
 				int cont =0;
@@ -307,10 +308,10 @@ public class GestorBDEstado {
 					}
 				}
 				if(cont > 0){
-					System.out.println("La jugada: " + Main.r2.getJugador().getListaJugadas().get(i).getNombre() + " Se realizo" );
-					System.out.println(cont + " Veces \n" + "En los tiempos:");
+					Main.v2.ta2.append("\n La jugada: " + Main.r2.getJugador().getListaJugadas().get(i).getNombre() + " Se realizo" );
+					Main.v2.ta2.append("\n"+cont + " Veces \n" + "En los tiempos:");
 					for(int j =0 ; j<tiempos.size();j++){
-						System.out.println(tiempos.get(j) + " Segundos");
+						Main.v2.ta2.append("\n"+tiempos.get(j) + " Segundos");
 					}
 				}
 			}
