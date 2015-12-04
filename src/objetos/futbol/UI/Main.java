@@ -90,6 +90,7 @@ public class Main {
 	//tipo delantero o arquero 
 	public static int tipo = 0;
 	public static int tipoOpcion = 0;
+	public static int aux =0;
 	/**
 	 * M�todo Main para mostrar al usuario las caracteristicas del juego y el menu
 	 * @param args

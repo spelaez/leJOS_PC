@@ -144,7 +144,7 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame implements ActionList
 		try{
 			String n = Main.s;
 			while(Integer.valueOf(n) < 0 || Integer.valueOf(n) > Main.listaJugadores.size()){
-			System.out.print("Dato fuera de rango, por favor ingreselo de nuevo");
+				ta1.append("Dato fuera de rango, por favor ingreselo de nuevo");
 			n = Main.s;
 			}
 			
@@ -169,10 +169,10 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame implements ActionList
 			}
 		}
 		catch(NumberFormatException e){
-			System.out.println("Dato incorrecto, ingrese un entero");
+			ta1.append("Dato incorrecto, ingrese un entero");
 		}
 		catch(InputMismatchException e){
-			System.out.println("Error: dato incorrecto");
+			ta1.append("Error: dato incorrecto");
 		}
 		
 	}
@@ -183,7 +183,7 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame implements ActionList
 			try{
 				String n = Main.s;
 				while(Integer.valueOf(n) < 0 || Integer.valueOf(n) > Main.listaJugadores.size()){
-					System.out.print("Dato fuera de rango, por favor ingreselo de nuevo");
+					ta1.append("Dato fuera de rango, por favor ingreselo de nuevo");
 					n = Main.s;
 				}
 				
@@ -192,11 +192,57 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame implements ActionList
 				
 			}
 			catch(NumberFormatException e){
-				System.out.println("Dato incorrecto, ingrese un entero");
+				ta1.append("Dato incorrecto, ingrese un entero");
 			}
 			catch(InputMismatchException e){
-				System.out.println("Error: dato incorrecto");
+				ta1.append("Error: dato incorrecto");
 			}
 		}
-	}
+		else if(Main.tipoOpcion ==3){
+			
+				if(Main.aux ==1){
+					Main.s = tf1.getText();
+					tf1.setText(null);
+					ta1.setText(null);
+					try{
+						String ind = Main.s;
+						while(Integer.valueOf(ind) < 1 || Integer.valueOf(ind) > 3){
+							ta1.append("Porfavor ingrese una jugada de la lista");
+							ind = Main.s;
+						}
+						Main.r1.ejecutarJugadaCompleja(Integer.valueOf(ind)-1, Main.dis1, Main.dos1);
+						if(Main.tInicio != 0){
+							Main.gestorEstado.crearBuffer(Main.r1.getJugador(), Main.r1.getJugador().getListaJugadas().get(Integer.valueOf(ind)-1));
+						}
+					}catch(NumberFormatException e){
+						ta1.append("Porfavor ingrese una jugada de la lista");
+					}catch(InputMismatchException e){
+						ta1.append("Porfavor ingrese una jugada de la lista");
+					}catch(IOException e){
+						ta1.append("No existe jugada");
+					}
+				}
+				else if(Main.aux ==2){
+					try{
+						String ind = Main.s;
+						while(Integer.valueOf(ind) < 1 || Integer.valueOf(ind) > 3){
+							ta1.append("Porfavor ingrese una jugada de la lista");
+							ind = Main.s;
+						}
+						Main.r2.ejecutarJugadaCompleja(Integer.valueOf(ind)-1,Main.dis2,Main.dos2);
+						if(Main.tInicio != 0){
+							Main.gestorEstado.crearBuffer(Main.r2.getJugador(), Main.r2.getJugador().getListaJugadas().get(Integer.valueOf(ind)-1));
+						}
+					}catch(NumberFormatException e){
+						ta1.append("Porfavor ingrese una jugada de la lista");
+					}catch(InputMismatchException e){
+						ta1.append("Porfavor ingrese una jugada de la lista");
+					}catch(IOException e){
+						ta1.append("No existe jugada");
+					}
+				}
+			}
+		}
+	
+		
 }

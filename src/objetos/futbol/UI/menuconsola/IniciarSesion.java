@@ -5,6 +5,7 @@ import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -92,7 +93,12 @@ public class IniciarSesion extends OpcionDeMenu implements ActionListener{
 			Main.v2.dispose();
 			Main.v2 = new VentanaPrincipalUsuarioGeneral();
 			Main.usuarioActual = (UsuarioAdministrador)Main.listaUsuarios.get(usuarios);
-			Main.v2.lanzar();
+			try {
+				Main.v2.lanzar();
+			} catch (IOException e) {
+				
+				e.printStackTrace();
+			}
 			usr.dispose();
 		}
 		else{
