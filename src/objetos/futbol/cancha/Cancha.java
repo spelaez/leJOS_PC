@@ -133,12 +133,12 @@ public class Cancha {
 	public void cargarImagenes() throws IOException{
 		m1 = new JLabel(Main.r1.getJugador().getNombre());
 		m2 = new JLabel(Main.r2.getJugador().getNombre());
-		m1.setSize(25,25);
-		m2.setSize(25,25);
+		m1.setSize(50,50);
+		m2.setSize(50,50);
 		Image img = ImageIO.read(new File("src/images/1.gif"));
 		Image img2 = ImageIO.read(new File("src/images/2.gif"));
 		Image resized1 = img.getScaledInstance(m1.getWidth(), m1.getHeight(), Image.SCALE_FAST);
-		Image resized2 = img.getScaledInstance(m2.getWidth(), m2.getHeight(), Image.SCALE_FAST);
+		Image resized2 = img2.getScaledInstance(m2.getWidth(), m2.getHeight(), Image.SCALE_FAST);
 		m1.setHorizontalAlignment(SwingConstants.CENTER);
 		m2.setHorizontalAlignment(SwingConstants.CENTER);
 		m1.setIcon(new ImageIcon(resized1));

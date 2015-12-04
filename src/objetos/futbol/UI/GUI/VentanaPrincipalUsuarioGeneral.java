@@ -59,6 +59,9 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame implements ActionList
 		p4.setBackground(Color.lightGray);
 		p4.setLayout(new BorderLayout());
 		p5 = new JPanel();
+		JLabel canchita = new JLabel(new ImageIcon(iCancha));
+		canchita.setSize(canchita.getWidth(), canchita.getHeight());
+		p5.setSize(canchita.getSize());
 		p5.setLayout(new BorderLayout());
 		p6 = new JPanel();
 		p6.setLayout(new BorderLayout(5,5));
@@ -96,19 +99,16 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame implements ActionList
 		s1.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		s2 = new JScrollPane(ta2);
 		s2.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		//menubar = new JMenuBar();
 		if(Main.tipo ==1){
 			this.setJMenuBar(((UsuarioGeneral)Main.usuarioActual).getMenu());}
 		else if(Main.tipo == 2){
 			this.setJMenuBar(((UsuarioAdministrador)Main.usuarioActual).getMenu());
 		}
-		//menubar.add(((UsuarioGeneral)Main.usuarioActual).getMenu());
 		contenedor.add(p1, BorderLayout.NORTH );
 		contenedor.add(p2, BorderLayout.SOUTH);
 		contenedor.add(p6, BorderLayout.WEST);
 		contenedor.add(p7, BorderLayout.EAST);
 		contenedor.add(p5, BorderLayout.CENTER);
-		//p1.add(menubar,BorderLayout.NORTH);
 		p7.add(p4, BorderLayout.WEST);
 		p6.add(p3, BorderLayout.EAST);
 		p3.add(l1);
@@ -120,9 +120,6 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame implements ActionList
 		p2.add(s1, BorderLayout.SOUTH);
 		p4.add(l2,BorderLayout.NORTH);
 		p4.add(s2, BorderLayout.CENTER);
-		//p5.add(cancha, BorderLayout.CENTER);
-		JLabel canchita = new JLabel(new ImageIcon(iCancha));
-		canchita.setSize(canchita.getWidth(), canchita.getHeight());
 		p5.add(canchita, BorderLayout.CENTER);
 		enviar.addActionListener(this);
 		setSize(850,600);
