@@ -51,7 +51,6 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame implements ActionList
 		p4.setBackground(Color.lightGray);
 		p4.setLayout(new BorderLayout());
 		p5 = new JPanel();
-		p5.setBackground(Color.BLUE);
 		p5.setLayout(new BorderLayout());
 		p6 = new JPanel();
 		p6.setLayout(new BorderLayout(5,5));
