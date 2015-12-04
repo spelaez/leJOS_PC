@@ -52,9 +52,6 @@ public abstract class Futbolista {
 	 * Metodo que muestra el nombre del delantero
 	 * @return
 	 */
-	public String getImagen(){
-		return imagen;
-	}
 	public String getNombre(){
 		return nombre;
 	}//Cierre del metodo
