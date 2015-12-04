@@ -139,8 +139,8 @@ public class Cancha {
 		Image img2 = ImageIO.read(new File("src/images/2.gif"));
 		Image resized1 = img.getScaledInstance(m1.getWidth(), m1.getHeight(), Image.SCALE_FAST);
 		Image resized2 = img2.getScaledInstance(m2.getWidth(), m2.getHeight(), Image.SCALE_FAST);
-		m1.setHorizontalAlignment(SwingConstants.CENTER);
-		m2.setHorizontalAlignment(SwingConstants.CENTER);
+		m1.setHorizontalAlignment(SwingConstants.LEFT);
+		m2.setHorizontalAlignment(SwingConstants.LEFT);
 		m1.setIcon(new ImageIcon(resized1));
 		m2.setIcon(new ImageIcon(resized2));
 		m1.setLocation(0, 0);
