@@ -24,8 +24,8 @@ public class ListaJugadasDisponibles extends OpcionDeMenu{
 	 */
 	@Override
 	public void ejecutar(){
-		System.out.print("---------------------------------------------------\n"+this+"\n");
 		
+		Main.v2.ta1.setText(null);
 		ArrayList<JugadaComplejaDefensiva> jDefensivas = new ArrayList<>();
 		ArrayList<JugadaComplejaOfensiva> jOfensivas = new ArrayList<>();
 		ArrayList<JugadaComplejaTiroLibre> jTiroLibre = new ArrayList<>();
@@ -41,17 +41,17 @@ public class ListaJugadasDisponibles extends OpcionDeMenu{
 					jTiroLibre.add((JugadaComplejaTiroLibre)x);
 				}
 		}
-		System.out.println("\t\t\tJugadas Defensivas");
+		Main.v2.ta1.append("Jugadas Defensivas");
 		for(JugadaComplejaDefensiva x: jDefensivas){
-			System.out.println((Main.listaJugadasComplejas.indexOf(x)+1)+" "+x);
+			Main.v2.ta1.append("\n"+(Main.listaJugadasComplejas.indexOf(x)+1)+" "+x);
 		}
-		System.out.println("\n\t\t\tJugadas Ofensivas");
+		Main.v2.ta1.append("\n Jugadas Ofensivas");
 		for(JugadaComplejaOfensiva x: jOfensivas){
-			System.out.println((Main.listaJugadasComplejas.indexOf(x)+1)+" "+x);
+			Main.v2.ta1.append("\n"+(Main.listaJugadasComplejas.indexOf(x)+1)+" "+x);
 		}
-		System.out.println("\n\t\tJugadas Tiro Libre");
+		System.out.println("\nJugadas Tiro Libre");
 		for(JugadaComplejaTiroLibre x: jTiroLibre){
-			System.out.println((Main.listaJugadasComplejas.indexOf(x)+1)+" "+x);
+			Main.v2.ta1.append("\n"+(Main.listaJugadasComplejas.indexOf(x)+1)+" "+x);
 		}
 	}//Cierre del metodo
 	/**
