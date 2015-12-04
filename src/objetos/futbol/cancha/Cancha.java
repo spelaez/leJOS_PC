@@ -131,8 +131,8 @@ public class Cancha {
 	}//Cierre del metodo
 	
 	public void cargarImagenes() throws IOException{
-		m1 = new JLabel(Main.r1.getJugador().getNombre());
-		m2 = new JLabel(Main.r2.getJugador().getNombre());
+		m1 = new JLabel(Main.r1.getJugador().getImagen());
+		m2 = new JLabel(Main.r2.getJugador().getImagen());
 		m1.setSize(50,50);
 		m2.setSize(50,50);
 		Image img = ImageIO.read(new File("src/images/1.gif"));
