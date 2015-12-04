@@ -1,5 +1,7 @@
 package objetos.futbol.UI.GUI;
+import javax.imageio.ImageIO;
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -20,6 +22,10 @@ import objetos.futbol.varios.UsuarioGeneral;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.ImageObserver;
+import java.awt.image.ImageProducer;
+import java.io.File;
+import java.io.IOException;
 import java.util.InputMismatchException;
 
 @SuppressWarnings("serial")
@@ -32,11 +38,13 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame implements ActionList
 	JLabel l1,l2;
 	JTextField tf1;
 	CanchaCanvas cancha;
+	Image iCancha;
     
 	public VentanaPrincipalUsuarioGeneral(){
 		super("Futbol");}
-	public void lanzar(){
+	public void lanzar() throws IOException{
 		cancha = new CanchaCanvas();
+		iCancha = ImageIO.read(new File("src/images/cancha.png"));
 		contenedor = this.getContentPane();
 		contenedor.setLayout(new BorderLayout(18,18));
 		p1 = new JPanel();
@@ -112,7 +120,10 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame implements ActionList
 		p2.add(s1, BorderLayout.SOUTH);
 		p4.add(l2,BorderLayout.NORTH);
 		p4.add(s2, BorderLayout.CENTER);
-		p5.add(cancha, BorderLayout.CENTER);
+		//p5.add(cancha, BorderLayout.CENTER);
+		JLabel canchita = new JLabel(new ImageIcon(iCancha));
+		canchita.setSize(canchita.getWidth(), canchita.getHeight());
+		p5.add(canchita, BorderLayout.CENTER);
 		enviar.addActionListener(this);
 		setSize(850,600);
 		setVisible(true);

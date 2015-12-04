@@ -1,8 +1,14 @@
 package objetos.futbol.cancha;
 
 import java.awt.Component;
+import java.awt.FlowLayout;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.io.File;
 import java.io.IOException;
 
+import javax.imageio.ImageIO;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
@@ -124,13 +130,21 @@ public class Cancha {
 		}
 	}//Cierre del metodo
 	
-	public void cargarImagenes(){
+	public void cargarImagenes() throws IOException{
 		m1 = new JLabel(Main.r1.getJugador().getNombre());
 		m2 = new JLabel(Main.r2.getJugador().getNombre());
+		m1.setSize(25,25);
+		m2.setSize(25,25);
+		Image img = ImageIO.read(new File("src/images/1.gif"));
+		Image img2 = ImageIO.read(new File("src/images/2.gif"));
+		Image resized1 = img.getScaledInstance(m1.getWidth(), m1.getHeight(), Image.SCALE_FAST);
+		Image resized2 = img.getScaledInstance(m2.getWidth(), m2.getHeight(), Image.SCALE_FAST);
 		m1.setHorizontalAlignment(SwingConstants.CENTER);
 		m2.setHorizontalAlignment(SwingConstants.CENTER);
-		m1.setIcon(new ImageIcon("src/images/1.gif"));
-		m2.setIcon(new ImageIcon("src/images/2.gif"));
+		m1.setIcon(new ImageIcon(resized1));
+		m2.setIcon(new ImageIcon(resized2));
+		m1.setLocation(0, 0);
+		m2.setLocation(0, 100);
 		Main.v2.getCancha().add(m1);
 		Main.v2.getCancha().add(m2);
 	}
