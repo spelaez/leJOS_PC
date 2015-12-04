@@ -25,13 +25,13 @@ import java.util.ArrayList;
  *
  */
 public class CrearJugador extends OpcionDeMenu implements ItemListener, ActionListener {
-	JFrame jugadores = new JFrame("Seleccion de jugadores");
+	JFrame jugadores = new JFrame("Creacion de jugador");
 	Container contenedor;
 	JPanel p1,arriba,centro,abajo,centizq,centder;
 	JButton aceptar;
 	ButtonGroup bg1,bg2;
 	JRadioButton delantero,arquero;
-	JTextField nombre,posicion,goles,dorsal,imagen;
+	JTextField nombre,posicion,goles,dorsal;
 	ArrayList <JugadaCompleja> jugadas= new ArrayList<>();
 	/**
 	 * Constructor que accesa al tipo de categoria que tiene la opcion crear jugador
@@ -61,13 +61,12 @@ public class CrearJugador extends OpcionDeMenu implements ItemListener, ActionLi
 		centder=new JPanel();
 		centizq=new JPanel();
 		aceptar=new JButton("Aceptar");
-		imagen=new JTextField();
 		//Layout
 		p1.setLayout(new BorderLayout(10,10));
 		arriba.setLayout(new GridLayout(2,1));
 		centro.setLayout(new GridLayout(1,2));
-		centizq.setLayout(new GridLayout(5,1));
-		centder.setLayout(new GridLayout(5,1));
+		centizq.setLayout(new GridLayout(4,1));
+		centder.setLayout(new GridLayout(4,1));
 		abajo.setLayout(new GridLayout(Main.listaJugadasComplejas.size(),2));
 		//añadir
 		p1.add(arriba, BorderLayout.NORTH);
@@ -110,7 +109,7 @@ public class CrearJugador extends OpcionDeMenu implements ItemListener, ActionLi
 		jugadores.setVisible(true);
 	}
 	public void actionPerformed(ActionEvent arg0) {
-				String Nomb,pos,Imag;
+				String Nomb,pos;
 				short gol;
 				byte dor;
 				int tiemposingol;
@@ -119,14 +118,13 @@ public class CrearJugador extends OpcionDeMenu implements ItemListener, ActionLi
 				gol=Short.valueOf(goles.getText());
 				dor=Byte.valueOf(dorsal.getText());
 				tiemposingol= Integer.valueOf(goles.getText());
-				Imag=imagen.getText();
 				jugadores.dispose();
 				
 				if(delantero.isSelected()){
-					Main.listaJugadores.add(new Delantero(Nomb,pos,gol,dor,jugadas,Imag));
+					Main.listaJugadores.add(new Delantero(Nomb,pos,gol,dor,jugadas));
 				}
 				if(arquero.isSelected()){
-					Main.listaJugadores.add(new Arquero(Nomb,pos,tiemposingol,dor,jugadas,Imag));
+					Main.listaJugadores.add(new Arquero(Nomb,pos,tiemposingol,dor,jugadas));
 				}
 				JOptionPane.showMessageDialog(this.jugadores,"Jugador registrado correctamente");
 			}
@@ -138,12 +136,10 @@ public class CrearJugador extends OpcionDeMenu implements ItemListener, ActionLi
 								centizq.add(new JLabel("Posicion"));
 								centizq.add(new JLabel("GolesMarcados"));
 								centizq.add(new JLabel("Dorsal"));
-								centizq.add(new JLabel("Imagen"));
 								centder.add(nombre);
 								centder.add(posicion);
 								centder.add(goles);
 								centder.add(dorsal);
-								centder.add(imagen);
 								centro.setVisible(false);
 								centro.setVisible(true);
 	}
@@ -154,12 +150,10 @@ public class CrearJugador extends OpcionDeMenu implements ItemListener, ActionLi
 								centizq.add(new JLabel("Posicion"));
 								centizq.add(new JLabel("Tiempo Sin goles"));
 								centizq.add(new JLabel("Dorsal"));
-								centizq.add(new JLabel("Imagen"));
 								centder.add(nombre);
 								centder.add(posicion);
 								centder.add(goles);
 								centder.add(dorsal);
-								centder.add(imagen);
 								centro.setVisible(false);
 								centro.setVisible(true);
 							}
