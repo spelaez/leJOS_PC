@@ -21,14 +21,14 @@ public  class CargarEstadoAnterior extends OpcionDeMenu {
 	 */
 	@Override
 	public void ejecutar() {
-		System.out.print("---------------------------------------------------\n"+this+"\n");
+		
 		File fichero = new File("src\\gestorBD\\Estado.xml");
 		if(!fichero.exists()){
-			System.out.println("Porfavor inicie un partido antes");
+			Main.v2.ta1.append("Porfavor inicie un partido antes");
 			return;
 			
 		}
-		System.out.println("Partido reanudado");
+		
 		Main.pausa = false;
 		Main.tInicio = System.currentTimeMillis();
 	}//Cierre del metodo

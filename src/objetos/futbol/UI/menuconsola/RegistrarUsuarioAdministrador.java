@@ -1,5 +1,17 @@
 package objetos.futbol.UI.menuconsola;
 
+import java.awt.Container;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 import objetos.futbol.UI.Main;
 import objetos.futbol.varios.UsuarioAdministrador;
 /**
@@ -7,7 +19,13 @@ import objetos.futbol.varios.UsuarioAdministrador;
  * @author Juan Pablo Betancur
  *
  */
-public class RegistrarUsuarioAdministrador extends OpcionDeMenu {
+public class RegistrarUsuarioAdministrador extends OpcionDeMenu implements ActionListener {
+	JFrame usr = new JFrame("Registrar");
+	Container contenedor;
+	JPanel p1,p2,pg;
+	JButton aceptar;
+	JTextField t1,t2;
+	JLabel l1,l2;
 	//Campos de la clase
 	String Usuario,clave;
 	/**
@@ -21,13 +39,26 @@ public class RegistrarUsuarioAdministrador extends OpcionDeMenu {
 	 * Metodo que ejecuta el menu para registrar un usuario administrador
 	 */
 	public void ejecutar(){
-		System.out.print("---------------------------------------------------\n"+this+"\n");
-		System.out.println("Por favor ingresa un nombre de usuario");
-		//Usuario = Main.scn.nextLine();
-		System.out.println("Porfavor ingresa tu contrase�a");
-		//clave=Main.scn.nextLine();
-		UsuarioAdministrador usuario = new UsuarioAdministrador(Usuario,clave);		
-		Main.listaUsuarios.put(Usuario,usuario);
+		contenedor = usr.getContentPane();
+		pg = new JPanel();
+		pg.setLayout(new GridLayout(3,2));
+		contenedor.add(pg);
+		l1 = new JLabel("usuario");
+		l2 = new JLabel("clave");
+		t1 = new JTextField();
+		t2 = new JTextField();
+		aceptar = new JButton("Aceptar");
+		pg.add(l1);
+		pg.add(t1);
+		pg.add(l2);
+		pg.add(t2);
+		pg.add(aceptar);
+		aceptar.addActionListener(this);
+		usr.setSize(300, 120);
+		usr.setVisible(true);
+		
+	
+		
 	}//Cierre del metodo
 	/**
 	 * Metodo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
@@ -36,5 +67,13 @@ public class RegistrarUsuarioAdministrador extends OpcionDeMenu {
 	public String toString(){
 		return "Registrar usuario administrador";
 	}//Cierre del metodo
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		Usuario = t1.getText();
+		clave = t2.getText();
+		UsuarioAdministrador usuario = new UsuarioAdministrador(Usuario,clave);		
+		Main.listaUsuarios.put(Usuario,usuario);
+		usr.dispose();
+	}
 }//Cierre de la clase
 

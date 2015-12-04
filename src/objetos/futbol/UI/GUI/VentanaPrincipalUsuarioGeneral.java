@@ -12,6 +12,8 @@ import javax.swing.JTextField;
 import javax.swing.ScrollPaneConstants;
 
 import objetos.futbol.UI.Main;
+import objetos.futbol.UI.menuconsola.Categoria;
+import objetos.futbol.UI.menuconsola.Salir;
 import objetos.futbol.jugadores.Arquero;
 import objetos.futbol.jugadores.Delantero;
 import objetos.futbol.jugadores.Futbolista;
@@ -87,6 +89,7 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame implements ActionList
 		enviar = new JButton("Enviar");
 		tf1 = new JTextField(650);
 		ta1 = new JTextArea(5,0);
+		ta1.setText("Escriba salir y de clic en enviar si desea salir de emergencia");
 		ta1.setEditable(false);
 		ta1.setLineWrap(true);
 		ta1.setWrapStyleWord(true);
@@ -136,6 +139,9 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame implements ActionList
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
+		if(tf1.getText().equals("salir")){
+			new Salir(Categoria.SISTEMA).ejecutar();
+		}
 		if(Main.tipoOpcion==1){
 		Main.s = tf1.getText();
 		tf1.setText(null);
@@ -242,6 +248,7 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame implements ActionList
 					}
 				}
 			}
+	
 		}
 	
 		

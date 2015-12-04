@@ -91,6 +91,8 @@ public class Main {
 	public static int tipo = 0;
 	public static int tipoOpcion = 0;
 	public static int aux =0;
+	public static String usuarioAuxiliar = null;
+	public static String claveAuxiliar = null;
 	/**
 	 * M�todo Main para mostrar al usuario las caracteristicas del juego y el menu
 	 * @param args

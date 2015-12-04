@@ -23,13 +23,13 @@ public class IniciarPartido extends OpcionDeMenu{
 			Main.pausa = false;
 			Main.gestorEstado.borrarBuffer();
 			Main.gestorEstado.borrarEstado();
-			System.out.print("---------------------------------------------------\n"+this+"\n");
+			
 			Main.tInicio = System.currentTimeMillis();
 			Main.tUltimoGol = Main.tInicio;
 			System.out.print("Partido Iniciado\n-----------------------------------------------------------");
 		}
 		else if(Main.pausa == true){
-			System.out.println("Porfavor reanude el prtido dando la opcion Reanudar partido");
+			Main.v2.ta1.append("Porfavor reanude el prtido dando la opcion Reanudar partido");
 		}
 	}//Cierre del metodo
 	/**
