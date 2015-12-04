@@ -7,15 +7,32 @@ import objetos.futbol.UI.menuconsola.ListaJugadasDisponibles;
 import objetos.futbol.jugadores.JugadaCompleja;
 
 import java.util.InputMismatchException;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.lang.NumberFormatException;
 import java.util.Scanner;
+
+import javax.swing.*;
+
+
 import java.util.ArrayList;
 /**
  * Clase que define la opción crear jugador, consiste de un ArrayList para guardar las jugadas complejas del jugador nuevo
  * @author Jhon Eider Murilo
  *
  */
-public class CrearJugador extends OpcionDeMenu {
+public class CrearJugador extends OpcionDeMenu implements ItemListener, ActionListener {
+	JFrame jugadores = new JFrame("Seleccion de jugadores");
+	Container contenedor;
+	JPanel p1,arriba,centro,abajo,centizq,centder;
+	JButton aceptar;
+	ButtonGroup bg1,bg2;
+	JRadioButton delantero,arquero;
+	JTextField nombre,posicion,goles,dorsal,imagen;
+	ArrayList <JugadaCompleja> jugadas= new ArrayList<>();
 	/**
 	 * Constructor que accesa al tipo de categoria que tiene la opcion crear jugador
 	 * @param categoria
@@ -27,7 +44,126 @@ public class CrearJugador extends OpcionDeMenu {
 	 * Metodo que ejecuta el menu de crear jugador
 	 */
 	@Override
-	public void ejecutar(){}
+	public void ejecutar(){
+		//CREACION
+		contenedor = jugadores.getContentPane();
+		p1 = new JPanel();
+		arriba= new JPanel();
+		centro=new JPanel();
+		abajo=new JPanel();
+		bg1= new ButtonGroup();
+		delantero = new JRadioButton("delantero");
+		arquero = new JRadioButton("arquero");
+		nombre=new JTextField();
+		posicion=new JTextField();
+		goles=new JTextField();
+		dorsal=new JTextField();
+		centder=new JPanel();
+		centizq=new JPanel();
+		aceptar=new JButton("Aceptar");
+		imagen=new JTextField();
+		//Layout
+		p1.setLayout(new BorderLayout(10,10));
+		arriba.setLayout(new GridLayout(2,1));
+		centro.setLayout(new GridLayout(1,2));
+		centizq.setLayout(new GridLayout(5,1));
+		centder.setLayout(new GridLayout(5,1));
+		abajo.setLayout(new GridLayout(Main.listaJugadasComplejas.size(),2));
+		//añadir
+		p1.add(arriba, BorderLayout.NORTH);
+		p1.add(centro, BorderLayout.CENTER);
+		p1.add(abajo, BorderLayout.SOUTH);
+		contenedor.add(p1);
+		bg1.add(arquero);
+		bg1.add(delantero);
+		arriba.add(arquero);
+		arriba.add(delantero);
+		centro.add(centizq);
+		centro.add(centder);
+		abajo.add(new JLabel("Por favor seleccione 3 jugadas para su jugador"));
+		for(int i=0;i<Main.listaJugadasComplejas.size();i++){
+			JRadioButton z = new JRadioButton(Main.listaJugadasComplejas.get(i).getNombre());
+						z.setName(i+"");
+						z.addItemListener(new ItemListener(){
+							public void itemStateChanged(ItemEvent e) {
+								if(z.isSelected()){
+									for(int j=0;j<Main.listaJugadasComplejas.size();j++){
+										if(z.getText().equals(Main.listaJugadasComplejas.get(j).getNombre())==true){
+											if(jugadas.size()<3){
+												jugadas.add(Main.listaJugadasComplejas.get(j));
+											}
+											
+										}
+									}
+									
+								}
+							}
+					});
+						abajo.add(z);
+		}
+		abajo.add(aceptar);
+		//listeners
+		delantero.addItemListener(this);
+		arquero.addItemListener(this);
+		aceptar.addActionListener(this);
+		jugadores.setSize(400, 400);
+		jugadores.setVisible(true);
+	}
+	public void actionPerformed(ActionEvent arg0) {
+				String Nomb,pos,Imag;
+				short gol;
+				byte dor;
+				int tiemposingol;
+				Nomb=nombre.getText();
+				pos=posicion.getText();
+				gol=Short.valueOf(goles.getText());
+				dor=Byte.valueOf(dorsal.getText());
+				tiemposingol= Integer.valueOf(goles.getText());
+				Imag=imagen.getText();
+				jugadores.dispose();
+				
+				if(delantero.isSelected()){
+					Main.listaJugadores.add(new Delantero(Nomb,pos,gol,dor,jugadas,Imag));
+				}
+				if(arquero.isSelected()){
+					Main.listaJugadores.add(new Arquero(Nomb,pos,tiemposingol,dor,jugadas,Imag));
+				}
+				JOptionPane.showMessageDialog(this.jugadores,"Jugador registrado correctamente");
+			}
+	public void itemStateChanged(ItemEvent e) {
+							if(delantero.isSelected()){
+								centizq.removeAll();
+								centder.removeAll();
+								centizq.add(new JLabel("Nombre"));
+								centizq.add(new JLabel("Posicion"));
+								centizq.add(new JLabel("GolesMarcados"));
+								centizq.add(new JLabel("Dorsal"));
+								centizq.add(new JLabel("Imagen"));
+								centder.add(nombre);
+								centder.add(posicion);
+								centder.add(goles);
+								centder.add(dorsal);
+								centder.add(imagen);
+								centro.setVisible(false);
+								centro.setVisible(true);
+	}
+							if(arquero.isSelected()){
+								centizq.removeAll();
+								centder.removeAll();
+								centizq.add(new JLabel("Nombre"));
+								centizq.add(new JLabel("Posicion"));
+								centizq.add(new JLabel("Tiempo Sin goles"));
+								centizq.add(new JLabel("Dorsal"));
+								centizq.add(new JLabel("Imagen"));
+								centder.add(nombre);
+								centder.add(posicion);
+								centder.add(goles);
+								centder.add(dorsal);
+								centder.add(imagen);
+								centro.setVisible(false);
+								centro.setVisible(true);
+							}
+	}
 		/*System.out.print("---------------------------------------------------\n"+this+"\n");
 		System.out.println("Ingrese tipo jugador");
 		System.out.println("1 Delantero \n2 Arquero ");
