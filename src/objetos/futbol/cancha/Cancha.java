@@ -1,7 +1,13 @@
 package objetos.futbol.cancha;
 
+import java.awt.Component;
 import java.io.IOException;
 
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+
+import objetos.futbol.UI.Main;
 import objetos.futbol.jugadores.Arquero;
 import objetos.futbol.robots.Robot;
 /**
@@ -23,6 +29,7 @@ public class Cancha {
 	static int Aposx, Aposy, Aultx, Aulty, Dposx, Dposy, Dultx, Dulty;
 	static String[][] rep;
 	static String[][] repClone;
+	private JLabel m1, m2;
 	/**
 	 * Constructor de la clase
 	 */
@@ -116,4 +123,15 @@ public class Cancha {
 			System.out.print("\n");
 		}
 	}//Cierre del metodo
+	
+	public void cargarImagenes(){
+		m1 = new JLabel(Main.r1.getJugador().getNombre());
+		m2 = new JLabel(Main.r2.getJugador().getNombre());
+		m1.setHorizontalAlignment(SwingConstants.CENTER);
+		m2.setHorizontalAlignment(SwingConstants.CENTER);
+		m1.setIcon(new ImageIcon("src/images/1.gif"));
+		m2.setIcon(new ImageIcon("src/images/2.gif"));
+		Main.v2.getCancha().add(m1);
+		Main.v2.getCancha().add(m2);
+	}
 }//Cierre de la clase

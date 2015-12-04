@@ -31,11 +31,12 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame implements ActionList
 	JScrollPane s1,s2;
 	JLabel l1,l2;
 	JTextField tf1;
+	CanchaCanvas cancha;
     
 	public VentanaPrincipalUsuarioGeneral(){
 		super("Futbol");}
 	public void lanzar(){
-		CanchaCanvas cancha = new CanchaCanvas();
+		cancha = new CanchaCanvas();
 		contenedor = this.getContentPane();
 		contenedor.setLayout(new BorderLayout(18,18));
 		p1 = new JPanel();
@@ -121,6 +122,10 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame implements ActionList
 	}
 	public JPanel getP3(){
 		return p3;
+	}
+	
+	public JPanel getCancha(){
+		return p5;
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {

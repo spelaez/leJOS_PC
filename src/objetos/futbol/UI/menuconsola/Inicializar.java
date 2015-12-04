@@ -148,7 +148,7 @@ public class Inicializar extends OpcionDeMenu implements ActionListener{
 		jugadores.dispose();
 		JOptionPane.showMessageDialog(this.jugadores, "Conectando a los NXT...");
 		conectar();
-		
+		Main.cancha.cargarImagenes();
 	}
 	
 	public void conectar(){
