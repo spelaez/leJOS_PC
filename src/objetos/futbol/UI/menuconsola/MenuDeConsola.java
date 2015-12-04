@@ -40,59 +40,87 @@ public class MenuDeConsola extends JMenuBar{
 		super();
 		delantero = new JMenu("Delantero");
 		delantero.addMouseListener(new MouseListener() {
-			
+			/**
+			 * Metodo para generar un evento cuando el usuario accede a una opcion
+			 */
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				System.out.println("Entre a delantero");
 				generarBotones(Main.v2.getP3(), Categoria.DELANTERO);
 				
-			}
-
+			}//Cierre del metodo
+			/**
+			 * Metodo para una accion del mouse
+			 */
 			@Override
 			public void mousePressed(MouseEvent e) {
 				// TODO Auto-generated method stub
 				
-			}
-
+			}//Cierre del metodo
+			/**
+			 * Metodo para una accion del mouse
+			 */
 			@Override
 			public void mouseReleased(MouseEvent e) {
 				// TODO Auto-generated method stub
 				
-			}
-
+			}//Cierre del metodo
+			/**
+			 * Metodo para una accion del mouse
+			 */
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				// TODO Auto-generated method stub
 				
-			}
-
+			}//Cierre del metodo
+			/**
+			 * Metodo para una accion del mouse
+			 */
 			@Override
 			public void mouseExited(MouseEvent e) {
 				// TODO Auto-generated method stub
 				
-			}
+			}//Cierre del metodo
 		});
 		arquero = new JMenu("Arquero");
 		arquero.addMouseListener(new MouseListener() {
-			
+			/**
+			 * Metodo para una accion del mouse
+			 */
 			@Override
-			public void mouseReleased(MouseEvent e) {}
-			
+			public void mouseReleased(MouseEvent e) {
+				
+			}//Cierre del metodo
+			/**
+			 * Metodo para una accion del mouse
+			 */
 			@Override
-			public void mousePressed(MouseEvent e) {}
-			
+			public void mousePressed(MouseEvent e) {
+				
+			}//Cierre del metodo
+			/**
+			 * Metodo para una accion del mouse
+			 */
 			@Override
-			public void mouseExited(MouseEvent e) {}
-			
+			public void mouseExited(MouseEvent e) {
+				
+			}// Cierre del metodo
+			/**
+			 * Metodo para una accion del mouse
+			 */
 			@Override
-			public void mouseEntered(MouseEvent e) {}
-			
+			public void mouseEntered(MouseEvent e) {
+				
+			}//Cierre del metodo
+			/**
+			 * Metodo para una accion del mouse
+			 */
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				System.out.println("Entre a arquero");
 				generarBotones(Main.v2.getP3(), Categoria.ARQUERO);
 				
-			}
+			}//Cierre del metodo
 		});
 		acciones = new JMenu("Acciones");
 		archivo = new JMenu("Archivo");
@@ -100,36 +128,46 @@ public class MenuDeConsola extends JMenuBar{
 		acercaDe= new JMenuItem("Acerca De");
 		ayuda.add(acercaDe);
 		acercaDe.addMouseListener(new MouseListener(){
-
+			/**
+			 * Metodo para una accion del mouse
+			 */
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				new VentanaAcercaDe();
 				
-			}
-
+			}//Cierre del metodo
+			/**
+			 * Metodo para una accion del mouse
+			 */
 			@Override
 			public void mouseEntered(MouseEvent arg0) {
 				// TODO Auto-generated method stub
 				
-			}
-
+			}//Cierre del metodo
+			/**
+			 * Metodo para una accion del mouse
+			 */
 			@Override
 			public void mouseExited(MouseEvent arg0) {
 				// TODO Auto-generated method stub
 				
-			}
-
+			}//Cierre del metodo
+			/**
+			 * Metodo para una accion del mouse
+			 */
 			@Override
 			public void mousePressed(MouseEvent arg0) {
 				new VentanaAcercaDe();
 				
-			}
-
+			}//Cierre del metodo
+			/**
+			 * Metodo para una accion del mouse
+			 */
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
 				// TODO Auto-generated method stub
 				
-			}
+			}//Cierre del metodo
 			
 		});
 		this.add(archivo);
@@ -179,14 +217,8 @@ public class MenuDeConsola extends JMenuBar{
 		opciones.sort(c);
 	}//Cierre del metodo
 	/**
-	 * ejecuta el metodo lanzar menu que muestra las opciones disponibles a elegir
+	 * Metodo para cargar la opciones del menu
 	 */
-	
-	//Cierre del metodo
-	/**
-	 * Metodo que agrega todas las opciones de menu a una segunda lista
-	 */
-	//Cierre del metodo
 	private void cargarOpciones(){
 		if(opciones2.size() == 0){
 
@@ -230,8 +262,10 @@ public class MenuDeConsola extends JMenuBar{
 			opciones2.add(new Salir(Categoria.SISTEMA));//33 //todos
 		}
 
-	}
-
+	}//Cierre del metodo
+	/**
+	 * Metodo para cargar las caracteristicas de las opciones
+	 */
 	public void cargarItems(){
 		for(int i = 0; i < opciones.size(); i++){
 			JMenuItem op = opciones.get(i);
@@ -254,8 +288,12 @@ public class MenuDeConsola extends JMenuBar{
 			}
 		}
 	
-	}
-	
+	}//Cierre del metodo
+	/**
+	 * Metodo para generar los botones del menu de consola
+	 * @param panel
+	 * @param categoria
+	 */
 	public void generarBotones(JPanel panel, Categoria categoria){
 		panel.removeAll();
 		JLabel l = new JLabel("Acciones");
@@ -270,5 +308,5 @@ public class MenuDeConsola extends JMenuBar{
 		}
 		Main.v2.repaint();
 		Main.v2.revalidate();
-	}
+	}//Cierre del metodo
 }//Cierre de la clase

@@ -28,7 +28,7 @@ import objetos.futbol.jugadores.JugadaComplejaOfensiva;
 import objetos.futbol.jugadores.JugadaComplejaTiroLibre;
 import objetos.futbol.varios.UsuarioAdministrador;
 /**
- * Clase que define la opncion crear jugada compleja
+ * Clase que define la opcion crear jugada compleja
  * @author Santiago Saldarriaga
  *
  */
@@ -50,7 +50,7 @@ public class CrearJugadaCompleja extends OpcionDeMenu implements ItemListener, A
 		super(categoria);		
 	}//Cierre del constructor
 	/**
-	 * Metodo sobreescrito que ejecuta el menu para crear una jugada compleja
+	 * Metodo sobreescrito que ejecuta el menu para crear una jugada compleja con la implementacion de una interfaz
 	 */
 	@Override
 	public void ejecutar() {
@@ -127,7 +127,10 @@ public class CrearJugadaCompleja extends OpcionDeMenu implements ItemListener, A
 		
 		jugadores.setSize(400, 400);
 		jugadores.setVisible(true);
-	}	
+	}//Cierre del metodo
+	/**
+	 * Metodo que se ejecuta por una accion en la interfaz
+	 */
 	public void actionPerformed(ActionEvent arg0) {
 		String s = (String)arg0.getActionCommand();
 		if(s.equals("Aceptar")){
@@ -148,7 +151,10 @@ public class CrearJugadaCompleja extends OpcionDeMenu implements ItemListener, A
 		
 		JOptionPane.showMessageDialog(this.jugadores,"Jugada Compleja creada exitosamente");
 	}
-		}
+		}//Cierre del metodo
+	/**
+	 * Metodo para ejecutar una juagada seleccionada por el usuario
+	 */
 	public void itemStateChanged(ItemEvent e) {
 		if(chutar.isSelected()){
 			jugadas.add(Main.chutar);
@@ -171,10 +177,7 @@ public class CrearJugadaCompleja extends OpcionDeMenu implements ItemListener, A
 		if(retroceder.isSelected()){
 			jugadas.add(Main.retroceder);
 		}
-	}
-
-
-
+	}//Cierre del metodo
 	/*	System.out.println("---------------------------------------------------\n"+this+"\n");
 		System.out.println("Ingrese el tipo de jugada compleja");
 		System.out.println("1 Defensiva \n2 Ofensiva \n3 Tiro libre");

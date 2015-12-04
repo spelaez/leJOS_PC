@@ -27,7 +27,7 @@ import javax.swing.WindowConstants;
  */
 public class ConsultarExplicacionJugada extends OpcionDeMenu {
 	/**
-	 * Constructor que accesa al tipo de categoria que tiene la opción de consutar la explicacion de una jugada
+	 * Constructor que accesa al tipo de categoria que tiene la opcion de consutar la explicacion de una jugada
 	 * @param categoria
 	 */
 	public ConsultarExplicacionJugada(Categoria categoria){
@@ -52,7 +52,7 @@ public class ConsultarExplicacionJugada extends OpcionDeMenu {
 		Main.tipoOpcion = 2;
 		
 		
-	}//Cierre del método
+	}//Cierre del metodo
 	/**
 	 * Metodo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
 	 * @return Retorna el tipo de opcion
@@ -60,8 +60,6 @@ public class ConsultarExplicacionJugada extends OpcionDeMenu {
 	@Override
 	public String toString(){
 		return "Consultar Explicacion de una jugada";
-	}//Cierre del metodo
-	
-	
+	}//Cierre del metodo	
 }//Cierre de la clase
 

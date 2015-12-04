@@ -41,7 +41,7 @@ public class IniciarSesion extends OpcionDeMenu implements ActionListener{
 		super(categoria);
 	}//Cierre del constructor
 	/**
-	 * Metodo que ejecuta el menu para iniciar sesion
+	 * Metodo que ejecuta el menu para iniciar sesion implementando una interfaz grafica
 	 */
 	@Override
 	public void ejecutar() {
@@ -105,6 +105,6 @@ public class IniciarSesion extends OpcionDeMenu implements ActionListener{
 			usr.dispose();
 			JOptionPane.showMessageDialog(null,"Porfavor ingrese un usuario y clave validos","ERROR",JOptionPane.ERROR_MESSAGE);
 		}
-	}
+	}//Cierre del metodo
 }//Cierre de la clase
 

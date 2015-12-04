@@ -25,9 +25,13 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.io.IOException;
-
+/**
+ * Clase para crear la ventana inicial del sistema
+ * @author Jhon Eider Murillo Usuga
+ *
+ */
 public class VentanaInicial extends JFrame implements ActionListener, MouseListener {
-
+	//Campos de clase
 	Container contenedor;
 	JPanel p1,p2,p3,p4,p5,p6,p7,p8,p9,p10;
 	JButton b1,b2,b3;
@@ -37,9 +41,15 @@ public class VentanaInicial extends JFrame implements ActionListener, MouseListe
 	JTextField tf1,tf2;
 	int opcion;
 	public static int cont =0;
+	/**
+	 * Constructor de la clase para nombrar la ventana
+	 */
 	public VentanaInicial(){
 		super("Usuario");
-	}
+	}//Cierre del constructor
+	/**
+	 * Metodo para ajecutar cuando se ejecuta
+	 */
 	public void lanzar(){
 		contenedor = this.getContentPane();
 		p1 = new JPanel();
@@ -119,8 +129,10 @@ public class VentanaInicial extends JFrame implements ActionListener, MouseListe
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo (null);
 
-	}
-
+	}//Cierre del metodo
+	/**
+	 * Metodo que se ejecuta por una accion en la interfaz
+	 */
 	@Override
 	public void actionPerformed(ActionEvent accion) {
 		String s = (String)accion.getActionCommand();
@@ -200,24 +212,40 @@ public class VentanaInicial extends JFrame implements ActionListener, MouseListe
 				b1.setIcon(new ImageIcon("src\\images\\10.gif"));
 			}
 		}
-	}
-
+	}//Cierre del metodo
+	/**
+	 * Metodo para ejecutar cuando el mouse sleeciona 
+	 */
 	@Override
-	public void mouseClicked(MouseEvent arg0) {}
-
+	public void mouseClicked(MouseEvent arg0) {
+		
+	}//Cierre del metodo
+	/**
+	 * Metodo para cuando el mouse entra en una zona
+	 */
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
 		l3.setForeground(java.awt.Color.YELLOW);
-	}
-
+	}//Cierre del metodo
+	/**
+	 * Metodo para cuando el mouse sale de una zona
+	 */
 	@Override
 	public void mouseExited(MouseEvent arg0) {
 		l3.setForeground(java.awt.Color.BLACK);
-	}
-
+	}//Cierre del metodo
+	/**
+	 * Metodo cuando el mouse presiona algo de la interfaz
+	 */
 	@Override
-	public void mousePressed(MouseEvent arg0) {}
-
+	public void mousePressed(MouseEvent arg0) {
+		
+	}//Cierre del metodo
+	/**
+	 * Metodo cuando el mouse deja de presionar un lugar
+	 */
 	@Override
-	public void mouseReleased(MouseEvent arg0) {}
-}
+	public void mouseReleased(MouseEvent arg0) {
+		
+	}//Cierre del metodo
+}//Cierre de la clase

@@ -47,7 +47,7 @@ public class Chutar extends OpcionDeMenu {
 		else if(Main.pausa == true){
 			System.out.println("Porfavor reanude el prtido dando la opcion Reanudar partido");
 		}
-	}//Cierre del m�todo
+	}//Cierre del metodo
 	/**
 	 * Metodo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
 	 * @return Retorna el tipo opcion

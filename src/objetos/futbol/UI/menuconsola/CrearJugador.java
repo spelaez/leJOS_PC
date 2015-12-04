@@ -1,24 +1,27 @@
 package objetos.futbol.UI.menuconsola;
 
-import objetos.futbol.UI.Main;
-import objetos.futbol.jugadores.Delantero;
-import objetos.futbol.jugadores.Arquero;
-import objetos.futbol.UI.menuconsola.ListaJugadasDisponibles;
-import objetos.futbol.jugadores.JugadaCompleja;
-
-import java.util.InputMismatchException;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.lang.NumberFormatException;
-import java.util.Scanner;
-
-import javax.swing.*;
-
-
 import java.util.ArrayList;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+
+import objetos.futbol.UI.Main;
+import objetos.futbol.jugadores.Arquero;
+import objetos.futbol.jugadores.Delantero;
+import objetos.futbol.jugadores.JugadaCompleja;
 /**
  * Clase que define la opción crear jugador, consiste de un ArrayList para guardar las jugadas complejas del jugador nuevo
  * @author Jhon Eider Murilo
@@ -107,7 +110,10 @@ public class CrearJugador extends OpcionDeMenu implements ItemListener, ActionLi
 		aceptar.addActionListener(this);
 		jugadores.setSize(400, 400);
 		jugadores.setVisible(true);
-	}
+	}//Cierre del metodo
+	/**
+	 * Metodo que se ejecuta por una accion en la interfaz
+	 */
 	public void actionPerformed(ActionEvent arg0) {
 				String Nomb,pos;
 				short gol;
@@ -127,7 +133,10 @@ public class CrearJugador extends OpcionDeMenu implements ItemListener, ActionLi
 					Main.listaJugadores.add(new Arquero(Nomb,pos,tiemposingol,dor,jugadas));
 				}
 				JOptionPane.showMessageDialog(this.jugadores,"Jugador registrado correctamente");
-			}
+			}//Cierre del metodo
+	/**
+	 * Metodo que se ejecuta cuando el usuario la selecciona a traves de la interfaz
+	 */
 	public void itemStateChanged(ItemEvent e) {
 							if(delantero.isSelected()){
 								centizq.removeAll();
@@ -157,7 +166,7 @@ public class CrearJugador extends OpcionDeMenu implements ItemListener, ActionLi
 								centro.setVisible(false);
 								centro.setVisible(true);
 							}
-	}
+	}//Cierre del metodo
 		/*System.out.print("---------------------------------------------------\n"+this+"\n");
 		System.out.println("Ingrese tipo jugador");
 		System.out.println("1 Delantero \n2 Arquero ");

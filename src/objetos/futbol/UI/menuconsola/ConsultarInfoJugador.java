@@ -26,7 +26,6 @@ import javax.swing.JRadioButton;
  *
  */
 public class ConsultarInfoJugador extends OpcionDeMenu {
-
 	/**
 	 * Constructor que accesa al tipo de categoria que tiene la opcion de consutar la informacion de un jugador
 	 * @param categoria
@@ -93,8 +92,6 @@ public class ConsultarInfoJugador extends OpcionDeMenu {
 	@Override
 	public String toString(){
 		return "Consultar informacion de un jugador";
-	}//Cierre del metodo
-	
-	
+	}//Cierre del metodo	
 }//Cierre de la clase
 

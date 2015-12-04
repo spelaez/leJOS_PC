@@ -27,7 +27,7 @@ public abstract class OpcionDeMenu extends JMenuItem{
 	 */
 	public OpcionDeMenu(Categoria categoria){
 		super.setText(toString());
-		this.categoria = categoria;//Cierre del m�todo
+		this.categoria = categoria;
 		this.addActionListener(new AbstractAction("Accion de item") {
 			
 			@Override
@@ -36,13 +36,18 @@ public abstract class OpcionDeMenu extends JMenuItem{
 				o.ejecutar();
 			}
 		});
+	
+	}//Cierre del metodo
 	/**
 	 * Metodo abastracto que sera implementado en otras clases
 	 */
-	}
 	public abstract void ejecutar();
+	/**
+	 * Metodo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
+	 * @return retorna null porque no es una opcion como tal
+	 */
 	public String toString() {
 		// TODO Auto-generated method stub
 		return null;
-	}
+	}//Cierre del metodo
 }//Cierre de la clase

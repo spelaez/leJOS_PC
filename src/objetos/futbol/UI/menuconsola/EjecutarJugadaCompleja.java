@@ -31,7 +31,7 @@ public class EjecutarJugadaCompleja extends OpcionDeMenu{
 		super(categoria);
 	}//Cierre del contructor
 	/**
-	 * Metodo que ejecuta el menu para ejecurtar una jugada compleja
+	 * Metodo que ejecuta el menu para ejecurtar una jugada compleja a traves de una interfaz
 	 */
 	JFrame jugadas = new JFrame("Seleccion jugada a ejecutar");
 	Container contenedor;

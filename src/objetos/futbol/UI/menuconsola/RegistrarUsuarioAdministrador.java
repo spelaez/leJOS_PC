@@ -55,10 +55,7 @@ public class RegistrarUsuarioAdministrador extends OpcionDeMenu implements Actio
 		pg.add(aceptar);
 		aceptar.addActionListener(this);
 		usr.setSize(300, 120);
-		usr.setVisible(true);
-		
-	
-		
+		usr.setVisible(true);		
 	}//Cierre del metodo
 	/**
 	 * Metodo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
@@ -68,12 +65,15 @@ public class RegistrarUsuarioAdministrador extends OpcionDeMenu implements Actio
 		return "Registrar usuario administrador";
 	}//Cierre del metodo
 	@Override
+	/**
+	 * Metodo que se ejecuta por una accion en la interfaz
+	 */
 	public void actionPerformed(ActionEvent arg0) {
 		Usuario = t1.getText();
 		clave = t2.getText();
 		UsuarioAdministrador usuario = new UsuarioAdministrador(Usuario,clave);		
 		Main.listaUsuarios.put(Usuario,usuario);
 		usr.dispose();
-	}
+	}//Cierre del metodo	
 }//Cierre de la clase
 

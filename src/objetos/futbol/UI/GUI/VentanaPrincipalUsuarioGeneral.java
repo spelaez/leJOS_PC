@@ -29,9 +29,14 @@ import java.awt.image.ImageProducer;
 import java.io.File;
 import java.io.IOException;
 import java.util.InputMismatchException;
-
+/**
+ * Clase para crear la ventana para un usuario genera
+ * @author Santiago Pelaez, Jhon Eider Murillo Usuga, Juan Pablo Betancur
+ *
+ */
 @SuppressWarnings("serial")
 public class VentanaPrincipalUsuarioGeneral extends JFrame implements ActionListener  {
+	//Campos de clase
 	Container contenedor;
 	JPanel p1,p2,p3,p4,p5,p6,p7,p8,p9;
 	public JButton b1,b2,b3,enviar;
@@ -41,9 +46,16 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame implements ActionList
 	JTextField tf1;
 	CanchaCanvas cancha;
 	Image iCancha;
-    
+    /**
+     * Constructor para nombrar la ventana
+     */
 	public VentanaPrincipalUsuarioGeneral(){
-		super("Futbol");}
+		super("Futbol");
+		}//Cierre del constructor
+	/**
+	 * Metodo para lanzar la ventana del usuario general
+	 * @throws IOException
+	 */
 	public void lanzar() throws IOException{
 		cancha = new CanchaCanvas();
 		iCancha = ImageIO.read(new File("src/images/cancha.png"));
@@ -129,14 +141,23 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame implements ActionList
 		setVisible(true);
 		setLocationRelativeTo (null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-	}
+	}//Cierre del metodo
+	/**
+	 * Metodo para ver el panel
+	 * @return
+	 */
 	public JPanel getP3(){
 		return p3;
-	}
-	
+	}//Cierre del metodo
+	/**
+	 * Metodo para ver la cancha
+	 */
 	public JPanel getCancha(){
 		return p5;
-	}
+	}//Cierre del metodo
+	/**
+	 * Metodo que se ejecuta por una accion en la interfaz
+	 */
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		if(tf1.getText().equals("salir")){
@@ -249,7 +270,5 @@ public class VentanaPrincipalUsuarioGeneral extends JFrame implements ActionList
 				}
 			}
 	
-		}
-	
-		
-}
+		}//Cierre del metodo		
+}//Cierre de la clase

@@ -29,7 +29,7 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 /**
  * Clase para inicializar el sistema con los robots
- * @author Santiago P�laez
+ * @author Santiago Pelaez
  *
  */
 @SuppressWarnings("serial")
@@ -47,7 +47,7 @@ public class Inicializar extends OpcionDeMenu implements ActionListener{
 		super(categoria);
 	}//Cierre del constructor
 	/**
-	 * Metodo que ejecuta la opcion de menu inicializar
+	 * Metodo que ejecuta la opcion de menu inicializar por medio de la implementacion de interfaz grafica
 	 */
 	@Override
 	public void ejecutar(){
@@ -76,21 +76,32 @@ public class Inicializar extends OpcionDeMenu implements ActionListener{
 		jugadores.setVisible(true);
 				
 			Main.conn1.addLogListener(new NXTCommLogListener(){
+				/**
+				 * Metodo para mostrar un mensaje
+				 */
 				public void logEvent(String message){
 					System.out.println("BTSend Log.listener: "+message);
 				}
 
 				public void logEvent(Throwable throwable){
+					/**
+					 * Metodo para mostrar un mensaje
+					 */
 					System.out.print("BTSend Log.listener - stack trace: ");
 					throwable.printStackTrace();
 				}
 			});
 			
 			Main.conn2.addLogListener(new NXTCommLogListener(){
+				/**
+				 * Metodo para mostrar un mensaje
+				 */
 				public void logEvent(String message){
 					System.out.println("BTSend Log.listener: "+message);
 				}
-
+				/**
+				 * Metodo para mostrar un mensaje
+				 */
 				public void logEvent(Throwable throwable){
 					System.out.print("BTSend Log.listener - stack trace: ");
 					throwable.printStackTrace();
@@ -98,22 +109,27 @@ public class Inicializar extends OpcionDeMenu implements ActionListener{
 			});
 			
 
-	}//Cierre del m�todo
+	}//Cierre del metodo
 	/**
-	 * Metodo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opci�n
+	 * Metodo sobreescrito de object que esta asignado por defecto, modificado para devolver el tipo de opcion
 	 * @return Retorna el tipo de opcion
 	 */
 	@Override
 	public String toString(){
 		return "Inicializar sistema";
 	}//Cierre del metodo
-
+	/**
+	 * Metodo para generar radiobotones
+	 * @param j
+	 */
 	public void generarRadioButton(ArrayList<Futbolista> j){
 		for(int i=0; i<j.size(); i++){
 			JRadioButton z = new JRadioButton(j.get(i).getNombre());
 			z.setName(i+"");
 			z.addItemListener(new ItemListener() {
-				
+				/**
+				 * Metodo para definir los eventos seleecionados por el usuario en la interfaz
+				 */
 				@Override
 				public void itemStateChanged(ItemEvent e) {
 					if(z.isSelected()){
@@ -128,7 +144,7 @@ public class Inicializar extends OpcionDeMenu implements ActionListener{
 						}
 						}
 					
-				}
+				}//Cierre del metodo
 			});
 			if(j.get(i) instanceof Arquero){
 				bg1.add(z);
@@ -139,11 +155,10 @@ public class Inicializar extends OpcionDeMenu implements ActionListener{
 				p2.add(z);
 			}
 		}
-	}
-	
-
-		
-	
+	}//Cierre del metodo
+	/**
+	 * Metodo que se ejecuta por una accion en la interfaz
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		jugadores.dispose();
@@ -154,8 +169,10 @@ public class Inicializar extends OpcionDeMenu implements ActionListener{
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-	}
-	
+	}//Cierre del metodo
+	/**
+	 * Metodo para conectar el sistema con los robots
+	 */
 	public void conectar(){
 		
 		NXTInfo info[] = Main.conn1.search(null, null, NXTCommFactory.BLUETOOTH);
@@ -178,5 +195,5 @@ public class Inicializar extends OpcionDeMenu implements ActionListener{
 		Main.dos2 = new DataOutputStream(Main.conn1.getOutputStream());
 		return;
 		}
-	}
+	}//Cierre del metodo
 }//Cierre de la clase
