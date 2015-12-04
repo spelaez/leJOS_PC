@@ -135,8 +135,10 @@ public class Cancha {
 		m2 = new JLabel(Main.r2.getJugador().getNombre());
 		m1.setSize(50,50);
 		m2.setSize(50,50);
-		Image img = ImageIO.read(new File(Main.r1.getJugador().getImagen()));
-		Image img2 = ImageIO.read(new File(Main.r1.getJugador().getImagen()));
+		int index1 = Main.listaJugadores.indexOf(Main.r1.getJugador()) + 1;
+		int index2 = Main.listaJugadores.indexOf(Main.r2.getJugador()) + 1;
+		Image img = ImageIO.read(new File("src/images/"+index1+".gif"));
+		Image img2 = ImageIO.read(new File("src/images/"+index2+".gif"));
 		Image resized1 = img.getScaledInstance(m1.getWidth(), m1.getHeight(), Image.SCALE_FAST);
 		Image resized2 = img2.getScaledInstance(m2.getWidth(), m2.getHeight(), Image.SCALE_FAST);
 		m1.setHorizontalAlignment(SwingConstants.LEFT);
